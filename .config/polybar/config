@@ -287,10 +287,10 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = BAT: <animation-charging><label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = BAT: <animation-discharging><label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
@@ -324,8 +324,8 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature-c%
-label-warn = %temperature-c%
+label = TEMP: %temperature-c%
+label-warn = TEMP: %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
