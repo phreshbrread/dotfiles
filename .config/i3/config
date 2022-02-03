@@ -61,7 +61,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # window border config
 default_border none
 default_floating_border none
-gaps inner 8
+gaps inner 10
 
 # bind brightness keys
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5
