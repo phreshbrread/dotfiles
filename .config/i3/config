@@ -5,6 +5,8 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
+#
+#
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -82,6 +84,9 @@ bindsym $mod+Shift+d exec rofi -show drun
 
 # open thunar
 bindsym $mod+Shift+e exec thunar
+
+# shutdown keybind
+bindsym $mod+Ctrl+Shift+Alt+s exec sudo shutdown now
 
 # change focus
 bindsym $mod+j focus left
