@@ -39,7 +39,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xbacklight pulseaudio filesystem memory cpu wlan battery temperature date
+modules-right = xbacklight pulseaudio filesystem memory cpu wlan battery temperature datetime
 
 tray-position = left
 tray-padding = 2
@@ -196,7 +196,7 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/date]
+[module/datetime]
 type = internal/date
 interval = 5
 
