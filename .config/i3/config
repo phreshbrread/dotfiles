@@ -56,13 +56,13 @@ floating_modifier $mod
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 
-# start polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
-
 # window border config
 default_border none
 default_floating_border none
 gaps inner 10
+
+# start polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # bind brightness keys
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5
