@@ -86,7 +86,7 @@ bindsym $mod+Shift+d exec rofi -show drun
 bindsym $mod+Shift+e exec thunar
 
 # shutdown keybind
-bindsym $mod+Ctrl+Shift+Alt+s exec systemctl poweroff -i
+bindsym $mod+Ctrl+Shift+p exec systemctl poweroff -i
 
 # change focus
 bindsym $mod+j focus left
