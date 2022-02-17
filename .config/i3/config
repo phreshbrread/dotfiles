@@ -53,8 +53,10 @@ exec nitrogen --restore
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
+
+# start chrome
+bindsym $mod+b exec google-chrome-stable
 
 # window border config
 default_border none
@@ -89,7 +91,7 @@ bindsym $mod+Shift+d exec rofi -show drun
 bindsym $mod+Shift+e exec thunar
 
 # shutdown keybind
-bindsym $mod+Ctrl+Shift+p exec systemctl poweroff -i -f
+bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
 
 # change focus
 bindsym $mod+j focus left
