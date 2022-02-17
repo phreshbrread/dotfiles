@@ -68,6 +68,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5
 bindsym XF86MonBrightnessDown exec brightnessctl -q set $(($(brightnessctl get)-5))
 
+# bind lockscreen hotkey
+bindsym $mod+Ctrl+Shift+l exec "i3lock -c 000000"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
