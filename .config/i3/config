@@ -25,7 +25,7 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# Start Picom
+# start picom
 exec_always --no-startup-id picom
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -53,7 +53,7 @@ exec nitrogen --restore
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # start chrome
 bindsym $mod+b exec google-chrome-stable
