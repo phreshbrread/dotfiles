@@ -61,7 +61,7 @@ bindsym $mod+b exec google-chrome-stable
 # window border config
 default_border none
 default_floating_border none
-gaps inner 10
+gaps inner 5
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
