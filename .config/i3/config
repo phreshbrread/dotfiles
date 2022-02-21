@@ -61,7 +61,7 @@ bindsym $mod+b exec google-chrome-stable
 # window border config
 default_border none
 default_floating_border none
-gaps inner 5
+gaps inner 8
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -91,7 +91,7 @@ bindsym $mod+Shift+d exec rofi -show drun
 bindsym $mod+Shift+e exec thunar
 
 # shutdown keybind
-bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
+bindsym $mod+Ctrl+Shift+p exec killall teeamviewer && systemctl poweroff
 
 # change focus
 bindsym $mod+j focus left
