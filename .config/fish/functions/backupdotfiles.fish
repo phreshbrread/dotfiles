@@ -1,5 +1,5 @@
 function backupdotfiles
-cd ~/Desktop/dotfiles/.config
+cd ~/dotfiles/.config
 cp -r /home/brad/.config/i3 (pwd)
 cp -r /home/brad/.config/fish (pwd)
 cp -r /home/brad/.config/kitty (pwd)

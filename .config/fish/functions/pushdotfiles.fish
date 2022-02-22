@@ -1,5 +1,5 @@
 function pushdotfiles
-cd ~/Desktop/dotfiles
+cd ~/dotfiles
 git add --all
 git commit --message='Update configs'
 git push
