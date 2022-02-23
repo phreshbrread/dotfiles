@@ -45,7 +45,7 @@ exec nitrogen --restore
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec i3-sensible-terminal
 
 # start chrome
 bindsym $mod+b exec google-chrome-stable
