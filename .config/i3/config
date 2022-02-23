@@ -77,7 +77,7 @@ bindsym $mod+Shift+q kill
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # rofi drun
-bindsym $mod+Shift+d exec rofi -show drun
+bindsym $mod+Shift+d exec rofi -show drun -icon-theme "Yaru-Blue" -show-icons
 
 # open thunar
 bindsym $mod+Shift+e exec thunar
