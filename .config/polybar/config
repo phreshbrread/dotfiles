@@ -21,7 +21,6 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-#line-size = 4
 line-size = 4
 line-color = #f00
 
