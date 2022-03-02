@@ -1,2 +1,2 @@
 # dotfiles
-Configs for alacritty, i3, kitty, picom and polybar
+Configs for alacritty, fish, i3, picom and polybar
