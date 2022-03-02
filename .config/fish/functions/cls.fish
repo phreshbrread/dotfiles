@@ -1,3 +1,3 @@
 function cls
-clear
+command clear $argv
 end

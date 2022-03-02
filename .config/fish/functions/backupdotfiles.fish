@@ -1,5 +1,8 @@
 function backupdotfiles
 cd ~/dotfiles/.config
+
+rm -rf (pwd)/*
+
 cp -r /home/brad/.config/i3 (pwd)
 cp -r /home/brad/.config/fish (pwd)
 cp -r /home/brad/.config/picom (pwd)
