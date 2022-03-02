@@ -1,4 +1,3 @@
 function piconf
-cd ~/.config/picom/
-nano picom.conf
+nano ~/.config/picom.conf
 end
