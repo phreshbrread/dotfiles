@@ -50,9 +50,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start chrome
 bindsym $mod+b exec google-chrome-stable
 
-# window border config
-default_border none
-default_floating_border none
+# border & gaps
+for_window [class="^.*"] border pixel 0
 gaps inner 8
 
 # start polybar
