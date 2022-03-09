@@ -44,12 +44,6 @@ exec nitrogen --restore
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
-# start chrome
-bindsym $mod+b exec google-chrome-stable
-
 # border & gaps
 for_window [class="^.*"] border pixel 0
 gaps inner 8
@@ -74,12 +68,6 @@ bindsym $mod+Shift+q kill
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
-# rofi drun
-bindsym $mod+Shift+d exec rofi -show drun -icon-theme "BeautyLine" -show-icons
-
-# open thunar
-bindsym $mod+Shift+e exec thunar
 
 # shutdown keybind
 bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
@@ -204,3 +192,15 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+########################
+### Program Keybinds ###
+########################
+# Alacritty
+bindsym $mod+Return exec alacritty
+# Chrome
+bindsym $mod+b exec google-chrome-stable
+# Rofi (drun)
+bindsym $mod+Shift+d exec rofi -show drun -icon-theme "BeautyLine" -show-icons
+# Thunar
+bindsym $mod+Shift+e exec thunar

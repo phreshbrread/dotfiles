@@ -1,3 +1,3 @@
 function nf
-neofetch $argv
+command neofetch $argv
 end
