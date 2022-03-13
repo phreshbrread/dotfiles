@@ -7,6 +7,7 @@ do
       case $input in
             [yY][eE][sS]|[yY])
                   sudo pacman -S --needed git base-devel go
+                  cd ~/
                   git clone https://aur.archlinux.org/yay.git
                   cd yay
                   makepkg -si
