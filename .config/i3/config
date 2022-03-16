@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # border & gaps
 for_window [class="^.*"] border pixel 0
-gaps inner 8
+gaps inner 5
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
