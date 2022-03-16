@@ -9,5 +9,8 @@ cp -r ~/.config/picom (pwd)
 cp -r ~/.config/polybar (pwd)
 cp -r ~/.config/alacritty (pwd)
 
-cp -r ~/.local/share/rofi/themes ~/dotfiles/.local/share/rofi
+mkdir -p ~/dotfiles/.local/share/rofi/themes/
+cp ~/.local/share/rofi/themes/nord.rasi ~/dotfiles/.local/share/rofi/themes
+
+cd ~/dotfiles
 end
