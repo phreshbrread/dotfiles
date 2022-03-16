@@ -3,9 +3,11 @@ cd ~/dotfiles/.config
 
 rm -rf (pwd)/*
 
-cp -r /home/brad/.config/i3 (pwd)
-cp -r /home/brad/.config/fish (pwd)
-cp -r /home/brad/.config/picom (pwd)
-cp -r /home/brad/.config/polybar (pwd)
-cp -r /home/brad/.config/alacritty (pwd)
+cp -r ~/.config/i3 (pwd)
+cp -r ~/.config/fish (pwd)
+cp -r ~/.config/picom (pwd)
+cp -r ~/.config/polybar (pwd)
+cp -r ~/.config/alacritty (pwd)
+
+cp -r ~/.local/share/rofi/themes ~/dotfiles/.local/share/rofi
 end
