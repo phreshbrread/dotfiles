@@ -69,8 +69,10 @@ bindsym $mod+Shift+q kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# shutdown keybind
+# shutdown
 bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
+# restart
+bindsym $mod+Ctrl+Shift+r exec systemctl reboot
 
 # change focus
 bindsym $mod+j focus left
