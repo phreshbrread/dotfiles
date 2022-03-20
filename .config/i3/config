@@ -61,7 +61,7 @@ bindsym $mod+Ctrl+Shift+l exec "i3lock -c 000000"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#shutdown
+# shutdown
 bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
 # restart
 bindsym $mod+Ctrl+Shift+r exec systemctl reboot
