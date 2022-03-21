@@ -23,7 +23,7 @@ do
       esac      
 done
 
-yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance nordic-darker-theme papirus-nord nordic-wallpapers
+yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance nordic-darker-theme papirus-nord nordic-wallpapers xmonad xmonad-contrib dmenu xterm xmobar
 
 mkdir .config/ .local/ .xmonad/
 cp -r .config/ ~/
