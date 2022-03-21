@@ -10,7 +10,8 @@ cp -r ~/.config/xmobar (pwd)
 cp -r ~/.config/polybar (pwd)
 cp -r ~/.config/alacritty (pwd)
 
-cp -r ~/.xmonad ~/dotfiles/
+mkdir ~/dotfiles/.xmonad/
+cp ~/.xmonad/xmonad.hs ~/dotfiles/.xmonad/
 
 mkdir -p ~/dotfiles/.local/share/rofi/themes/
 cp ~/.local/share/rofi/themes/nord.rasi ~/dotfiles/.local/share/rofi/themes
