@@ -80,7 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b     ), spawn "google-chrome-stable")
 
     -- launch thunar
-    , ((modm,               xK_e     ), spawn "thunar")
+    , ((modm .|. shiftMask, xK_t     ), spawn "thunar")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_q     ), kill)
@@ -143,7 +143,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask .|. controlMask, xK_e     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-    , ((modm .|. shiftMask,                 xK_r     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm .|. shiftMask .|. controlMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
