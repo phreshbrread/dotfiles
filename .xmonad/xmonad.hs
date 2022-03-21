@@ -75,6 +75,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
+    -- launch chrome
+    , ((modm,               xK_b     ), spawn "google-chrome-stable")
+
     -- close focused window
     , ((modm .|. shiftMask, xK_q     ), kill)
 
@@ -130,7 +133,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Power Off
-    , ((modm .|. shiftMask .|. controlMask, xK_p     ),  )
+    --, ((modm .|. shiftMask .|. controlMask, xK_p     ),  )
 
     -- Quit xmonad
     , ((modm .|. shiftMask .|. controlMask, xK_e     ), io (exitWith ExitSuccess))
