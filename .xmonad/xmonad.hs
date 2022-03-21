@@ -129,6 +129,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
+    -- Power Off
+    , ((modm .|. shiftMask .|. controlMask, xK_p     ),  )
+
     -- Quit xmonad
     , ((modm .|. shiftMask .|. controlMask, xK_e     ), io (exitWith ExitSuccess))
 
