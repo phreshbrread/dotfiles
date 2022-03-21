@@ -14,6 +14,7 @@ import System.Exit
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.StackTile
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -78,6 +79,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch chrome
     , ((modm,               xK_b     ), spawn "google-chrome-stable")
 
+    -- launch thunar
+    , ((modm,               xK_e     ), spawn "thunar")
+
     -- close focused window
     , ((modm .|. shiftMask, xK_q     ), kill)
 
@@ -121,10 +125,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
 
     -- Increment the number of windows in the master area
-    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
+    , ((modm,               xK_comma ), sendMessage (IncMasterN 1))
 
     -- Deincrement the number of windows in the master area
-    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+    , ((modm,               xK_period), sendMessage (IncMasterN (-1)))
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
@@ -139,7 +143,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask .|. controlMask, xK_e     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm .|. shiftMask,                 xK_r     ), spawn "xmonad --recompile; xmonad --restart")
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
