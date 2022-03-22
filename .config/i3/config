@@ -31,8 +31,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Start Xpad on workspace 10
-exec --no-startup-id i3-msg 'workspace 10:note; exec xpad'
+# Start Xpad for sticky notes
+exec --no-startup-id xpad
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
