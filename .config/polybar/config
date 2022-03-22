@@ -215,11 +215,12 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/datetime]
 type = internal/date
-interval = 1
+interval = 10
 
 date = %h %d, %Y |
 
-time = %I:%M:%S %p
+#time = %I:%M:%S %p
+time = %I:%M %p
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
