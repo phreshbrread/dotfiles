@@ -2,7 +2,7 @@
 
 while true
 do
-      read -r -p "Do you want to install the Yay AUR helper? [Y/n] " input
+      read -r -p "Would you like to install the Yay AUR helper? [Y/n] " input
  
       case $input in
             [yY][eE][sS]|[yY])
@@ -23,7 +23,26 @@ do
       esac      
 done
 
-yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance nordic-darker-theme papirus-nord nordic-wallpapers xmonad xmonad-contrib dmenu xterm xmobar xpad
+while true
+do
+      read -r -p "Would you like to install the nordic-wallpapers package? [Y/n] " input
+
+      case $input in
+            [yY][eE][sS]|[yY])
+                  yay -Sy nordic-wallpapers
+
+                  break
+                  ;;
+            [nN][oO]|[nN])
+                  break
+                  ;;
+            *)
+                  echo "Invalid input..."
+                  ;;
+      esac
+done
+
+yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance qbittorrent nordic-darker-theme papirus-nord xmonad xmonad-contrib dmenu xterm xmobar xpad
 
 mkdir .config/ .local/ .xmonad/
 cp -r .config/ ~/
