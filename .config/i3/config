@@ -45,8 +45,10 @@ exec nitrogen --restore
 floating_modifier $mod
 
 # border & gaps
-for_window [class="^.*"] border pixel 0
-gaps inner 5
+for_window [class="^.*"] border pixel 2
+gaps inner 0
+#client.focused #353439 #9FEE00 #7B9F35
+client.focused #f0b000 #f0b000 #f0b000
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
