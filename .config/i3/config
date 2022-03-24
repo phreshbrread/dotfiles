@@ -48,8 +48,8 @@ exec nitrogen --restore
 floating_modifier $mod
 
 # border, gaps and border color
-for_window [class="^.*"] border pixel 2
-gaps inner 5
+for_window [class="^.*"] border pixel 3
+gaps inner 3
 client.focused #f0b000 #f0b000 #f0b000 #f0b000
 client.unfocused #808080 #808080 #808080 #808080
 
