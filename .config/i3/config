@@ -199,7 +199,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Return exec alacritty
 # Chrome
 bindsym $mod+b exec google-chrome-stable
-# Rofi (drun)
+# Rofi
 bindsym $mod+Shift+d exec rofi -show drun -icon-theme "Papirus-Dark" -show-icons
 # Thunar
 bindsym $mod+Shift+e exec thunar
