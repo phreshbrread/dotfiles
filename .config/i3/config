@@ -17,7 +17,10 @@ font pango:DejaVu Sans Mono 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# start picom
+# Enable autotiling
+#exec --no-startup-id autotiling
+
+# Start picom
 #exec_always --no-startup-id picom
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -50,8 +53,8 @@ floating_modifier $mod
 # border, gaps and border color
 for_window [class="^.*"] border pixel 3
 gaps inner 3
-client.focused #f0b000 #f0b000 #f0b000 #f0b000
-client.unfocused #808080 #808080 #808080 #808080
+client.focused #f0b000 #f0b000 #000000 #f0b000
+client.unfocused #808080 #808080 #ffffff #808080
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &

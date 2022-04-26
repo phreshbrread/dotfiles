@@ -1,11 +1,7 @@
 function backupdotfiles
-cd ~/dotfiles/
+cd ~/dotfiles/.config
 
-rm -rf .config
-rm -rf .xmonad
-
-mkdir .config
-cd .config
+rm -rf (pwd)/*
 
 cp -r ~/.config/i3 (pwd)
 cp -r ~/.config/fish (pwd)
