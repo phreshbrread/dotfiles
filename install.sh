@@ -44,8 +44,5 @@ done
 
 yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance qbittorrent nordic-darker-theme papirus-nord dmenu xterm xpad
 
-mkdir .config/ .local/ .xmonad/
 cp -r .config/ ~/
 cp -r .local/ ~/
-
-cp .xmonad/xmonad.hs ~/.xmonad

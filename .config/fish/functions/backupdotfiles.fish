@@ -2,7 +2,6 @@ function backupdotfiles
 cd ~/dotfiles/
 
 rm -rf .config
-rm -rf .xmonad
 
 mkdir .config
 cd .config
@@ -10,12 +9,8 @@ cd .config
 cp -r ~/.config/i3 (pwd)
 cp -r ~/.config/fish (pwd)
 cp -r ~/.config/picom (pwd)
-cp -r ~/.config/xmobar (pwd)
 cp -r ~/.config/polybar (pwd)
 cp -r ~/.config/alacritty (pwd)
-
-mkdir ~/dotfiles/.xmonad/
-cp ~/.xmonad/xmonad.hs ~/dotfiles/.xmonad/
 
 mkdir -p ~/dotfiles/.local/share/rofi/themes/
 cp ~/.local/share/rofi/themes/nord.rasi ~/dotfiles/.local/share/rofi/themes
