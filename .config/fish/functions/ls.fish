@@ -1,3 +1,3 @@
 function ls
-exa -al --color=always --group-directories-first $argv
+command exa -al --color=always --group-directories-first $argv
 end
