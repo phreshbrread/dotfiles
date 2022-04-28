@@ -42,7 +42,7 @@ do
       esac
 done
 
-yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad
+yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi thunar google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet
 
 cp -r .config/ ~/
 cp -r .local/ ~/
