@@ -135,16 +135,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # Same bindings, but for the arrow keys
+        #Same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -171,11 +162,14 @@ bindsym $mod+Return exec alacritty
 # Chrome
 bindsym $mod+b exec google-chrome-stable
 
-# Rofi
-bindsym $mod+Shift+d exec rofi -show drun -icon-theme "Adwaita" -show-icons
-
 # Thunar
 bindsym $mod+Shift+e exec thunar
+
+# Rofi drun
+bindsym $mod+Shift+d exec rofi -show drun -show-icons
+
+# Rofi window
+bindsym $mod+Tab exec rofi -show window -show-icons
 
 ### Floating Window Exceptions  ###
 for_window [class="xpad"] floating enable
