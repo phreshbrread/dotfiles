@@ -159,8 +159,8 @@ bindsym $mod+Return exec alacritty
 # Chrome
 bindsym $mod+b exec google-chrome-stable
 
-# Thunar
-bindsym $mod+Shift+e exec thunar
+# Nemo
+bindsym $mod+Shift+e exec nemo
 
 # Rofi drun
 bindsym $mod+Shift+d exec rofi -show drun -show-icons
