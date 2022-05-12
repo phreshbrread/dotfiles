@@ -25,7 +25,7 @@ floating_modifier $mod
 
 # Borders and gaps
 for_window [class="^.*"] border pixel 3
-gaps inner 5
+gaps inner 8
 client.focused          #f0b000 #f0b000 #000000 #f0b000
 client.unfocused        #808080 #808080 #ffffff #808080
 
