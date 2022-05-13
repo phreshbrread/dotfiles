@@ -23,25 +23,6 @@ do
       esac      
 done
 
-while true
-do
-      read -r -p "Would you like to install the nordic-wallpapers package? [Y/n] " input
-
-      case $input in
-            [yY][eE][sS]|[yY])
-                  yay -Sy nordic-wallpapers
-
-                  break
-                  ;;
-            [nN][oO]|[nN])
-                  break
-                  ;;
-            *)
-                  echo "Invalid input..."
-                  ;;
-      esac
-done
-
 yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi nemo google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet
 
 cp -r .config/ ~/

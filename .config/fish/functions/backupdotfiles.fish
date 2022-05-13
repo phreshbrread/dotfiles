@@ -2,18 +2,21 @@ function backupdotfiles
 cd ~/dotfiles/
 
 rm -rf .config
+rm -rf rofi-themes
+rm -rf wallpapers 
 
 mkdir .config
-cd .config
+mkdir ~/dotfiles/rofi-themes
 
-cp -r ~/.config/i3 (pwd)
-cp -r ~/.config/fish (pwd)
-cp -r ~/.config/picom (pwd)
-cp -r ~/.config/polybar (pwd)
-cp -r ~/.config/alacritty (pwd)
+cp -r ~/.config/i3 .config
+cp -r ~/.config/fish .config
+cp -r ~/.config/picom .config
+cp -r ~/.config/polybar .config
+cp -r ~/.config/alacritty .config
 
-mkdir -p ~/dotfiles/.local/share/rofi/themes/
-cp ~/.local/share/rofi/themes/nord.rasi ~/dotfiles/.local/share/rofi/themes
+cp -r ~/Pictures/Wallpapers wallpapers
+
+cp ~/.local/share/rofi/themes/nord.rasi rofi-themes
 
 cd ~/dotfiles
 end
