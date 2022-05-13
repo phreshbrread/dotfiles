@@ -16,7 +16,7 @@ cp -r ~/.config/alacritty .config
 
 cp -r ~/Pictures/Wallpapers wallpapers
 
-cp ~/.local/share/rofi/themes/nord.rasi rofi-themes
+cp ~/.local/share/rofi/themes/* rofi-themes
 
 cd ~/dotfiles
 end
