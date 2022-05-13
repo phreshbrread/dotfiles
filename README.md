@@ -1,4 +1,4 @@
 # dotfiles
-Configs for alacritty, fish, i3, picom and polybar
+Program configs, wallpapers and Rofi themes
 
-Intended for vanilla Arch
+Install script made for vanilla Arch
