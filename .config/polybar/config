@@ -147,7 +147,7 @@ label = CPU: %percentage:2%%
 type = internal/fs
 interval = 25
 
-mount-0 = /
+mount-0 = /home
 
 label-mounted = DISK (%mountpoint%): %percentage_used%%
 label-mounted-underline = ${colors.secondary}
