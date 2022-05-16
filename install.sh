@@ -23,7 +23,7 @@ do
       esac      
 done
 
-yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi nemo google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet
+yay -S --needed alacritty fish i3-gaps picom polybar nitrogen brightnessctl xautolock rofi nemo google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome
 
 cp -r .config/ ~/
 cp wallpapers/* ~/Pictures/Wallpapers
