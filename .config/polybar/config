@@ -6,7 +6,6 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/mybar]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 26
 ;offset-x = 10%
@@ -34,13 +33,10 @@ modules-left = i3
 modules-center = datetime
 modules-right = xbacklight pulseaudio filesystem memory cpu eth wlan battery temperature
 
+override-redirect = false
+
 tray-position = left
 tray-padding = 2
-;tray-background = #0063ff
-
-;wm-restack = i3
-
-;override-redirect = true
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -153,8 +149,7 @@ interval = 25
 
 mount-0 = /
 
-#label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-mounted = DISK: %percentage_used%%
+label-mounted = DISK (%mountpoint%): %percentage_used%%
 label-mounted-underline = ${colors.secondary}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -210,7 +205,6 @@ interval = 10
 
 date = %h %d, %Y |
 
-#time = %I:%M:%S %p
 time = %I:%M %p
 
 format-prefix = 

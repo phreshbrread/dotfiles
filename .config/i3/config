@@ -47,10 +47,10 @@ set $ws10 "10"
 
 ### System Keybinds ###
 # Shutdown
-bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
+bindsym $mod+Ctrl+Shift+p exec "i3-nagbar -t warning -m 'Are you sure you want to shut down the system?' -B 'Yes, shut down' 'systemctl poweroff'"
 
 # Restart
-bindsym $mod+Ctrl+Shift+r exec systemctl reboot
+bindsym $mod+Ctrl+Shift+r exec "i3-nagbar -t warning -m 'Are you sure you want to reboot the system?' -B 'Yes, reboot' 'systemctl reboot'
 
 # Brightness keys
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5
@@ -153,7 +153,7 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
 # Exit i3
-bindsym $mod+Ctrl+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Ctrl+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want to log out of i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 ### Program Keybinds ###
 # Alacritty
