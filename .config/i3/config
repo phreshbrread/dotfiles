@@ -18,7 +18,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id nm-applet
 
 # Restore background with Nitrogen
-exec nitrogen --restore
+exec --no-startup-id nitrogen --restore
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
