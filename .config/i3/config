@@ -1,12 +1,13 @@
 ### Init ###
 # Set i3 mod key
 set $mod Mod4
+set $alt Mod1
 
 # Window title font
 font pango:monospace 8
 
 # Start Polkit agent
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Start Picom
 exec_always --no-startup-id picom
@@ -163,10 +164,10 @@ bindsym $mod+b exec google-chrome-stable
 bindsym $mod+Shift+e exec nemo
 
 # Rofi drun
-bindsym $mod+Shift+d exec rofi -show drun -show-icons
+bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
 
 # Rofi window
-bindsym $mod+Tab exec rofi -show window -show-icons
+bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
 
 # Flameshot
 bindsym $mod+Shift+s exec flameshot gui
