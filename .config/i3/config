@@ -5,9 +5,6 @@ set $mod Mod4
 # Window title font
 font pango:monospace 8
 
-# Start XDG autostart .desktop files using dex.
-exec --no-startup-id dex --autostart --environment i3
-
 # Start Polkit agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
