@@ -163,8 +163,8 @@ bindsym $mod+b exec google-chrome-stable
 # Nemo
 bindsym $mod+Shift+e exec nemo
 
-# Rofi drun
-bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
+# Rofi run
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run -show-icons
 
 # Rofi window
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
