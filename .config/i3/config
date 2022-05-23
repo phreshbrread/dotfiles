@@ -103,7 +103,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Focus the child container
-bindsym $mod+d focus child
+#bindsym $mod+d focus child
 
 # Switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -164,7 +164,10 @@ bindsym $mod+b exec google-chrome-stable
 bindsym $mod+Shift+e exec nemo
 
 # Rofi run
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
+
+# Rofi drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
 
 # Rofi window
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
