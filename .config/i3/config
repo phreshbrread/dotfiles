@@ -18,6 +18,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # Start NetworkManager applet
 exec --no-startup-id nm-applet
 
+# Start flameshot
+exec --no-startup-id flameshot
+
 # Restore background with Nitrogen
 exec --no-startup-id nitrogen --restore
 
@@ -27,7 +30,7 @@ floating_modifier $mod
 # Borders and gaps
 for_window [class="^.*"] border pixel 2
 gaps inner 10
-client.focused          #f0b000 #f0b000 #000000 #f0b000
+client.focused          #ffbb00 #ffbb00 #000000 #ffbb00
 client.unfocused        #808080 #808080 #ffffff #808080
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -48,7 +51,7 @@ set $ws10 "10"
 bindsym $mod+Ctrl+Shift+p exec "i3-nagbar -t warning -m 'Are you sure you want to shut down the system?' -B 'Yes, shut down' 'systemctl poweroff'"
 
 # Restart
-bindsym $mod+Ctrl+Shift+r exec "i3-nagbar -t warning -m 'Are you sure you want to reboot the system?' -B 'Yes, reboot' 'systemctl reboot'
+bindsym $mod+Ctrl+Shift+r exec "i3-nagbar -t warning -m 'Are you sure you want to reboot the system?' -B 'Yes, reboot' 'systemctl reboot'"
 
 # Brightness keys
 bindsym XF86MonBrightnessUp exec brightnessctl -q set +5
