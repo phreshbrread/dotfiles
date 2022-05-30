@@ -10,7 +10,7 @@ font pango:monospace 8
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Start Picom
-exec_always --no-startup-id picom
+#exec_always --no-startup-id picom
 
 # Start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -30,6 +30,8 @@ floating_modifier $mod
 # Borders and gaps
 for_window [class="^.*"] border pixel 2
 gaps inner 10
+smart_gaps on
+smart_borders on
 client.focused          #ffbb00 #ffbb00 #000000 #ffbb00
 client.unfocused        #808080 #808080 #ffffff #808080
 
