@@ -19,7 +19,7 @@ cp -r ~/.config/alacritty .
 
 cd ../
 
-cp -r ~/Pictures/Wallpapers wallpapers
+cp ~/Pictures/Wallpapers/* wallpapers
 
 cp ~/.local/share/rofi/themes/* rofi-themes
 end
