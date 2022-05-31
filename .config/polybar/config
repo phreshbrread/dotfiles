@@ -7,7 +7,7 @@ alert = #bd2c40
 
 [bar/mybar]
 width = 100%
-height = 22
+height = 24
 ;offset-x = 10%
 ;offset-y = 10%
 ;radius = 8
@@ -25,7 +25,7 @@ padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
@@ -78,8 +78,8 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = #545454
+;label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -98,7 +98,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-;label-separator = |
+label-separator = "   "
 
 [module/mpd]
 type = internal/mpd
@@ -140,8 +140,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = CPU: %percentage:2%%
+;format-underline = #f90000
+label = [CPU: %percentage:2%%]
 
 [module/filesystem]
 type = internal/fs
@@ -149,8 +149,8 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = DISK (%mountpoint%): %percentage_used%%
-label-mounted-underline = ${colors.secondary}
+label-mounted = [DISK (%mountpoint%): %percentage_used%%]
+;label-mounted-underline = ${colors.secondary}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -158,18 +158,18 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/memory
 interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = MEM: %percentage_used%%
+;format-underline = #4bffdc
+label = [MEM: %percentage_used%%]
 
 [module/eth]
 type = internal/network
 interface = enp5s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+;format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = Ethernet: Connected
+label-connected = [Ethernet: Connected]
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -183,8 +183,8 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = WIRELESS: %essid%
+;format-connected-underline = #9f78e1
+label-connected = [WIRELESS: %essid%]
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -209,7 +209,7 @@ time = %I:%M %p
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -274,11 +274,11 @@ battery = BAT0
 adapter = AC
 full-at = 100
 
-format-charging = BAT: <animation-charging><label-charging> (Charging)
-format-charging-underline = #ffb52a
+format-charging = [BAT: <animation-charging><label-charging> (Charging)]
+;format-charging-underline = #ffb52a
 
-format-discharging = BAT: <animation-discharging><label-discharging> (Discharging)
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = [BAT: <animation-discharging><label-discharging> (Discharging)]
+;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-suffix = " (Full)"
 ;format-full-prefix-foreground = ${colors.foreground-alt}
@@ -307,11 +307,11 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = TEMP: %temperature-c%
+label = [TEMP: %temperature-c%]
 label-warn = TEMP: %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
