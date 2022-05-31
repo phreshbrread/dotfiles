@@ -1,22 +1,25 @@
 function backupdotfiles
-cd ~/dotfiles/
+cd ~/dotfiles
 
 rm -rf .config
 rm -rf rofi-themes
-rm -rf wallpapers 
+rm -rf wallpapers
 
 mkdir .config
-mkdir ~/dotfiles/rofi-themes
+mkdir rofi-themes
+mkdir wallpapers
 
-cp -r ~/.config/i3 .config
-cp -r ~/.config/fish .config
-cp -r ~/.config/picom .config
-cp -r ~/.config/polybar .config
-cp -r ~/.config/alacritty .config
+cd .config
+cp -r ~/.config/i3 .
+cp -r ~/.config/fish .
+cp -r ~/.config/picom .
+cp -r ~/.config/polybar .
+cp -r ~/.config/neofetch .
+cp -r ~/.config/alacritty .
+
+cd ../
 
 cp -r ~/Pictures/Wallpapers wallpapers
 
 cp ~/.local/share/rofi/themes/* rofi-themes
-
-cd ~/dotfiles
 end
