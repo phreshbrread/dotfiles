@@ -32,7 +32,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3 xwindow
 ;modules-center = datetime
-modules-right = pulseaudio cpu memory eth wlan battery
+modules-right = pulseaudio cpu memory eth wlan battery datetime
 
 override-redirect = false
 
