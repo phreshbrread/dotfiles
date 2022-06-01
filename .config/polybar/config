@@ -1,7 +1,8 @@
 [colors]
-background = #331a1a1a
+background = #000000
 foreground = #ffffff
-primary = #ffbb00
+primary-yellow = ffbb00
+primary-blue = #6E9CFA
 secondary = #e60053
 alert = #bd2c40
 
@@ -29,14 +30,14 @@ font-0 = fixed:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3
-modules-center = datetime
-modules-right = xbacklight pulseaudio memory cpu eth wlan battery temperature
+modules-left = i3 xwindow
+;modules-center = datetime
+modules-right = pulseaudio cpu memory eth wlan battery
 
 override-redirect = false
 
-tray-position = left
-tray-padding = 2
+tray-position = right
+tray-padding = 4
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -47,6 +48,8 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+;format-background = ${colors.primary-blue}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -72,14 +75,13 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+;label-mode-padding = 2
+;label-mode-background = ${colors.primary-yellow}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #545454
-;label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.primary-blue}
+;label-focused-underline= ${colors.primary-yellow}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -88,8 +90,7 @@ label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+;label-visible-background = ${self.label-focused-background}label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -98,7 +99,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-label-separator = "   "
+;label-separator = "   "
 
 [module/mpd]
 type = internal/mpd
@@ -159,7 +160,7 @@ type = internal/memory
 interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
-label = [MEM: %percentage_used%%]
+label = [RAM: %percentage_used%%]
 
 [module/eth]
 type = internal/network
@@ -217,11 +218,11 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = [VOL: %percentage%%]
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted = [VOL: Muted]
+;label-muted-foreground = #666
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -232,7 +233,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = ""
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
