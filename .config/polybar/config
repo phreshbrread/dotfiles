@@ -1,7 +1,7 @@
 [colors]
 background = #000000
 foreground = #ffffff
-primary-yellow = ffbb00
+primary-yellow = #ffbb00
 primary-blue = #6E9CFA
 secondary = #e60053
 alert = #bd2c40
@@ -20,8 +20,8 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-padding-left = 2
-padding-right = 2
+;padding-left = 2
+;padding-right = 2
 
 module-margin-left = 2
 module-margin-right = 2
@@ -47,7 +47,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 ;format-background = ${colors.primary-blue}
 
