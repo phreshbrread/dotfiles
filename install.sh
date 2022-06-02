@@ -22,12 +22,12 @@ while true; do
       esac
 done
 
-yay -S --needed alacritty fish i3-gaps i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings
+yay -S --needed alacritty fish i3-gaps i3status i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
 cd ~/
-mkdir Desktop Documents Downloads Videos Music
-mkdir -p Pictures/Wallpapers
-mkdir -p .local/share/rofi/themes
+mkdir ./Desktop ./Documents ./Downloads ./Pictures ./Videos ./Music
+mkdir ./Pictures/Wallpapers
+mkdir -p ./.local/share/rofi/themes
 
 cp -r .config/ ~/
 cp wallpapers/* ~/Pictures/Wallpapers
