@@ -2,7 +2,7 @@
 background = #000000
 foreground = #ffffff
 primary-yellow = #ffbb00
-primary-blue = #6E9CFA
+primary-blue = #005577
 secondary = #e60053
 alert = #bd2c40
 
@@ -20,18 +20,14 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-;padding-left = 2
-;padding-right = 2
+;module-margin-left = 1
+module-margin-right = 1
 
-module-margin-left = 2
-module-margin-right = 2
+font-0 = monospace:size=10
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
 
-font-0 = fixed:pixelsize=12;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-
-modules-left = i3 xwindow
-;modules-center = 
+modules-left = i3 spacer xwindow
 modules-right = pulseaudio cpu memory eth wlan battery datetime
 
 override-redirect = false
@@ -39,17 +35,19 @@ override-redirect = false
 tray-position = right
 tray-padding = 4
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/spacer]
+type = custom/text
+content = "   "
+;content-background = ${colors.primary-blue}
+
 [module/xwindow]
 type = internal/xwindow
-label = %title%
+label = %title:0:100%
 
-;format-background = ${colors.primary-blue}
+format-background = ${colors.primary-blue}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -233,7 +231,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = ""
+bar-volume-indicator = "|"
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -275,13 +273,14 @@ battery = BAT0
 adapter = AC
 full-at = 100
 
-format-charging = [BAT: <animation-charging><label-charging> (Charging)]
+format-charging = [<animation-charging><label-charging> Charging]
 ;format-charging-underline = #ffb52a
 
-format-discharging = [BAT: <animation-discharging><label-discharging> (Discharging)]
+format-discharging = [<animation-discharging><label-discharging> Discharging]
 ;format-discharging-underline = ${self.format-charging-underline}
 
-format-full-suffix = " (Full)"
+format-full-prefix = "["
+format-full-suffix = " Full]"
 ;format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 

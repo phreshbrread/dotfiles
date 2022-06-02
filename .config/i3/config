@@ -28,12 +28,12 @@ exec --no-startup-id nitrogen --restore
 floating_modifier $mod
 
 # Borders and gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 10
 gaps outer -10
 smart_gaps on
 #smart_borders on
-client.focused          #6E9CFA #6E9CFA #000000 #6E9CFA
+client.focused          #005577 #005577 #000000 #005577
 client.unfocused        #808080 #808080 #ffffff #808080
 
 # Define names for default workspaces for which we configure key bindings later on.
