@@ -38,7 +38,8 @@ while true; do
 
       case $input in
       [yY][eE][sS] | [yY])
-            sudo systemctl enable lightdm
+            sudo systemctl enable lightdm.service
+
             break
             ;;
       [nN][oO] | [nN])
