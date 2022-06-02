@@ -30,7 +30,7 @@ mkdir -p Pictures/Wallpapers/
 mkdir -p .config/
 mkdir -p .local/share/rofi/themes/
 
-cp -f .config/ ~/
+cp -fr .config/ ~/
 cp -f wallpapers/* ~/Pictures/Wallpapers
 cp -f rofi-themes/* ~/.local/share/rofi/themes
 
