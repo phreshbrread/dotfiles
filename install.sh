@@ -30,9 +30,9 @@ mkdir Pictures/Wallpapers/
 mkdir .config/
 mkdir -p .local/share/rofi/themes/
 
-cp -r .config/* ~/.config
-cp wallpapers/* ~/Pictures/Wallpapers
-cp rofi-themes/* ~/.local/share/rofi/themes
+cp -fr .config/* ~/.config
+cp -f wallpapers/* ~/Pictures/Wallpapers
+cp -f rofi-themes/* ~/.local/share/rofi/themes
 
 while true; do
       read -r -p "Would you like to enable LightDM? [Y/n] " input
