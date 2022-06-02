@@ -25,14 +25,15 @@ done
 yay -S --needed alacritty fish i3-gaps i3status i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo google-chrome exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
 cd ~/
-mkdir -p Desktop/ Documents/ Downloads/ Pictures/ Videos/ Music/
-mkdir -p Pictures/Wallpapers/
-mkdir -p .config/
-mkdir -p .local/share/rofi/themes/
+mkdir -p Desktop Documents Downloads Pictures Videos Musi
+mkdir -p Pictures/Wallpapers
+mkdir -p .config
+mkdir -p .local/share/rofi/themes
 
-\cp -r .config/ ~/
-\cp wallpapers/* ~/Pictures/Wallpapers
-\cp rofi-themes/* ~/.local/share/rofi/themes
+cd ~/dotfiles/
+cp -r .config ~/
+cp wallpapers/* ~/Pictures/Wallpapers
+cp rofi-themes/* ~/.local/share/rofi/themes
 
 while true; do
       read -r -p "Would you like to enable LightDM? [Y/n] " input
