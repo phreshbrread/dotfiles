@@ -47,7 +47,7 @@ content = "   "
 type = internal/xwindow
 label = %title:0:100%
 
-format-background = ${colors.primary-blue}
+;format-background = ${colors.primary-blue}
 
 [module/xkeyboard]
 type = internal/xkeyboard
