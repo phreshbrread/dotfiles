@@ -22,4 +22,6 @@ cd ../
 cp ~/Pictures/Wallpapers/* wallpapers
 
 cp ~/.local/share/rofi/themes/* rofi-themes
+
+cp ~/.profile .
 end
