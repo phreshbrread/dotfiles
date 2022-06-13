@@ -29,6 +29,7 @@ floating_modifier $mod
 
 # Borders and gaps
 for_window [class="^.*"] border pixel 3
+for_window [class="brave-browser"] border pixel 3
 gaps inner 10
 gaps outer -10
 smart_gaps on
@@ -163,8 +164,8 @@ bindsym $mod+Ctrl+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want t
 # Alacritty
 bindsym $mod+Return exec alacritty
 
-# Chrome
-bindsym $mod+b exec google-chrome-stable
+# Browser
+bindsym $mod+b exec brave
 
 # Nemo
 bindsym $mod+Shift+e exec nemo
