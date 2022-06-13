@@ -22,7 +22,7 @@ while true; do
       esac
 done
 
-yay -S --needed alacritty fish i3-gaps i3status i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo brave-bin exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings flameshot ghex github-cli gparted qt5ct
+yay -S --needed alacritty fish i3-gaps i3status i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo brave-bin exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings flameshot ghex github-cli gparted qt5ct tor torbrowser-launcher torsocks
 
 cd ~/
 mkdir -p Desktop Documents Downloads Pictures Videos Music
