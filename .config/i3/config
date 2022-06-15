@@ -52,14 +52,20 @@ set $ws10 "10"
 
 ### System Keybinds ###
 # Shutdown
-bindsym $mod+Ctrl+Shift+p exec "i3-nagbar -t warning -m 'Are you sure you want to shut down the system?' -B 'Yes, shut down' 'systemctl poweroff'"
+bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
+#"i3-nagbar -t warning -m 'Are you sure you want to shut down the system?' -B 'Yes, shut down' 'systemctl poweroff'"
 
 # Restart
-bindsym $mod+Ctrl+Shift+r exec "i3-nagbar -t warning -m 'Are you sure you want to reboot the system?' -B 'Yes, reboot' 'systemctl reboot'"
+bindsym $mod+Ctrl+Shift+r exec systemctl reboot
+#"i3-nagbar -t warning -m 'Are you sure you want to reboot the system?' -B 'Yes, reboot' 'systemctl reboot'"
+
+# Log Out
+bindsym $mod+Ctrl+Shift+e exec i3-msg exit
+#"i3-nagbar -t warning -m 'Are you sure you want to log out of i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec brightnessctl -q set +5
-bindsym XF86MonBrightnessDown exec brightnessctl -q set $(($(brightnessctl get)-5))
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%-
 
 # Adjust PulseAudio volume with pactl
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -157,8 +163,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+c reload
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
-# Exit i3
-bindsym $mod+Ctrl+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want to log out of i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 ### Program Keybinds ###
 # Alacritty
