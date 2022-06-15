@@ -1,3 +1,3 @@
 function polyconf
-nano ~/.config/polybar/config
+nano ~/.config/polybar/config.ini
 end
