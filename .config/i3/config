@@ -64,8 +64,8 @@ bindsym $mod+Ctrl+Shift+e exec i3-msg exit
 #"i3-nagbar -t warning -m 'Are you sure you want to log out of i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 2%+
+bindsym XF86MonBrightnessDown exec brightnessctl -q set 2%-
 
 # Adjust PulseAudio volume with pactl
 set $refresh_i3status killall -SIGUSR1 i3status
