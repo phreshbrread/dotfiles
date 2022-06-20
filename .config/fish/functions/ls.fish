@@ -1,3 +1,3 @@
 function ls
-command exa -al --color=always --group-directories-first $argv
+command exa -h --all --long --color=always --group-directories-first --icons --no-permissions $argv
 end
