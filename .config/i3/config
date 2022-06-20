@@ -1,4 +1,4 @@
-### Init ###
+### Startup ###
 # Set i3 mod key
 set $mod Mod4
 set $alt Mod1
@@ -6,37 +6,35 @@ set $alt Mod1
 # Window title font
 font pango:monospace 8
 
-# Start Polkit agent
+# Polkit agent
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# Start picom
+# Picom
 exec_always --no-startup-id picom
 
-# Start polybar
+# Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
-# Start xpad
+# Xpad
 exec --no-startup-id xpad --no-new --hide
 
-# Start NetworkManager applet
+# NetworkManager applet
 exec --no-startup-id nm-applet
 
-# Start flameshot
+# Flameshot
 exec --no-startup-id flameshot
 
-# Restore background with Nitrogen
+# Restore background with nitrogen
 exec --no-startup-id nitrogen --restore
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Borders and gaps
+# Borders & gaps
 for_window [class="^.*"] border pixel 3
-#for_window [class="brave-browser"] border pixel 3
 gaps inner 10
 gaps outer -10
 smart_gaps on
-#smart_borders on
 client.focused          #005577 #005577 #000000 #005577
 client.unfocused        #808080 #808080 #ffffff #808080
 
