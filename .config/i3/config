@@ -9,11 +9,14 @@ font pango:monospace 8
 # Start Polkit agent
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# Start Picom
+# Start picom
 exec_always --no-startup-id picom
 
 # Start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+# Start xpad
+exec --no-startup-id xpad --no-new --hide
 
 # Start NetworkManager applet
 exec --no-startup-id nm-applet
