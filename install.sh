@@ -2,7 +2,7 @@
 #!/bin/bash
 
 while true; do
-      read -r -p "Would you like to install the Yay AUR helper? [Y/n] " input
+      read -r -p "Install Yay? [Y/n] " input
 
       case $input in
       [yY][eE][sS] | [yY])
@@ -38,7 +38,25 @@ cp rofi-themes/* ~/.local/share/rofi/themes
 cp .profile  ~/
 
 while true; do
-      read -r -p "Would you like to enable LightDM? [Y/n] " input
+      read -r -p "Install NordTray? [Y/n] " input
+
+      case $input in
+      [yY][eE][sS] | [yY])
+            yay -S nordtray
+
+            break
+            ;;
+      [nN][oO] | [nN])
+            break
+            ;;
+      *)
+            echo "Invalid input..."
+            ;;
+      esac
+done
+
+while true; do
+      read -r -p "Enable LightDM? [Y/n] " input
 
       case $input in
       [yY][eE][sS] | [yY])
