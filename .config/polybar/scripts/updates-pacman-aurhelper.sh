@@ -15,10 +15,4 @@ fi
 
 updates=$((updates_arch + updates_aur))
 
-echo "📦 $updates"
-
-#if [ "$updates" -gt 0 ]; then
-#    echo "📦 $updates"
-#else
-#    echo "📦 Up to Date"
-#fi
+echo " $updates"
