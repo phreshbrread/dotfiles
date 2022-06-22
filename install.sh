@@ -38,24 +38,6 @@ cp rofi-themes/* ~/.local/share/rofi/themes
 cp .profile  ~/
 
 while true; do
-      read -r -p "Install NordTray? [Y/n] " input
-
-      case $input in
-      [yY][eE][sS] | [yY])
-            yay -S nordtray
-
-            break
-            ;;
-      [nN][oO] | [nN])
-            break
-            ;;
-      *)
-            echo "Invalid input..."
-            ;;
-      esac
-done
-
-while true; do
       read -r -p "Enable LightDM? [Y/n] " input
 
       case $input in
