@@ -187,6 +187,9 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
 # Rofi calc
 bindsym $mod+c exec --no-startup-id rofi -modi "calc:./rofi-calc.sh" -show calc
 
+# Rofi filebrowser
+bindsym $mod+Shift+f exec --no-startup-id rofi -show filebrowser -show-icons
+
 # Rofi window
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
 
