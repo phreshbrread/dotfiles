@@ -25,7 +25,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id flameshot
 
 # NordVPN tray icon
-exec --no-startup-id /usr/lib/nordtray/nordtray
+#exec --no-startup-id /usr/lib/nordtray/nordtray
 
 # Restore background with nitrogen
 exec --no-startup-id nitrogen --restore
