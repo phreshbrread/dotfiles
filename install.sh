@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 while true; do
@@ -33,7 +32,7 @@ mkdir -p .local/share/rofi/themes
 mkdir -p .cargo/env
 
 cd ~/dotfiles/
-cp -r .config ~/
+cp .config/* ~/.config/
 cp wallpapers/* ~/Pictures/Wallpapers
 cp rofi-themes/* ~/.local/share/rofi/themes
 cp .profile  ~/
