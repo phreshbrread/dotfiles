@@ -12,6 +12,7 @@ mkdir wallpapers
 cd .config
 cp -r ~/.config/i3 .
 cp -r ~/.config/fish .
+cp -r ~/.config/nano .
 cp -r ~/.config/picom .
 cp -r ~/.config/polybar .
 cp -r ~/.config/neofetch .
