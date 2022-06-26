@@ -22,7 +22,7 @@ while true; do
       esac
 done
 
-yay -S --needed ttf-font-awesome pacman-contrib alacritty fish i3-gaps i3status i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo brave-bin exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings flameshot ghex github-cli gparted qt5ct tor torbrowser-launcher torsocks adwaita-qt5
+yay -S --needed font-manager ttf-font-awesome pacman-contrib alacritty fish i3-gaps i3status i3lock picom polybar onedriver nitrogen brightnessctl xautolock rofi nemo brave-bin exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings flameshot ghex github-cli gparted qt5ct tor torbrowser-launcher torsocks adwaita-qt5
 
 cd ~/
 mkdir -p Desktop Documents Downloads Pictures Videos Music
@@ -32,7 +32,7 @@ mkdir -p .local/share/rofi/themes
 mkdir -p .cargo/env
 
 cd ~/dotfiles/
-cp .config/* ~/.config/
+cp -r .config/* ~/.config/
 cp wallpapers/* ~/Pictures/Wallpapers
 cp rofi-themes/* ~/.local/share/rofi/themes
 cp .profile  ~/
