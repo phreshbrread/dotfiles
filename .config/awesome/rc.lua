@@ -104,7 +104,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+--mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
@@ -211,11 +211,12 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-            wibox.widget.systray(),
             mytextclock,
+            wibox.widget.systray(),
             s.mylayoutbox,
         },
     }
+
 end)
 -- }}}
 
@@ -569,4 +570,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+awful.spawn.with_shell("xpad --no-new --hide")
+awful.spawn.with_shell("flameshot")
+--awful.spawn.with_shell("")
 --awful.spawn.with_shell("")
