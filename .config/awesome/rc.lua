@@ -568,4 +568,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart apps
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 --awful.spawn.with_shell("")
