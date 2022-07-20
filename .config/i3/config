@@ -3,9 +3,6 @@
 set $mod Mod4
 set $alt Mod1
 
-# Window title font
-font pango:monospace 8
-
 # Polkit agent
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -24,8 +21,8 @@ exec --no-startup-id nm-applet
 # Flameshot
 exec --no-startup-id flameshot
 
-# NordVPN tray icon
-#exec --no-startup-id /usr/lib/nordtray/nordtray
+# Window title font
+font pango:monospace 8
 
 # Restore background with nitrogen
 exec --no-startup-id nitrogen --restore
@@ -57,30 +54,25 @@ set $ws10 "10"
 ### System Keybinds ###
 # Shutdown
 bindsym $mod+Ctrl+Shift+p exec systemctl poweroff
-#"i3-nagbar -t warning -m 'Are you sure you want to shut down the system?' -B 'Yes, shut down' 'systemctl poweroff'"
 
 # Restart
 bindsym $mod+Ctrl+Shift+r exec systemctl reboot
-#"i3-nagbar -t warning -m 'Are you sure you want to reboot the system?' -B 'Yes, reboot' 'systemctl reboot'"
 
 # Log Out
 bindsym $mod+Ctrl+Shift+e exec i3-msg exit
-#"i3-nagbar -t warning -m 'Are you sure you want to log out of i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Brightness keys
 bindsym XF86MonBrightnessUp exec brightnessctl set 2%+
 bindsym XF86MonBrightnessDown exec brightnessctl -q set 2%-
 
 # Adjust PulseAudio volume with pactl
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Lockscreen
 bindsym $mod+Ctrl+Shift+l exec dm-tool lock
-#"i3lock -c 000000"
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -147,28 +139,15 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-#bindsym Left resize shrink width 10 px or 10 ppt
-#bindsym Down resize grow height 10 px or 10 ppt
-#bindsym Up resize shrink height 10 px or 10 ppt
-#bindsym Right resize grow width 10 px or 10 ppt
-
-# Resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # Back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
+# Resize window
+bindsym $mod+Control+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Control+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+Right resize grow width 10 px or 10 ppt
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
+
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
 
@@ -178,29 +157,22 @@ bindsym $mod+Return exec alacritty
 
 # Brave
 bindsym $mod+b exec brave
+
 # Brave incognito
 bindsym $mod+Shift+b brave --incognito
 
 # Nemo
 bindsym $mod+Shift+e exec nemo
 
-# Rofi run
-bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
-
-# Rofi drun
-bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
-
-# Rofi calc
-bindsym $mod+c exec --no-startup-id rofi -modi "calc:./rofi-calc.sh" -show calc
-
-# Rofi filebrowser
-bindsym $mod+Shift+f exec --no-startup-id rofi -show filebrowser -show-icons
-
-# Rofi window
-bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
-
 # Flameshot
 bindsym $mod+Shift+s exec flameshot gui
+
+# Rofi run, drun, calc, filebrowser and window
+bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
+bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+c exec --no-startup-id rofi -modi "calc:./rofi-calc.sh" -show calc
+bindsym $mod+Shift+f exec --no-startup-id rofi -show filebrowser -show-icons
+bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
 
 ### Floating Window Exceptions  ###
 for_window [class="xpad"] floating enable
