@@ -176,8 +176,10 @@ bindsym $mod+Shift+r restart
 # Alacritty
 bindsym $mod+Return exec alacritty
 
-# Browser
+# Brave
 bindsym $mod+b exec brave
+# Brave incognito
+bindsym $mod+Shift+b brave --incognito
 
 # Nemo
 bindsym $mod+Shift+e exec nemo
