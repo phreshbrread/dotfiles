@@ -159,7 +159,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+b exec brave
 
 # Brave incognito
-bindsym $mod+Shift+b brave --incognito
+bindsym $mod+Shift+b exec brave --incognito
 
 # Nemo
 bindsym $mod+Shift+e exec nemo
