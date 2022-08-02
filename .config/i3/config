@@ -18,6 +18,9 @@ exec --no-startup-id xpad --no-new --hide
 # NetworkManager applet
 exec --no-startup-id nm-applet
 
+# Blueman applet
+exec --no-startup-id blueman-applet
+
 # Flameshot
 exec --no-startup-id flameshot
 
