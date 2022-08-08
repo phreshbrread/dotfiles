@@ -36,6 +36,7 @@ cp -r .config/* ~/.config/
 cp wallpapers/* ~/Pictures/Wallpapers
 cp rofi-themes/* ~/.local/share/rofi/themes
 cp .profile  ~/
+cp .xprofile ~/
 
 while true; do
       read -r -p "Enable LightDM? [Y/n] " input
