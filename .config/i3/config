@@ -3,9 +3,6 @@
 set $mod Mod4
 set $alt Mod1
 
-# Try to get this to work
-#export QT_QPA_PLATFORMTHEME="qt5ct"
-
 # Polkit agent
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -167,8 +164,8 @@ bindsym $mod+b exec brave
 # Brave incognito
 bindsym $mod+Shift+b exec brave --incognito
 
-# Nemo
-bindsym $mod+Shift+e exec nemo
+# Dolphin
+bindsym $mod+Shift+e exec dolphin
 
 # Flameshot
 bindsym $mod+Shift+s exec flameshot gui
