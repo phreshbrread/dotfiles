@@ -21,9 +21,6 @@ exec --no-startup-id nm-applet
 # Blueman applet
 exec --no-startup-id blueman-applet
 
-# Flameshot
-exec --no-startup-id flameshot
-
 # Window title font
 font pango:monospace 8
 
@@ -167,8 +164,8 @@ bindsym $mod+Shift+b exec brave --incognito
 # Dolphin
 bindsym $mod+Shift+e exec dolphin
 
-# Flameshot
-bindsym $mod+Shift+s exec flameshot gui
+# Spectacle
+bindsym $mod+Shift+s exec spectacle -r
 
 # Rofi run, drun, calc, filebrowser and window
 bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
