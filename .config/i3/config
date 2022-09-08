@@ -62,8 +62,8 @@ bindsym $mod+Ctrl+Shift+r exec systemctl reboot
 bindsym $mod+Ctrl+Shift+e exec i3-msg exit
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec brightnessctl set 2%+
-bindsym XF86MonBrightnessDown exec brightnessctl -q set 2%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 2%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 2%-
 
 # Adjust PulseAudio volume with pactl
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
