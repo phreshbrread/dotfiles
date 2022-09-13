@@ -71,7 +71,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Lockscreen
+# Lock screen (needs lightdm to be display manager)
 bindsym $mod+Ctrl+Shift+l exec dm-tool lock
 
 # Kill focused window
@@ -167,10 +167,9 @@ bindsym $mod+Shift+e exec dolphin
 # Spectacle
 bindsym $mod+Shift+s exec spectacle -r
 
-# Rofi run, drun, calc, filebrowser and window
+# Rofi run, drun, filebrowser and window
 bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
 bindsym $mod+Shift+d exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+c exec --no-startup-id rofi -modi "calc:./rofi-calc.sh" -show calc
 bindsym $mod+Shift+f exec --no-startup-id rofi -show filebrowser -show-icons
 bindsym $alt+Tab exec --no-startup-id rofi -show window -show-icons
 
