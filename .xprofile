@@ -4,3 +4,4 @@ if [ "$XDG_CURRENT_DESKTOP" != "KDE" ]; then
 fi
 
 export TERMINAL="alacritty"
+export EDITOR="nano"
