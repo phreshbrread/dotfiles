@@ -184,20 +184,29 @@ awful.screen.connect_for_each_screen(function(s)
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
-	screen  = s,
+	    screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
     }
 
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        buttons = tasklist_buttons,
     }
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
+
+    local battery_widget = require("battery-widget")
+    local separator = wibox.widget.textbox(" ")
+    local BAT0 = battery_widget {
+        adapter = "BAT0",
+        ac = "AC",
+        battery_prefix = "Bat: "
+    }
+    --local audio_widget = require("awesome-pulseaudio-widget")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -210,8 +219,10 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            separator,
+            BAT0,
             mytextclock,
+            --audio_widget(),
             wibox.widget.systray(),
             s.mylayoutbox,
         },
@@ -298,6 +309,19 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+
+    -- Brightness & sound
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+        awful.util.spawn("brightnessctl set 2%+", false) end),
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+        awful.util.spawn("brightnessctl -q set 2%-", false) end),
+    
+    awful.key({ }, "XF86AudioRaiseVolume", function ()
+        awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false) end),
+    awful.key({ }, "XF86AudioLowerVolume", function ()
+        awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%", false) end),
+        awful.key({ }, "XF86AudioMute", function ()
+            awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle", false) end),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
@@ -572,5 +596,6 @@ awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn.with_shell("xpad --no-new --hide")
 awful.spawn.with_shell("flameshot")
---awful.spawn.with_shell("")
+awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("pgrep pa-applet || pa-applet") --Makes sure to not spawn multiple instances of pa-applet
 --awful.spawn.with_shell("")
