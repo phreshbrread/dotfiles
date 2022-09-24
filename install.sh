@@ -22,7 +22,7 @@ while true; do
       esac
 done
 
-yay -S --needed awesome pa-applet-git ttf-hack colorpicker font-manager ttf-font-awesome pacman-contrib alacritty i3-gaps i3status i3lock picom polybar onedrive nitrogen brightnessctl xautolock rofi dolphin brave-bin exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings spectacle ghex github-cli gparted qt5ct tor torbrowser-launcher torsocks adwaita-qt5 blueman
+yay -S --needed awesome pa-applet-git ttf-hack colorpicker font-manager ttf-font-awesome pacman-contrib alacritty i3-gaps i3status i3lock picom polybar onedrive nitrogen brightnessctl xautolock rofi dolphin brave-bin exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings spectacle ghex github-cli gparted qt5ct-kde tor torbrowser-launcher torsocks adwaita-qt5 blueman
 
 cd ~/
 mkdir -p Desktop Documents Downloads Pictures Videos Music
