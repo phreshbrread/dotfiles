@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf ~/Pictures/Wallpapers
+
 cd ~/
 mkdir -p Desktop Documents Downloads Pictures Videos Music
 mkdir -p Pictures/Wallpapers
