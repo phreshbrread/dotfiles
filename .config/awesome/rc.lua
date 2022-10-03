@@ -64,7 +64,7 @@ modkey = "Mod4"
 awful.layout.layouts = {
     awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
@@ -197,7 +197,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 28 })
 
     local battery_widget = require("battery-widget")
     local separator = wibox.widget.textbox(" ")
@@ -338,6 +338,8 @@ globalkeys = gears.table.join(
               {description = "power off system", group = "system"}),
     awful.key({ modkey, "Shift", "Control" }, "r", function () awful.util.spawn("systemctl reboot") end,
               {description = "reboot system", group = "system"}),
+    awful.key({ modkey, "Shift", "Control" }, "l", function () awful.util.spawn("dm-tool lock") end,
+              {description = "reboot system", group = "system"}),
 
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl set 2%+", false) end,
               {description = "increase brightness", group = "system"}),
@@ -352,7 +354,7 @@ globalkeys = gears.table.join(
               {description = "mute/unmute volume", group = "system"}),
 
     -- Application
-    awful.key({ modkey, "Shift" }, "d", function () awful.spawn("rofi -show drun -show-icons") end,
+    awful.key({ modkey, "Shift" }, "d", function () awful.spawn("rofi -show drun") end,
               {description = "rofi drun", group = "application"}),
     awful.key({ modkey,         }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "application"}),
