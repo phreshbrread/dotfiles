@@ -280,6 +280,12 @@ globalkeys = gears.table.join(
         end,
         {description = "focus next by index", group = "client"}
     ),
+    awful.key({ modkey,           }, "Tab",
+        function ()
+            awful.client.focus.byidx( 1)
+        end,
+        {description = "focus next by index", group = "client"}
+    ),
 
     awful.key({ modkey,           }, "Up",
         function ()
@@ -354,8 +360,8 @@ globalkeys = gears.table.join(
               {description = "mute/unmute volume", group = "system"}),
 
     -- Application
-    awful.key({ modkey, "Shift" }, "d", function () awful.spawn("rofi -show drun") end,
-              {description = "rofi drun", group = "application"}),
+    awful.key({ modkey, "Shift" }, "d", function () awful.spawn("rofi -show run") end,
+              {description = "rofi run", group = "application"}),
     awful.key({ modkey,         }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "application"}),
     awful.key({ modkey,         }, "b", function () awful.spawn("brave") end,
