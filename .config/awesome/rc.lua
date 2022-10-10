@@ -370,7 +370,7 @@ globalkeys = gears.table.join(
               {description = "open brave browser (incognito)", group = "application"}),
     awful.key({ modkey, "Shift" }, "e", function () awful.spawn("dolphin") end,
               {description = "open dolphin file manager", group = "application"}),
-    awful.key({ modkey, "Shift" }, "s", function () awful.spawn("spectacle -r") end,
+    awful.key({ modkey, "Shift" }, "s", function () awful.spawn("flameshot gui") end,
               {description = "take a screenshot", group = "application"})
 )
 
