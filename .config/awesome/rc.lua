@@ -344,8 +344,6 @@ globalkeys = gears.table.join(
               {description = "power off system", group = "system"}),
     awful.key({ modkey, "Shift", "Control" }, "r", function () awful.util.spawn("systemctl reboot") end,
               {description = "reboot system", group = "system"}),
-    awful.key({ modkey, "Shift", "Control" }, "l", function () awful.util.spawn("dm-tool lock") end,
-              {description = "reboot system", group = "system"}),
 
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl set 2%+", false) end,
               {description = "increase brightness", group = "system"}),
@@ -369,7 +367,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "b", function () awful.spawn("firefox --private-window") end,
               {description = "open firefox private", group = "application"}),
     awful.key({ modkey, "Shift" }, "e", function () awful.spawn("dolphin") end,
-              {description = "open dolphin file manager", group = "application"}),
+              {description = "open file manager", group = "application"}),
     awful.key({ modkey, "Shift" }, "s", function () awful.spawn("flameshot gui") end,
               {description = "take a screenshot", group = "application"})
 )
