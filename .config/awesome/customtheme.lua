@@ -1,7 +1,3 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -11,7 +7,19 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "monospace 8"
+theme.font          = "DejaVu Sans Mono 10"
+
+-- Default colours
+-- bg_normal: "#222222"
+-- bg_focus: "#535d6c"
+-- bg_urgent: "#ff0000"
+-- bg_minimize: "#444444"
+-- bg_systray: "#222222"
+
+-- fg_normal: "#aaaaaa"
+-- fg_focus: "#ffffff"
+-- fg_urgent: "#ffffff"
+-- fg_minimize: "#ffffff"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -26,8 +34,8 @@ theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(3)
-theme.border_normal = "#222222"
-theme.border_focus  = "#535d6c"
+theme.border_normal = theme.bg_normal
+theme.border_focus  = theme.bg_focus
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
