@@ -243,6 +243,10 @@ globalkeys = gears.table.join(
     -- Tag
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
+    awful.key({ modkey,           }, "Left",   awful.wtag.viewprev,
+              {description = "view previous", group = "tag"}),
+    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
+              {description = "view next", group = "tag"}),
 
     -- Awesome
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
@@ -254,6 +258,7 @@ globalkeys = gears.table.join(
     --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
     --          {description = "show main menu", group = "awesome"}),
 
+    --[[
     awful.key({ modkey }, "x",
         function ()
             awful.prompt.run {
@@ -264,6 +269,7 @@ globalkeys = gears.table.join(
             }
         end,
         {description = "lua execute prompt", group = "awesome"}),
+    --]]
 
 
     -- Client
@@ -322,9 +328,9 @@ globalkeys = gears.table.join(
               {description = "focus the previous screen", group = "screen"}),
     
     -- Layout
-    awful.key({ modkey,           }, "Right",     function () awful.tag.incmwfact( 0.05)      end,
+    awful.key({ modkey, "Control" }, "Right",     function () awful.tag.incmwfact( 0.05)      end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "Left",     function () awful.tag.incmwfact(-0.05)       end,
+    awful.key({ modkey, "Control" }, "Left",     function () awful.tag.incmwfact(-0.05)       end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
