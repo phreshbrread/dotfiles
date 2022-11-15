@@ -353,9 +353,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift", "Control" }, "l", function () awful.util.spawn("dm-tool lock") end,
               {description = "lock system", group = "system"}),
 
-    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl set 2%+", false) end,
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl set 4%+", false) end,
               {description = "increase brightness", group = "system"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("brightnessctl -q set 2%-", false) end,
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("brightnessctl -q set 4%-", false) end,
               {description = "decrease brightness", group = "system"}),
     
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%", false) end,
