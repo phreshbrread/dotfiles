@@ -286,6 +286,7 @@ globalkeys = gears.table.join(
         end,
         {description = "focus next by index", group = "client"}
     ),
+    
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
@@ -299,7 +300,7 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-
+--[[
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
@@ -307,7 +308,8 @@ globalkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-        {description = "go back", group = "client"}),
+        {description = "go back", group = "client"}),2
+        --]]
 
     awful.key({ modkey, "Control" }, "n",
         function ()
