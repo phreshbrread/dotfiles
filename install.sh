@@ -22,23 +22,7 @@ while true; do
       esac
 done
 
-yay -S --needed awesome pa-applet-git ttf-hack font-manager ttf-font-awesome pacman-contrib alacritty i3-gaps i3status i3lock picom polybar onedrive nitrogen brightnessctl xautolock rofi dolphin firefox exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings spectacle ghex github-cli gparted qt5ct-kde tor torbrowser-launcher torsocks adwaita-qt5 blueman
-
-rm -rf ~/Pictures/Wallpapers
-
-cd ~/
-mkdir -p Desktop Documents Downloads Pictures Videos Music
-mkdir -p Pictures/Wallpapers
-mkdir -p .config
-mkdir -p .local/share/rofi/themes
-mkdir -p .cargo/env
-
-cd ~/dotfiles/
-cp -r .config/* ~/.config/
-cp wallpapers/* ~/Pictures/Wallpapers
-cp rofi-themes/* ~/.local/share/rofi/themes
-cp .profile  ~/
-cp .xprofile ~/
+yay -S --needed awesome pa-applet-git ttf-hack font-manager ttf-font-awesome pacman-contrib alacritty picom polybar onedrive nitrogen brightnessctl xautolock rofi dolphin firefox exa fish arandr neofetch lxappearance qbittorrent dmenu xterm xpad network-manager-applet polkit-gnome baobab bat gnome-themes-extra lightdm-gtk-greeter lightdm-gtk-greeter-settings spectacle ghex github-cli gparted qt5ct-kde tor torbrowser-launcher torsocks adwaita-qt5 blueman
 
 while true; do
       read -r -p "Enable LightDM? [Y/n] " input
