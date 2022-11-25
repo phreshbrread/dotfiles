@@ -253,7 +253,7 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Control", "Shift"   }, "e", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,           }, "h",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
     --          {description = "show main menu", group = "awesome"}),
@@ -378,6 +378,8 @@ globalkeys = gears.table.join(
               {description = "open firefox private", group = "application"}),
     awful.key({ modkey, "Shift" }, "e", function () awful.spawn("dolphin") end,
               {description = "open file manager", group = "application"}),
+    awful.key({ modkey,         }, "o", function () awful.spawn("obsidian") end,
+              {description = "open obsidian", group = "application"}),
     awful.key({ modkey, "Shift" }, "s", function () awful.spawn("flameshot gui") end,
               {description = "take a screenshot", group = "application"})
 )
