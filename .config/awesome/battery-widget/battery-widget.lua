@@ -51,7 +51,8 @@ end
 local function substitute(template, context)
     if type(template) == "string" then
         return (template:gsub("%${([%w_]+)}", function(key)
-            return tostring(context[key] or "Err!")
+            --return tostring(context[key] or "Err!")
+            return tostring(context[key] or "")
         end))
     else
         -- function / functor:
