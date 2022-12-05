@@ -620,10 +620,11 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart apps
-awful.spawn.with_shell("dex -a")
+awful.spawn.with_shell("pgrep lxsession || lxsession")
+awful.spawn.with_shell("pgrep pa-applet || pa-applet")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn.with_shell("flameshot")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("pgrep pa-applet || pa-applet") --Makes sure to not spawn multiple instances of pa-applet
+
+--awful.spawn.with_shell("dex -a")
