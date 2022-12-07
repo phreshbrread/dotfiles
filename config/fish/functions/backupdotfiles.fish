@@ -1,11 +1,11 @@
 function backupdotfiles
 cd ~/dotfiles
 
-rm -rf .config
+rm -rf config
 rm -rf rofi-themes
 rm -rf wallpapers
 
-mkdir .config
+mkdir config
 mkdir rofi-themes
 mkdir wallpapers
 
