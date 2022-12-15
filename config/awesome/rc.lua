@@ -368,7 +368,7 @@ globalkeys = gears.table.join(
               {description = "mute/unmute volume", group = "system"}),
 
     -- Application
-    awful.key({ modkey, "Shift" }, "d", function () awful.spawn("rofi -combi-modi drun,run -show combi -show-icons") end,
+    awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -combi-modi drun,run -show combi -show-icons") end,
               {description = "open rofi", group = "application"}),
     awful.key({ modkey,         }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "application"}),
