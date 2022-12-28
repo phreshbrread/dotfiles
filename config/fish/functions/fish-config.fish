@@ -1,3 +1,3 @@
 function fish-config
-nano ~/.config/fish/config.fish
+$EDITOR ~/.config/fish/config.fish $arg
 end

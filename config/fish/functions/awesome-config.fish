@@ -1,3 +1,3 @@
 function awesome-config
-nano ~/.config/awesome/rc.lua
+$EDITOR ~/.config/awesome/rc.lua $argv
 end

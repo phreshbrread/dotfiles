@@ -1,3 +1,3 @@
 function polybar-config
-nano ~/.config/polybar/config.ini
+$EDITOR ~/.config/polybar/config.ini $argv
 end

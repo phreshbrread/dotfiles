@@ -1,3 +1,3 @@
 function picom-config
-nano ~/.config/picom/picom.conf
+$EDITOR ~/.config/picom/picom.conf $argv
 end

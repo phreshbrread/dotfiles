@@ -1,3 +1,3 @@
 function alacritty-config
-nano ~/.config/alacritty/alacritty.yml
+$EDITOR ~/.config/alacritty/alacritty.yml $argv
 end
