@@ -19,6 +19,6 @@ cd ../
 
 cp ~/.local/share/rofi/themes/* rofi-themes
 
-cp ~/.profile .
+#cp ~/.profile .
 cp ~/.xprofile .
 end
