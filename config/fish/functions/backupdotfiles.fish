@@ -21,5 +21,4 @@ cp ~/.local/share/rofi/themes/* rofi-themes
 
 #cp ~/.profile .
 cp ~/.xprofile .
-cp ~/.nanorc .
 end
