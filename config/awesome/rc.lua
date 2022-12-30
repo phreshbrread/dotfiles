@@ -198,9 +198,6 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons,
     }
 
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 28 })
-
     local battery_widget = require("battery-widget")
     local separator = wibox.widget.textbox(" ")
     local BAT0 = battery_widget {
@@ -210,6 +207,9 @@ awful.screen.connect_for_each_screen(function(s)
     }
     --local audio_widget = require("awesome-pulseaudio-widget")
 
+    -- Create the wibox
+    --s.mywibox = awful.wibar({ position = "top", screen = s, height = 28 })
+--[[
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -228,6 +228,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
+--]]
 
 end)
 
@@ -552,9 +553,12 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Polybar
+    { rule_any = {
+        instance = {
+          "polybar",
+        }, 
+      }, properties = { border_width = 0 }},
 }
 -- }}}
 
@@ -623,6 +627,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart apps
+awful.spawn.with_shell("~/.config/polybar/launch.sh")
 awful.spawn.with_shell("pgrep lxsession || lxsession")
 awful.spawn.with_shell("pgrep pa-applet || pa-applet")
 awful.spawn.with_shell("nitrogen --restore")
