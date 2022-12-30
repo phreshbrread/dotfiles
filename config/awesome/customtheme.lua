@@ -7,7 +7,8 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "DejaVu Sans Mono 10"
+theme.font          = "RobotoMono Nerd Font Regular 11"
+--theme.font          = "DejaVu Sans Mono 10"
 
 -- Default colours
 -- bg_normal: "#222222"
