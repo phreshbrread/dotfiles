@@ -208,8 +208,8 @@ awful.screen.connect_for_each_screen(function(s)
     --local audio_widget = require("awesome-pulseaudio-widget")
 
     -- Create the wibox
-    --s.mywibox = awful.wibar({ position = "top", screen = s, height = 28 })
---[[
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 28 })
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -228,7 +228,6 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
---]]
 
 end)
 
@@ -627,7 +626,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart apps
-awful.spawn.with_shell("~/.config/polybar/launch.sh")
 awful.spawn.with_shell("pgrep lxsession || lxsession")
 awful.spawn.with_shell("pgrep pa-applet || pa-applet")
 awful.spawn.with_shell("nitrogen --restore")
