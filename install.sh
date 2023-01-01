@@ -6,22 +6,12 @@ case "$choice" in
          mkdir -p Desktop Documents Downloads Pictures Videos Music
          mkdir -p .config
          mkdir -p .local/share/rofi/themes
-         #mkdir -p .cargo/env
 
          cd ~/dotfiles/
          cp -r config/* ~/.config/
          cp rofi-themes/* ~/.local/share/rofi/themes
-         #cp .profile  ~/
          cp .xprofile ~/
          cp .nanorc ~/;;
-   n|N ) ;;
-   * ) ;;
-esac
-
-read -p "Install Lightdm slick greeter (y/N)? " choice
-case "$choice" in
-   y|Y ) sudo pacman -S --needed lightdm-slick-greeter lightdm-settings
-         sudo sed -i 's/#greeter-session=example-gtk-greeter/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf;;
    n|N ) ;;
    * ) ;;
 esac
