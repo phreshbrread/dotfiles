@@ -254,8 +254,6 @@ globalkeys = gears.table.join(
     -- Awesome
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Control", "Shift"   }, "e", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey,           }, "h",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
@@ -351,12 +349,14 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
 
     -- System
-    awful.key({ modkey, "Shift", "Control" }, "p", function () awful.util.spawn("systemctl poweroff") end,
-              {description = "power off system", group = "system"}),
+    awful.key({ modkey, "Control", "Shift"   }, "e", awesome.quit,
+              {description = "log out", group = "system"}),
     awful.key({ modkey, "Shift", "Control" }, "r", function () awful.util.spawn("systemctl reboot") end,
-              {description = "reboot system", group = "system"}),
+              {description = "reboot", group = "system"}),
+    awful.key({ modkey, "Shift", "Control" }, "p", function () awful.util.spawn("systemctl poweroff") end,
+              {description = "power off", group = "system"}),
     awful.key({ modkey, "Shift", "Control" }, "l", function () awful.util.spawn("dm-tool lock") end,
-              {description = "lock system", group = "system"}),
+              {description = "lock", group = "system"}),
 
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl set 4%+", false) end,
               {description = "increase brightness", group = "system"}),
