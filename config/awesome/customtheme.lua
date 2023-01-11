@@ -10,23 +10,23 @@ local theme = {}
 theme.font          = "DejaVu Sans Mono 10"
 
 -- Default colours
--- bg_normal: "#222222"
--- bg_focus: "#535d6c"
--- bg_urgent: "#ff0000"
--- bg_minimize: "#444444"
--- bg_systray: "#222222"
-
--- fg_normal: "#aaaaaa"
--- fg_focus: "#ffffff"
--- fg_urgent: "#ffffff"
--- fg_minimize: "#ffffff"
+--[[
+bg_normal: "#222222"
+bg_focus: "#535d6c"
+bg_urgent: "#ff0000"
+bg_minimize: "#444444"
+bg_systray: "#222222"
+fg_normal: "#aaaaaa"
+fg_focus: "#ffffff"
+fg_urgent: "#ffffff"
+fg_minimize: "#ffffff"
+--]]
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
-
 theme.fg_normal     = "#FFFFFF"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
