@@ -18,7 +18,7 @@ esac
 
 read -p "Install Yay (y/N)? " choice
 case "$choice" in
-   y|Y ) sudo pacman -S --needed git base-devel go
+   y|Y ) sudo pacman -S --needed --noconfirm git base-devel go
          cd ~/
          git clone https://aur.archlinux.org/yay.git
          cd yay
@@ -29,7 +29,7 @@ esac
 
 read -p "Install packages (y/N)? " choice
 case "$choice" in
-   y|Y ) yay -S --needed $(< pkglist.txt);;
+   y|Y ) yay -S --needed --noconfirm $(< pkglist.txt);;
    n|N ) ;;
    * ) ;;
 esac
