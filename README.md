@@ -1,4 +1,4 @@
 # dotfiles
-Program configs, wallpapers and rofi themes
+Program configs, and rofi themes
 
 Install script made for vanilla Arch

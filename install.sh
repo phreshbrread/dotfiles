@@ -29,7 +29,7 @@ esac
 
 read -p "Install packages (y/N)? " choice
 case "$choice" in
-   y|Y ) yay -S --needed --noconfirm $(< pkglist.txt);;
+   y|Y ) yay -S --needed --noconfirm $(< deps);;
    n|N ) ;;
    * ) ;;
 esac
