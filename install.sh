@@ -27,9 +27,16 @@ case "$choice" in
    * ) ;;
 esac
 
-read -p "Install packages (y/N)? " choice
+read -p "Install dependency packages (y/N)? " choice
 case "$choice" in
    y|Y ) yay -S --needed --noconfirm $(< deps);;
+   n|N ) ;;
+   * ) ;;
+esac
+
+read -p "Install extra packages (y/N)? " choice
+case "$choice" in
+   y|Y ) yay -S --needed --noconfirm $(< extra-pkg);;
    n|N ) ;;
    * ) ;;
 esac
