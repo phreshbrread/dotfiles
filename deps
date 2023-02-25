@@ -22,3 +22,6 @@ breeze-gtk
 ttf-dejavu
 awesome
 github-cli
+system-config-printer
+cups
+ripgrep
