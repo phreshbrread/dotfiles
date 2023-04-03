@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Install configs (y/N)? " choice
+read -p "Install configs (y/n)? " choice
 case "$choice" in
    y|Y ) cd ~/
          mkdir -p Desktop Documents Downloads Pictures Videos Music
@@ -16,7 +16,23 @@ case "$choice" in
    * ) ;;
 esac
 
-read -p "Install Yay (y/N)? " choice
+read -p "Enable chaotic AUR (y/n)? " choice
+case "$choice" in
+   y|Y ) pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+         pacman-key --lsign-key FBA220DFC880C036
+         pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+         echo "Append"
+         echo "'[chaotic-aur]"
+         echo "Include = /etc/pacman.d/chaotic-mirrorlist'"
+         echo "to the end of /etc/pacman.conf"
+         echo ""
+         echo "Remember to update mirrors";;
+   n|N ) ;;
+   * ) ;;
+esac
+
+
+read -p "Install Yay (y/n)? " choice
 case "$choice" in
    y|Y ) sudo pacman -S --needed --noconfirm git base-devel go
          cd ~/
@@ -27,14 +43,14 @@ case "$choice" in
    * ) ;;
 esac
 
-read -p "Install dependency packages (y/N)? " choice
+read -p "Install dependency packages (y/n)? " choice
 case "$choice" in
    y|Y ) yay -S --needed --noconfirm $(< deps);;
    n|N ) ;;
    * ) ;;
 esac
 
-read -p "Install extra packages (y/N)? " choice
+read -p "Install extra packages (y/n)? " choice
 case "$choice" in
    y|Y ) yay -S --needed --noconfirm $(< extra-pkg);;
    n|N ) ;;
