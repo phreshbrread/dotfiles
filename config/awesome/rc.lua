@@ -632,4 +632,4 @@ awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("flameshot")
 awful.spawn.with_shell("nm-applet")
 
---awful.spawn.with_shell("dex -a")
+--awful.spawn.with_shell("")
