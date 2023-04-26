@@ -16,4 +16,5 @@ cp -r ~/.config/alacritty ~/dotfiles/config/
 cp ~/.local/share/rofi/themes/* ~/dotfiles/rofi-themes/
 
 cp ~/.xprofile ~/dotfiles/
+cp ~/.profile ~/dotfiles
 cp ~/.nanorc ~/dotfiles/

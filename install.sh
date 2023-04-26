@@ -11,6 +11,7 @@ case "$choice" in
          cp -r config/* ~/.config/
          cp rofi-themes/* ~/.local/share/rofi/themes
          cp .xprofile ~/
+         cp .profile ~/
          cp .nanorc ~/;;
    n|N ) ;;
    * ) ;;
