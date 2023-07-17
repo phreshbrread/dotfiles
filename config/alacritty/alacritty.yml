@@ -110,19 +110,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: Cascadia Mono
+    family: monospace
     style: Regular
 
   bold:
-    family: Cascadia Mono
+    family: monospace
     style: Bold
 
   italic:
-    family: Cascadia Mono
+    family: monospace
     style: Italic
 
   bold_italic:
-    family: Cascadia Mono
+    family: monospace
     style: Bold Italic
 
   size: 8
