@@ -1,2 +1,5 @@
 Unable to connect bluetooth headphones
-   -> Install pulseaudio-bluetooth
+   -> pacman -S pulseaudio-bluetooth
+
+Pacman "failed to commit transaction (invalid or corrupted packages)
+   -> pacman -Sy archlinux-keyring
