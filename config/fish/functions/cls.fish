@@ -1,3 +1,4 @@
-function cls
-command clear $argv
+function cls --wraps=clear --description 'alias cls=clear'
+  clear $argv
+        
 end
