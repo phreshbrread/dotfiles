@@ -102,18 +102,11 @@
     description = "Brad";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   # Enable automatic login for the user
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "brad";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  #systemd.services."getty@tty1".enable = false;
-  #systemd.services."autovt@tty1".enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -121,35 +114,34 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  hyprland
-  hyprcursor
-  alacritty
-  git
-  fish
-  waypaper
-  waybar
-  doas
-  starship
-  font-awesome
-  wofi
-  networkmanagerapplet
-  floorp
-  brightnessctl
-  swaybg
-  rustup
-  gcc
-  fastfetch
-  btop
-  swaynotificationcenter
-  nwg-look
-  kdePackages.breeze
-  kdePackages.breeze-gtk
-  kdePackages.breeze-icons
-  kdePackages.systemsettings
-  lightdm-gtk-greeter
-  dolphin
-  gparted
-  hyprpolkitagent
+    hyprland
+    hyprcursor
+    alacritty
+    git
+    fish
+    waypaper
+    waybar
+    doas
+    starship
+    font-awesome
+    wofi
+    networkmanagerapplet
+    floorp
+    brightnessctl
+    swaybg
+    rustup
+    gcc
+    fastfetch
+    btop
+    swaynotificationcenter
+    nwg-look
+    kdePackages.breeze
+    kdePackages.breeze-gtk
+    kdePackages.breeze-icons
+    lightdm-gtk-greeter
+    dolphin
+    gparted
+    hyprpolkitagent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
