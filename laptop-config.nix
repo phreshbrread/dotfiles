@@ -116,6 +116,7 @@
   environment.systemPackages = with pkgs; [
     hyprland
     hyprcursor
+    hyprpolkitagent
     alacritty
     git
     fish
@@ -141,7 +142,8 @@
     lightdm-gtk-greeter
     dolphin
     gparted
-    hyprpolkitagent
+    fuzzel
+    killall
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
