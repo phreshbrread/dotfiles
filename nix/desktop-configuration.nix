@@ -10,13 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  # Enable OpenGL
-  hardware.opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32bit = true;
-  };
-
   # Bootloader
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
