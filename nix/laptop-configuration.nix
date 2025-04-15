@@ -17,14 +17,7 @@
   boot.loader.grub.timeoutStyle = "hidden";
 
   # Set hostname
-  networking.hostName = "brad-toshiba-nixos"; 
-
-  # Enables wireless support via wpa_supplicant
-  # networking.wireless.enable = true;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = "brad-toshiba-nixos";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -54,11 +47,12 @@
   };
 
   # Enable the X11 windowing system
+  # This can be disabled if exclusively using Wayland
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -111,39 +105,38 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Hyprland stuff
     hyprland
     hyprcursor
     hyprpolkitagent
-    alacritty
-    git
-    fish
     waypaper
     waybar
-    doas
-    starship
     font-awesome
-    wofi
     networkmanagerapplet
-    floorp
     brightnessctl
     swaybg
-    rustup
+    fuzzel
+
+    # General programs
+    git
+    fish
+    alacritty
+    doas
+    starship
+    floorp
     gcc
     fastfetch
     btop
-    swaynotificationcenter
-    nwg-look
-    kdePackages.breeze
-    kdePackages.breeze-gtk
-    kdePackages.breeze-icons
-    lightdm-gtk-greeter
     dolphin
     gparted
-    fuzzel
     killall
+    ark
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -151,11 +144,6 @@
   programs.hyprland.enable = true;
   programs.fish.enable = true;
   programs.kdeconnect.enable = true;
-
-  # List services that you want to enable:
-  # Lightdm GTK greeter
-  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;
-  services.xserver.displayManager.lightdm.greeters.gtk.theme.name = "Breeze-Dark";
 
   # Enable the OpenSSH daemon
   # services.openssh.enable = true;
@@ -173,7 +161,6 @@
     ];  
   };  
 
-
   # Disable firewall
   # networking.firewall.enable = false;
 
@@ -184,5 +171,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html)
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
