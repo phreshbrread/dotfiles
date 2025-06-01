@@ -51,6 +51,7 @@
     TERM = "alacritty";
     GDK_SCALE = 2;
     XCURSOR_SIZE = 32;
+    GCM_CREDENTIAL_STORE = "secretservice";
   };
 
   # Define user account
@@ -107,6 +108,8 @@
     btop
     starship
     libnotify
+    git-credential-manager
+    seahorse
 
     # Core (Hyprland)
     hyprpolkitagent
@@ -141,9 +144,9 @@
 
   # Enable programs
   programs.fish.enable = true;
-  #programs.git.enable = true;
   programs.hyprland.enable = true;
   programs.kdeconnect.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Power key handling
   services.logind.powerKey = "ignore";
