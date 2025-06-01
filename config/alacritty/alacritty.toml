@@ -3,9 +3,11 @@ dimensions = { columns = 120, lines = 30 }
 
 opacity = 0.8
 
-
-# Windows 95 Color Scheme
-# To have the authentic experience in Chicago95 GTK Theme.
+[font]
+normal = { family = "HackNerdFontMono", style = "Regular" }
+bold = { family = "HackNerdFontMono", style = "Bold" }
+italic = { family = "HackNerdFontMono", style = "Italic" }
+bold_italic = { family = "HackNerdFontMono", style = "BoldItalic" }
 
 # Default colors
 [colors.primary]
