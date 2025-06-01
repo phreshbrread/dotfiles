@@ -48,9 +48,7 @@
   # Environment variables
   environment.variables = {
     EDITOR = "nano";
-    TERM = "alacritty";
     GDK_SCALE = 2;
-    XCURSOR_SIZE = 32;
     GCM_CREDENTIAL_STORE = "secretservice";
   };
 
@@ -115,6 +113,7 @@
     hyprpolkitagent
     hyprprop
     hyprnotify
+    hyprcursor
     alacritty
     mpd
     playerctl
@@ -126,6 +125,13 @@
     swaybg
     fuzzel
     xfce.thunar
+    kdePackages.dolphin
+
+    # Appearance
+    nwg-look
+    elementary-xfce-icon-theme
+    catppuccin
+    catppuccin-gtk
 
     # Extra
     vscodium
@@ -146,6 +152,8 @@
   programs.fish.enable = true;
   programs.hyprland.enable = true;
   programs.kdeconnect.enable = true;
+
+  # Enable services
   services.gnome.gnome-keyring.enable = true;
 
   # Power key handling
