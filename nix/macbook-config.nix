@@ -87,8 +87,12 @@
   };
 
   # Enable OpenGL
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -115,17 +119,16 @@
     hyprnotify
     hyprcursor
     alacritty
-    mpd
-    playerctl
-    wev
     waybar
     waypaper
     networkmanagerapplet
+    mpd
+    playerctl
     brightnessctl
     swaybg
     fuzzel
     xfce.thunar
-    kdePackages.dolphin
+    smile
 
     # Appearance
     nwg-look
@@ -134,12 +137,14 @@
     catppuccin-gtk
 
     # Extra
+    wev
     vscodium
     floorp
     gparted
     fastfetch
     font-manager
-    steam
+    obsidian
+    kdePackages.dolphin
   ];
 
   # System fonts
@@ -148,13 +153,22 @@
     nerd-fonts.hack
   ];
 
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "brad";
+    dataDir = "/home/brad";
+  };
+
   # Enable programs
   programs.fish.enable = true;
+  programs.steam.enable = true;
   programs.hyprland.enable = true;
   programs.kdeconnect.enable = true;
 
   # Enable services
   services.gnome.gnome-keyring.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   # Power key handling
   services.logind.powerKey = "ignore";
