@@ -133,8 +133,9 @@
     # Appearance
     nwg-look
     elementary-xfce-icon-theme
-    catppuccin
     catppuccin-gtk
+    catppuccin-kvantum
+    kdePackages.qtstyleplugin-kvantum
 
     # Extra
     wev
@@ -145,6 +146,8 @@
     font-manager
     obsidian
     kdePackages.dolphin
+    kdePackages.gwenview
+
   ];
 
   # System fonts
