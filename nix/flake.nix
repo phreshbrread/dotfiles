@@ -3,14 +3,20 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
+    
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, catppuccin, home-manager, ... }: {
     nixosConfigurations.brad-nixos-macbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        catppuccin.nixosModules.catppuccin
+
         ./configuration.nix
 
         # make home-manager as a module of nixos
@@ -21,6 +27,7 @@
           home-manager.users.brad = {
               imports = [
                 ./home.nix
+                catppuccin.homeModules.catppuccin
             ];
           };
         }

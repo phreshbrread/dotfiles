@@ -133,8 +133,15 @@
     # Appearance
     nwg-look
     elementary-xfce-icon-theme
-    catppuccin-gtk
-    catppuccin-kvantum
+    (catppuccin-gtk.overrideAttrs {
+      accent = "mauve";
+      variant = "macchiato";
+    })
+    (catppuccin-kvantum.overrideAttrs {
+      accent = "mauve";
+      variant = "macchiato";
+    })
+
     kdePackages.qtstyleplugin-kvantum
 
     # Extra
@@ -147,7 +154,6 @@
     obsidian
     kdePackages.dolphin
     kdePackages.gwenview
-
   ];
 
   # System fonts
@@ -155,6 +161,21 @@
     font-awesome
     nerd-fonts.hack
   ];
+  
+  # Set colour scheme for supported apps
+  # This is not for QT/GTK theme
+  catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+    accent = "mauve";
+  };
+
+  # QT theming
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "kvantum";
+  };
 
   # Syncthing
   services.syncthing = {

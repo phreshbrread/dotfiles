@@ -1,4 +1,7 @@
-- Theme Qt
+- Change icon theme
+- Alacritty catppuccin theme
+- XDG desktop portals
 - Change Waybar memory icon
 - Theme waybar properly
 - Power hotkeys / menu
+- Include kvantum theme in config
