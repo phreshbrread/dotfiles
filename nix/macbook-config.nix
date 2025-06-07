@@ -50,6 +50,7 @@
     EDITOR = "nano";
     GDK_SCALE = 2;
     GCM_CREDENTIAL_STORE = "secretservice";
+    QT_QPA_PLATFORM = "wayland";
   };
 
   # Define user account
@@ -112,6 +113,7 @@
     libnotify
     git-credential-manager
     seahorse
+    wl-clipboard
 
     # Core (Hyprland)
     hyprpolkitagent
@@ -129,10 +131,16 @@
     fuzzel
     xfce.thunar
     smile
+    grim
+    slurp
+    hyprshot
 
     # Appearance
+    kdePackages.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
     nwg-look
-    elementary-xfce-icon-theme
+    papirus-icon-theme
+    phinger-cursors
     (catppuccin-gtk.overrideAttrs {
       accent = "mauve";
       variant = "macchiato";
@@ -142,10 +150,9 @@
       variant = "macchiato";
     })
 
-    kdePackages.qtstyleplugin-kvantum
-
     # Extra
     wev
+    hyprpicker
     vscodium
     floorp
     gparted
@@ -154,6 +161,7 @@
     obsidian
     kdePackages.dolphin
     kdePackages.gwenview
+    space-cadet-pinball
   ];
 
   # System fonts
@@ -170,7 +178,7 @@
     accent = "mauve";
   };
 
-  # QT theming
+  # Qt theming
   qt = {
     enable = true;
     platformTheme = "qt5ct";
@@ -191,6 +199,7 @@
   programs.kdeconnect.enable = true;
 
   # Enable services
+  services.openssh.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.power-profiles-daemon.enable = true;
 

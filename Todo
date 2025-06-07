@@ -1,7 +1,8 @@
-- Change icon theme
+- Make floating rename prompt Thunar-specific
+- QT Theming
+- Thunar thumbnails
 - Alacritty catppuccin theme
 - XDG desktop portals
-- Change Waybar memory icon
+- Split nix packages into separate file
 - Theme waybar properly
-- Power hotkeys / menu
 - Include kvantum theme in config
