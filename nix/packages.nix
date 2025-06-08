@@ -16,27 +16,26 @@
     libnotify
     git-credential-manager
     seahorse
-    wl-clipboard
 
     # Core (Hyprland)
     hyprpolkitagent
     hyprprop
     hyprnotify
     hyprcursor
+    swaynotificationcenter
     alacritty
     waybar
     waypaper
+    swaybg
     networkmanagerapplet
     mpd
     playerctl
     brightnessctl
-    swaybg
     fuzzel
     xfce.thunar
     smile
-    grim
-    slurp
     hyprshot
+    clipse
 
     # Appearance
     kdePackages.qtstyleplugin-kvantum

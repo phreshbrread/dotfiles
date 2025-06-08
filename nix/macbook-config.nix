@@ -17,6 +17,9 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Set hostname
   networking.hostName = "brad-nixos-macbook";
 
@@ -101,9 +104,6 @@
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Enable Flakes
   nix.settings.experimental-features = [
     "nix-command"
@@ -135,13 +135,17 @@
   # XDG desktop portal
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   # Enable programs
   programs.fish.enable = true;
   programs.steam.enable = true;
   programs.hyprland.enable = true;
+  programs.hyprlock.enable = true;
   programs.kdeconnect.enable = true;
 
   # Enable services
