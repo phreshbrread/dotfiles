@@ -3,6 +3,5 @@
 - Thunar thumbnails
 - Alacritty catppuccin theme
 - XDG desktop portals
-- Split nix packages into separate file
 - Theme waybar properly
 - Include kvantum theme in config
