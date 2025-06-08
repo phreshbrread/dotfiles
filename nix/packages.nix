@@ -16,6 +16,7 @@
     libnotify
     git-credential-manager
     seahorse
+    pavucontrol
 
     # Core (Hyprland)
     hyprpolkitagent
