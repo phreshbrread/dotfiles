@@ -1,5 +1,4 @@
-- Make floating rename prompt Thunar-specific
-- QT Theming
+- Fix QT Theming
 - Thunar thumbnails
 - Alacritty catppuccin theme
 - Theme waybar properly
