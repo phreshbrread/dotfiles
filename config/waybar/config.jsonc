@@ -13,13 +13,12 @@
     "modules-right": [
         "mpd",
         "pulseaudio",
-        "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "backlight",
         "battery",
         "clock",
+        "power-profiles-daemon",
         "tray"
     ],
     // Modules configuration
