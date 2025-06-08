@@ -124,6 +124,12 @@
     dataDir = "/home/brad";
   };
 
+  # XDG desktop portal
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  }; 
+
   # Enable programs
   programs.fish.enable = true;
   programs.steam.enable = true;
