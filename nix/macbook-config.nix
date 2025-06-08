@@ -1,15 +1,15 @@
-#######################
+# ######################
 ## MAIN NIXOS CONFIG ##
 #######################
 
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan
-      ./hardware-configuration.nix
-      ./packages.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan
+    ./hardware-configuration.nix
+    ./packages.nix
+  ];
 
   # Bootloader
   boot.loader = {
@@ -58,18 +58,23 @@
   users.users.brad = {
     isNormalUser = true;
     description = "Brad";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.fish;
   };
 
   # Use doas instead of sudo
   security.doas.enable = true;
   security.sudo.enable = false;
-  security.doas.extraRules = [{
-    users = ["brad"];
-    keepEnv = true;
-    persist = true;
-  }];
+  security.doas.extraRules = [
+    {
+      users = [ "brad" ];
+      keepEnv = true;
+      persist = true;
+    }
+  ];
 
   # Autologin to tty1
   services.getty = {
@@ -100,8 +105,11 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Set colour scheme for supported apps
   # This is not for QT/GTK theme
   catppuccin = {
@@ -128,7 +136,7 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  }; 
+  };
 
   # Enable programs
   programs.fish.enable = true;

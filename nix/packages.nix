@@ -1,8 +1,8 @@
-#############################
+# ############################
 ## SYSTEM PACKAGES + FONTS ##
 #############################
 
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -65,6 +65,7 @@
     kdePackages.dolphin
     kdePackages.gwenview
     space-cadet-pinball
+    nixfmt-rfc-style
   ];
 
   fonts.packages = with pkgs; [
