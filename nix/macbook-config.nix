@@ -1,5 +1,5 @@
 #######################
-## Main NixOS Config ##
+## MAIN NIXOS CONFIG ##
 #######################
 
 { config, pkgs, ... }:

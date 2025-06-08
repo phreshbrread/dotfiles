@@ -1,5 +1,10 @@
-{ pkgs, ...}: {
-  # System packages
+#####################
+## SYSTEM PACKAGES ##
+#####################
+
+{ pkgs, ...}:
+
+{
   environment.systemPackages = with pkgs; [
     # Core (System)
     gcc
@@ -62,7 +67,6 @@
     space-cadet-pinball
   ];
 
-  # System fonts
   fonts.packages = with pkgs; [
     font-awesome
     nerd-fonts.hack

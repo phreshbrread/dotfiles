@@ -1,5 +1,9 @@
+################
+## MAIN FLAKE ##
+################
+
 {
-  description = "NixOS configuration";
+  description = "NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
