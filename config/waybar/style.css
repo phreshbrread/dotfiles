@@ -1,6 +1,6 @@
 * {
     font-family: HackNerdFontMono, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 window#waybar {
@@ -35,7 +35,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 #workspaces button.focused {
