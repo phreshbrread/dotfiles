@@ -150,6 +150,7 @@
 
   # Enable services
   services.openssh.enable = true;
+  services.tumbler.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.power-profiles-daemon.enable = true;
 

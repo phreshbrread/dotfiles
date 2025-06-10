@@ -1,6 +1,5 @@
 - Fix QT Theming
 - Clipboard history
-- Thunar thumbnails
 - Alacritty catppuccin theme
 - Theme waybar properly
 - Include kvantum theme in config
