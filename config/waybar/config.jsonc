@@ -47,6 +47,11 @@
             "unlocked": ""
         }
     },
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            // 1-10
+        }
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
