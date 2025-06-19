@@ -97,12 +97,8 @@
   };
 
   # Enable OpenGL
-  hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-  };
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
   # Enable Flakes
   nix.settings.experimental-features = [
@@ -147,6 +143,7 @@
   programs.hyprland.enable = true;
   programs.hyprlock.enable = true;
   programs.kdeconnect.enable = true;
+  programs.steam.protontricks.enable = true;
 
   # Enable services
   services.openssh.enable = true;

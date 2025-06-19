@@ -17,6 +17,8 @@
     git-credential-manager
     seahorse
     pavucontrol
+    vulkan-tools
+    wine64Packages.stagingFull
 
     # Core (Hyprland)
     hyprpolkitagent
