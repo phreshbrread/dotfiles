@@ -18,6 +18,7 @@
     seahorse
     pavucontrol
     vulkan-tools
+    winePackages.stagingFull
     wine64Packages.stagingFull
 
     # Core (Hyprland)
@@ -68,6 +69,8 @@
     kdePackages.gwenview
     space-cadet-pinball
     nixfmt-rfc-style
+    blender
+    steamtinkerlaunch
   ];
 
   fonts.packages = with pkgs; [

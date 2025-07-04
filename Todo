@@ -1,7 +1,5 @@
 - Fix QT Theming
 - Clipboard history
-- Improve Waybar theme
-    - Persistent workspaces
-    - Indicators for used and active workspaces
 - Include kvantum theme in config
 - Learn Vim
+- Clean up Waybar config

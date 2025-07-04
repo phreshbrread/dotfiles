@@ -51,10 +51,12 @@
 
   # Environment variables
   environment.variables = {
-    EDITOR = "nano";
     GDK_SCALE = 2;
-    GCM_CREDENTIAL_STORE = "secretservice";
+    EDITOR = "nano";
+    TERM = "alacritty";
+    LIBVA_DRIVER_NAME = "i965";
     QT_QPA_PLATFORM = "wayland";
+    GCM_CREDENTIAL_STORE = "secretservice";
   };
 
   # Define user account
@@ -96,9 +98,16 @@
     jack.enable = true;
   };
 
-  # Enable OpenGL
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
+  # Intel graphics accel
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+      libvdpau-va-gl
+    ];
+  };
+  hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
 
   # Enable Flakes
   nix.settings.experimental-features = [
@@ -131,19 +140,21 @@
   # XDG desktop portal
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
     ];
   };
 
   # Enable programs
   programs.fish.enable = true;
-  programs.steam.enable = true;
   programs.hyprland.enable = true;
   programs.hyprlock.enable = true;
   programs.kdeconnect.enable = true;
-  programs.steam.protontricks.enable = true;
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true;
+  };
 
   # Enable services
   services.openssh.enable = true;
@@ -151,7 +162,7 @@
   services.gnome.gnome-keyring.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  # Power key handling
+  # Ignore power key
   services.logind.powerKey = "ignore";
 
   # Disable firewall

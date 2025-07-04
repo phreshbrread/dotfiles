@@ -31,25 +31,26 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
+}
+
+#workspaces button.persistent {
+    color: #8a8a8a;
+}
+
+#workspaces button.active {
     color: #ffffff;
 }
 
-#workspaces button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+#workspaces button.empty {
+    color: #454545;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 #clock,
@@ -87,12 +88,12 @@ button:hover {
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
     margin-right: 0;
 }
 
@@ -100,11 +101,11 @@ label:focus {
     background-color: #000000;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
