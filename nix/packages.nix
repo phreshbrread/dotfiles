@@ -20,6 +20,7 @@
     vulkan-tools
     winePackages.stagingFull
     wine64Packages.stagingFull
+    inxi
 
     # Core (Hyprland)
     hyprpolkitagent
