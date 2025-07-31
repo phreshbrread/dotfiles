@@ -1,6 +1,6 @@
-# ######################
-## MAIN NIXOS CONFIG ##
-#######################
+##########################
+## MACBOOK NIXOS CONFIG ##
+##########################
 
 { config, pkgs, ... }:
 
@@ -23,7 +23,7 @@
   # Set hostname
   networking.hostName = "brad-nixos-macbook";
 
-  # Enable networking
+  # Enable NetworkManager
   networking.networkmanager.enable = true;
 
   # Set time zone
