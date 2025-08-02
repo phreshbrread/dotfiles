@@ -2,7 +2,7 @@
 ## SERVER-SPECIFIC OVERRIDES ##
 ###############################
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Docker

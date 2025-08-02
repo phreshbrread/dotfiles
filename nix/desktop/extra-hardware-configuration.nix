@@ -7,6 +7,10 @@
 {
   # Fix RAM RGB control
   boot.kernelParams = [ "acpi_enforce_resources=lax" ];
+  boot.kernelModules = [
+    "i2c-dev"
+    "i2c-piix4"
+  ];
 
   # Mount extra drives
   fileSystems."/mass-storage" = {
@@ -24,13 +28,15 @@
     device = "/dev/disk/by-uuid/777F-FB5D";
     fsType = "exfat";
     options = [
-      "defaults"
       "nofail"
+      "nosuid"
+      "nodev"
       "rw"
       "users"
       "uid=1000"
       "gid=100"
       "umask=000"
+      "dmask=000"
     ];
   };
 }

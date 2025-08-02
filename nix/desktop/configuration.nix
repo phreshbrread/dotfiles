@@ -35,6 +35,9 @@
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Enable NetworkManager
   networking.networkmanager.enable = true;
 
@@ -43,7 +46,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
     LC_IDENTIFICATION = "en_AU.UTF-8";
@@ -85,11 +87,11 @@
   users.users.brad = {
     isNormalUser = true;
     description = "Brad";
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.fish;
   };
 
   # Use doas instead of sudo
@@ -103,8 +105,11 @@
     }
   ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # Enable AppImages
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   # Enable OpenGL
   hardware.graphics = {
@@ -118,18 +123,34 @@
   # Enable programs
   programs.git.enable = true;
   programs.fish.enable = true;
+  programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
   programs.kdeconnect.enable = true;
-  programs.thunderbird = {
-    enable = true;
-    package = pkgs.thunderbird-latest-unwrapped;
-  };
   programs.steam = {
     enable = true;
     protontricks.enable = true;
   };
+  programs.thunderbird = {
+    enable = true;
+    package = pkgs.thunderbird-latest;
+  };
 
-  # Enable services
+  # Enable Flatpak & add flathub repo
   services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+
+  # OpenRGB udev rules
+  services = {
+    udev.packages = with pkgs; [
+      openrgb-with-all-plugins
+    ];
+  };
 
   # Syncthing
   services.syncthing = {
