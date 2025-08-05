@@ -33,6 +33,16 @@
 
   # Authorised SSH keys
   users.users.brad.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4CrQpgClN88TzMPVCkACe0r6n3kwPttU8b2ir5C9oa u0_a329@localhost"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4CrQpgClN88TzMPVCkACe0r6n3kwPttU8b2ir5C9oa u0_a329@localhost" # Mobile phone
   ];
+
+  # Open firewall ports
+  networking.firewall = {
+    allowedTCPPorts = [
+      8096
+      8920
+      7777
+    ];
+    allowedUDPPorts = [ 7359 ];
+  };
 }

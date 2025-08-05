@@ -49,7 +49,10 @@
     kdePackages.kdenlive
     protonup-qt
     heroic
-    #openrgb-with-all-plugins
+    steamtinkerlaunch
+    lutris
+    umu-launcher
+    gimp3-with-plugins
   ];
 
   fonts.packages = with pkgs; [

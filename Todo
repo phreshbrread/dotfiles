@@ -1,6 +1,5 @@
 # Desktop
-- Autostart docker compose
-- Backup docker compose
+- Set up Jellyfin backup
 
 # Macbook
 - Fix QT Theming

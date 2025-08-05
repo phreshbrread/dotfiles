@@ -161,16 +161,10 @@
     dataDir = "/home/brad";
   };
 
-  # Firewall
+  # Enable firewall
   networking.firewall = {
     enable = true;
     allowPing = true;
-    allowedTCPPorts = [
-      8096
-      8920
-      7777
-    ];
-    allowedUDPPorts = [ 7359 ];
     logRefusedConnections = true;
   };
 
