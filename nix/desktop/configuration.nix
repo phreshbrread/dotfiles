@@ -118,6 +118,7 @@
     enable = true;
     enable32Bit = true;
   };
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -126,15 +127,24 @@
   programs.git.enable = true;
   programs.fish.enable = true;
   programs.gamemode.enable = true;
-  programs.gamescope.enable = true;
   programs.kdeconnect.enable = true;
   programs.steam = {
     enable = true;
     protontricks.enable = true;
+    gamescopeSession.enable = true;
   };
   programs.thunderbird = {
     enable = true;
     package = pkgs.thunderbird-latest;
+  };
+  programs.nano = {
+    enable = true;
+    syntaxHighlight = true;
+    nanorc = ''
+      set nowrap
+      set tabstospaces
+      set tabsize 2
+    '';
   };
 
   # Enable Flatpak & add flathub repo
@@ -168,12 +178,25 @@
     logRefusedConnections = true;
   };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    configure = {
+      customRC = ''
+        filetype on
+        syntax on
+        set number
+        set expandtab
+        set tabstop=3
+        set shiftwidth=3
+        set autoindent
+        set smartindent 
+        set cursorcolumn
+        set relativenumber
+      '';
+    };
+  };
 
+  # Initial system state version (no need to change)
+  system.stateVersion = "25.05";
 }
