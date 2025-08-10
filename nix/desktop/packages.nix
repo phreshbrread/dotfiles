@@ -42,7 +42,6 @@
     discord
     arrpc
     qjackctl
-    reaper
     brave
     pcsx2
     dolphin-emu
