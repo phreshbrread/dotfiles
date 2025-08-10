@@ -5,6 +5,16 @@
 { ... }:
 
 {
+  # Enable OpenGL
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+
   # Fix RAM RGB control
   boot.kernelParams = [ "acpi_enforce_resources=lax" ];
   boot.kernelModules = [

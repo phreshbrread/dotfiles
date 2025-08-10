@@ -6,10 +6,11 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./locale.nix
     ./packages.nix
-    ./extra-hardware-configuration.nix
     ./server-specific.nix
+    ./hardware-configuration.nix
+    ./extra-hardware-configuration.nix
   ];
 
   # Bootloader
@@ -41,24 +42,7 @@
   # Enable NetworkManager
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Australia/Melbourne";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
-  };
-
-  # Enable KDE Plasma.
+  # Enable KDE Plasma
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.autoLogin.user = "brad";
@@ -69,10 +53,7 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
+  # Enable sound with pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -82,6 +63,26 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  # Enable Flatpak
+  services.flatpak.enable = true;
+
+  # OpenRGB udev rules
+  services = {
+    udev.packages = with pkgs; [
+      openrgb-with-all-plugins
+    ];
+  };
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "brad";
+    dataDir = "/home/brad";
+  };
+
+  # Enable CUPS for printing
+  services.printing.enable = true;
 
   # Define user account
   users.users.brad = {
@@ -113,16 +114,6 @@
     binfmt = true;
   };
 
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-  services.xserver.videoDrivers = [ "amdgpu" ];
-
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
-
   # Enable programs
   programs.git.enable = true;
   programs.fish.enable = true;
@@ -147,37 +138,6 @@
     '';
   };
 
-  # Enable Flatpak & add flathub repo
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  # OpenRGB udev rules
-  services = {
-    udev.packages = with pkgs; [
-      openrgb-with-all-plugins
-    ];
-  };
-
-  # Syncthing
-  services.syncthing = {
-    enable = true;
-    user = "brad";
-    dataDir = "/home/brad";
-  };
-
-  # Enable firewall
-  networking.firewall = {
-    enable = true;
-    allowPing = true;
-    logRefusedConnections = true;
-  };
-
   # Neovim
   programs.neovim = {
     enable = true;
@@ -195,6 +155,13 @@
         set relativenumber
       '';
     };
+  };
+
+  # Enable firewall
+  networking.firewall = {
+    enable = true;
+    allowPing = true;
+    logRefusedConnections = true;
   };
 
   # Initial system state version (no need to change)
