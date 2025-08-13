@@ -52,6 +52,8 @@
     lutris
     umu-launcher
     gimp3-with-plugins
+    yabridge
+    yabridgectl
   ];
 
   fonts.packages = with pkgs; [

@@ -42,7 +42,6 @@
       "nosuid"
       "nodev"
       "rw"
-      "users"
       "uid=1000"
       "gid=100"
       "umask=000"

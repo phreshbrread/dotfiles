@@ -24,6 +24,7 @@
 
   # Environment variables
   environment.variables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
     GCM_CREDENTIAL_STORE = "secretservice";
   };
 
@@ -94,6 +95,7 @@
       "wheel"
       "video"
       "render"
+      "audio"
     ];
   };
 
@@ -156,6 +158,22 @@
       '';
     };
   };
+
+  # Realtime permissions
+  security.pam.loginLimits = [
+    {
+      domain = "@audio";
+      item = "rtprio";
+      type = "-";
+      value = "95";
+    }
+    {
+      domain = "@audio";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
+  ];
 
   # Enable firewall
   networking.firewall = {
