@@ -54,9 +54,15 @@
     gimp3-with-plugins
     yabridge
     yabridgectl
+    wineWowPackages.stagingFull
+    wineWowPackages.waylandFull
+    winetricks
+    onlyoffice-desktopeditors
   ];
 
+  fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
+    corefonts
     font-awesome
     nerd-fonts.hack
   ];
