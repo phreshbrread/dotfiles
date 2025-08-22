@@ -58,6 +58,8 @@
     wineWowPackages.waylandFull
     winetricks
     onlyoffice-desktopeditors
+    equibop
+    arrpc
   ];
 
   fonts.enableDefaultPackages = true;
