@@ -6,7 +6,6 @@
 
 {
   imports = [
-    # Include the results of the hardware scan
     ./hardware-configuration.nix
     ./packages.nix
   ];
@@ -19,6 +18,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+ # Allow insecure broadcom driver
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-57-6.12.43"
+    ];
+            
 
   # Set hostname
   networking.hostName = "brad-nixos-macbook";
@@ -98,7 +103,7 @@
     jack.enable = true;
   };
 
-  # Intel graphics accel
+  # Intel graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -163,7 +168,7 @@
   services.power-profiles-daemon.enable = true;
 
   # Ignore power key
-  services.logind.powerKey = "ignore";
+  services.logind.settings.powerKey = "ignore";
 
   # Disable firewall
   networking.firewall.enable = false;
