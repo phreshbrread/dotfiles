@@ -19,11 +19,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
- # Allow insecure broadcom driver
+  # Allow insecure broadcom driver
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.43"
-    ];
-            
+  ];
 
   # Set hostname
   networking.hostName = "brad-nixos-macbook";
@@ -56,7 +55,9 @@
 
   # Environment variables
   environment.variables = {
-    GDK_SCALE = 2;
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     EDITOR = "nano";
     TERM = "alacritty";
     LIBVA_DRIVER_NAME = "i965";
@@ -142,6 +143,22 @@
     dataDir = "/home/brad";
   };
 
+  # DWM
+  services.xserver = {
+    enable = true;
+    dpi = 180;
+    displayManager.startx.enable = true;
+    windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.overrideAttrs {
+        src = ./dwm;
+      };
+    };
+    excludePackages = with pkgs; [
+      xterm
+    ];
+  };
+
   # XDG desktop portal
   xdg.portal = {
     enable = true;
@@ -168,7 +185,7 @@
   services.power-profiles-daemon.enable = true;
 
   # Ignore power key
-  services.logind.settings.powerKey = "ignore";
+  services.logind.settings.Login.handlePowerKey = "ignore";
 
   # Disable firewall
   networking.firewall.enable = false;
