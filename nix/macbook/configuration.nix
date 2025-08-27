@@ -140,6 +140,9 @@
   services.xserver = {
     enable = true;
     dpi = 227;
+    excludePackages = with pkgs; [
+      xterm
+    ];
     displayManager.startx.enable = true;
     windowManager.dwm = {
       enable = true;
@@ -151,9 +154,15 @@
       layout = "au";
       variant = "";
     };
-    excludePackages = with pkgs; [
-      xterm
-    ];
+    libinput = {
+      enable = true;
+      # Disable touchpad acceleration
+      touchpad = {
+        accelProfile = "flat";
+        naturalScrolling = true;
+        disableWhileTyping = true;
+      };
+    };
   };
 
   # XDG desktop portal
