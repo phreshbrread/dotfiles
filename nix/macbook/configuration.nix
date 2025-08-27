@@ -47,16 +47,9 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "au";
-    variant = "";
-  };
-
   # Environment variables
   environment.variables = {
     GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     EDITOR = "nano";
     TERM = "alacritty";
@@ -146,13 +139,17 @@
   # DWM
   services.xserver = {
     enable = true;
-    dpi = 180;
+    dpi = 227;
     displayManager.startx.enable = true;
     windowManager.dwm = {
       enable = true;
       package = pkgs.dwm.overrideAttrs {
         src = ./dwm;
       };
+    };
+    xkb = {
+      layout = "au";
+      variant = "";
     };
     excludePackages = with pkgs; [
       xterm

@@ -21,6 +21,9 @@
     winePackages.stagingFull
     wine64Packages.stagingFull
     inxi
+    
+    # Core (DWM)
+    dmenu
 
     # Core (Hyprland)
     hyprpolkitagent
