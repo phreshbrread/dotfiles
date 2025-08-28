@@ -1,4 +1,4 @@
-#! /run/current-system/sw/bin/bash
+#! /usr/bin/env bash
 
 DATE=$(date +"%F")
 TIME=$(date +"%R")
