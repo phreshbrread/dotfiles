@@ -54,7 +54,6 @@
     EDITOR = "nano";
     TERM = "alacritty";
     LIBVA_DRIVER_NAME = "i965";
-    QT_QPA_PLATFORM = "wayland";
     GCM_CREDENTIAL_STORE = "secretservice";
   };
 
@@ -154,14 +153,15 @@
       layout = "au";
       variant = "";
     };
-    libinput = {
-      enable = true;
-      # Disable touchpad acceleration
-      touchpad = {
-        accelProfile = "flat";
-        naturalScrolling = true;
-        disableWhileTyping = true;
-      };
+  };
+
+  services.libinput = {
+    enable = true;
+    # Disable touchpad acceleration
+    touchpad = {
+      accelProfile = "flat";
+      naturalScrolling = true;
+      disableWhileTyping = true;
     };
   };
 

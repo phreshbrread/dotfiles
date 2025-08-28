@@ -18,6 +18,12 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+/* Autostarts */
+static const char *const autostart[] = {
+	"nitrogen", "--restore", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -58,10 +64,20 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
-static const char *upbrightness[]   = { "brightnessctl", "set", "5%+", NULL };
-static const char *downbrightness[] = { "brightnessctl", "set", "5%-", NULL };
+static const char *dmenucmd[]      = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]       = { "alacritty", NULL };
+static const char *incbrightness[] = { "brightnessctl", "set", "5%+", NULL };
+static const char *decbrightness[] = { "brightnessctl", "set", "5%-", NULL };
+static const char *inckbdlight[]   = { "brightnessctl", "-d", "*::kbd_backlight", "set", "10%+", NULL};
+static const char *deckbdlight[]   = { "brightnessctl", "-d", "*::kbd_backlight", "set", "10%-", NULL};
+static const char *incvolume[]     = { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
+static const char *decvolume[]     = { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
+static const char *togglemute[]    = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+static const char *audioplay[]     = { "playerctl", "play-pause", NULL };
+static const char *audionext[]     = { "playerctl", "next", NULL };
+static const char *audioprev[]     = { "playerctl", "previous", NULL };
+static const char *audiostop[]     = { "playerctl", "--all-players", "stop", NULL };
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,8 +114,17 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_m,      quit,           {0} },
-	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = upbrightness } },
-	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = downbrightness } },
+	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = incbrightness } },
+	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = decbrightness } },
+	{ 0,            XF86XK_KbdBrightnessUp,    spawn,          {.v = inckbdlight } },
+	{ 0,            XF86XK_KbdBrightnessDown,  spawn,          {.v = deckbdlight } },
+	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = incvolume } },
+	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = decvolume } },
+	{ 0,            XF86XK_AudioMute,          spawn,          {.v = togglemute } },
+	{ 0,            XF86XK_AudioPlay,          spawn,          {.v = audioplay } },
+	{ 0,            XF86XK_AudioNext,          spawn,          {.v = audionext } },
+	{ 0,            XF86XK_AudioPrev,          spawn,          {.v = audioprev } },
+	{ 0,            XF86XK_AudioStop,          spawn,          {.v = audiostop } },
 };
 
 /* button definitions */

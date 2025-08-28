@@ -24,6 +24,7 @@
     
     # Core (DWM)
     dmenu
+    nitrogen
 
     # Core (Hyprland)
     hyprpolkitagent
@@ -46,6 +47,10 @@
     clipse
 
     # Appearance
+    arc-theme
+    lxappearance
+    lxappearance-gtk2
+    xfce.xfwm4-themes
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
     nwg-look
@@ -73,6 +78,7 @@
     kdePackages.gwenview
     space-cadet-pinball
     nixfmt-rfc-style
+    shfmt
     blender
     steamtinkerlaunch
   ];
