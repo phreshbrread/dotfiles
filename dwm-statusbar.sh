@@ -4,6 +4,7 @@ DATE=$(date +"%F")
 TIME=$(date +"%R")
 BAT_PERCENT=$(cat /sys/class/power_supply/BAT0/capacity)%
 BAT_STATUS=$(cat /sys/class/power_supply/BAT0/status)
+VOL_PERCENT=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F': ' '{printf "%.0f%%\n", $2 * 100}')
 
 if [ $BAT_STATUS == "Charging" ]; then
     BAT_STATUS_ICON="↑"
@@ -13,5 +14,5 @@ else
     BAT_STATUS_ICON=""
 fi
 
-xsetroot -name "[BAT:$BAT_PERCENT$BAT_STATUS_ICON] [$TIME] [$DATE]"
-sleep 1s # Update every second
+xsetroot -name "[VOL: $VOL_PERCENT] [BAT: $BAT_PERCENT$BAT_STATUS_ICON] [$TIME] [$DATE]"
+sleep 500ms # Update every second
