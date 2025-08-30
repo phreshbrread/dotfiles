@@ -125,7 +125,7 @@
   qt = {
     enable = true;
     platformTheme = "qt5ct";
-    style = "kvantum";
+    #style = "kvantum";
   };
 
   # Syncthing

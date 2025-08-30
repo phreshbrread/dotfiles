@@ -56,14 +56,9 @@
     nwg-look
     papirus-icon-theme
     phinger-cursors
-    (catppuccin-gtk.overrideAttrs {
-      accent = "mauve";
-      variant = "macchiato";
-    })
-    (catppuccin-kvantum.overrideAttrs {
-      accent = "mauve";
-      variant = "macchiato";
-    })
+    kdePackages.breeze
+    kdePackages.breeze-gtk
+    kdePackages.breeze-icons
 
     # Extra
     wev
