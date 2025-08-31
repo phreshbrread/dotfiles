@@ -192,7 +192,7 @@
   services.power-profiles-daemon.enable = true;
 
   # Ignore power key
-  services.logind.settings.Login.handlePowerKey = "ignore";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
 
   # Disable firewall
   networking.firewall.enable = false;
