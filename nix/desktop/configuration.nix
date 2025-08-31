@@ -15,12 +15,23 @@
 
   # Bootloader
   boot.loader = {
-    systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 5;
+      memtest86.enable = true;
+    };
   };
 
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   # Environment variables
   environment.variables = {
