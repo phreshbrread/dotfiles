@@ -76,6 +76,7 @@
     shfmt
     blender
     steamtinkerlaunch
+    equibop
   ];
 
   fonts.packages = with pkgs; [
