@@ -19,13 +19,7 @@
     # changes in each release.
     stateVersion = "24.11";
   };
-
-  programs.git = {
-    enable = true;
-    userName = "PhreshBrread";
-    userEmail = "crustydog9@gmail.com";
-  };
-
+  
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
