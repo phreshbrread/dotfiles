@@ -30,6 +30,7 @@
     yad
     ffmpeg
     lsof
+    ntfs3g
 
     # Extra
     vscodium
