@@ -62,6 +62,7 @@
     equibop
     arrpc
     filezilla
+    mangareader
   ];
 
   fonts.enableDefaultPackages = true;
