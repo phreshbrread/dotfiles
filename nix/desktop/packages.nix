@@ -41,7 +41,6 @@
     blender
     spotify
     discord
-    rpcs3
     arrpc
     qjackctl
     brave
