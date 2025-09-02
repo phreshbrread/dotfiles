@@ -61,6 +61,7 @@
     onlyoffice-desktopeditors
     equibop
     arrpc
+    filezilla
   ];
 
   fonts.enableDefaultPackages = true;
