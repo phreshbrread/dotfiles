@@ -41,6 +41,7 @@
     blender
     spotify
     discord
+    rpcs3
     arrpc
     qjackctl
     brave
@@ -63,6 +64,7 @@
     arrpc
     filezilla
     mangareader
+    rustup
   ];
 
   fonts.enableDefaultPackages = true;
