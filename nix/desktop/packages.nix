@@ -64,6 +64,7 @@
     filezilla
     mangareader
     rustup
+    azahar
   ];
 
   fonts.enableDefaultPackages = true;

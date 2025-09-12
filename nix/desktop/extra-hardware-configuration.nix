@@ -31,6 +31,7 @@
       "nofail"
       "rw"
       "exec"
+      "nodev"
     ];
   };
 
