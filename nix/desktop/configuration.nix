@@ -55,9 +55,11 @@
   networking.networkmanager.enable = true;
 
   # Enable KDE Plasma
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.autoLogin.user = "brad";
+  services = {
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    displayManager.autoLogin.user = "brad";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -66,14 +68,16 @@
   };
 
   # Enable sound with pipewire
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+  services = {
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
   };
 
   # Enable Flatpak
@@ -111,62 +115,75 @@
   };
 
   # Use doas instead of sudo
-  security.doas.enable = true;
-  security.sudo.enable = false;
-  security.doas.extraRules = [
-    {
-      users = [ "brad" ];
-      keepEnv = true;
-      persist = true;
-    }
-  ];
-
-  # Enable AppImages
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
+  security = {
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "brad" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
   };
 
   # Enable programs
-  programs.git.enable = true;
-  programs.fish.enable = true;
-  programs.gamemode.enable = true;
-  programs.kdeconnect.enable = true;
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
-    gamescopeSession.enable = true;
-  };
-  programs.thunderbird = {
-    enable = true;
-    package = pkgs.thunderbird-latest;
-  };
-  programs.nano = {
-    enable = true;
-    syntaxHighlight = true;
-    nanorc = ''
-      set nowrap
-      set tabstospaces
-      set tabsize 2
-    '';
-  };
+  programs = {
+    git.enable = true;
+    fish.enable = true;
+    gamemode.enable = true;
+    obs-studio.enable = true;
+    kdeconnect.enable = true;
 
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    configure = {
-      customRC = ''
-        filetype on
-        syntax on
-        set number
-        set expandtab
-        set tabstop=3
-        set shiftwidth=3
-        set autoindent
-        set smartindent 
-        set cursorcolumn
-        set relativenumber
+    # Steam
+    steam = {
+      enable = true;
+      protontricks.enable = true;
+      gamescopeSession.enable = true;
+    };
+
+    # Thunderbird
+    thunderbird = {
+      enable = true;
+      package = pkgs.thunderbird-latest;
+    };
+
+    # Nano
+    nano = {
+      enable = true;
+      syntaxHighlight = true;
+      nanorc = ''
+        set nowrap
+        set tabstospaces
+        set tabsize 2
       '';
+    };
+
+    # Neovim
+    neovim = {
+      enable = true;
+      configure = {
+        customRC = ''
+          filetype on
+          syntax on
+          set number
+          set expandtab
+          set tabstop=3
+          set shiftwidth=3
+          set autoindent
+          set smartindent 
+          set cursorcolumn
+          set relativenumber
+        '';
+      };
+    };
+
+    # Enable AppImage
+    appimage = {
+      enable = true;
+      binfmt = true;
     };
   };
 

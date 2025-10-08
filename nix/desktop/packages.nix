@@ -65,6 +65,7 @@
     mangareader
     rustup
     azahar
+    overlayed
   ];
 
   fonts.enableDefaultPackages = true;
