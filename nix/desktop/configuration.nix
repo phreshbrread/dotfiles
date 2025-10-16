@@ -134,8 +134,13 @@
     git.enable = true;
     fish.enable = true;
     gamemode.enable = true;
-    obs-studio.enable = true;
     kdeconnect.enable = true;
+
+    # OBS + Plugins
+    obs-studio = {
+      enable = true;
+      plugins = [ pkgs.obs-studio-plugins.droidcam-obs ];
+    };
 
     # Steam
     steam = {
