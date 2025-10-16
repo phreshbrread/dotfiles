@@ -22,6 +22,7 @@
   # Allow insecure broadcom driver
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.43"
+    "broadcom-sta-6.30.223.271-57-6.12.52"
   ];
 
   # Set hostname
@@ -149,6 +150,7 @@
         src = ./dwm;
       };
     };
+    windowManager.awesome.enable = true;
     xkb = {
       layout = "au";
       variant = "";
