@@ -64,7 +64,7 @@
     wev
     hyprpicker
     vscodium
-    floorp
+    floorp-bin
     gparted
     fastfetch
     font-manager
