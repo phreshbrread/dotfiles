@@ -65,7 +65,7 @@
     mangareader
     rustup
     azahar
-    overlayed
+    OVMF
   ];
 
   fonts.enableDefaultPackages = true;

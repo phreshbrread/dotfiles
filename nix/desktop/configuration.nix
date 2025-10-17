@@ -211,8 +211,10 @@
   # Enable VM support
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = [ "brad" ];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
 
   # Enable firewall
   networking.firewall = {
