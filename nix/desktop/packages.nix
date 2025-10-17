@@ -34,7 +34,7 @@
 
     # Extra
     vscodium
-    floorp-bin
+    floorp
     gparted
     fastfetch
     obsidian
