@@ -6,11 +6,11 @@
 
 {
   imports = [
-    ./locale.nix
-    ./packages.nix
-    ./server-specific.nix
     ./hardware-configuration.nix
     ./extra-hardware-configuration.nix
+    ./../../locale.nix
+    ./../../server-specific.nix
+    ./../../desktop-packages.nix
   ];
 
   # Bootloader
