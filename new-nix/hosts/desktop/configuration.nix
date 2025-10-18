@@ -8,9 +8,9 @@
   imports = [
     ./hardware-configuration.nix
     ./extra-hardware-configuration.nix
-    ./../../locale.nix
-    ./../../server-specific.nix
-    ./../../desktop-packages.nix
+    ./../../nixModules/locale.nix
+    ./../../nixModules/server-specific.nix
+    ./../../nixModules/desktop-packages.nix
   ];
 
   # Bootloader
