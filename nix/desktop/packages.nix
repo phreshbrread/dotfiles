@@ -66,6 +66,8 @@
     rustup
     azahar
     OVMF
+    jdk
+    jdk8
   ];
 
   fonts.enableDefaultPackages = true;
