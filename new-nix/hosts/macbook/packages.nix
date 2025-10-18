@@ -21,6 +21,7 @@
     winePackages.stagingFull
     wine64Packages.stagingFull
     inxi
+    tree
     
     # Core (DWM)
     dmenu
