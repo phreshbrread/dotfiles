@@ -11,13 +11,13 @@
     ./../../nixModules/pkg/macbook-packages.nix
   ];
 
+  # Define your hostname.
+  networking.hostName = "nixos-vm";
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos-vm"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pheg = {
     isNormalUser = true;

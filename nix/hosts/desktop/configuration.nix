@@ -13,6 +13,9 @@
     ./../../nixModules/pkg/desktop-packages.nix
   ];
 
+  # Set hostname
+  networking.hostName = "pheg-nixos-desktop";
+
   # Bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -36,27 +39,11 @@
     GCM_CREDENTIAL_STORE = "secretservice";
   };
 
-  # Set hostname
-  networking.hostName = "pheg-nixos-desktop";
-
   # Enable KDE Plasma
   services = {
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
     displayManager.autoLogin.user = "brad";
-  };
-
-  # Enable sound with pipewire
-  security.rtkit.enable = true;
-  services = {
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
   };
 
   # OpenRGB udev rules

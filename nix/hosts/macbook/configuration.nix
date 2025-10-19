@@ -11,6 +11,9 @@
     ./../../nixModules/pkg/macbook-packages.nix
   ];
 
+  # Set hostname
+  networking.hostName = "brad-nixos-macbook";
+
   # Bootloader
   boot.loader = {
     systemd-boot.enable = true;
@@ -24,9 +27,6 @@
     "broadcom-sta-6.30.223.271-57-6.17.2"
     "broadcom-sta-6.30.223.271-57-6.17.3"
   ];
-
-  # Set hostname
-  networking.hostName = "brad-nixos-macbook";
 
   # Environment variables
   environment.variables = {
@@ -64,17 +64,6 @@
   services.getty = {
     autologinUser = "brad";
     autologinOnce = true;
-  };
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
   };
 
   # Intel graphics
