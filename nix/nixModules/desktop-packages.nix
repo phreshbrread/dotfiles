@@ -1,6 +1,6 @@
-##############################
-## DESKTOP PACKAGES + FONTS ##
-##############################
+#############################
+## SYSTEM PACKAGES + FONTS ##
+#############################
 
 { pkgs, ... }:
 
@@ -31,6 +31,7 @@
     ffmpeg
     lsof
     ntfs3g
+    tree
 
     # Extra
     vscodium
