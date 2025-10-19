@@ -6,7 +6,7 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
 
@@ -18,14 +18,14 @@
 
   outputs =
     inputs@{
-      nixpkgs-stable,
+      nixpkgs,
       nixpkgs-unstable,
       catppuccin,
       home-manager,
       ...
     }:
     {
-      nixosConfigurations.brad-nixos-macbook = nixpkgs-unstable.lib.nixosSystem {
+      nixosConfigurations.brad-nixos-macbook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           catppuccin.nixosModules.catppuccin
@@ -47,7 +47,7 @@
         ];
       };
 
-      nixosConfigurations.pheg-nixos-desktop = inputs.nixpkgs-stable.lib.nixosSystem {
+      nixosConfigurations.pheg-nixos-desktop = inputs.nixpkgs.lib.nixosSystem {
         modules = [
           {
             nix.settings.experimental-features = [
@@ -56,6 +56,18 @@
             ];
           }
           ./hosts/desktop/configuration.nix
+        ];
+      };
+
+      nixosConfigurations.nixos-vm = inputs.nixpkgs.lib.nixosSystem {
+        modules = [
+          {
+            nix.settings.experimental-features = [
+              "nix-command"
+              "flakes"
+            ];
+          }
+          ./hosts/virtual-machine/configuration.nix
         ];
       };
     };

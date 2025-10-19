@@ -21,6 +21,8 @@
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.43"
     "broadcom-sta-6.30.223.271-57-6.12.52"
+    "broadcom-sta-6.30.223.271-57-6.17.2"
+    "broadcom-sta-6.30.223.271-57-6.17.3"
   ];
 
   # Set hostname
@@ -166,7 +168,8 @@
   services.power-profiles-daemon.enable = true;
 
   # Ignore power key
-  services.logind.settings.Login.HandlePowerKey = "ignore";
+  #services.logind.settings.Login.HandlePowerKey = "ignore";
+  services.logind.extraConfig = ''HandlePowerKey=ignore'';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
