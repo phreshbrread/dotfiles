@@ -7,24 +7,23 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     inputs@{
       nixpkgs,
-      nixpkgs-unstable,
       catppuccin,
       home-manager,
       ...
     }:
     {
+      # Macbook
       nixosConfigurations.brad-nixos-macbook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -47,6 +46,7 @@
         ];
       };
 
+      # Desktop
       nixosConfigurations.pheg-nixos-desktop = inputs.nixpkgs.lib.nixosSystem {
         modules = [
           {
@@ -59,6 +59,7 @@
         ];
       };
 
+      # Virtual Machine
       nixosConfigurations.nixos-vm = inputs.nixpkgs.lib.nixosSystem {
         modules = [
           {

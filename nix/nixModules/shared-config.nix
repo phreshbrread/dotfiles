@@ -8,9 +8,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Enable NetworkManager
   networking.networkmanager.enable = true;
 

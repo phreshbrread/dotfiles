@@ -14,6 +14,9 @@
   # Define your hostname.
   networking.hostName = "nixos-vm";
 
+  # Set kernel packages
+  boot.kernelPackages = pkgs.linuxPackages;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

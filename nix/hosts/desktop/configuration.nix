@@ -16,6 +16,9 @@
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
 
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;

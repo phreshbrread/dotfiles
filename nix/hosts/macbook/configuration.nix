@@ -2,7 +2,12 @@
 ## MACBOOK NIXOS CONFIG ##
 ##########################
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -14,6 +19,9 @@
   # Set hostname
   networking.hostName = "brad-nixos-macbook";
 
+  # Set kernel packages
+  boot.kernelPackages = pkgs.linuxPackages;
+
   # Bootloader
   boot.loader = {
     systemd-boot.enable = true;
@@ -21,12 +29,9 @@
   };
 
   # Allow insecure broadcom driver
-  nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.43"
-    "broadcom-sta-6.30.223.271-57-6.12.52"
-    "broadcom-sta-6.30.223.271-57-6.17.2"
-    "broadcom-sta-6.30.223.271-57-6.17.3"
-  ];
+  nixpkgs.config = {
+    allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
+  };
 
   # Environment variables
   environment.variables = {
