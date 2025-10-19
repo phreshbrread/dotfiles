@@ -8,9 +8,9 @@
   imports = [
     ./hardware-configuration.nix
     ./extra-hardware-configuration.nix
-    ./../../nixModules/locale.nix
+    ./../../nixModules/shared-config.nix
     ./../../nixModules/server-specific.nix
-    ./../../nixModules/desktop-packages.nix
+    ./../../nixModules/pkg/desktop-packages.nix
   ];
 
   # Bootloader
@@ -22,9 +22,6 @@
       memtest86.enable = true;
     };
   };
-
-  # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Garbage collection
   nix.gc = {
@@ -39,32 +36,14 @@
     GCM_CREDENTIAL_STORE = "secretservice";
   };
 
-  # Enable Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Enable NetworkManager
-  networking.networkmanager.enable = true;
 
   # Enable KDE Plasma
   services = {
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
     displayManager.autoLogin.user = "brad";
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "au";
-    variant = "";
   };
 
   # Enable sound with pipewire
@@ -80,9 +59,6 @@
     };
   };
 
-  # Enable Flatpak
-  services.flatpak.enable = true;
-
   # OpenRGB udev rules
   services = {
     udev.packages = with pkgs; [
@@ -96,9 +72,6 @@
     user = "brad";
     dataDir = "/home/brad";
   };
-
-  # Enable CUPS for printing
-  services.printing.enable = true;
 
   # Define user account
   users.users.brad = {
@@ -214,13 +187,6 @@
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
-  };
-
-  # Enable firewall
-  networking.firewall = {
-    enable = true;
-    allowPing = true;
-    logRefusedConnections = true;
   };
 
   # Initial system state version (no need to change)

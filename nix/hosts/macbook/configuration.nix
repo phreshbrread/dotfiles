@@ -7,8 +7,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../../nixModules/locale.nix
-    ./../../nixModules/macbook-packages.nix
+    ./../../nixModules/shared-config.nix
+    ./../../nixModules/pkg/macbook-packages.nix
   ];
 
   # Bootloader
@@ -16,9 +16,6 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Allow insecure broadcom driver
   nixpkgs.config.permittedInsecurePackages = [
@@ -28,9 +25,6 @@
 
   # Set hostname
   networking.hostName = "brad-nixos-macbook";
-
-  # Enable NetworkManager
-  networking.networkmanager.enable = true;
 
   # Environment variables
   environment.variables = {
@@ -91,12 +85,6 @@
     ];
   };
   hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
-
-  # Enable Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # Set colour scheme for supported apps
   # This is not for QT/GTK theme
