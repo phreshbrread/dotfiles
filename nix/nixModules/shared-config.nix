@@ -20,6 +20,9 @@
   # Enable realtime daemon
   security.rtkit.enable = true;
 
+  # Enable XDG portals
+  xdg.portal.enable = true;
+
   # Declare services
   services = {
     # Enable Flatpak
