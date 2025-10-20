@@ -1,5 +1,6 @@
 # Nix
 - Shared packages
+- Shared programs/services
 
 # Desktop
 - Automate Jellyfin backup

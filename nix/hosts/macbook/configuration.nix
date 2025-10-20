@@ -158,22 +158,25 @@
     };
   };
 
-  # Enable programs
-  programs.git.enable = true;
-  programs.fish.enable = true;
-  programs.hyprland.enable = true;
-  programs.hyprlock.enable = true;
-  programs.kdeconnect.enable = true;
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
+  programs = {
+    git.enable = true;
+    fish.enable = true;
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    kdeconnect.enable = true;
+    steam = {
+      enable = true;
+      protontricks.enable = true;
+    };
   };
 
   # Enable services
-  services.openssh.enable = true;
-  services.tumbler.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.power-profiles-daemon.enable = true;
+  services = {
+    openssh.enable = true;
+    tumbler.enable = true;
+    gnome.gnome-keyring.enable = true;
+    power-profiles-daemon.enable = true;
+  };
 
   # Ignore power key
   #services.logind.settings.Login.HandlePowerKey = "ignore";
