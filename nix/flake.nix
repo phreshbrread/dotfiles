@@ -53,12 +53,7 @@
       # Desktop
       nixosConfigurations.pheg-nixos-desktop = inputs.nixpkgs.lib.nixosSystem {
         modules = [
-          {
-            nix.settings.experimental-features = [
-              "nix-command"
-              "flakes"
-            ];
-          }
+          nix-flatpak.nixosModules.nix-flatpak
           ./hosts/desktop/configuration.nix
         ];
       };
@@ -66,12 +61,6 @@
       # Virtual Machine
       nixosConfigurations.nixos-vm = inputs.nixpkgs.lib.nixosSystem {
         modules = [
-          {
-            nix.settings.experimental-features = [
-              "nix-command"
-              "flakes"
-            ];
-          }
           ./hosts/virtual-machine/configuration.nix
         ];
       };

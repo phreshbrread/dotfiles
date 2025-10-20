@@ -55,15 +55,19 @@
   };
 
   # Use doas instead of sudo
-  security.doas.enable = true;
-  security.sudo.enable = false;
-  security.doas.extraRules = [
-    {
-      users = [ "brad" ];
-      keepEnv = true;
-      persist = true;
-    }
-  ];
+  security = {
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "brad" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
+  };
 
   # Autologin to tty1
   services.getty = {
@@ -154,13 +158,12 @@
     ];
     update.auto = {
       enable = true;
-      onCalendar = "weekly"; # Default value
+      onCalendar = "weekly";
     };
   };
 
+  # Enable programs
   programs = {
-    git.enable = true;
-    fish.enable = true;
     hyprland.enable = true;
     hyprlock.enable = true;
     kdeconnect.enable = true;
@@ -179,7 +182,6 @@
   };
 
   # Ignore power key
-  #services.logind.settings.Login.HandlePowerKey = "ignore";
   services.logind.extraConfig = ''HandlePowerKey=ignore'';
 
   # This value determines the NixOS release from which the default

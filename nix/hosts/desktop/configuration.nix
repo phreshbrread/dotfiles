@@ -94,8 +94,6 @@
 
   # Enable programs
   programs = {
-    git.enable = true;
-    fish.enable = true;
     gamemode.enable = true;
     kdeconnect.enable = true;
 
@@ -116,42 +114,6 @@
     thunderbird = {
       enable = true;
       package = pkgs.thunderbird-latest;
-    };
-
-    # Nano
-    nano = {
-      enable = true;
-      syntaxHighlight = true;
-      nanorc = ''
-        set nowrap
-        set tabstospaces
-        set tabsize 2
-      '';
-    };
-
-    # Neovim
-    neovim = {
-      enable = true;
-      configure = {
-        customRC = ''
-          filetype on
-          syntax on
-          set number
-          set expandtab
-          set tabstop=3
-          set shiftwidth=3
-          set autoindent
-          set smartindent 
-          set cursorcolumn
-          set relativenumber
-        '';
-      };
-    };
-
-    # Enable AppImage
-    appimage = {
-      enable = true;
-      binfmt = true;
     };
   };
 
@@ -177,6 +139,30 @@
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
+  };
+
+  # Declare flatpaks
+  services.flatpak = {
+    packages = [
+      "com.dec05eba.gpu_screen_recorder"
+      "com.steamgriddb.SGDBoop"
+      "com.usebottles.bottles"
+      "dev.ares.ares"
+      "fm.reaper.Reaper"
+      "fr.handbrake.ghb"
+      "io.github.aandrew_me.ytdn"
+      "io.github.shiiion.primehack"
+      "io.github.streetpea.Chiaki4deck"
+      "io.github.tntwise.REAL-Video-Enhancer"
+      "net.rpcs3.RPCS3"
+      "org.jdownloader.JDownloader"
+      "org.openrgb.OpenRGB"
+      "org.polymc.PolyMC"
+    ];
+    update.auto = {
+      enable = true;
+      onCalendar = "weekly";
+    };
   };
 
   # Initial system state version (no need to change)

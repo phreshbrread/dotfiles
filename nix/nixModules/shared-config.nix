@@ -65,4 +65,46 @@
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
+
+  # Shared programs
+  programs = {
+    git.enable = true;
+    fish.enable = true;
+
+    # Enable AppImage
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+    # Nano
+    nano = {
+      enable = true;
+      syntaxHighlight = true;
+      nanorc = ''
+        set nowrap
+        set tabstospaces
+        set tabsize 2
+      '';
+    };
+
+    # Neovim
+    neovim = {
+      enable = true;
+      configure = {
+        customRC = ''
+          filetype on
+          syntax on
+          set number
+          set expandtab
+          set tabstop=3
+          set shiftwidth=3
+          set autoindent
+          set smartindent 
+          set cursorcolumn
+          set relativenumber
+        '';
+      };
+    };
+  };
 }
