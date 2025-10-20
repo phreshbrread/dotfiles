@@ -7,6 +7,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
+
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
@@ -19,6 +21,7 @@
     inputs@{
       nixpkgs,
       catppuccin,
+      nix-flatpak,
       home-manager,
       ...
     }:
@@ -28,6 +31,7 @@
         system = "x86_64-linux";
         modules = [
           catppuccin.nixosModules.catppuccin
+          nix-flatpak.nixosModules.nix-flatpak
 
           ./hosts/macbook/configuration.nix
 

@@ -144,6 +144,20 @@
     ];
   };
 
+  # Declare flatpaks
+  services.flatpak = {
+    packages = [
+      "org.polymc.PolyMC"
+      "fr.handbrake.ghb"
+      "fm.reaper.Reaper"
+      "org.jdownloader.JDownloader"
+    ];
+    update.auto = {
+      enable = true;
+      onCalendar = "weekly"; # Default value
+    };
+  };
+
   # Enable programs
   programs.git.enable = true;
   programs.fish.enable = true;
