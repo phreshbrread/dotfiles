@@ -18,26 +18,32 @@
   };
 
   outputs =
-    { nixpkgs, nix-flatpak, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      nix-flatpak,
+      catppuccin,
+      home-manager,
+    }:
     {
       # Macbook
       nixosConfigurations.brad-nixos-macbook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          inputs.nixosModules.catppuccin
-          inputs.nixosModules.nix-flatpak
+          catppuccin.nixosModules.catppuccin
+          nix-flatpak.nixosModules.nix-flatpak
 
           ./hosts/macbook/configuration.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          inputs.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.users.brad = {
               imports = [
                 ./nixModules/home.nix
-                inputs.homeModules.catppuccin
+                catppuccin.homeModules.catppuccin
               ];
             };
           }
