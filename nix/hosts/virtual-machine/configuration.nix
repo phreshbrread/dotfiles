@@ -20,7 +20,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pheg = {
     isNormalUser = true;
@@ -28,6 +28,14 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+    ];
+  };
+
+  # Specify XDG desktop portals
+  xdg.portal = {
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
     ];
   };
 
