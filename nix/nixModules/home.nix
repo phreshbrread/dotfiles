@@ -8,18 +8,26 @@
   home = {
     username = "brad";
     homeDirectory = "/home/brad";
-
-    # This value determines the home Manager release that your
-    # configuration is compatible with. This helps avoid breakage
-    # when a new home Manager release introduces backwards
-    # incompatible changes.
-    #
-    # You can update home Manager without changing this value. See
-    # the home Manager release notes for a list of state version
-    # changes in each release.
-    stateVersion = "24.11";
+    stateVersion = "24.11"; # No need to change, only signifies minimum version to avoid breakage
   };
-  
+
+# Set gtk theme
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Materia-dark"; # Replace with your desired theme name
+      package = pkgs.materia-theme; # Replace with the corresponding Nix package
+    };
+    iconTheme = {
+      name = "Adwaita"; # Optional: Set an icon theme
+      package = pkgs.adwaita-icon-theme; # Optional: Corresponding icon theme package
+    };
+    cursorTheme = {
+      name = "Adwaita"; # Optional: Set a cursor theme
+      package = pkgs.adwaita-icon-theme; # Optional: Corresponding cursor theme package
+    };
+  };
+
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

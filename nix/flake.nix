@@ -15,25 +15,31 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      nix-flatpak,
       catppuccin,
+      nix-flatpak,
       home-manager,
+      rust-overlay,
     }:
     {
       # Macbook
       nixosConfigurations.brad-nixos-macbook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/macbook/configuration.nix
+
           catppuccin.nixosModules.catppuccin
           nix-flatpak.nixosModules.nix-flatpak
-
-          ./hosts/macbook/configuration.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -47,6 +53,15 @@
               ];
             };
           }
+
+          # Rust overlay
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+            }
+          )
         ];
       };
 
@@ -54,8 +69,9 @@
       nixosConfigurations.pheg-nixos-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          nix-flatpak.nixosModules.nix-flatpak
           ./hosts/desktop/configuration.nix
+
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
 

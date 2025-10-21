@@ -60,6 +60,7 @@
     kdePackages.breeze
     kdePackages.breeze-gtk
     kdePackages.breeze-icons
+    nemo-with-extensions
 
     # Extra
     wev

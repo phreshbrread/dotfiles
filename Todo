@@ -1,13 +1,13 @@
 # Nix
+- Set up rust/cargo
 - Shared packages
-- Shared programs/services
 
 # Desktop
 - Automate Jellyfin backup
 
 # Macbook
+- Declare Qt/Gtk theming
 - Set up DWM
-- Fix QT Theming
 - Clipboard history
 - Include kvantum theme in config
 - Learn Vim
