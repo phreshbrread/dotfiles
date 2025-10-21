@@ -25,10 +25,26 @@
   users.users.pheg = {
     isNormalUser = true;
     description = "Pheg";
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
+  };
+
+  # Use doas instead of sudo
+  security = {
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "pheg" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
   };
 
   # Specify XDG desktop portals
