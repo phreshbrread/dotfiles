@@ -64,7 +64,6 @@
     arrpc
     filezilla
     mangareader
-    rustup
     azahar
     OVMF
     jdk
