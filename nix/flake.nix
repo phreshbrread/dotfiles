@@ -15,11 +15,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -29,7 +24,6 @@
       catppuccin,
       nix-flatpak,
       home-manager,
-      rust-overlay,
     }:
     {
       # Macbook
@@ -53,15 +47,6 @@
               ];
             };
           }
-
-          # Rust overlay
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            }
-          )
         ];
       };
 

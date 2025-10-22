@@ -22,6 +22,7 @@
     wine64Packages.stagingFull
     inxi
     tree
+    slint-lsp
     
     # Core (DWM)
     dmenu
@@ -65,7 +66,7 @@
     # Extra
     wev
     hyprpicker
-    vscodium
+    vscodium-fhs
     floorp
     gparted
     fastfetch
