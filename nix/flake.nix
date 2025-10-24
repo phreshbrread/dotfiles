@@ -27,7 +27,7 @@
     }:
     {
       # Macbook
-      nixosConfigurations.brad-nixos-macbook = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.pheg-nixos-macbook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/macbook/configuration.nix

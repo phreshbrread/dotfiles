@@ -17,7 +17,7 @@
   ];
 
   # Set hostname
-  networking.hostName = "brad-nixos-macbook";
+  networking.hostName = "pheg-nixos-macbook";
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
