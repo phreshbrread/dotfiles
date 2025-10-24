@@ -97,10 +97,8 @@
     };
   };
 
-  # Set time zone.
+  # Time zone + locale
   time.timeZone = "Australia/Melbourne";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
