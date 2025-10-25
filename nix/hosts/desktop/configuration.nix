@@ -2,7 +2,12 @@
 ## DESKTOP NIXOS CONFIG ##
 ##########################
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -18,6 +23,11 @@
 
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Allow insecure broadcom driver
+  nixpkgs.config = {
+    allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "mbedtls" ];
+  };
 
   # Bootloader
   boot.loader = {

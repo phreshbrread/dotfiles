@@ -2,10 +2,10 @@
 ## EXTRA HARDWARE CONFIG ##
 ###########################
 
-{ ... }:
+{ config, pkgs, ... }:
 
 {
-  # Enable OpenGL
+  # Enable accelerated graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
