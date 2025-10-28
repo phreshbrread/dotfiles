@@ -68,6 +68,7 @@
     OVMF
     jdk
     jdk8
+    vlc
   ];
 
   fonts.enableDefaultPackages = true;

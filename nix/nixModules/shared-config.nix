@@ -64,6 +64,7 @@
         x = "exit";
         ls = "eza -alg --group-directories-first --icons=always";
         cls = "clear";
+        sudo = "doas";
         tmux-mc = "tmux a -t minecraft-server";
         sudoedit = "doas rnano";
         install-date = "stat / | grep Birth";
