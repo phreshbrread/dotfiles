@@ -58,7 +58,18 @@
   # Shared programs
   programs = {
     git.enable = true;
-    fish.enable = true;
+    fish = {
+      enable = true;
+      shellAliases = {
+        x = "exit";
+        ls = "eza -alg --group-directories-first --icons=always";
+        cls = "clear";
+        tmux-mc = "tmux a -t minecraft-server";
+        sudoedit = "doas rnano";
+        install-date = "stat / | grep Birth";
+        tmux-terraria = "tmux a -t terraria-server";
+      };
+    };
 
     # Enable AppImage
     appimage = {
