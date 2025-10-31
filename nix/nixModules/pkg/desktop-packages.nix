@@ -32,6 +32,7 @@
     lsof
     ntfs3g
     tree
+    smartmontools
 
     # Extra
     vscodium
