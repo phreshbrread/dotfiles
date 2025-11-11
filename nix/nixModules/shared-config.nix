@@ -58,6 +58,7 @@
   # Shared programs
   programs = {
     git.enable = true;
+    tmux.enable = true;
     fish = {
       enable = true;
       shellAliases = {

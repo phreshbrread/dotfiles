@@ -168,6 +168,7 @@
       "org.jdownloader.JDownloader"
       "org.openrgb.OpenRGB"
       "org.polymc.PolyMC"
+      "nl.hjdskes.gcolor3"
     ];
     update.auto = {
       enable = true;
