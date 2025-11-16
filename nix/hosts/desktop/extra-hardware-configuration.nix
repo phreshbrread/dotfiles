@@ -2,7 +2,12 @@
 ## EXTRA HARDWARE CONFIG ##
 ###########################
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Enable accelerated graphics
@@ -14,6 +19,9 @@
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
+
+  # Disable swap
+  swapDevices = lib.mkForce [ ];
 
   # Fix RAM RGB control
   boot.kernelParams = [ "acpi_enforce_resources=lax" ];
