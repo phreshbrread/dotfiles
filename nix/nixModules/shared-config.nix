@@ -43,7 +43,13 @@
   # Declare services
   services = {
     # Enable Flatpak
-    flatpak.enable = true;
+    flatpak = {
+      enable = true;
+      update.auto = {
+        enable = true;
+        onCalendar = "weekly";
+      };
+    };
 
     # Enable CUPS for printing
     printing.enable = true;

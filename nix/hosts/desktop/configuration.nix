@@ -138,29 +138,23 @@
   };
 
   # Declare flatpaks
-  services.flatpak = {
-    packages = [
-      "com.dec05eba.gpu_screen_recorder"
-      "com.steamgriddb.SGDBoop"
-      "com.usebottles.bottles"
-      "dev.ares.ares"
-      "fm.reaper.Reaper"
-      "fr.handbrake.ghb"
-      "io.github.aandrew_me.ytdn"
-      "io.github.shiiion.primehack"
-      "io.github.streetpea.Chiaki4deck"
-      "io.github.tntwise.REAL-Video-Enhancer"
-      "net.rpcs3.RPCS3"
-      "org.jdownloader.JDownloader"
-      "org.openrgb.OpenRGB"
-      "org.polymc.PolyMC"
-      "nl.hjdskes.gcolor3"
-    ];
-    update.auto = {
-      enable = true;
-      onCalendar = "weekly";
-    };
-  };
+  services.flatpak.packages = [
+    "com.dec05eba.gpu_screen_recorder"
+    "com.steamgriddb.SGDBoop"
+    "com.usebottles.bottles"
+    "dev.ares.ares"
+    "fm.reaper.Reaper"
+    "fr.handbrake.ghb"
+    "io.github.aandrew_me.ytdn"
+    "io.github.shiiion.primehack"
+    "io.github.streetpea.Chiaki4deck"
+    "io.github.tntwise.REAL-Video-Enhancer"
+    "net.rpcs3.RPCS3"
+    "org.jdownloader.JDownloader"
+    "org.openrgb.OpenRGB"
+    "org.polymc.PolyMC"
+    "nl.hjdskes.gcolor3"
+  ];
 
   # Initial system state version (no need to change)
   system.stateVersion = "25.05";

@@ -126,18 +126,12 @@
   };
 
   # Declare flatpaks
-  services.flatpak = {
-    packages = [
-      "org.polymc.PolyMC"
-      "fr.handbrake.ghb"
-      "fm.reaper.Reaper"
-      "org.jdownloader.JDownloader"
-    ];
-    update.auto = {
-      enable = true;
-      onCalendar = "weekly";
-    };
-  };
+  services.flatpak.packages = [
+    "org.polymc.PolyMC"
+    "fr.handbrake.ghb"
+    "fm.reaper.Reaper"
+    "org.jdownloader.JDownloader"
+  ];
 
   # Enable programs
   programs = {
