@@ -32,20 +32,12 @@
     ];
   };
 
-  # Use doas instead of sudo
-  security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraRules = [
-        {
-          users = [ "pheg" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
-    };
-  };
+  # Allow user to use doas
+  security.doas.extraRules = [
+    {
+      users = [ "pheg" ];
+    }
+  ];
 
   # Specify XDG desktop portals
   xdg.portal = {

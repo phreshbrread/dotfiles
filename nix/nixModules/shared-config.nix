@@ -17,6 +17,21 @@
     "flakes"
   ];
 
+  # Use doas instead of sudo
+  # Make sure to set users in host config
+  security = {
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
+  };
+
   # Enable realtime daemon
   security.rtkit.enable = true;
 

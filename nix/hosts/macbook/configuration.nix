@@ -54,20 +54,12 @@
     shell = pkgs.fish;
   };
 
-  # Use doas instead of sudo
-  security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraRules = [
-        {
-          users = [ "brad" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
-    };
-  };
+  # Allow user to use doas
+  security.doas.extraRules = [
+    {
+      users = [ "brad" ];
+    }
+  ];
 
   # Autologin to tty1
   services.getty = {
