@@ -50,6 +50,7 @@
   environment.variables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     GCM_CREDENTIAL_STORE = "secretservice";
+    TERMINAL = "alacritty";
   };
 
   # Enable KDE Plasma
@@ -86,13 +87,6 @@
       "audio"
     ];
   };
-
-  # Allow user to use doas
-  security.doas.extraRules = [
-    {
-      users = [ "brad" ];
-    }
-  ];
 
   # Enable programs
   programs = {

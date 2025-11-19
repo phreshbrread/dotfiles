@@ -18,13 +18,15 @@
   ];
 
   # Use doas instead of sudo
-  # Make sure to set users in host config
+  # User must be in 'wheel' group
   security = {
     sudo.enable = false;
     doas = {
       enable = true;
+      wheelNeedsPassword = true;
       extraRules = [
         {
+          groups = [ "wheel" ];
           keepEnv = true;
           persist = true;
         }
@@ -70,7 +72,7 @@
     logRefusedConnections = true;
   };
 
-  # Shared programs
+  # Programs
   programs = {
     git.enable = true;
     tmux.enable = true;

@@ -54,13 +54,6 @@
     shell = pkgs.fish;
   };
 
-  # Allow user to use doas
-  security.doas.extraRules = [
-    {
-      users = [ "brad" ];
-    }
-  ];
-
   # Autologin to tty1
   services.getty = {
     autologinUser = "brad";

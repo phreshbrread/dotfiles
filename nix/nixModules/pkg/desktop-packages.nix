@@ -33,6 +33,7 @@
     ntfs3g
     tree
     smartmontools
+    alacritty
 
     # Extra
     vscodium
@@ -77,5 +78,6 @@
     corefonts
     font-awesome
     nerd-fonts.hack
+    noto-fonts
   ];
 }

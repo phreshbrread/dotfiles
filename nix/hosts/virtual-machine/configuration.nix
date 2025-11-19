@@ -32,13 +32,6 @@
     ];
   };
 
-  # Allow user to use doas
-  security.doas.extraRules = [
-    {
-      users = [ "pheg" ];
-    }
-  ];
-
   # Specify XDG desktop portals
   xdg.portal = {
     extraPortals = with pkgs; [
