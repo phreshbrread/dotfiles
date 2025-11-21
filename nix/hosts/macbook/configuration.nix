@@ -38,7 +38,7 @@
     GDK_SCALE = "2";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     EDITOR = "nano";
-    TERM = "alacritty";
+    TERMINAL = "alacritty";
     LIBVA_DRIVER_NAME = "i965";
     GCM_CREDENTIAL_STORE = "secretservice";
   };
