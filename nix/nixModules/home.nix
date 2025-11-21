@@ -15,16 +15,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Materia-dark"; # Replace with your desired theme name
-      package = pkgs.materia-theme; # Replace with the corresponding Nix package
+      name = "Arc-Dark";
+      package = pkgs.arc-theme;
     };
     iconTheme = {
-      name = "Adwaita"; # Optional: Set an icon theme
-      package = pkgs.adwaita-icon-theme; # Optional: Corresponding icon theme package
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
-      name = "Adwaita"; # Optional: Set a cursor theme
-      package = pkgs.adwaita-icon-theme; # Optional: Corresponding cursor theme package
+      name = "phinger-cursors-dark";
+      package = pkgs.phinger-cursors;
     };
   };
 

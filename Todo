@@ -6,10 +6,11 @@
 - Automate Jellyfin backup
 
 ### Macbook
-- Declare Qt/Gtk theming
-- Clipboard history
+- Declare Qt theming
+- DWM / Hyprland clipboard history
+   - Set up copyq (dwm)
 - Include kvantum theme in config
-- Clean up Waybar config
+- Redo Waybar config
 
 ### Misc
 - Learn Vim

@@ -27,6 +27,7 @@
     # Core (DWM)
     dmenu
     nitrogen
+    copyq
 
     # Core (Hyprland)
     hyprpolkitagent
@@ -47,21 +48,14 @@
     smile
     hyprshot
     clipse
+    nemo-with-extensions
 
     # Appearance
-    arc-theme
-    lxappearance
-    lxappearance-gtk2
-    xfce.xfwm4-themes
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
-    nwg-look
+    arc-theme
     papirus-icon-theme
     phinger-cursors
-    kdePackages.breeze
-    kdePackages.breeze-gtk
-    kdePackages.breeze-icons
-    nemo-with-extensions
 
     # Extra
     wev
