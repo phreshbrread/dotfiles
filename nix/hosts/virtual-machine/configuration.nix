@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
     ./../../nixModules/pkg/macbook-packages.nix
+    ./../../nixModules/pkg/fonts.nix
   ];
 
   # Define your hostname.

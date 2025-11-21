@@ -1,6 +1,6 @@
-#############################
-## SYSTEM PACKAGES + FONTS ##
-#############################
+######################
+## MACBOOK PACKAGES ##
+######################
 
 { pkgs, ... }:
 
@@ -23,7 +23,7 @@
     inxi
     tree
     slint-lsp
-    
+
     # Core (DWM)
     dmenu
     nitrogen
@@ -74,10 +74,5 @@
     blender
     steamtinkerlaunch
     discord
-  ];
-
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerd-fonts.hack
   ];
 }

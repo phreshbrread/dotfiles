@@ -1,6 +1,6 @@
-#############################
-## SYSTEM PACKAGES + FONTS ##
-#############################
+######################
+## DESKTOP PACKAGES ##
+######################
 
 { pkgs, ... }:
 
@@ -71,13 +71,5 @@
     jdk
     jdk8
     vlc
-  ];
-
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    corefonts
-    font-awesome
-    nerd-fonts.hack
-    noto-fonts
   ];
 }

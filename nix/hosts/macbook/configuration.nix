@@ -14,6 +14,7 @@
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
     ./../../nixModules/pkg/macbook-packages.nix
+    ./../../nixModules/pkg/fonts.nix
   ];
 
   # Set hostname
@@ -26,6 +27,11 @@
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+  };
+
+  # Allow insecure broadcom driver
+  nixpkgs.config = {
+    allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
   };
 
   # Environment variables

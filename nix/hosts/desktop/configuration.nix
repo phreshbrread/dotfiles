@@ -16,6 +16,7 @@
     ./../../nixModules/shared-config.nix
     ./../../nixModules/server-specific.nix
     ./../../nixModules/pkg/desktop-packages.nix
+    ./../../nixModules/pkg/fonts.nix
   ];
 
   # Set hostname
@@ -23,11 +24,6 @@
 
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Allow insecure broadcom driver
-  # nixpkgs.config = {
-  #   allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "mbedtls" ];
-  # };
 
   # Bootloader
   boot.loader = {
@@ -129,14 +125,6 @@
     }
   ];
 
-  # Enable VM support
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "brad" ];
-  virtualisation = {
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
-  };
-
   # Declare flatpaks
   services.flatpak.packages = [
     "com.dec05eba.gpu_screen_recorder"
@@ -155,6 +143,14 @@
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
   ];
+
+  # Enable VM support
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "brad" ];
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
 
   # Initial system state version (no need to change)
   system.stateVersion = "25.05";
