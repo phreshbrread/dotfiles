@@ -28,11 +28,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Allow insecure broadcom driver
-  nixpkgs.config = {
-    allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
-  };
-
   # Environment variables
   environment.variables = {
     GDK_SCALE = "2";
