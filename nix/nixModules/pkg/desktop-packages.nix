@@ -71,5 +71,6 @@
     jdk
     jdk8
     vlc
+    warpinator
   ];
 }
