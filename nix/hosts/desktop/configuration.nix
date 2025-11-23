@@ -15,9 +15,11 @@
     ./extra-hardware-configuration.nix
     ./../../nixModules/shared-config.nix
     ./../../nixModules/server-specific.nix
-    ./../../nixModules/pkg/desktop-packages.nix
-    ./../../nixModules/pkg/fonts.nix
+    ./../../nixModules/pkg/pkg-module.nix
   ];
+
+  # Enable desktop packages module
+  desktop-pkgs.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -57,11 +59,9 @@
   };
 
   # OpenRGB udev rules
-  services = {
-    udev.packages = with pkgs; [
-      openrgb-with-all-plugins
-    ];
-  };
+  services.udev.packages = with pkgs; [
+    openrgb-with-all-plugins
+  ];
 
   # Syncthing
   services.syncthing = {

@@ -14,8 +14,11 @@
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
     ./../../nixModules/pkg/macbook-packages.nix
-    ./../../nixModules/pkg/fonts.nix
+    ./../../nixModules/pkg/pkg-module.nix
   ];
+
+  # Enable macbook packages module
+  macbook-pkgs.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
