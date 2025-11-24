@@ -8,9 +8,11 @@
   imports = [
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
-    ./../../nixModules/pkg/macbook-packages.nix
-    ./../../nixModules/pkg/fonts.nix
+    ./../../nixModules/pkg/pkg-module.nix
   ];
+
+  # Enable macbook packages module
+  macbook-pkgs.enable = true;
 
   # Define your hostname.
   networking.hostName = "nixos-vm";
@@ -46,7 +48,14 @@
     pantheon.apps.enable = true;
     xserver = {
       enable = true;
-      desktopManager.pantheon.enable = true;
+      desktopManager = {
+        pantheon.enable = true;
+        mate = {
+          enable = true;
+          extraPanelApplets = true;
+          enableWaylandSession = true;
+        };
+      };
       displayManager = {
         startx.enable = true;
         lightdm = {
