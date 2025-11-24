@@ -14,7 +14,6 @@
     alacritty
     blender
     btop
-    discord
     eza
     fastfetch
     gcc
@@ -37,6 +36,15 @@
     warpinator
     mpv
     vlc
+    sqlite
+    p7zip
+    ffmpeg
+    lsof
+    ntfs3g
+    smartmontools
+    wineWowPackages.stagingFull
+    wineWowPackages.waylandFull
+    filezilla
   ];
 
   fonts.enableDefaultPackages = true;

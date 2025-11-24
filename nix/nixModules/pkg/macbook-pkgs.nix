@@ -16,18 +16,17 @@
 
   config = lib.mkIf config.macbook-pkgs.enable {
     environment.systemPackages = with pkgs; [
-      # Core (System)
+      # System
       pavucontrol
-      winePackages.stagingFull
-      wine64Packages.stagingFull
       slint-lsp
+      shfmt
 
-      # Core (DWM)
+      # DWM
       dmenu
       nitrogen
       copyq
 
-      # Core (Hyprland)
+      # Hyprland
       hyprpolkitagent
       hyprprop
       hyprnotify
@@ -58,14 +57,10 @@
       wev
       hyprpicker
       floorp
-      fastfetch
       font-manager
       kdePackages.dolphin
       kdePackages.gwenview
       space-cadet-pinball
-      nixfmt-rfc-style
-      shfmt
-      steamtinkerlaunch
     ];
   };
 }
