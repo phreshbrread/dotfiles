@@ -69,6 +69,8 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/virtual-machine/configuration.nix
+
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };
