@@ -50,11 +50,6 @@
       enable = true;
       desktopManager = {
         pantheon.enable = true;
-        mate = {
-          enable = true;
-          extraPanelApplets = true;
-          enableWaylandSession = true;
-        };
       };
       displayManager = {
         startx.enable = true;
