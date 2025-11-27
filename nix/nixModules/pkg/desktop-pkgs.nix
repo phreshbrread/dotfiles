@@ -43,6 +43,7 @@
       OVMF
       jdk
       jdk8
+      scrcpy
     ];
   };
 }

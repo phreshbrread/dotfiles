@@ -81,11 +81,13 @@
       "video"
       "render"
       "audio"
+      "adbusers"
     ];
   };
 
   # Enable programs
   programs = {
+    adb.enable = true;
     gamemode.enable = true;
     kdeconnect.enable = true;
 

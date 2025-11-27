@@ -48,6 +48,7 @@
     wineWowPackages.stagingFull
     wineWowPackages.waylandFull
     filezilla
+    system-config-printer
   ];
 
   fonts.enableDefaultPackages = true;

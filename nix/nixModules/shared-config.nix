@@ -51,8 +51,15 @@
       };
     };
 
-    # Enable CUPS for printing
-    printing.enable = true;
+    # Enable printing
+    printing = {
+      enable = true;
+      drivers = with pkgs; [
+        gutenprint
+        gutenprintBin
+        cnijfilter2
+      ];
+    };
 
     # Configure keymap in X11
     xserver.xkb = {
