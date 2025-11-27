@@ -17,6 +17,7 @@
     eza
     ripgrep
     ripgrep-all
+    fzy
     fastfetch
     gcc
     git-credential-manager
