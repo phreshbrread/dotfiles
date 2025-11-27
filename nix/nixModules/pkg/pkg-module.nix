@@ -15,7 +15,8 @@
     blender
     btop
     eza
-    rg
+    ripgrep
+    ripgrep-all
     fastfetch
     gcc
     git-credential-manager
