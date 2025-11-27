@@ -128,7 +128,15 @@
           set smartindent 
           set cursorcolumn
           set relativenumber
+          nnoremap <C-p> :FuzzyOpen<CR>
         '';
+        packages.myVimPackage = with pkgs.vimPlugins; {
+          start = [
+            nvim-treesitter
+            nvim-cmp
+            neovim-fuzzy
+          ];
+        };
       };
     };
   };

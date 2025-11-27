@@ -15,6 +15,7 @@
     blender
     btop
     eza
+    rg
     fastfetch
     gcc
     git-credential-manager
