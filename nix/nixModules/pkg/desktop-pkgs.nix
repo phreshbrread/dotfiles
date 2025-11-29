@@ -26,7 +26,6 @@
       brave
       pcsx2
       dolphin-emu
-      kdePackages.kdenlive
       protonup-qt
       heroic
       lutris

@@ -144,6 +144,7 @@
     "org.openrgb.OpenRGB"
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
+    "org.kde.kdenlive"
   ];
 
   # Enable VM support
