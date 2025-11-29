@@ -20,8 +20,13 @@
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
 
-  # Disable swap
-  swapDevices = lib.mkForce [ ];
+  # Enable swap file
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   # Fix RAM RGB control
   boot.kernelParams = [ "acpi_enforce_resources=lax" ];
