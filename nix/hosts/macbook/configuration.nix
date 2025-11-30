@@ -90,6 +90,9 @@
     dataDir = "/home/brad";
   };
 
+  # Use ly
+  services.displayManager.ly.enable = true;
+
   # DWM
   services.xserver = {
     enable = true;
