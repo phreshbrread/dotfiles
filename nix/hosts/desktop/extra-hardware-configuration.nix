@@ -25,8 +25,14 @@
     {
       device = "/var/lib/swapfile";
       size = 8 * 1024;
+      options = [ "discard" ];
     }
   ];
+
+  # Adjust swappiness
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
 
   # Fix RAM RGB control
   boot.kernelParams = [ "acpi_enforce_resources=lax" ];
