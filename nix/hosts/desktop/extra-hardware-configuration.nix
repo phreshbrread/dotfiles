@@ -35,7 +35,10 @@
   };
 
   # Fix RAM RGB control
-  boot.kernelParams = [ "acpi_enforce_resources=lax" ];
+  boot.kernelParams = [
+    "acpi_enforce_resources=lax"
+    "systemd.swap=0" # Not for RGB, just disables systemd auto swap gen
+  ];
   boot.kernelModules = [
     "i2c-dev"
     "i2c-piix4"
