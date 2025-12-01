@@ -13,10 +13,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
-    ./../../nixModules/dwm-module.nix
-    ./../../nixModules/hyprland-module.nix
-    ./../../nixModules/pkg/macbook-pkgs.nix
-    ./../../nixModules/pkg/pkg-module.nix
+    ./../../nixModules/submodules/pkg/macbook-pkgs.nix
   ];
 
   # Enable macbook packages module

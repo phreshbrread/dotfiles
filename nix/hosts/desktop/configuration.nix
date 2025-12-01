@@ -15,7 +15,6 @@
     ./extra-hardware-configuration.nix
     ./../../nixModules/shared-config.nix
     ./../../nixModules/server-specific.nix
-    ./../../nixModules/pkg/pkg-module.nix
   ];
 
   # Enable desktop packages module

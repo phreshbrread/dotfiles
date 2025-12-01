@@ -25,7 +25,7 @@
       windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
-          src = ../hosts/macbook/dwm;
+          src = ../../hosts/macbook/dwm;
         };
       };
       xkb = {
@@ -40,5 +40,4 @@
       copyq
     ];
   };
-
 }

@@ -5,6 +5,15 @@
 { config, pkgs, ... }:
 
 {
+  # Import all modules here
+  # Hosts can simply toggle the ones needed
+  imports = [
+    ./submodules/dwm-module.nix
+    ./submodules/hyprland-module.nix
+    ./submodules/pkg/desktop-pkgs.nix
+    ./submodules/pkg/macbook-pkgs.nix
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
