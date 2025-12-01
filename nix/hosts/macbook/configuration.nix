@@ -57,7 +57,7 @@
     ];
     shell = pkgs.fish;
   };
-  
+
   # Intel graphics
   hardware.graphics = {
     enable = true;
