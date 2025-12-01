@@ -14,6 +14,7 @@
     hyprland-module.enable = lib.mkEnableOption "Enables Hyprland";
   };
 
+  # Enable Hyprland + Hyprlock
   config = lib.mkIf config.hyprland-module.enable {
     programs = {
       hyprland.enable = true;
@@ -27,5 +28,27 @@
         xdg-desktop-portal-hyprland
       ];
     };
+
+    # Hyprland packages
+    environment.systemPackages = with pkgs; [
+      hyprpolkitagent
+      hyprprop
+      hyprnotify
+      hyprcursor
+      swaynotificationcenter
+      waybar
+      waypaper
+      swaybg
+      networkmanagerapplet
+      mpd
+      playerctl
+      brightnessctl
+      fuzzel
+      xfce.thunar
+      smile
+      hyprshot
+      clipse
+      nemo-with-extensions
+    ];
   };
 }

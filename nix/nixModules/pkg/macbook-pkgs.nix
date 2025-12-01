@@ -26,26 +26,6 @@
       nitrogen
       copyq
 
-      # Hyprland
-      hyprpolkitagent
-      hyprprop
-      hyprnotify
-      hyprcursor
-      swaynotificationcenter
-      waybar
-      waypaper
-      swaybg
-      networkmanagerapplet
-      mpd
-      playerctl
-      brightnessctl
-      fuzzel
-      xfce.thunar
-      smile
-      hyprshot
-      clipse
-      nemo-with-extensions
-
       # Appearance
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
