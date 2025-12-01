@@ -6,7 +6,7 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # Stable 25.05
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11"; # Stable 25.11
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
