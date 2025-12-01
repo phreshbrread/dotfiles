@@ -1,12 +1,13 @@
 ### Nix
 - Set up rust/cargo
-- Shared packages
 
 ### Desktop
 - Automate Jellyfin backup
 - Create PS3 status service
 
 ### Macbook
+- Split WMs into modules
+   - DWM, Awesome, XMonad (maybe)
 - Declare Qt theming
 - DWM / Hyprland clipboard history
    - Set up copyq (dwm)

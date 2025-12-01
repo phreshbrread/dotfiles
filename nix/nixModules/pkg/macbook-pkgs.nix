@@ -35,8 +35,8 @@
 
       # Extra
       wev
+      floorp-bin
       hyprpicker
-      floorp
       font-manager
       kdePackages.dolphin
       kdePackages.gwenview

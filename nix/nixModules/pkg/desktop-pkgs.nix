@@ -22,9 +22,9 @@
       yad
 
       # Extra
-      floorp-bin
       brave
       pcsx2
+      floorp-bin
       dolphin-emu
       protonup-qt
       heroic

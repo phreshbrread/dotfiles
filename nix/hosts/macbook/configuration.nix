@@ -14,7 +14,7 @@
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
     ./../../nixModules/hyprland-module.nix
-    ./../../nixModules/pkg/macbook-packages.nix
+    ./../../nixModules/pkg/macbook-pkgs.nix
     ./../../nixModules/pkg/pkg-module.nix
   ];
 
@@ -148,7 +148,10 @@
   };
 
   # Ignore power key
-  services.logind.extraConfig = ''HandlePowerKey=ignore'';
+  #services.logind.extraConfig = ''HandlePowerKey=ignore'';
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
