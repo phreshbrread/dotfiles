@@ -57,13 +57,7 @@
     ];
     shell = pkgs.fish;
   };
-
-  # Autologin to tty1
-  #services.getty = {
-  #  autologinUser = "brad";
-  #  autologinOnce = true;
-  #};
-
+  
   # Intel graphics
   hardware.graphics = {
     enable = true;
