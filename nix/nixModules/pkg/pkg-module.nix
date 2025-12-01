@@ -56,6 +56,7 @@
     corefonts
     font-awesome
     nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
     noto-fonts
   ];
 }
