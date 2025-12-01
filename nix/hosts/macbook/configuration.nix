@@ -13,6 +13,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
+    ./../../nixModules/dwm-module.nix
     ./../../nixModules/hyprland-module.nix
     ./../../nixModules/pkg/macbook-pkgs.nix
     ./../../nixModules/pkg/pkg-module.nix
@@ -21,8 +22,9 @@
   # Enable macbook packages module
   macbook-pkgs.enable = true;
 
-  # Enable Hyprland module
+  # Enable WM modules
   hyprland-module.enable = true;
+  dwm-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -91,32 +93,14 @@
   # Use ly
   services.displayManager.ly.enable = true;
 
-  # DWM
-  services.xserver = {
-    enable = true;
-    dpi = 227;
-    excludePackages = with pkgs; [
-      xterm
-    ];
-    displayManager.startx.enable = true;
-    windowManager.dwm = {
-      enable = true;
-      package = pkgs.dwm.overrideAttrs {
-        src = ./dwm;
-      };
-    };
-    windowManager.awesome.enable = true;
-    xkb = {
-      layout = "au";
-      variant = "";
-    };
-  };
+  # Enable AwesomeWM
+  services.xserver.windowManager.awesome.enable = true;
 
+  # Enable touchpad
   services.libinput = {
     enable = true;
-    # Disable touchpad acceleration
     touchpad = {
-      accelProfile = "flat";
+      accelProfile = "flat"; # Disable touchpad acceleration
       naturalScrolling = true;
       disableWhileTyping = true;
     };
@@ -148,7 +132,6 @@
   };
 
   # Ignore power key
-  #services.logind.extraConfig = ''HandlePowerKey=ignore'';
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";
   };

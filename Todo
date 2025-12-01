@@ -6,6 +6,7 @@
 - Create PS3 status service
 
 ### Macbook
+- Fix home-manager version mismatch
 - Split WMs into modules
    - DWM, Awesome, XMonad (maybe)
 - Declare Qt theming

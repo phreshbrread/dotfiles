@@ -21,11 +21,6 @@
       slint-lsp
       shfmt
 
-      # DWM
-      dmenu
-      nitrogen
-      copyq
-
       # Appearance
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
