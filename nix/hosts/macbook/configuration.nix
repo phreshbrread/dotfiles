@@ -13,12 +13,16 @@
   imports = [
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
+    ./../../nixModules/hyprland-module.nix
     ./../../nixModules/pkg/macbook-packages.nix
     ./../../nixModules/pkg/pkg-module.nix
   ];
 
   # Enable macbook packages module
   macbook-pkgs.enable = true;
+
+  # Enable Hyprland module
+  hyprland-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -118,14 +122,6 @@
     };
   };
 
-  # Specify XDG desktop portals
-  xdg.portal = {
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
-  };
-
   # Declare flatpaks
   services.flatpak.packages = [
     "org.polymc.PolyMC"
@@ -136,8 +132,6 @@
 
   # Enable programs
   programs = {
-    hyprland.enable = true;
-    hyprlock.enable = true;
     kdeconnect.enable = true;
     steam = {
       enable = true;
