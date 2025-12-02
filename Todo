@@ -7,8 +7,6 @@
 
 ### Macbook
 - Fix home-manager version mismatch
-- Split WMs into modules
-   - DWM, Awesome, XMonad (maybe)
 - Declare Qt theming
 - DWM / Hyprland clipboard history
    - Set up copyq (dwm)
