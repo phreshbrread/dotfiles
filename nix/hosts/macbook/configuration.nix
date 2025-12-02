@@ -43,10 +43,7 @@
   environment.variables = {
     GDK_SCALE = "2";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-    EDITOR = "nano";
-    TERMINAL = "alacritty";
     LIBVA_DRIVER_NAME = "i965";
-    GCM_CREDENTIAL_STORE = "secretservice";
   };
 
   # Define user account

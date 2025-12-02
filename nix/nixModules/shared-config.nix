@@ -25,6 +25,13 @@
     "flakes"
   ];
 
+  # Environment variables
+  environment.variables = {
+    GCM_CREDENTIAL_STORE = "secretservice";
+    TERMINAL = "alacritty";
+    EDITOR = "nvim"
+  };
+
   # Use doas instead of sudo
   # User must be in 'wheel' group
   security = {

@@ -44,12 +44,6 @@
     options = "--delete-older-than 7d";
   };
 
-  # Environment variables
-  environment.variables = {
-    GCM_CREDENTIAL_STORE = "secretservice";
-    TERMINAL = "alacritty";
-  };
-
   # Enable KDE Plasma
   services = {
     displayManager.sddm.enable = true;
