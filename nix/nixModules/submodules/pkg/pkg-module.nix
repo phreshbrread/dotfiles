@@ -11,25 +11,35 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    alacritty
-    blender
-    btop
+    # CLI
     eza
     ripgrep
     ripgrep-all
     fzy
     fastfetch
-    gcc
     git-credential-manager
-    gparted
     killall
     nh
     nixfmt-rfc-style
-    obsidian
-    seahorse
-    starship
     steamtinkerlaunch
     tree
+    starship
+    sqlite
+    p7zip
+    ffmpeg
+    lsof
+    smartmontools
+    ntfs3g
+    wineWowPackages.stagingFull
+    wineWowPackages.waylandFull
+
+    # GUI / TUI
+    alacritty
+    btop
+    obsidian
+    blender
+    seahorse
+    gparted
     libnotify
     inxi
     vulkan-tools
@@ -38,16 +48,11 @@
     warpinator
     mpv
     vlc
-    sqlite
-    p7zip
-    ffmpeg
-    lsof
-    ntfs3g
-    smartmontools
-    wineWowPackages.stagingFull
-    wineWowPackages.waylandFull
     filezilla
     system-config-printer
+
+    # Language servers
+    rust-analyzer
   ];
 
   fonts.enableDefaultPackages = true;
