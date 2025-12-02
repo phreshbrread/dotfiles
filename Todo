@@ -7,10 +7,8 @@
 
 ### Macbook
 - Fix home-manager version mismatch
-- Declare Qt theming
+- Declare Qt / kvantum theming
 - DWM / Hyprland clipboard history
-   - Set up copyq (dwm)
-- Include kvantum theme in config
 - Redo Waybar config
 
 ### Misc
