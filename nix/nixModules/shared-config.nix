@@ -29,7 +29,7 @@
   environment.variables = {
     GCM_CREDENTIAL_STORE = "secretservice";
     TERMINAL = "alacritty";
-    EDITOR = "nvim"
+    EDITOR = "nvim";
   };
 
   # Use doas instead of sudo
