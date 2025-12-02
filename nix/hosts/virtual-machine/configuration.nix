@@ -8,7 +8,6 @@
   imports = [
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
-    ./../../nixModules/pkg/pkg-module.nix
   ];
 
   # Enable macbook packages module
@@ -32,14 +31,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-    ];
-  };
-
-  # Specify XDG desktop portals
-  xdg.portal = {
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
     ];
   };
 
