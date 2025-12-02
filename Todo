@@ -1,5 +1,6 @@
 ### Nix
 - Set up rust/cargo
+- Set up LSP + syntax highlighting in nvim
 
 ### Desktop
 - Automate Jellyfin backup

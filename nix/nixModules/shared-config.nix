@@ -156,6 +156,7 @@
         packages.myVimPackage = with pkgs.vimPlugins; {
           start = [
             nvim-treesitter
+            nvim-treesitter.withAllGrammars
             nvim-cmp
             neovim-fuzzy
           ];
