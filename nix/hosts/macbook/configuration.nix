@@ -13,7 +13,6 @@
   imports = [
     ./hardware-configuration.nix
     ./../../nixModules/shared-config.nix
-    ./../../nixModules/submodules/pkg/macbook-pkgs.nix
   ];
 
   # Enable macbook packages module

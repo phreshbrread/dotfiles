@@ -10,8 +10,7 @@
   imports = [
     ./submodules/dwm-module.nix
     ./submodules/hyprland-module.nix
-    ./submodules/pkg/desktop-pkgs.nix
-    ./submodules/pkg/macbook-pkgs.nix
+    ./submodules/pkg/pkg-module.nix
   ];
 
   # Allow unfree packages
