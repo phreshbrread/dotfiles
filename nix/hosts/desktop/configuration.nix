@@ -125,7 +125,6 @@
     "com.dec05eba.gpu_screen_recorder"
     "com.steamgriddb.SGDBoop"
     "com.usebottles.bottles"
-    "dev.ares.ares"
     "fm.reaper.Reaper"
     "fr.handbrake.ghb"
     "io.github.aandrew_me.ytdn"
