@@ -57,5 +57,6 @@
     nerd-fonts.hack
     nerd-fonts.jetbrains-mono
     noto-fonts
+    noto-fonts-cjk-sans
   ];
 }
