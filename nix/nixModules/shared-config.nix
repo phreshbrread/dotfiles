@@ -127,7 +127,7 @@
         jnoortheen.nix-ide
         llvm-vs-code-extensions.vscode-clangd
         redhat.vscode-yaml
-        bungcip.better-toml
+        tamasfe.even-better-toml
       ];
     };
 
