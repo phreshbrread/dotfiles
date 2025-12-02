@@ -12,9 +12,10 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./../../nixModules/server-specific.nix
+
     ./extra-hardware-configuration.nix
     ./../../nixModules/shared-config.nix
-    ./../../nixModules/server-specific.nix
   ];
 
   # Enable desktop packages module
@@ -45,7 +46,6 @@
 
   # Environment variables
   environment.variables = {
-    NIXPKGS_ALLOW_UNFREE = "1";
     GCM_CREDENTIAL_STORE = "secretservice";
     TERMINAL = "alacritty";
   };
