@@ -139,6 +139,8 @@
     # Neovim
     neovim = {
       enable = true;
+      viAlias = true;
+      vimAlias = true;
       configure = {
         customRC = ''
           filetype on
@@ -155,7 +157,6 @@
         '';
         packages.myVimPackage = with pkgs.vimPlugins; {
           start = [
-            nvim-treesitter
             nvim-treesitter.withAllGrammars
             nvim-cmp
             neovim-fuzzy
