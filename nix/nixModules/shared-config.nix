@@ -70,6 +70,7 @@
     printing = {
       enable = true;
       drivers = with pkgs; [
+        # Canon print drivers
         gutenprint
         gutenprintBin
         cnijfilter2
