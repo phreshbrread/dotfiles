@@ -33,7 +33,6 @@
     libnotify
     inxi
     vulkan-tools
-    vscodium-fhs
     spotify
     discord
     warpinator

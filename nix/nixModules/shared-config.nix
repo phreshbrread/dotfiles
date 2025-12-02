@@ -119,6 +119,18 @@
       };
     };
 
+    # VSCodium
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium-fhs;
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        llvm-vs-code-extensions.vscode-clangd
+        redhat.vscode-yaml
+        bungcip.better-toml
+      ];
+    };
+
     # Enable AppImage
     appimage = {
       enable = true;
