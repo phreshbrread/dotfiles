@@ -23,16 +23,18 @@
         vimAlias = true;
         configure = {
           customRC = ''
-            filetype on
+            filetype plugin indent on
             syntax on
+
             set number
+            set relativenumber
             set expandtab
-            set tabstop=3
-            set shiftwidth=3
-            set autoindent
+            set shiftwidth=4
+            set tabstop=4
+            set softtabstop=4
             set smartindent 
             set cursorcolumn
-            set relativenumber
+
             nnoremap <C-p> :FuzzyOpen<CR>
           '';
           packages.myVimPackage = with pkgs.vimPlugins; {

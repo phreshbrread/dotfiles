@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     # CLI
     eza
+    gcc
     ripgrep
     ripgrep-all
     fzy
