@@ -7,7 +7,6 @@
 - Create PS3 status service
 
 ### Macbook
-- Fix home-manager version mismatch
 - Declare Qt / kvantum theming
 - DWM / Hyprland clipboard history
 - Redo Waybar config
