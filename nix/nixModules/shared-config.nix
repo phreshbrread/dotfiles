@@ -48,7 +48,7 @@
     };
 
     # Set default apps
-    mime.defaultApplications = {
+    mime.defaultApplications = { # https://mimetype.io/all-types for types
       "application/pdf" = "floorp.desktop";
       "image/png" = [
         "gwenview.desktop"
