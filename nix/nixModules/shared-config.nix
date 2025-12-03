@@ -36,12 +36,23 @@
     EDITOR = "nvim";
   };
 
-  # Set xdg terminal
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = [
-        "alacritty.desktop"
+  xdg = {
+    # Set default XDG terminal
+    terminal-exec = {
+      enable = true;
+      settings = {
+        default = [
+          "alacritty.desktop"
+        ];
+      };
+    };
+
+    # Set default apps
+    mime.defaultApplications = {
+      "application/pdf" = "firefox.desktop";
+      "image/png" = [
+        "gwenview.desktop"
+        "gimp.desktop"
       ];
     };
   };
