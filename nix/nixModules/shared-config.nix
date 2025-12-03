@@ -49,7 +49,7 @@
 
     # Set default apps
     mime.defaultApplications = {
-      "application/pdf" = "firefox.desktop";
+      "application/pdf" = "floorp.desktop";
       "image/png" = [
         "gwenview.desktop"
         "gimp.desktop"
