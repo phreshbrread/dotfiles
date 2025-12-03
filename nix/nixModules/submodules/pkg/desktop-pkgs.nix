@@ -43,6 +43,7 @@
       jdk
       jdk8
       scrcpy
+      qjackctl
     ];
   };
 }
