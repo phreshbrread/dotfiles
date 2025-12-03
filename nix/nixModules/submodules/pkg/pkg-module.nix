@@ -51,6 +51,7 @@
     vlc
     filezilla
     system-config-printer
+    xfce.mousepad
 
     # Language servers
     rust-analyzer

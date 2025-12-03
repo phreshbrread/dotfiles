@@ -36,6 +36,16 @@
     EDITOR = "nvim";
   };
 
+  # Set xdg terminal
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "alacritty.desktop"
+      ];
+    };
+  };
+
   # Use doas instead of sudo
   # User must be in 'wheel' group
   security = {
