@@ -70,6 +70,7 @@
           llvm-vs-code-extensions.vscode-clangd
           redhat.vscode-yaml
           tamasfe.even-better-toml
+          enkia.tokyo-night
         ];
       };
     };
