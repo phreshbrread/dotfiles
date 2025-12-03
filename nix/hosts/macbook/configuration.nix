@@ -70,11 +70,11 @@
 
   # Set colour scheme for supported apps
   # This is not for QT/GTK theme
-  catppuccin = {
+  /* catppuccin = {
     enable = true;
     flavor = "macchiato";
     accent = "mauve";
-  };
+  }; */
 
   # Syncthing
   services.syncthing = {

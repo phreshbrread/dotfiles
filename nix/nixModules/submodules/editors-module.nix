@@ -36,12 +36,15 @@
             set cursorcolumn
 
             nnoremap <C-p> :FuzzyOpen<CR>
+
+            colorscheme tokyonight
           '';
           packages.myVimPackage = with pkgs.vimPlugins; {
             start = [
               nvim-treesitter.withAllGrammars
               nvim-cmp
               neovim-fuzzy
+              tokyonight-nvim
             ];
           };
         };
