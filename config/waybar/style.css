@@ -1,12 +1,16 @@
+/*
+Main dark: rgb(26, 27, 38)
+Lighter dark: rgb(68, 75, 106)
+*/
+
 * {
     font-family: JetBrainsMono Nerd Font;
     font-size: 13px;
 }
 
 window#waybar {
-    background-color: rgb(43, 48, 59);
+    background-color: rgb(68, 75, 106);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -29,7 +33,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 2px;
     background-color: transparent;
 }
 
@@ -50,7 +54,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(120, 124, 153, 0.2);
 }
 
 #clock,
@@ -76,15 +80,15 @@ button:hover {
 
 #workspaces {
     margin: 0 4px;
-    background-color: black;
+    background-color: rgb(26, 27, 38);
 }
 
 .modules-left {
-    background-color: rgb(43, 48, 59);
+    background-color: transparent;
 }
 
 .modules-right {
-    background-color: black;
+    background-color: rgb(26, 27, 38);
 }
 
 /* If workspaces is the leftmost module, omit left margin */

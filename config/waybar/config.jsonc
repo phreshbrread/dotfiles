@@ -8,9 +8,10 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window",
-        "hyprland/submap"
+        "hyprland/submap",
+        "hyprland/window"
     ],
+    "modules-center": [],
     "modules-right": [
         "mpd",
         "pulseaudio",
@@ -37,7 +38,9 @@
         }
     },
     "hyprland/submap": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "✌️ {}",
+        "max-length": 8,
+        "tooltip": false
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
