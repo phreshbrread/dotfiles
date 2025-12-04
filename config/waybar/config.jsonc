@@ -8,7 +8,6 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap",
         "hyprland/window"
     ],
     "modules-center": [],
