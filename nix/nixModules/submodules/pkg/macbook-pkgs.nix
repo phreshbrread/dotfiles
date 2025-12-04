@@ -20,6 +20,7 @@
       pavucontrol
       slint-lsp
       shfmt
+      wl-clipboard
 
       # Appearance
       kdePackages.qtstyleplugin-kvantum
