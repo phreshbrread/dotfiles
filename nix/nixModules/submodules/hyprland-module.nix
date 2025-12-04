@@ -47,7 +47,7 @@
       xfce.thunar
       smile
       hyprshot
-      clipse
+      clipman
       nemo-with-extensions
     ];
   };
