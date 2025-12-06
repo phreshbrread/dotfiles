@@ -41,16 +41,10 @@
       "systemd.swap=0" # Disable systemd auto swap geneneration
     ];
 
-    # Extra module packages
-    extraModulePackages = with config.boot.kernelPackages; [
-      v4l2loopback
-    ];
-
     # Kernel modules
     kernelModules = [
       "i2c-dev"
       "i2c-piix4" # These two are for RGB control
-      "v4l2loopback" # Video4Linux
     ];
   };
 
