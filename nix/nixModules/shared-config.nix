@@ -48,7 +48,8 @@
     };
 
     # Set default apps
-    mime.defaultApplications = { # https://mimetype.io/all-types for types
+    mime.defaultApplications = {
+      # https://mimetype.io/all-types for types
       "application/pdf" = "floorp.desktop";
       "image/png" = [
         "gwenview.desktop"
@@ -82,6 +83,9 @@
 
   # Declare services
   services = {
+    # Power profiles daemon
+    power-profiles-daemon.enable = true;
+
     # Enable Flatpak
     flatpak = {
       enable = true;
