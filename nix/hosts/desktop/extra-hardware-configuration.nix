@@ -29,20 +29,30 @@
     }
   ];
 
-  # Adjust swappiness
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 10;
-  };
+  boot = {
+    # Adjust swappiness
+    kernel.sysctl = {
+      "vm.swappiness" = 10;
+    };
 
-  # Fix RAM RGB control
-  boot.kernelParams = [
-    "acpi_enforce_resources=lax"
-    "systemd.swap=0" # Not for RGB, just disables systemd auto swap gen
-  ];
-  boot.kernelModules = [
-    "i2c-dev"
-    "i2c-piix4"
-  ];
+    # Kernel parameters
+    kernelParams = [
+      "acpi_enforce_resources=lax" # Fix RAM RGB control
+      "systemd.swap=0" # Disable systemd auto swap geneneration
+    ];
+
+    # Extra module packages
+    extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
+    ];
+
+    # Kernel modules
+    kernelModules = [
+      "i2c-dev"
+      "i2c-piix4" # These two are for RGB control
+      "v4l2loopback" # Video4Linux
+    ];
+  };
 
   # Mount extra drives
   fileSystems."/mass-storage" = {

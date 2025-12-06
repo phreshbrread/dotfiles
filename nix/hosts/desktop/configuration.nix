@@ -87,6 +87,7 @@
     # OBS + Plugins
     obs-studio = {
       enable = true;
+      enableVirtualCamera = true;
       plugins = [ pkgs.obs-studio-plugins.droidcam-obs ];
     };
 
