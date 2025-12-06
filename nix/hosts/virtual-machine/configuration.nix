@@ -34,24 +34,6 @@
     ];
   };
 
-  # Desktop
-  services = {
-    pantheon.apps.enable = true;
-    xserver = {
-      enable = true;
-      desktopManager = {
-        pantheon.enable = true;
-      };
-      displayManager = {
-        startx.enable = true;
-        lightdm = {
-          enable = true;
-          greeters.pantheon.enable = true;
-        };
-      };
-    };
-  };
-
   # Initial system state version (no need to change)
   system.stateVersion = "25.05";
 }
