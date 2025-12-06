@@ -21,6 +21,9 @@
   # Enable desktop packages module
   desktop-pkgs.enable = true;
 
+  # Enable Hyprland
+  hyprland-module.enable = true;
+
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
 

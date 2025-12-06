@@ -32,9 +32,15 @@
         }
     },
     "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
         "persistent-workspaces": {
-            "*": 10
+            "*": 9
         }
+    },
+    "hyprland/window": {
+        "max-length": 40,
+        "separate-outputs": false
     },
     "hyprland/submap": {
         "format": "✌️ {}",

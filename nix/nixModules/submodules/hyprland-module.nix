@@ -48,7 +48,6 @@
       smile
       hyprshot
       cliphist
-      nemo-with-extensions
     ];
   };
 }

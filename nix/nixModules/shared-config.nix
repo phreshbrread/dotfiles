@@ -1,4 +1,4 @@
-###################
+##################
 ## SHARED CONFIG ##
 ###################
 
@@ -141,6 +141,8 @@
         sudoedit = "doas rnano";
         install-date = "stat / | grep Birth";
         tmux-terraria = "tmux a -t terraria-server";
+        nrs = "nixos-rebuild switch";
+        nv = "nvim";
       };
     };
 
