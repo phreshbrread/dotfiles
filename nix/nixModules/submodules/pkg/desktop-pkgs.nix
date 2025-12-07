@@ -44,6 +44,7 @@
       jdk8
       scrcpy
       qjackctl
+      qpwgraph
     ];
   };
 }
