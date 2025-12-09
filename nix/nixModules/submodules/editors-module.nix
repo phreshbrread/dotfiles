@@ -48,16 +48,7 @@
         vimAlias = true;
         configure = {
           customRC = ''
-            filetype plugin indent on
-            syntax on
-
-            nnoremap <C-p> :Telescope find_files<CR>
-
-            colorscheme tokyonight
-
             source ~/dotfiles/config/nvim/init.lua
-
-            hi Normal guibg=NONE ctermbg=NONE
           '';
           packages.myVimPackage = with pkgs.vimPlugins; {
             start = [

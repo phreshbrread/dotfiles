@@ -1,18 +1,20 @@
--- Ensure termguicolors is enabled if not already
-vim.opt.termguicolors = true
-
 -- Set options
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.cursorcolumn = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.o.termguicolors = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.expandtab = true
+vim.o.cursorline = true
+vim.o.syntax = 'on'
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.cmd('filetype plugin indent on')
+vim.cmd('colorscheme tokyonight')
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE') -- Transparent background
+
+-- Custom keybinds
+vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
 
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
-
-print("Test")
