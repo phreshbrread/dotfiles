@@ -15,8 +15,6 @@
     eza
     gcc
     ripgrep
-    ripgrep-all
-    fzy
     fastfetch
     git-credential-manager
     killall

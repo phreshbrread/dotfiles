@@ -16,40 +16,6 @@
 
   config = lib.mkIf config.editors-module.enable {
     programs = {
-      # Neovim
-      neovim = {
-        enable = true;
-        viAlias = true;
-        vimAlias = true;
-        configure = {
-          customRC = ''
-            filetype plugin indent on
-            syntax on
-
-            set number
-            set relativenumber
-            set expandtab
-            set shiftwidth=4
-            set tabstop=4
-            set softtabstop=4
-            set smartindent 
-            set cursorcolumn
-
-            nnoremap <C-p> :FuzzyOpen<CR>
-
-            colorscheme tokyonight
-          '';
-          packages.myVimPackage = with pkgs.vimPlugins; {
-            start = [
-              nvim-treesitter.withAllGrammars
-              nvim-cmp
-              neovim-fuzzy
-              tokyonight-nvim
-            ];
-          };
-        };
-      };
-
       # Nano
       nano = {
         enable = true;
@@ -73,6 +39,54 @@
           enkia.tokyo-night
         ];
       };
+
+      # Neovim
+      neovim = {
+        enable = true;
+        viAlias = true;
+        vimAlias = true;
+        configure = {
+          customRC = ''
+            filetype plugin indent on
+            syntax on
+
+            set number
+            set relativenumber
+            set expandtab
+            set shiftwidth=4
+            set tabstop=4
+            set softtabstop=4
+            set smartindent 
+            set cursorcolumn
+
+            nnoremap <C-p> :Telescope find_files<CR>
+
+            colorscheme tokyonight
+
+            hi Normal guibg=NONE ctermbg=NONE
+          '';
+          packages.myVimPackage = with pkgs.vimPlugins; {
+            start = [
+              tokyonight-nvim
+              nvim-cmp
+              nvim-web-devicons
+
+              telescope-nvim
+              plenary-nvim
+              telescope-fzf-native-nvim
+
+              lualine-nvim
+            ];
+          };
+        };
+      };
     };
+
+    # Dependencies
+    environment.systemPackages = with pkgs; [
+      ripgrep
+      fzf
+      fd
+    ];
   };
 }
