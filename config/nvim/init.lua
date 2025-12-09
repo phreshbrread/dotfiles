@@ -21,3 +21,5 @@ require('nvim-highlight-colors').setup({})
 
 -- TODO switch vim.cmd to lua
 -- TODO separate into options and keybinds files
+    -- require('config.options') -- [./lua/options.lua]
+    -- require('config.keybinds') -- [./lua/keybinds.lua]
