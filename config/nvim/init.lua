@@ -18,3 +18,6 @@ vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
+
+-- TODO switch vim.cmd to lua
+-- TODO separate into options and keybinds files
