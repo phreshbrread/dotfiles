@@ -134,6 +134,7 @@
   programs = {
     git.enable = true;
     tmux.enable = true;
+    gamescope.enable = true;
     fish = {
       enable = true;
       shellAliases = {
