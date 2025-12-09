@@ -148,6 +148,7 @@
         tmux-terraria = "tmux a -t terraria-server";
         nrs = "nixos-rebuild switch";
         nv = "nvim";
+        ff = "fastfetch";
       };
     };
 
