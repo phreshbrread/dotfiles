@@ -63,7 +63,6 @@
               lualine-nvim
               nvim-highlight-colors
 
-              nvim-treesitter
               nvim-treesitter.withAllGrammars
             ];
           };
