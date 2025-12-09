@@ -14,7 +14,7 @@ vim.o.syntax = 'on'
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
-vim.cmd('filetype plugin indent on') -- TODO switch this to lua equivalent
+vim.api.nvim_command('filetype plugin indent on')
 
 -- Custom keybinds
 vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
