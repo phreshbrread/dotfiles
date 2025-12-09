@@ -22,14 +22,6 @@ vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
-require('nvim-treesitter.configs').setup({
-    highlight = { enable = true },
-    indent = { enable = true },
-    autotag = { enable = true },
-    ensure_installed = { "all" },
-    auto_install = false,
-})
-
 
 -- TODO separate into options and keybinds files
 -- require('config.options') -- [./lua/options.lua]
