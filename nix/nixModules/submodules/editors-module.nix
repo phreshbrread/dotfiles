@@ -76,6 +76,7 @@
               telescope-fzf-native-nvim
 
               lualine-nvim
+              nvim-highlight-colors
             ];
           };
         };
