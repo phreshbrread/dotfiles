@@ -12,11 +12,12 @@ static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]            = "JetBrainsMono Nerd Font:size=10";
-static const char col_gray1[]            = "#222222";
-static const char col_gray2[]            = "#444444";
-static const char col_gray3[]            = "#bbbbbb";
-static const char col_gray4[]            = "#eeeeee";
-static const char col_cyan[]             = "#005577";
+// TODO change colour names
+static const char col_gray1[]            = "#1a1b26";
+static const char col_gray2[]            = "#444b6a";
+static const char col_gray3[]            = "#a9b1d6";
+static const char col_gray4[]            = "#ffffff";
+static const char col_cyan[]             = "#ad8ee6";
 static const char *colors[][3]           = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
