@@ -38,6 +38,7 @@
       dmenu
       nitrogen
       copyq
+      picom
     ];
   };
 }
