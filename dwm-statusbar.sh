@@ -22,6 +22,6 @@ while [ true ]; do
         VOLUME=$(echo $VOLUME | awk -F': ' '{printf "%.0f%%\n", $2 * 100}')
     fi
 
-    xsetroot -name "[SCRN: $BRIGHTNESS_PERCENT] [VOL: $VOLUME] [BAT: $BAT_PERCENT$BAT_STATUS_ICON] [$TIME] [$DATE]"
+    xsetroot -name "BRGHT: $BRIGHTNESS_PERCENT | VOL: $VOLUME | BAT: $BAT_PERCENT$BAT_STATUS_ICON | $TIME | $DATE"
     sleep 1s
 done
