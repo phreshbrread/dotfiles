@@ -12,12 +12,25 @@ static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]            = "JetBrainsMono Nerd Font:size=10";
-// TODO change colour names
-static const char col_gray1[]            = "#1a1b26";
-static const char col_gray2[]            = "#444b6a";
-static const char col_gray3[]            = "#a9b1d6";
-static const char col_gray4[]            = "#ffffff";
-static const char col_cyan[]             = "#ad8ee6";
+static const char col_gray1[]            = "#222222";
+static const char col_gray2[]            = "#444444";
+static const char col_gray3[]            = "#bbbbbb";
+static const char col_gray4[]            = "#eeeeee";
+static const char col_cyan[]             = "#005577";
+
+// Tokyo Night colours
+static const char bg[]                   = "#1a1b26";
+static const char fg[]                   = "#a9b1d6";
+static const char blk[]                  = "#32344a";
+static const char red[]                  = "#f7768e";
+static const char grn[]                  = "#9ece6a";
+static const char ylw[]                  = "#e0af68";
+static const char blu[]                  = "#7aa2f7";
+static const char mag[]                  = "#ad8ee6";
+static const char cyn[]                  = "#0db9d7";
+static const char brblk[]                = "#444b6a";
+static const char wht[]                  = "#ffffff";
+
 static const char *colors[][3]           = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
