@@ -1,9 +1,7 @@
 -- TODO:
 -- Change font
--- Use picom
 -- Change colours
 -- Battery widget
--- App tray
 -- Remove top right menu
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -211,15 +209,15 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            -- mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
+            mykeyboardlayout,
             mytextclock,
             s.mylayoutbox,
         },
@@ -286,7 +284,7 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    awful.key({ modkey, "Shift"   }, "m", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -570,3 +568,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Autostarts
+awful.spawn("nm-applet")
+awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("picom --backend glx")
