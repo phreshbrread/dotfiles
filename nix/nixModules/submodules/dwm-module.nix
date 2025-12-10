@@ -18,6 +18,8 @@
     services.xserver = {
       enable = true;
       dpi = 227;
+      autoRepeatDelay = 200;
+      autoRepeatInterval = 35;
       excludePackages = with pkgs; [
         xterm
       ];
@@ -25,13 +27,9 @@
       windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
-          src = ../../hosts/macbook/dwm;
+          src = ../../dwm;
         };
-      };
-      xkb = {
-        layout = "au";
-        variant = "";
-      };
+      }; 
     };
 
     environment.systemPackages = with pkgs; [
