@@ -41,6 +41,8 @@ static const char *colors[][3]           = {
 static const char *const autostart[] = {
 	"nitrogen", "--restore", NULL,
 	"nm-applet", NULL,
+	"picom", "--backend", "glx", NULL,
+	"sh", "-c", "$HOME/dotfiles/dwm-statusbar.sh", NULL,
 	NULL /* terminate */
 };
 
@@ -58,7 +60,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -83,7 +85,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static char dmenumon[2]            = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]      = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]       = { "alacritty", NULL };
 static const char *incbrightness[] = { "brightnessctl", "set", "5%+", NULL };
