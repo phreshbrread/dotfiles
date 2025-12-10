@@ -23,7 +23,6 @@
       excludePackages = with pkgs; [
         xterm
       ];
-      displayManager.startx.enable = true;
       windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
