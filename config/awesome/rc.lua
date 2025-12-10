@@ -1,8 +1,6 @@
 -- TODO:
--- Change font
--- Change colours
+-- Tokyo Night theme
 -- Battery widget
--- Remove top right menu
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
@@ -51,7 +49,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "customtheme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
