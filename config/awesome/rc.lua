@@ -1,6 +1,9 @@
 -- TODO:
 -- Tokyo Night theme
 -- Battery widget
+-- Brightness keys
+-- Sound keys
+-- Media keys
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
@@ -78,9 +81,6 @@ awful.layout.layouts = {
     -- awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.magnifier,
     -- awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
 }
 -- }}}
 
