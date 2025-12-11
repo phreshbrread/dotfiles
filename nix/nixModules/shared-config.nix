@@ -8,7 +8,7 @@
   # Import all modules here
   # Hosts can simply toggle the ones needed
   imports = [
-    ./submodules/dwm-module.nix
+    ./submodules/x-module.nix
     ./submodules/editors-module.nix
     ./submodules/hyprland-module.nix
     ./submodules/pkg/pkg-module.nix

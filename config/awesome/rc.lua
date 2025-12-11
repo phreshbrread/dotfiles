@@ -1,5 +1,5 @@
 -- TODO:
--- Use external runner
+-- Configure rofi properly
 -- Tokyo Night theme
 -- Battery widget
 -- Brightness keys
@@ -301,7 +301,7 @@ globalkeys = gears.table.join(
     --awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
     --          {description = "run prompt", group = "launcher"}),
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey },            "r",     function () awful.spawn("rofi -show drun") end,
               {description = "run prompt", group = "launcher"}),
 
 

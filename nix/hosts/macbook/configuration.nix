@@ -20,7 +20,7 @@
 
   # Enable WM modules
   hyprland-module.enable = true;
-  dwm-module.enable = true;
+  x-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -70,11 +70,13 @@
 
   # Set colour scheme for supported apps
   # This is not for QT/GTK theme
-  /* catppuccin = {
-    enable = true;
-    flavor = "macchiato";
-    accent = "mauve";
-  }; */
+  /*
+    catppuccin = {
+      enable = true;
+      flavor = "macchiato";
+      accent = "mauve";
+    };
+  */
 
   # Syncthing
   services.syncthing = {
@@ -85,9 +87,6 @@
 
   # Use ly
   services.displayManager.ly.enable = true;
-
-  # Enable AwesomeWM
-  services.xserver.windowManager.awesome.enable = true;
 
   # Enable touchpad
   services.libinput = {
