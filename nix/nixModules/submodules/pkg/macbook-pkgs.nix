@@ -37,6 +37,8 @@
       kdePackages.dolphin
       kdePackages.gwenview
       space-cadet-pinball
+      protonvpn-gui
+      qbittorrent
     ];
   };
 }
