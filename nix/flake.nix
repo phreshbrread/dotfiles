@@ -11,8 +11,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
 
-    catppuccin.url = "github:catppuccin/nix";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +21,6 @@
     {
       self,
       nixpkgs,
-      catppuccin,
       nix-flatpak,
       home-manager,
       nixpkgs-unstable,
@@ -35,7 +32,6 @@
         modules = [
           ./hosts/macbook/configuration.nix
 
-          catppuccin.nixosModules.catppuccin
           nix-flatpak.nixosModules.nix-flatpak
 
           # Make home-manager as a module of nixos so that
@@ -47,7 +43,6 @@
             home-manager.users.brad = {
               imports = [
                 ./nixModules/home.nix
-                catppuccin.homeModules.catppuccin
               ];
             };
           }

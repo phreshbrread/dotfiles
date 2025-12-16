@@ -68,16 +68,6 @@
   };
   hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
 
-  # Set colour scheme for supported apps
-  # This is not for QT/GTK theme
-  /*
-    catppuccin = {
-      enable = true;
-      flavor = "macchiato";
-      accent = "mauve";
-    };
-  */
-
   # Syncthing
   services.syncthing = {
     enable = true;
