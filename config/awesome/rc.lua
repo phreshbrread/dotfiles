@@ -2,7 +2,6 @@
 -- Configure rofi properly
 -- Tokyo Night theme
 -- Battery widget
--- Sound keys
 -- Media keys
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -307,21 +306,25 @@ globalkeys = gears.table.join(
         { description = "run prompt", group = "launcher" }),
 
     --[[
-static const char *incvolume[]     = { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
-static const char *decvolume[]     = { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
-static const char *togglemute[]    = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 static const char *audioplay[]     = { "playerctl", "play-pause", NULL };
 static const char *audionext[]     = { "playerctl", "next", NULL };
 static const char *audioprev[]     = { "playerctl", "previous", NULL };
 static const char *audiostop[]     = { "playerctl", "--all-players", "stop", NULL };
-	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = incvolume } },
-	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = decvolume } },
-	{ 0,            XF86XK_AudioMute,          spawn,          {.v = togglemute } },
 	{ 0,            XF86XK_AudioPlay,          spawn,          {.v = audioplay } },
 	{ 0,            XF86XK_AudioNext,          spawn,          {.v = audionext } },
 	{ 0,            XF86XK_AudioPrev,          spawn,          {.v = audioprev } },
 	{ 0,            XF86XK_AudioStop,          spawn,          {.v = audiostop } },
 ]]
+    -- Volume keys
+    awful.key({}, "XF86AudioRaiseVolume",
+        function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+") end,
+        { description = "increase volume", group = "screen" }),
+    awful.key({}, "XF86AudioLowerVolume",
+        function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-") end,
+        { description = "decrease volume", group = "screen" }),
+    awful.key({}, "XF86AudioMute",
+        function() awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") end,
+        { description = "toggle mute", group = "screen" }),
 
     -- Brightness keys
     awful.key({}, "XF86MonBrightnessUp", function() awful.spawn("brightnessctl set 5%+") end,
