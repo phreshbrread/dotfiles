@@ -11,7 +11,7 @@
     stateVersion = "24.11"; # No need to change, only signifies minimum version to avoid breakage
   };
 
-  # Set gtk theme
+# Set gtk theme
   gtk = {
     enable = true;
     theme = {
@@ -26,11 +26,6 @@
       name = "phinger-cursors-dark";
       package = pkgs.phinger-cursors;
     };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
   };
 
   # Let home Manager install and manage itself.
