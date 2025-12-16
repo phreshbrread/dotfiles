@@ -307,8 +307,6 @@ globalkeys = gears.table.join(
         { description = "run prompt", group = "launcher" }),
 
     --[[
-static const char *inckbdlight[]   = { "brightnessctl", "-d", "*::kbd_backlight", "set", "10%+", NULL};
-static const char *deckbdlight[]   = { "brightnessctl", "-d", "*::kbd_backlight", "set", "10%-", NULL};
 static const char *incvolume[]     = { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *decvolume[]     = { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *togglemute[]    = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
@@ -316,8 +314,6 @@ static const char *audioplay[]     = { "playerctl", "play-pause", NULL };
 static const char *audionext[]     = { "playerctl", "next", NULL };
 static const char *audioprev[]     = { "playerctl", "previous", NULL };
 static const char *audiostop[]     = { "playerctl", "--all-players", "stop", NULL };
-	{ 0,            XF86XK_KbdBrightnessUp,    spawn,          {.v = inckbdlight } },
-	{ 0,            XF86XK_KbdBrightnessDown,  spawn,          {.v = deckbdlight } },
 	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = incvolume } },
 	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = decvolume } },
 	{ 0,            XF86XK_AudioMute,          spawn,          {.v = togglemute } },
@@ -329,9 +325,15 @@ static const char *audiostop[]     = { "playerctl", "--all-players", "stop", NUL
 
     -- Brightness keys
     awful.key({}, "XF86MonBrightnessUp", function() awful.spawn("brightnessctl set 5%+") end,
-        { description = "increase screen brightness", group = "launcher" }),
+        { description = "increase screen brightness", group = "screen" }),
     awful.key({}, "XF86MonBrightnessDown", function() awful.spawn("brightnessctl set 5%-") end,
-        { description = "decrease screen brightness", group = "launcher" }),
+        { description = "decrease screen brightness", group = "screen" }),
+
+    -- Backlight keys
+    awful.key({}, "XF86KbdBrightnessUp", function() awful.spawn("brightnessctl -d *::kbd_backlight set 10%+") end,
+        { description = "increase keyboard brightness", group = "screen" }),
+    awful.key({}, "XF86KbdBrightnessDown", function() awful.spawn("brightnessctl -d *::kbd_backlight set 10%-") end,
+        { description = "decrease keyboard brightness", group = "screen" }),
 
     -- Run Lua
     awful.key({ modkey }, "x",
