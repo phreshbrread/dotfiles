@@ -1,4 +1,5 @@
 -- TODO:
+-- Polkit agent
 -- Configure rofi properly
 -- Tokyo Night theme
 -- Battery widget

@@ -39,6 +39,7 @@
       space-cadet-pinball
       protonvpn-gui
       qbittorrent
+      kdePackages.falkon
     ];
   };
 }
