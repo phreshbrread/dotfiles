@@ -318,24 +318,24 @@ globalkeys = gears.table.join(
 
     -- Media keys
     awful.key({}, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end,
-        { description = "toggle media playback", group = "screen" }),
+        { description = "toggle media playback", group = "audio" }),
     awful.key({}, "XF86AudioNext", function() awful.spawn("playerctl next") end,
-        { description = "skip currently playing", group = "screen" }),
+        { description = "skip currently playing", group = "audio" }),
     awful.key({}, "XF86AudioPrev", function() awful.spawn("playerctl previous") end,
-        { description = "go to previously playing", group = "screen" }),
+        { description = "go to previously playing", group = "audio" }),
     awful.key({}, "XF86AudioStop", function() awful.spawn("playerctl --all-players stop") end,
-        { description = "stop media playback", group = "screen" }),
+        { description = "stop media playback", group = "audio" }),
 
     -- Volume keys
     awful.key({}, "XF86AudioRaiseVolume",
         function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+") end,
-        { description = "increase volume", group = "screen" }),
+        { description = "increase volume", group = "audio" }),
     awful.key({}, "XF86AudioLowerVolume",
         function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-") end,
-        { description = "decrease volume", group = "screen" }),
+        { description = "decrease volume", group = "audio" }),
     awful.key({}, "XF86AudioMute",
         function() awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") end,
-        { description = "toggle mute", group = "screen" }),
+        { description = "toggle mute", group = "audio" }),
 
     -- Run Lua
     awful.key({ modkey }, "x",
