@@ -2,7 +2,6 @@
 -- Configure rofi properly
 -- Tokyo Night theme
 -- Battery widget
--- Media keys
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
@@ -301,30 +300,9 @@ globalkeys = gears.table.join(
         end,
         { description = "restore minimized", group = "client" }),
 
-    -- Prompt
+    -- Run prompt
     awful.key({ modkey }, "r", function() awful.spawn("rofi -show drun") end,
         { description = "run prompt", group = "launcher" }),
-
-    --[[
-static const char *audioplay[]     = { "playerctl", "play-pause", NULL };
-static const char *audionext[]     = { "playerctl", "next", NULL };
-static const char *audioprev[]     = { "playerctl", "previous", NULL };
-static const char *audiostop[]     = { "playerctl", "--all-players", "stop", NULL };
-	{ 0,            XF86XK_AudioPlay,          spawn,          {.v = audioplay } },
-	{ 0,            XF86XK_AudioNext,          spawn,          {.v = audionext } },
-	{ 0,            XF86XK_AudioPrev,          spawn,          {.v = audioprev } },
-	{ 0,            XF86XK_AudioStop,          spawn,          {.v = audiostop } },
-]]
-    -- Volume keys
-    awful.key({}, "XF86AudioRaiseVolume",
-        function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+") end,
-        { description = "increase volume", group = "screen" }),
-    awful.key({}, "XF86AudioLowerVolume",
-        function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-") end,
-        { description = "decrease volume", group = "screen" }),
-    awful.key({}, "XF86AudioMute",
-        function() awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") end,
-        { description = "toggle mute", group = "screen" }),
 
     -- Brightness keys
     awful.key({}, "XF86MonBrightnessUp", function() awful.spawn("brightnessctl set 5%+") end,
@@ -337,6 +315,27 @@ static const char *audiostop[]     = { "playerctl", "--all-players", "stop", NUL
         { description = "increase keyboard brightness", group = "screen" }),
     awful.key({}, "XF86KbdBrightnessDown", function() awful.spawn("brightnessctl -d *::kbd_backlight set 10%-") end,
         { description = "decrease keyboard brightness", group = "screen" }),
+
+    -- Media keys
+    awful.key({}, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end,
+        { description = "toggle media playback", group = "screen" }),
+    awful.key({}, "XF86AudioNext", function() awful.spawn("playerctl next") end,
+        { description = "skip currently playing", group = "screen" }),
+    awful.key({}, "XF86AudioPrev", function() awful.spawn("playerctl previous") end,
+        { description = "go to previously playing", group = "screen" }),
+    awful.key({}, "XF86AudioStop", function() awful.spawn("playerctl --all-players stop") end,
+        { description = "stop media playback", group = "screen" }),
+
+    -- Volume keys
+    awful.key({}, "XF86AudioRaiseVolume",
+        function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+") end,
+        { description = "increase volume", group = "screen" }),
+    awful.key({}, "XF86AudioLowerVolume",
+        function() awful.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-") end,
+        { description = "decrease volume", group = "screen" }),
+    awful.key({}, "XF86AudioMute",
+        function() awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") end,
+        { description = "toggle mute", group = "screen" }),
 
     -- Run Lua
     awful.key({ modkey }, "x",
