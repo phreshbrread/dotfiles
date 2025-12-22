@@ -54,12 +54,6 @@
     displayManager.autoLogin.user = "brad";
   };
 
-  # Enable COSMIC
-  services.desktopManager.cosmic = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   # OpenRGB udev rules
   services.udev.packages = with pkgs; [
     openrgb-with-all-plugins

@@ -48,6 +48,7 @@
       smile
       hyprshot
       cliphist
+      wl-clipboard
     ];
   };
 }

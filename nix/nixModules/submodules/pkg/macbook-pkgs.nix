@@ -20,7 +20,6 @@
       pavucontrol
       slint-lsp
       shfmt
-      wl-clipboard
 
       # Appearance
       kdePackages.qtstyleplugin-kvantum
@@ -30,13 +29,11 @@
       phinger-cursors
 
       # Extra
-      wev
       floorp-bin
       hyprpicker
       font-manager
       kdePackages.dolphin
       kdePackages.gwenview
-      space-cadet-pinball
       protonvpn-gui
       qbittorrent
       kdePackages.falkon
