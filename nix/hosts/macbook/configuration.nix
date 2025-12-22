@@ -78,6 +78,12 @@
   # Use ly
   services.displayManager.ly.enable = true;
 
+  # Enable COSMIC
+  services.desktopManager.cosmic = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # Enable touchpad
   services.libinput = {
     enable = true;
