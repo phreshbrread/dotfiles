@@ -140,6 +140,7 @@
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
     "org.kde.kdenlive"
+    "com.rafaelmardojai.Blanket"
   ];
 
   # Enable VM support
