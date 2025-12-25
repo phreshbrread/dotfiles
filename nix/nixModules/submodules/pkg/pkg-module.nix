@@ -31,6 +31,8 @@
     ntfs3g
     wineWowPackages.stagingFull
     wineWowPackages.waylandFull
+    python3
+    uv
 
     # GUI / TUI
     alacritty
