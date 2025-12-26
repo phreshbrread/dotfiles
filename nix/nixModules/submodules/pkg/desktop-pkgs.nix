@@ -45,6 +45,7 @@
       scrcpy
       qjackctl
       qpwgraph
+      blanket
     ];
   };
 }
