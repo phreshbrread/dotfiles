@@ -48,6 +48,9 @@
     ];
   };
 
+  # Enable i2c for RGB control
+  hardware.i2c.enable = true;
+
   # Mount extra drives
   fileSystems."/mass-storage" = {
     device = "/dev/disk/by-uuid/1f430d6f-a649-4717-ae3f-5e6f98ffbe3f";

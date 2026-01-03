@@ -46,6 +46,7 @@
       qjackctl
       qpwgraph
       blanket
+      kdePackages.kdenlive
     ];
   };
 }
