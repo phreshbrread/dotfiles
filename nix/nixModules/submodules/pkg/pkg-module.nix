@@ -33,6 +33,7 @@
     wineWowPackages.waylandFull
     python3
     uv
+    imagemagick
 
     # GUI / TUI
     alacritty
