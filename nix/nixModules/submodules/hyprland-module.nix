@@ -44,7 +44,7 @@
       playerctl
       brightnessctl
       fuzzel
-      xfce.thunar
+      thunar
       smile
       hyprshot
       cliphist
