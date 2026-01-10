@@ -47,6 +47,7 @@
       qpwgraph
       blanket
       kdePackages.kdenlive
+      android-tools
     ];
   };
 }
