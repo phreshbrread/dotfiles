@@ -19,7 +19,7 @@
     git-credential-manager
     killall
     nh
-    nixfmt-rfc-style
+    nixfmt
     steamtinkerlaunch
     tree
     starship

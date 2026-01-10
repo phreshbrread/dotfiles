@@ -102,7 +102,7 @@
         # Canon print drivers
         gutenprint
         gutenprintBin
-        cnijfilter2
+        # cnijfilter2
       ];
     };
 

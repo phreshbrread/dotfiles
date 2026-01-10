@@ -22,7 +22,7 @@ vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
-require("nvim-treesitter.configs").setup({})
+--require("nvim-treesitter.configs").setup({})
 
 -- TODO separate into options and keybinds files
 -- require('config.options') -- [./lua/options.lua]
