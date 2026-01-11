@@ -17,6 +17,7 @@
     };
   };
   users.users.brad.extraGroups = [ "docker" ];
+  systemd.services.docker.unitConfig.RequiresMountsFor = [ "/external-drive" ];
 
   # SSH
   services.openssh = {
