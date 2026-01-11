@@ -25,7 +25,6 @@
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
       arc-theme
-      papirus-icon-theme
       phinger-cursors
 
       # Extra

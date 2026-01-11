@@ -56,6 +56,10 @@
 
     # Language servers
     rust-analyzer
+
+    # Other
+    papirus-icon-theme
+    pantheon.elementary-wallpapers
   ];
 
   fonts.enableDefaultPackages = true;
