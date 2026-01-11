@@ -27,7 +27,7 @@
     }:
     {
       # Macbook
-      nixosConfigurations.pheg-nixos-macbook = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.pheg-nixos-macbook = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/macbook/configuration.nix
