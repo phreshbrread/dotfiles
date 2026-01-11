@@ -58,9 +58,6 @@
     options = [
       "defaults"
       "nofail"
-      "rw"
-      "exec"
-      "nodev"
     ];
   };
 
@@ -71,7 +68,10 @@
       "nofail"
       "nosuid"
       "nodev"
+      "noatime"
+      "async"
       "rw"
+      "auto"
       "uid=1000"
       "gid=100"
       "umask=000"

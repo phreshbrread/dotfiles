@@ -21,10 +21,4 @@ services:
     devices:
       - /dev/dri:/dev/dri
       - /dev/kfd:/dev/kfd
-    healthcheck:
-      test: ["CMD-SHELL", "test -d /data/media || exit 1"] # Check to see if media dir exists before starting
-      interval: 5s
-      timeout: 3s
-      retries: 30 # ~ 2.5 minutes max wait
-      start_period: 2s
     restart: unless-stopped
