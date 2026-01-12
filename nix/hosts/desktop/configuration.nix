@@ -142,6 +142,7 @@
     "org.openrgb.OpenRGB"
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
+    "org.nickvision.tagger"
   ];
 
   # Enable VM support
