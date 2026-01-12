@@ -53,6 +53,8 @@
     filezilla
     system-config-printer
     mousepad
+    picard
+    picard-tools
 
     # Language servers
     rust-analyzer
