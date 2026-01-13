@@ -55,6 +55,7 @@
     mousepad
     picard
     picard-tools
+    ranger
 
     # Language servers
     rust-analyzer

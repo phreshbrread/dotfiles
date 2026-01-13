@@ -18,6 +18,7 @@ vim.api.nvim_command('filetype plugin indent on')
 
 -- Custom keybinds
 vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<C-l>', ':Telescope live_grep<CR>')
 
 -- Load plugins
 require('lualine').setup()
