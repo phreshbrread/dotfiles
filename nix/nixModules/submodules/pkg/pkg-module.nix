@@ -56,6 +56,8 @@
     picard
     picard-tools
     ranger
+    qjackctl
+    qpwgraph
 
     # Language servers
     rust-analyzer

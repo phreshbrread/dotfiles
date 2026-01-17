@@ -43,8 +43,6 @@
       jdk
       jdk8
       scrcpy
-      qjackctl
-      qpwgraph
       blanket
       kdePackages.kdenlive
       android-tools
