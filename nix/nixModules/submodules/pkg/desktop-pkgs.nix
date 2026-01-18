@@ -46,7 +46,6 @@
       blanket
       kdePackages.kdenlive
       android-tools
-      shadps4
     ];
   };
 }
