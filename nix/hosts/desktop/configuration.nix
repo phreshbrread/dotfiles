@@ -142,6 +142,7 @@
     "org.openrgb.OpenRGB"
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
+    "net.shadps4.shadPS4"
   ];
 
   # Enable VM support
