@@ -59,6 +59,7 @@
     ranger
     qjackctl
     qpwgraph
+    kooha
 
     # Language servers
     rust-analyzer
