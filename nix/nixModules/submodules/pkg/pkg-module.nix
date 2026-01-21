@@ -14,6 +14,7 @@
     # CLI
     eza
     gcc
+    bat
     ripgrep
     fastfetch
     git-credential-manager
