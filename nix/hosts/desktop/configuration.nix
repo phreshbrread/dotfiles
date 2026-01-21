@@ -47,11 +47,22 @@
     options = "--delete-older-than 7d";
   };
 
-  # Enable KDE Plasma
+
+  # Enable desktop environments
   services = {
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
-    displayManager.autoLogin.user = "brad";
+    displayManager = {
+      sddm.enable = true; # Use SDDM as display manager
+      autoLogin.user = "brad";
+    };
+
+    desktopManager = {
+      # KDE Plasma
+      plasma6.enable = true;
+      
+      # COSMIC
+      cosmic.enable = true;
+      cosmic.xwayland.enable = true;
+    };
   };
 
   # OpenRGB udev rules
