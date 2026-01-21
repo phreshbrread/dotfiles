@@ -34,6 +34,7 @@
     python3
     uv
     imagemagick
+    direnv
 
     # GUI / TUI
     alacritty
