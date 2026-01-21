@@ -113,11 +113,28 @@
 
   # Enable services
   services = {
-    openssh.enable = true;
     tumbler.enable = true;
     gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
   };
+
+  # SSH
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = [ "brad" ];
+      UseDns = true;
+      X11Forwarding = false;
+      PermitRootLogin = "yes";
+    };
+  };
+
+  # Authorised SSH keys
+  users.users.brad.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsOBvqJxsicqpr4wDYLwR9s2VezX0r84vRpsSM/I0Oe brad@pheg-nixos-desktop"
+  ];
 
   # Ignore power key
   services.logind.settings.Login = {
