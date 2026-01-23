@@ -24,7 +24,6 @@
       # Extra
       brave
       pcsx2
-      floorp-bin
       dolphin-emu
       protonup-qt
       heroic

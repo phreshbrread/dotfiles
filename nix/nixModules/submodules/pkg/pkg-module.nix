@@ -40,6 +40,7 @@
     # GUI / TUI
     alacritty
     btop
+    floorp-bin
     obsidian
     blender
     seahorse
@@ -62,12 +63,11 @@
     qpwgraph
     kooha
 
+    # Appearance
+    papirus-icon-theme
+
     # Language servers
     rust-analyzer
-
-    # Other
-    papirus-icon-theme
-    pantheon.elementary-wallpapers
   ];
 
   fonts.enableDefaultPackages = true;

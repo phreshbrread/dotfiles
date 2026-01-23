@@ -26,9 +26,9 @@
       libsForQt5.qtstyleplugin-kvantum
       arc-theme
       phinger-cursors
+      adwaita-qt
 
       # Extra
-      floorp-bin
       hyprpicker
       font-manager
       kdePackages.dolphin
