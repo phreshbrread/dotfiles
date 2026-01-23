@@ -28,11 +28,6 @@
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-  };
-
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
