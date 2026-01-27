@@ -45,6 +45,10 @@
       blanket
       kdePackages.kdenlive
       android-tools
+
+      # Doom Engines
+      crispy-doom
+      uzdoom
     ];
   };
 }
