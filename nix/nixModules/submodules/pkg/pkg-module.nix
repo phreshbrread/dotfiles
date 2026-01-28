@@ -62,6 +62,7 @@
     qjackctl
     qpwgraph
     kooha
+    jellyfin-media-player
 
     # Appearance
     papirus-icon-theme
