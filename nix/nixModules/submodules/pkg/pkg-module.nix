@@ -36,6 +36,7 @@
     uv
     imagemagick
     direnv
+    sshfs
 
     # GUI / TUI
     alacritty
