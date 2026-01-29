@@ -10,6 +10,7 @@
   imports = [
     ./submodules/x-module.nix
     ./submodules/vm-module.nix
+    ./submodules/ssh-module.nix
     ./submodules/editors-module.nix
     ./submodules/hyprland-module.nix
     ./submodules/systemd-boot-module.nix

@@ -15,6 +15,7 @@
   systemd-boot-module.enable = true;
   hyprland-module.enable = true;
   vm-module.enable = true; # VM support
+  ssh-module = enable;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
