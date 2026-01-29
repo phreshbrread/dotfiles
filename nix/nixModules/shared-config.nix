@@ -13,6 +13,7 @@
     ./submodules/ssh-module.nix
     ./submodules/editors-module.nix
     ./submodules/hyprland-module.nix
+    ./submodules/syncthing-module.nix
     ./submodules/systemd-boot-module.nix
     ./submodules/pkg/pkg-module.nix
   ];
