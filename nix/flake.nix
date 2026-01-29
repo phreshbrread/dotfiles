@@ -58,8 +58,8 @@
           ./hosts/desktop/configuration.nix
           ./hosts/desktop/hardware-configuration.nix
           ./hosts/desktop/extra-hardware-configuration.nix
+          ./hosts/desktop/server-stuff.nix
           ./nixModules/shared-config.nix
-          ./nixModules/server-stuff.nix
 
           nix-flatpak.nixosModules.nix-flatpak
         ];
