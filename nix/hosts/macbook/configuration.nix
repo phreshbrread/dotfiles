@@ -75,6 +75,14 @@
     dataDir = "/home/brad";
   };
 
+  # VM stuff
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "brad" ];
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
+
   # Use ly
   services.displayManager.ly.enable = true;
 
