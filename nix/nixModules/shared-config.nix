@@ -9,8 +9,10 @@
   # Hosts can simply toggle the ones needed
   imports = [
     ./submodules/x-module.nix
+    ./submodules/vm-module.nix
     ./submodules/editors-module.nix
     ./submodules/hyprland-module.nix
+    ./submodules/systemd-boot-module.nix
     ./submodules/pkg/pkg-module.nix
   ];
 

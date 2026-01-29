@@ -10,24 +10,18 @@
 }:
 
 {
-  # Enable macbook packages module
-  macbook-pkgs.enable = true;
-
-  # Enable WM modules
+  # Enable modules
+  macbook-pkgs.enable = true; # Macbook package set
+  systemd-boot-module.enable = true;
   hyprland-module.enable = true;
-  x-module.enable = true;
+  x-module.enable = true; # X window managers
+  vm-module.enable = true; # VM support
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
-
-  # Bootloader
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
 
   # Allow insecure broadcom driver
   nixpkgs.config = {
@@ -68,14 +62,6 @@
     enable = true;
     user = "brad";
     dataDir = "/home/brad";
-  };
-
-  # VM stuff
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "brad" ];
-  virtualisation = {
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
   };
 
   # Use ly

@@ -10,11 +10,11 @@
 }:
 
 {
-  # Enable desktop packages module
-  desktop-pkgs.enable = true;
-
-  # Enable Hyprland
+  # Enable modules
+  desktop-pkgs.enable = true; # Desktop package set
+  systemd-boot-module.enable = true;
   hyprland-module.enable = true;
+  vm-module.enable = true; # VM support
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -22,23 +22,12 @@
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Bootloader
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 5;
-      memtest86.enable = true;
-    };
-  };
-
   # Garbage collection
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
-
 
   # Enable desktop environments
   services = {
@@ -50,7 +39,7 @@
     desktopManager = {
       # KDE Plasma
       plasma6.enable = true;
-      
+
       # COSMIC
       cosmic.enable = true;
       cosmic.xwayland.enable = true;
@@ -147,14 +136,6 @@
     "nl.hjdskes.gcolor3"
     "net.shadps4.shadPS4"
   ];
-
-  # Enable VM support
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "brad" ];
-  virtualisation = {
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
-  };
 
   # Initial system state version (no need to change)
   system.stateVersion = "25.05";
