@@ -31,6 +31,8 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/macbook/configuration.nix
+          ./hosts/macbook/hardware-configuration.nix
+          ./nixModules/shared-config.nix
 
           nix-flatpak.nixosModules.nix-flatpak
 
@@ -54,6 +56,10 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/desktop/configuration.nix
+          ./hosts/desktop/hardware-configuration.nix
+          ./hosts/desktop/extra-hardware-configuration.nix
+          ./nixModules/shared-config.nix
+          ./nixModules/server-stuff.nix
 
           nix-flatpak.nixosModules.nix-flatpak
         ];
@@ -63,7 +69,9 @@
       nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          # configuration.nix imports hardware config relatively since VM hardware changes often
           ./hosts/virtual-machine/configuration.nix
+          ./nixModules/shared-config.nix
 
           nix-flatpak.nixosModules.nix-flatpak
         ];

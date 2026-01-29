@@ -10,14 +10,6 @@
 }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./../../nixModules/server-specific.nix
-
-    ./extra-hardware-configuration.nix
-    ./../../nixModules/shared-config.nix
-  ];
-
   # Enable desktop packages module
   desktop-pkgs.enable = true;
 

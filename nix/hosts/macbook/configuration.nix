@@ -10,11 +10,6 @@
 }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./../../nixModules/shared-config.nix
-  ];
-
   # Enable macbook packages module
   macbook-pkgs.enable = true;
 
