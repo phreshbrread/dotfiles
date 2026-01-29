@@ -15,7 +15,8 @@
   systemd-boot-module.enable = true;
   hyprland-module.enable = true;
   vm-module.enable = true; # VM support
-  ssh-module = enable;
+  ssh-module.enable = true;
+  syncthing-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -51,13 +52,6 @@
   services.udev.packages = with pkgs; [
     openrgb-with-all-plugins
   ];
-
-  # Syncthing
-  services.syncthing = {
-    enable = true;
-    user = "brad";
-    dataDir = "/home/brad";
-  };
 
   # Define user account
   users.users.brad = {

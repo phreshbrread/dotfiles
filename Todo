@@ -1,5 +1,4 @@
 ### Nix
-- Set up rust/cargo
 - Set up LSP + syntax highlighting in nvim
 
 ### Desktop
@@ -9,6 +8,5 @@
 ### Macbook
 - Tokyo Night gtk theme
 - Declare Qt / kvantum theming
-- Try Niri
 - X clipboard history
 - Polkit for X WMs

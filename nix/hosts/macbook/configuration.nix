@@ -17,6 +17,7 @@
   x-module.enable = true; # X window managers
   vm-module.enable = true; # VM support
   ssh-module.enable = true;
+  syncthing-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -57,13 +58,6 @@
     ];
   };
   hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
-
-  # Syncthing
-  services.syncthing = {
-    enable = true;
-    user = "brad";
-    dataDir = "/home/brad";
-  };
 
   # Use ly
   services.displayManager.ly.enable = true;
