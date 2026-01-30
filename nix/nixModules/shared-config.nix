@@ -56,7 +56,7 @@
       # https://mimetype.io/all-types for types
       "application/pdf" = "floorp.desktop";
       "image/png" = [
-        "gwenview.desktop"
+        "image-roll.desktop"
         "gimp.desktop"
       ];
     };

@@ -36,10 +36,10 @@
       hyprpicker
       font-manager
       kdePackages.dolphin
-      kdePackages.gwenview
       protonvpn-gui
       qbittorrent
       kdePackages.falkon
+      image-roll
     ];
   };
 }
