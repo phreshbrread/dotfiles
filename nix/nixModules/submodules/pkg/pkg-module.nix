@@ -21,7 +21,6 @@
     killall
     nh
     nixfmt
-    steamtinkerlaunch
     tree
     starship
     sqlite

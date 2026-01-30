@@ -88,6 +88,26 @@
     steam = {
       enable = true;
       protontricks.enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+        steamtinkerlaunch
+      ];
+      package = pkgs.steam.override {
+        extraPkgs =
+          pkgs': with pkgs'; [
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXinerama
+            xorg.libXScrnSaver
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc.lib # Provides libstdc++.so.6
+            libkrb5
+            keyutils
+          ];
+      };
+
     };
 
     # Thunderbird
