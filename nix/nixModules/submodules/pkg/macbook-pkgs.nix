@@ -29,6 +29,7 @@
       kdePackages.breeze
       kdePackages.breeze-icons
       arc-theme
+      tokyonight-gtk-theme
       phinger-cursors
       adwaita-qt
 
