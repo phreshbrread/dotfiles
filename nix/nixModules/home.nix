@@ -15,8 +15,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Arc-Dark";
-      package = pkgs.arc-theme;
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";
