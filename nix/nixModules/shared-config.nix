@@ -133,6 +133,14 @@
     enable = true;
     allowPing = true;
     logRefusedConnections = true;
+    allowedTCPPorts = [
+      42000
+      42001
+    ];
+    allowedUDPPorts = [
+      42000
+      42001
+    ];
   };
 
   # Programs
