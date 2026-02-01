@@ -40,6 +40,7 @@
       qbittorrent
       kdePackages.falkon
       image-roll
+      scarlett2
     ];
   };
 }

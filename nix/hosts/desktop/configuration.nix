@@ -17,6 +17,7 @@
   vm-module.enable = true; # VM support
   ssh-module.enable = true;
   syncthing-module.enable = true;
+  gaming-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -82,32 +83,6 @@
       enable = true;
       enableVirtualCamera = true;
       plugins = [ pkgs.obs-studio-plugins.droidcam-obs ];
-    };
-
-    # Steam
-    steam = {
-      enable = true;
-      protontricks.enable = true;
-      extraCompatPackages = with pkgs; [
-        proton-ge-bin
-        steamtinkerlaunch
-      ];
-      package = pkgs.steam.override {
-        extraPkgs =
-          pkgs': with pkgs'; [
-            xorg.libXcursor
-            xorg.libXi
-            xorg.libXinerama
-            xorg.libXScrnSaver
-            libpng
-            libpulseaudio
-            libvorbis
-            stdenv.cc.cc.lib # Provides libstdc++.so.6
-            libkrb5
-            keyutils
-          ];
-      };
-
     };
 
     # Thunderbird

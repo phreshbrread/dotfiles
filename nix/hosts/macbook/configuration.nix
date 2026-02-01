@@ -18,6 +18,7 @@
   vm-module.enable = true; # VM support
   ssh-module.enable = true;
   syncthing-module.enable = true;
+  gaming-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -89,10 +90,6 @@
   # Enable programs
   programs = {
     kdeconnect.enable = true;
-    steam = {
-      enable = true;
-      protontricks.enable = true;
-    };
   };
 
   # Enable services

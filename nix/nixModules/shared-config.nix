@@ -11,6 +11,7 @@
     ./submodules/x-module.nix
     ./submodules/vm-module.nix
     ./submodules/ssh-module.nix
+    ./submodules/gaming-module.nix
     ./submodules/editors-module.nix
     ./submodules/hyprland-module.nix
     ./submodules/syncthing-module.nix
