@@ -45,6 +45,7 @@
       blanket
       kdePackages.kdenlive
       android-tools
+      steamtinkerlaunch
 
       # Doom Engines
       crispy-doom
