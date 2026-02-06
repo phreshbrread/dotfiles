@@ -162,6 +162,7 @@
         nrs = "nixos-rebuild switch";
         nv = "nvim";
         ff = "fastfetch";
+        cat = "bat";
       };
     };
 
