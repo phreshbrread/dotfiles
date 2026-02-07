@@ -66,6 +66,7 @@
       "render"
       "audio"
       "adbusers"
+      "i2c"
     ];
   };
 
