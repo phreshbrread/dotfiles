@@ -63,6 +63,7 @@
     qpwgraph
     kooha
     jellyfin-media-player
+    tenacity
 
     # Appearance
     papirus-icon-theme
