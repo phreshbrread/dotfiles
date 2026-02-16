@@ -29,8 +29,8 @@
     lsof
     smartmontools
     ntfs3g
-    wineWowPackages.stagingFull
-    wineWowPackages.waylandFull
+    wineWow64Packages.stagingFull
+    wineWow64Packages.waylandFull
     python3
     uv
     imagemagick

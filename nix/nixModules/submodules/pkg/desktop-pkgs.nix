@@ -30,7 +30,7 @@
       lutris
       umu-launcher
       gimp3-with-plugins
-      yabridge
+      #yabridge
       yabridgectl
       winetricks
       onlyoffice-desktopeditors
