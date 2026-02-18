@@ -126,6 +126,7 @@
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
     "net.shadps4.shadPS4"
+    "org.gnome.Brasero"
   ];
 
   # Initial system state version (no need to change)
