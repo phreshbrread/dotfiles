@@ -80,9 +80,9 @@
       <command>urxvt</command>
     </action>
   </item>
-  <item label="Gnome Terminal">
+  <item label="Alacritty">
     <action name="Execute">
-      <command>gnome-terminal</command>
+      <command>alacritty</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
