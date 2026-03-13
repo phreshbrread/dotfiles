@@ -46,6 +46,7 @@
       kdePackages.kdenlive
       android-tools
       steamtinkerlaunch
+      kdePackages.plasma-vault
 
       # Doom Engines
       crispy-doom
