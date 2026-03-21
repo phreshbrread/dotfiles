@@ -48,6 +48,7 @@
       steamtinkerlaunch
       kdePackages.plasma-vault
       openutau
+      easyeffects
 
       # Doom Engines
       crispy-doom
