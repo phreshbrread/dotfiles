@@ -47,6 +47,7 @@
       android-tools
       steamtinkerlaunch
       kdePackages.plasma-vault
+      openutau
 
       # Doom Engines
       crispy-doom

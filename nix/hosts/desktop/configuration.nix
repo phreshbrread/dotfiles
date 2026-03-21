@@ -49,17 +49,11 @@
     };
   };
 
-  # OpenRGB udev rules
-  #services.udev.packages = with pkgs; [
-  #  openrgb-with-all-plugins
-  #];
-
 services.hardware.openrgb = { 
   enable = true; 
   package = pkgs.openrgb-with-all-plugins; 
   motherboard = "amd"; 
 };
-
 
   # Define user account
   users.users.brad = {
@@ -129,7 +123,6 @@ services.hardware.openrgb = {
     "io.github.tntwise.REAL-Video-Enhancer"
     "net.rpcs3.RPCS3"
     "org.jdownloader.JDownloader"
-    #"org.openrgb.OpenRGB"
     "org.polymc.PolyMC"
     "nl.hjdskes.gcolor3"
     "net.shadps4.shadPS4"
