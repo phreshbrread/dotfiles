@@ -34,7 +34,8 @@
 
   # Environment variables
   environment.variables = {
-    #GDK_SCALE = "2";
+    GDK_SCALE = "1";
+    QT_SCALE_FACTOR = "1";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     LIBVA_DRIVER_NAME = "i965";
   };
