@@ -12,6 +12,7 @@
     ./submodules/vm-module.nix
     ./submodules/ssh-module.nix
     ./submodules/gaming-module.nix
+    ./submodules/cosmic-module.nix
     ./submodules/editors-module.nix
     ./submodules/openbox-module.nix
     ./submodules/hyprland-module.nix

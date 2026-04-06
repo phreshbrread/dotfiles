@@ -37,7 +37,7 @@
       hyprpicker
       font-manager
       kdePackages.dolphin
-      protonvpn-gui
+      proton-vpn
       qbittorrent
       kdePackages.falkon
       image-roll

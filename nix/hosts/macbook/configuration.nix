@@ -20,6 +20,7 @@
   syncthing-module.enable = true;
   gaming-module.enable = true;
   openbox-module.enable = true;
+  cosmic-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -64,12 +65,6 @@
 
   # Use ly
   services.displayManager.ly.enable = true;
-
-  # Enable COSMIC
-  services.desktopManager.cosmic = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   # Enable touchpad
   services.libinput = {

@@ -64,6 +64,7 @@
     kooha
     jellyfin-media-player
     tenacity
+    yacreader
 
     # Appearance
     papirus-icon-theme
