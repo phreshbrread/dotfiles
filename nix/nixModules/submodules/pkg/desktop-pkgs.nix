@@ -36,7 +36,6 @@
       onlyoffice-desktopeditors
       equibop
       arrpc
-      mangareader
       azahar
       OVMF
       jdk
