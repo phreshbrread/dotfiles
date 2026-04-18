@@ -39,14 +39,7 @@
       autoLogin.user = "brad";
     };
 
-    desktopManager = {
-      # KDE Plasma
-      plasma6.enable = true;
-
-      # COSMIC
-      cosmic.enable = true;
-      cosmic.xwayland.enable = true;
-    };
+    desktopManager.plasma6.enable = true;
   };
 
 services.hardware.openrgb = { 
