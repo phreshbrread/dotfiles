@@ -18,6 +18,7 @@
   ssh-module.enable = true;
   syncthing-module.enable = true;
   gaming-module.enable = true;
+  davinci-resolve.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";

@@ -15,6 +15,7 @@
     ./submodules/cosmic-module.nix
     ./submodules/editors-module.nix
     ./submodules/openbox-module.nix
+    ./submodules/davinci-resolve.nix
     ./submodules/hyprland-module.nix
     ./submodules/syncthing-module.nix
     ./submodules/systemd-boot-module.nix
