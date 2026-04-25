@@ -66,7 +66,7 @@
       };
 
       # Virtual Machine
-      nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos-vm = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           # configuration.nix imports hardware config relatively since VM hardware changes often
