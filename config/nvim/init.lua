@@ -23,7 +23,6 @@ vim.keymap.set('n', '<C-l>', ':Telescope live_grep<CR>')
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
---require("nvim-treesitter.configs").setup({})
 
 -- TODO separate into options and keybinds files
 -- require('config.options') -- [./lua/options.lua]
