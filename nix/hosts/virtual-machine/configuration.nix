@@ -9,21 +9,21 @@
     ./hardware-configuration.nix
   ];
 
-  # Enable macbook packages module
+  # Enable modules
   macbook-pkgs.enable = true;
-
-  # Enable Hyprland
   hyprland-module.enable = true;
 
-  # Define your hostname.
+  # Define hostname
   networking.hostName = "nixos-vm";
 
-  # Set kernel packages
-  boot.kernelPackages = pkgs.linuxPackages;
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader + kernel
+  boot = {
+    kernelPackages = pkgs.linuxPackages;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   # Define a user account.
   users.users.pheg = {
@@ -34,6 +34,12 @@
       "networkmanager"
       "wheel"
     ];
+  };
+
+  # Autologin
+  services.getty = {
+    autologinUser = "pheg";
+    autologinOnce = true;
   };
 
   # Initial system state version (no need to change)
