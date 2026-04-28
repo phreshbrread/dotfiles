@@ -36,6 +36,9 @@
     ];
   };
 
+  # GNOME keyring
+  services.gnome.gnome-keyring.enable = true;
+
   # Autologin
   services.getty = {
     autologinUser = "pheg";
