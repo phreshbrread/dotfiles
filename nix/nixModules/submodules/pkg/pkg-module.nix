@@ -2,7 +2,7 @@
 ## SHARED PACKAGES MODULE ##
 ############################
 
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -38,6 +38,7 @@
     sshfs
 
     # GUI / TUI
+    inputs.pmenu-master.packages.${pkgs.system}.default
     alacritty
     btop
     floorp-bin

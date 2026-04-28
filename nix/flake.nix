@@ -15,6 +15,8 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    pmenu-master.url = "github:PhreshBrread/pmenu"; # My own power menu utility
   };
 
   outputs =
@@ -23,12 +25,14 @@
       nixpkgs,
       nix-flatpak,
       home-manager,
+      pmenu-master,
       nixpkgs-unstable,
-    }:
+    }@inputs:
     {
       # Macbook
       nixosConfigurations.pheg-nixos-macbook = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/macbook/configuration.nix
           ./hosts/macbook/hardware-configuration.nix
@@ -54,6 +58,7 @@
       # Desktop
       nixosConfigurations.pheg-nixos-desktop = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/desktop/configuration.nix
           ./hosts/desktop/hardware-configuration.nix
@@ -68,6 +73,7 @@
       # Virtual Machine
       nixosConfigurations.nixos-vm = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           # configuration.nix imports hardware config relatively since VM hardware changes often
           ./hosts/virtual-machine/configuration.nix
