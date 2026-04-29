@@ -67,6 +67,7 @@
     jellyfin-media-player
     tenacity
     yacreader
+    nicotine-plus
 
     # Appearance
     papirus-icon-theme

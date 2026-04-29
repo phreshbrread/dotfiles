@@ -137,12 +137,14 @@
     allowPing = true;
     logRefusedConnections = true;
     allowedTCPPorts = [
-      42000
+      42000 # Warpinator
       42001
+      2234  # Soulseek
     ];
     allowedUDPPorts = [
       42000
       42001
+      2234
     ];
   };
 
