@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    pmenu-master.url = "github:PhreshBrread/pmenu"; # My own power menu utility
+    pmenu-git.url = "github:PhreshBrread/pmenu/dev"; # pmenu dev branch
   };
 
   outputs =
@@ -25,7 +25,7 @@
       nixpkgs,
       nix-flatpak,
       home-manager,
-      pmenu-master,
+      pmenu-git,
       nixpkgs-unstable,
     }@inputs:
     {

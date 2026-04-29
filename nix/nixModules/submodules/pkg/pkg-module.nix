@@ -38,7 +38,7 @@
     sshfs
 
     # GUI / TUI
-    inputs.pmenu-master.packages.${pkgs.system}.default # Use pmenu from flake.nix
+    inputs.pmenu-git.packages.${pkgs.system}.default # Use pmenu from flake.nix
     ncdu
     alacritty
     btop
