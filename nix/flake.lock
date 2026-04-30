@@ -85,20 +85,21 @@
         "type": "github"
       }
     },
-    "pmenu-master": {
+    "pmenu-git": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1777422144,
-        "narHash": "sha256-AB/fle8TUludj7pgEm1VxX2NW290p+zrgDKvAe2fwIU=",
+        "lastModified": 1777553737,
+        "narHash": "sha256-Rzb+/yu/s34jQHYss9WT3oLs0Q354bJe7OYgFcgE3OM=",
         "owner": "PhreshBrread",
         "repo": "pmenu",
-        "rev": "3cf88e834dad0e68f2bdb588a9a521be4451fd34",
+        "rev": "0ac31b56e34ccbf3ea7a92288be63c1e2e559c1c",
         "type": "github"
       },
       "original": {
         "owner": "PhreshBrread",
+        "ref": "dev",
         "repo": "pmenu",
         "type": "github"
       }
@@ -109,7 +110,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "pmenu-master": "pmenu-master"
+        "pmenu-git": "pmenu-git"
       }
     }
   },
