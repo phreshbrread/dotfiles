@@ -59,6 +59,7 @@
               telescope-nvim
               plenary-nvim
               telescope-fzf-native-nvim
+              vim-better-whitespace
 
               lualine-nvim
               nvim-highlight-colors
