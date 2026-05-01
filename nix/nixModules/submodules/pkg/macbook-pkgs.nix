@@ -17,7 +17,6 @@
   config = lib.mkIf config.macbook-pkgs.enable {
     environment.systemPackages = with pkgs; [
       # System
-      pavucontrol
       slint-lsp
       shfmt
 
@@ -34,12 +33,10 @@
       adwaita-qt
 
       # Extra
-      hyprpicker
       font-manager
       kdePackages.dolphin
       proton-vpn
       qbittorrent
-      kdePackages.falkon
       image-roll
       scarlett2
     ];

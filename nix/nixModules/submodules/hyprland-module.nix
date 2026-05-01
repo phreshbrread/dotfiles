@@ -35,12 +35,14 @@
       hyprprop
       hyprnotify
       hyprcursor
+      hyprpicker
       swaynotificationcenter
       waybar
       waypaper
       swaybg
       networkmanagerapplet
       mpd
+      pavucontrol
       playerctl
       brightnessctl
       fuzzel

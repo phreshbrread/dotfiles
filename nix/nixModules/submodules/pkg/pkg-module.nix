@@ -57,8 +57,8 @@
     inxi
     vulkan-tools
     spotify
-    discord
     warpinator
+    equibop
     mpv
     vlc
     filezilla
