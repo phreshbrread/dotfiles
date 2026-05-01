@@ -31,26 +31,33 @@
 
     # Hyprland packages
     environment.systemPackages = with pkgs; [
+      # Hypr
       hyprpolkitagent
       hyprprop
       hyprnotify
       hyprcursor
       hyprpicker
+      hyprshot
+
+      # Core
       swaynotificationcenter
-      waybar
       waypaper
       swaybg
-      networkmanagerapplet
-      mpd
-      pavucontrol
       playerctl
       brightnessctl
       fuzzel
-      thunar
-      smile
-      hyprshot
       cliphist
       wl-clipboard
+
+      # Waybar
+      waybar
+      networkmanagerapplet
+      pavucontrol
+      mpd
+
+      # Extra
+      thunar
+      smile
     ];
   };
 }
