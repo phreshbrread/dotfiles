@@ -36,11 +36,17 @@
     imagemagick
     direnv
     sshfs
+    poppler
+    jq
+    zoxide
+    resvg
 
     # GUI / TUI
     inputs.pmenu-git.packages.${pkgs.system}.default # Use pmenu from flake.nix
     ncdu
-    alacritty
+    alacritty # Eventually replace with kitty
+    kitty
+    yazi
     btop
     floorp-bin
     obsidian
