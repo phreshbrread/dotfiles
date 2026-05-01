@@ -40,7 +40,7 @@
   # Environment variables
   environment.variables = {
     GCM_CREDENTIAL_STORE = "secretservice";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
     EDITOR = "nvim";
   };
 
