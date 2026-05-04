@@ -20,6 +20,7 @@
     git-credential-manager
     killall
     nh
+    exiftool
     nixfmt
     tree
     starship
