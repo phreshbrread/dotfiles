@@ -67,7 +67,6 @@
     mousepad
     picard
     picard-tools
-    ranger
     qjackctl
     qpwgraph
     kooha
