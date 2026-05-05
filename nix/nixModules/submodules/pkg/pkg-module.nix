@@ -45,7 +45,6 @@
     # GUI / TUI
     inputs.pmenu-git.packages.${pkgs.system}.default # Use pmenu from flake.nix
     ncdu
-    alacritty # Eventually replace with kitty
     kitty
     yazi
     btop

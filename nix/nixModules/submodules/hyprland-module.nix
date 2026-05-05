@@ -57,7 +57,6 @@
 
       # Extra
       thunar
-      smile
     ];
   };
 }
