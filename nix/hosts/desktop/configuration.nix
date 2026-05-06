@@ -43,10 +43,15 @@
     desktopManager.plasma6.enable = true;
   };
 
-services.hardware.openrgb = { 
-  enable = true; 
-  package = pkgs.openrgb-with-all-plugins; 
-  motherboard = "amd"; 
+  # Exclude KDE packages
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    discover
+  ];
+
+services.hardware.openrgb = {
+  enable = true;
+  package = pkgs.openrgb-with-all-plugins;
+  motherboard = "amd";
 };
 
   # Define user account
