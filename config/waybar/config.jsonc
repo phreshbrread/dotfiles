@@ -33,9 +33,9 @@
     },
     "hyprland/workspaces": {
         "disable-scroll": false,
-        "all-outputs": true,
+        "all-outputs": false,
         "persistent-workspaces": {
-            "*": 9
+            "*": 10
         }
     },
     "hyprland/window": {
