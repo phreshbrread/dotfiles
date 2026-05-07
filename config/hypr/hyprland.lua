@@ -2,22 +2,68 @@
 -- [[ HYPRLAND CONFIG ]] --
 ---------------------------
 
+require("workspaces")
+require("monitors")
 
--- [[ MONITORS ]] --
--- Primary (Gigabyte)
-hl.monitor({ output = "desc: GIGA-BYTE TECHNOLOGY CO. LTD. G27F 21282B001333", mode = "1920x1080@144", position = "0x0", scale = 1 })
+-- [[ ENVIRONMENT ]] --
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "Adwaita")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("QT_QPA_PLATFOAM", "wayland;xcb")
+hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("QT_STYLE_OVERRIDE", "kvantum")
 
--- Primary (Gigaybte)
-hl.monitor({ output = "DP-2", mode = "1920x1080@144", position = "0x0", scale = 1 })
+-- [[ PROGRAMS ]] --
+local terminal      = "kitty"
+local menu          = "fuzzel"
+local fileManager   = "yazi"
+local browser       = "floorp"
+local pmenu         = "kitty -T pmenu -o font_size=16 pmenu"
 
--- Secondary (BenQ)
-hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "1920x0", scale = 1 })
+-- [[ MAIN CONFIG ]] --
+hl.config({
+    input = {
+        kb_layout       = "us",
+        follow_mouse    = 1,
+        sensitivity     = 0.1,
+        accel_profile   = flat,
 
--- Macbook
-hl.monitor({ output = "desc:Apple Computer Inc Color LCD", mode = "highres", position = "0x0", scale = 2 })
+        touchpad = {
+            natural_scroll          = true,
+            scroll_factor           = 0.2,
+            disable_while_typing    = true,
+        },
+    },
 
--- Virtual Machine
-hl.monitor({ output = "Virtual-1", mode = "1920x1080", position = "0x0", scale = 1 })
+    general = {
+        gaps_in             = 0,
+        gaps_out            = 0,
+        border_size         = 2,
+        resize_on_border    = true,
+        allow_tearing       = true,
+        layout              = "master",
 
--- Nested Session
-hl.monitor({ output = "WL-1", mode = "1366x768", position = "0x0", scale = 1 })
+        col = {
+            active_border   = { colors = {"rgb(173,142,230)", "rgb(122,162,247)"}, angle = 45 },
+            inactive_border = "rgb(50,52,74)",
+        },
+    },
+
+    decoration = {
+        rounding = 0,
+    },
+
+    blur = {
+        enabled = false,
+    },
+
+    animations = {
+        enabled = false,
+    },
+})
+
+hl.device({
+    name        = "logitech-g502-hero-gaming-mouse",
+    sensitivity = -0.1,
+})
