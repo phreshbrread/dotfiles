@@ -19,5 +19,13 @@
         enable = true;
         xwayland.enable = true;
     };
+
+    environment.cosmic.excludePackages = with pkgs; [
+        cosmic-store
+        cosmic-reader
+        cosmic-term
+        cosmic-edit
+        cosmic-player
+    ];
   };
 }
