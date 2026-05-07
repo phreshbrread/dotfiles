@@ -2,17 +2,11 @@
 -- [[ HYPRLAND CONFIG ]] --
 ---------------------------
 
-require("workspaces")
+require("environment")
+require("keybinds")
 require("monitors")
-
--- [[ ENVIRONMENT ]] --
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_THEME", "Adwaita")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
-hl.env("QT_QPA_PLATFOAM", "wayland;xcb")
-hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
-hl.env("QT_STYLE_OVERRIDE", "kvantum")
+require("window-rules")
+require("workspaces")
 
 -- [[ PROGRAMS ]] --
 local terminal      = "kitty"
@@ -20,6 +14,12 @@ local menu          = "fuzzel"
 local fileManager   = "yazi"
 local browser       = "floorp"
 local pmenu         = "kitty -T pmenu -o font_size=16 pmenu"
+
+-- [[ COMMANDS ]] --
+local reloadWaybar          = "pkill waybar; waybar &"
+local clipboardManager      = "cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"
+local screenshotCommand     = "hyprshot -z -m region -o $HOME/Pictures/Screenshots"
+local screenLockerCommand   = "hyprlock"
 
 -- [[ MAIN CONFIG ]] --
 hl.config({
@@ -49,17 +49,16 @@ hl.config({
             inactive_border = "rgb(50,52,74)",
         },
     },
+})
 
-    decoration = {
-        rounding = 0,
-    },
-
-    blur = {
-        enabled = false,
-    },
-
-    animations = {
-        enabled = false,
+-- [[ APPEARANCE ]] --
+hl.config({
+    blur        = { enabled = false },
+    animations  = { enabled = false },
+    decoration  = { rounding = 0 },
+    misc = {
+        force_default_wallpaper = -1,
+        disable_hyprland_logo   = false,
     },
 })
 
@@ -67,3 +66,33 @@ hl.device({
     name        = "logitech-g502-hero-gaming-mouse",
     sensitivity = -0.1,
 })
+
+-- [[ LAYOUTS ]] --
+hl.config =({
+    master = {
+        new_status = "master",
+        new_on_top = true,
+        mfact = 0.65,
+    },
+})
+
+--[[ AUTOSTARTS ]]--
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("swaync")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("qjackctl")
+    hl.exec_cmd("nm-applet")
+    hl.exec_cmd("waypaper --restore")
+    hl.exec_cmd("openrgb")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+end)
+
+--[[            OLD CONFIG ---------------------
+xwayland {
+    force_zero_scaling = true
+}]]--
