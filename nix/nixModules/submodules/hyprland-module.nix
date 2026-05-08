@@ -38,6 +38,7 @@
       hyprcursor
       hyprpicker
       hyprshot
+      hyprsunset
 
       # Core
       swaynotificationcenter
