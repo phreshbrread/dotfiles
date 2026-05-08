@@ -27,7 +27,7 @@
       dolphin-emu
       protonup-qt
       heroic
-      lutris
+      #lutris
       umu-launcher
       gimp3-with-plugins
       winetricks
