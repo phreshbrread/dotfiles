@@ -60,6 +60,7 @@
               plenary-nvim
               telescope-fzf-native-nvim
               vim-better-whitespace
+              nvim-autopairs
 
               lualine-nvim
               nvim-highlight-colors
