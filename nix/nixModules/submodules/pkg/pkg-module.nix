@@ -81,15 +81,4 @@
     # Language servers
     rust-analyzer
   ];
-
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    corefonts
-    font-awesome
-    nerd-fonts.hack
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-  ];
 }

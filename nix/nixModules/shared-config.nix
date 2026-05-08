@@ -178,6 +178,25 @@
     };
   };
 
+  # Fonts
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      corefonts
+      font-awesome
+      nerd-fonts.hack
+      nerd-fonts.jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+    ];
+
+    fontconfig = {
+      defaultFonts.emoji = [ "Noto Color Emoji" ];
+      useEmbeddedBitmaps = true;
+    };
+  };
+
   # Time zone + locale
   time.timeZone = "Australia/Melbourne";
   i18n.defaultLocale = "en_AU.UTF-8";
