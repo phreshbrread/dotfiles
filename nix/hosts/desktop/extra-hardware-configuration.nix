@@ -41,11 +41,23 @@
       "systemd.swap=0" # Disable systemd auto swap geneneration
     ];
 
+    # Extra packages
+    extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
+    ];
+
     # Kernel modules
     kernelModules = [
       "i2c-dev"
       "i2c-piix4" # These two are for RGB control
+      "v4l2loopback"
+      "snd-aloop"
     ];
+
+    # Set module parameters
+    extraModprobeConfig = ''
+      options v4l2loopback devices=2 exclusive_caps=1,1 video_nr=1,2 card_label="OBS Cam,Virtual Camera"
+    '';
   };
 
   # Enable i2c for RGB control
