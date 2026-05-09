@@ -92,7 +92,6 @@
   # Enable services
   services = {
     tumbler.enable = true;
-    gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
   };
 

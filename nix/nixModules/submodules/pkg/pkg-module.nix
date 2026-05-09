@@ -42,6 +42,7 @@
     zoxide
     resvg
     v4l-utils
+    libsecret
 
     # GUI / TUI
     inputs.pmenu-git.packages.${pkgs.system}.default # Use pmenu from flake.nix

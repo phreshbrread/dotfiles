@@ -37,10 +37,14 @@
   services = {
     displayManager = {
       sddm.enable = true; # Use SDDM as display manager
-      autoLogin.user = "brad";
     };
 
     desktopManager.plasma6.enable = true;
+  };
+
+  # Enable Kwallet
+  security.pam.services = {
+    sddm.enableKwallet = true;
   };
 
   # Exclude KDE packages
