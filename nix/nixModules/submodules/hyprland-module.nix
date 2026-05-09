@@ -39,6 +39,9 @@
       hyprpicker
       hyprshot
       hyprsunset
+      hyprtoolkit
+      hyprland-qt-support
+      hyprland-qtutils
 
       # Core
       swaynotificationcenter
@@ -55,6 +58,13 @@
       networkmanagerapplet
       pavucontrol
       mpd
+
+      # Appearance
+      kdePackages.qtstyleplugin-kvantum
+      libsForQt5.qtstyleplugin-kvantum
+      kdePackages.breeze
+      kdePackages.breeze-icons
+      tokyonight-gtk-theme
 
       # Extra
       thunar

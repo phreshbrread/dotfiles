@@ -16,13 +16,6 @@
 
   config = lib.mkIf config.macbook-pkgs.enable {
     environment.systemPackages = with pkgs; [
-      # Appearance
-      kdePackages.qtstyleplugin-kvantum
-      libsForQt5.qtstyleplugin-kvantum
-      kdePackages.breeze
-      kdePackages.breeze-icons
-      tokyonight-gtk-theme
-      phinger-cursors
 
       # Extra
       font-manager

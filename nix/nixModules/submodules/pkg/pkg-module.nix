@@ -75,9 +75,6 @@
     yacreader
     nicotine-plus
 
-    # Appearance
-    papirus-icon-theme
-
     # Language servers
     rust-analyzer
   ];
