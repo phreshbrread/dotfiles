@@ -67,6 +67,8 @@
       tokyonight-gtk-theme
       elementary-xfce-icon-theme
       qt6Packages.qt6ct
+      nwg-look
+      adwaita-icon-theme
 
       # Extra
       thunar
