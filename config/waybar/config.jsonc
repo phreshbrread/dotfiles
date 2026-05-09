@@ -35,7 +35,7 @@
         "disable-scroll": false,
         "all-outputs": false,
         "persistent-workspaces": {
-            "*": 10
+            "*": 5
         }
     },
     "hyprland/window": {
