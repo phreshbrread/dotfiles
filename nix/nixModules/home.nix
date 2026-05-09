@@ -19,8 +19,8 @@
       package = pkgs.tokyonight-gtk-theme;
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "elementary-xfce-dark";
+      package = pkgs.elementary-xfce-icon-theme;
     };
     cursorTheme = {
       name = "phinger-cursors-dark";

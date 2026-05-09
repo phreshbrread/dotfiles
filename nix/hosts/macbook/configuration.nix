@@ -89,12 +89,6 @@
     kdeconnect.enable = true;
   };
 
-  # Enable services
-  services = {
-    tumbler.enable = true;
-    power-profiles-daemon.enable = true;
-  };
-
   # Ignore power key
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";

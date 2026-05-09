@@ -65,6 +65,8 @@
       kdePackages.breeze
       kdePackages.breeze-icons
       tokyonight-gtk-theme
+      elementary-xfce-icon-theme
+      qt6Packages.qt6ct
 
       # Extra
       thunar

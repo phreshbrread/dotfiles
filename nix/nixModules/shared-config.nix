@@ -93,8 +93,9 @@
 
   # Declare services
   services = {
-    # Power profiles daemon
     power-profiles-daemon.enable = true;
+    tumbler.enable = true;
+    gvfs.enable = true;
 
     # Enable Flatpak
     flatpak = {
