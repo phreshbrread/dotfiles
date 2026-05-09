@@ -44,7 +44,7 @@
       hyprland-qtutils
 
       # Core
-      swaynotificationcenter
+      lxqt.lxqt-notificationd
       waypaper
       swaybg
       playerctl
