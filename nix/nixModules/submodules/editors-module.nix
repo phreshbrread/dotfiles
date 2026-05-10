@@ -62,6 +62,7 @@
               vim-better-whitespace
               nvim-autopairs
               nvim-lspconfig
+              nvim-treesitter.withAllGrammars
 
               lualine-nvim
               nvim-highlight-colors
@@ -77,6 +78,7 @@
       fzf
       fd
       clang-tools # For nvim LSP
+      tree-sitter
     ];
   };
 }

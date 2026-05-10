@@ -33,8 +33,18 @@ require('nvim-autopairs').setup({})
 vim.cmd.colorscheme "tokyonight"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
 
+-- Tree-sitter setup
+require('nvim-treesitter').setup({})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function()
+    pcall(vim.treesitter.start)   -- pcall so it doesn't error on unsupported files
+  end,
+})
+
 -- LSP config
-vim.lsp.enable({ 'clangd' })
+vim.lsp.enable({ 'clangd', 'rust_analyzer' })
+
 vim.o.autocomplete = true
 
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
@@ -50,7 +60,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.opt.complete:append('o')
 
-vim.opt.completeopt = { 'menuone', 'noselect' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 vim.o.pumheight = 6
 vim.o.pumborder = 'rounded'
