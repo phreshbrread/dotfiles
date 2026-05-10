@@ -129,11 +129,18 @@
   };
 
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn
+        networkmanager-strongswan
+      ];
+    };
     firewall = {
-      enable                  = true;
-      allowPing               = true;
-      logRefusedConnections   = true;
+      enable                    = true;
+      allowPing                 = true;
+      logRefusedConnections     = true;
+      checkReversePath          = false;
       allowedTCPPorts = [
         42000 # Warpinator
         42001
