@@ -61,6 +61,7 @@
               telescope-fzf-native-nvim
               vim-better-whitespace
               nvim-autopairs
+              nvim-lspconfig
 
               lualine-nvim
               nvim-highlight-colors
@@ -70,11 +71,12 @@
       };
     };
 
-    # Dependencies
     environment.systemPackages = with pkgs; [
+      # Neovim Dependencies
       ripgrep
       fzf
       fd
+      clang-tools # For nvim LSP
     ];
   };
 }
