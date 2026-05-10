@@ -23,6 +23,9 @@
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
 
+  # Use NetworkManager
+  networking.networkmanager.enable = true;
+
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -57,6 +60,7 @@
     shell           = pkgs.fish;
     extraGroups = [
       "networkmanager"
+      "wpa_supplicant"
       "wheel"
       "video"
       "render"

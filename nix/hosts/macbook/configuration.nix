@@ -11,19 +11,28 @@
 
 {
   # Enable modules
-  macbook-pkgs.enable = true; # Macbook package set
-  systemd-boot-module.enable = true;
-  hyprland-module.enable = true;
-  x-module.enable = true; # X window managers
-  vm-module.enable = true; # VM support
-  ssh-module.enable = true;
-  syncthing-module.enable = true;
-  gaming-module.enable = true;
-  openbox-module.enable = true;
-  cosmic-module.enable = true;
+  macbook-pkgs.enable           = true; # Macbook package set
+  systemd-boot-module.enable    = true;
+  hyprland-module.enable        = true;
+  x-module.enable               = true; # X window managers
+  vm-module.enable              = true;
+  ssh-module.enable             = true;
+  syncthing-module.enable       = true;
+  gaming-module.enable          = true;
+  openbox-module.enable         = true;
+  cosmic-module.enable          = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
+
+  # wpa_supplicant
+  networking = {
+    networkmanager.enable = false;
+    wireless = {
+      enable          = true;
+      userControlled  = true;
+    };
+  };
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
@@ -35,26 +44,26 @@
 
   # Environment variables
   environment.variables = {
-    GDK_SCALE = "1";
-    QT_SCALE_FACTOR = "1";
-    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-    LIBVA_DRIVER_NAME = "i965";
+    GDK_SCALE           = "1";
+    QT_SCALE_FACTOR     = "1";
+    _JAVA_OPTIONS       = "-Dsun.java2d.uiScale=2";
+    LIBVA_DRIVER_NAME   = "i965";
   };
 
   # Define user account
   users.users.brad = {
-    isNormalUser = true;
-    description = "Brad";
+    isNormalUser    = true;
+    shell           = pkgs.fish;
     extraGroups = [
       "networkmanager"
+      "wpa_supplicant"
       "wheel"
     ];
-    shell = pkgs.fish;
   };
 
   # Intel graphics
   hardware.graphics = {
-    enable = true;
+    enable      = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
       intel-vaapi-driver
@@ -70,9 +79,9 @@
   services.libinput = {
     enable = true;
     touchpad = {
-      accelProfile = "flat"; # Disable touchpad acceleration
-      naturalScrolling = true;
-      disableWhileTyping = true;
+      accelProfile          = "flat"; # Disable touchpad acceleration
+      naturalScrolling      = true;
+      disableWhileTyping    = true;
     };
   };
 
