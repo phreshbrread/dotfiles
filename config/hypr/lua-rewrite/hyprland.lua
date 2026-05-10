@@ -11,7 +11,7 @@ require("workspaces")
 -- [[ PROGRAMS ]] --
 local terminal      = "kitty"
 local menu          = "fuzzel"
-local fileManager   = "yazi"
+local fileManager   = "Thunar"
 local browser       = "floorp"
 local pmenu         = "kitty -T pmenu -o font_size=16 pmenu"
 
