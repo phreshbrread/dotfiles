@@ -28,9 +28,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Enable NetworkManager
-  networking.networkmanager.enable = true;
-
   # Enable Flakes
   nix.settings.experimental-features = [
     "nix-command"
@@ -68,41 +65,38 @@
     };
   };
 
-  # Use doas instead of sudo
-  # User must be in 'wheel' group
   security = {
+    rtkit.enable = true; # Enable realtime daemon
+
+    # Use doas instead of sudo
+    # User must be in 'wheel' group
     sudo.enable = false;
     doas = {
-      enable = true;
-      wheelNeedsPassword = true;
-      extraRules = [
-        {
-          groups = [ "wheel" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
+      enable                = true;
+      wheelNeedsPassword    = true;
+      extraRules = [{
+        groups    = [ "wheel" ];
+        keepEnv   = true;
+        persist   = true;
+      }];
     };
   };
-
-  # Enable realtime daemon
-  security.rtkit.enable = true;
 
   # Enable XDG portals
   xdg.portal.enable = true;
 
   # Declare services
   services = {
-    power-profiles-daemon.enable = true;
-    tumbler.enable = true;
-    gvfs.enable = true;
+    power-profiles-daemon.enable    = true;
+    tumbler.enable                  = true;
+    gvfs.enable                     = true;
 
     # Enable Flatpak
     flatpak = {
       enable = true;
       update.auto = {
-        enable = true;
-        onCalendar = "weekly";
+        enable      = true;
+        onCalendar  = "weekly";
       };
     };
 
@@ -119,58 +113,60 @@
 
     # Configure keymap in X11
     xserver.xkb = {
-      layout = "au";
-      variant = "";
+      layout    = "au";
+      variant   = "";
     };
 
     # Enable sound with pipewire
     pulseaudio.enable = false;
     pipewire = {
-      enable = true;
-      alsa.enable = true;
+      enable            = true;
+      alsa.enable       = true;
       alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
+      pulse.enable      = true;
+      jack.enable       = true;
     };
   };
 
-  # Enable firewall
-  networking.firewall = {
-    enable = true;
-    allowPing = true;
-    logRefusedConnections = true;
-    allowedTCPPorts = [
-      42000 # Warpinator
-      42001
-      2234  # Soulseek
-    ];
-    allowedUDPPorts = [
-      42000
-      42001
-      2234
-    ];
+  networking = {
+    networkmanager.enable = true;
+    firewall = {
+      enable                  = true;
+      allowPing               = true;
+      logRefusedConnections   = true;
+      allowedTCPPorts = [
+        42000 # Warpinator
+        42001
+        2234  # Soulseek
+      ];
+      allowedUDPPorts = [
+        42000
+        42001
+        2234
+      ];
+    };
   };
 
   # Programs
   programs = {
-    git.enable = true;
-    tmux.enable = true;
-    gamescope.enable = true;
+    git.enable          = true;
+    tmux.enable         = true;
+    gamescope.enable    = true;
     fish = {
       enable = true;
       shellAliases = {
-        x = "exit";
-        ls = "eza -algh --group-directories-first --icons=always";
-        cls = "clear";
-        sudo = "doas";
-        tmux-mc = "tmux a -t minecraft-server";
-        sudoedit = "doas rnano";
-        install-date = "stat / | grep Birth";
-        tmux-terraria = "tmux a -t terraria-server";
-        nrs = "nixos-rebuild switch";
-        nv = "nvim";
-        ff = "fastfetch";
-        cat = "bat";
+        x               = "exit";
+        ls              = "eza -algh --group-directories-first --icons=always";
+        cls             = "clear";
+        sudo            = "doas";
+        tmux-mc         = "tmux a -t minecraft-server";
+        sudoedit        = "doas rnano";
+        install-date    = "stat / | grep Birth";
+        tmux-terraria   = "tmux a -t terraria-server";
+        nrs             = "nixos-rebuild switch";
+        nv              = "nvim";
+        ff              = "fastfetch";
+        cat             = "bat";
       };
     };
 
@@ -201,18 +197,18 @@
   };
 
   # Time zone + locale
-  time.timeZone = "Australia/Melbourne";
-  i18n.defaultLocale = "en_AU.UTF-8";
-  i18n.extraLocales = [ "all" ];
+  time.timeZone         = "Australia/Melbourne";
+  i18n.defaultLocale    = "en_AU.UTF-8";
+  i18n.extraLocales     = [ "all" ];
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
+    LC_ADDRESS          = "en_AU.UTF-8";
+    LC_IDENTIFICATION   = "en_AU.UTF-8";
+    LC_MEASUREMENT      = "en_AU.UTF-8";
+    LC_MONETARY         = "en_AU.UTF-8";
+    LC_NAME             = "en_AU.UTF-8";
+    LC_NUMERIC          = "en_AU.UTF-8";
+    LC_PAPER            = "en_AU.UTF-8";
+    LC_TELEPHONE        = "en_AU.UTF-8";
+    LC_TIME             = "en_AU.UTF-8";
   };
 }

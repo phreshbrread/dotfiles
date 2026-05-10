@@ -11,14 +11,14 @@
 
 {
   # Enable modules
-  desktop-pkgs.enable = true; # Desktop package set
-  systemd-boot-module.enable = true;
-  hyprland-module.enable = true;
-  vm-module.enable = true; # VM support
-  ssh-module.enable = true;
-  syncthing-module.enable = true;
-  gaming-module.enable = true;
-  davinci-resolve.enable = true;
+  desktop-pkgs.enable           = true; # Desktop package set
+  systemd-boot-module.enable    = true;
+  hyprland-module.enable        = true;
+  vm-module.enable              = true; # VM support
+  ssh-module.enable             = true;
+  syncthing-module.enable       = true;
+  gaming-module.enable          = true;
+  davinci-resolve.enable        = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -28,41 +28,33 @@
 
   # Garbage collection
   nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+    automatic   = true;
+    dates       = "weekly";
+    options     = "--delete-older-than 7d";
   };
 
-  # Enable desktop environments
   services = {
-    displayManager = {
-      sddm.enable = true; # Use SDDM as display manager
-    };
-
-    desktopManager.plasma6.enable = true;
-  };
-
-  # Enable Kwallet
-  security.pam.services = {
-    sddm.enableKwallet = true;
+    displayManager.sddm.enable      = true; # Use SDDM as display manager
+    desktopManager.plasma6.enable   = true; # Enable Plasma
   };
 
   # Exclude KDE packages
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     discover
+    kate
+    konsolee
   ];
 
-services.hardware.openrgb = {
-  enable = true;
-  package = pkgs.openrgb-with-all-plugins;
-  motherboard = "amd";
-};
+  services.hardware.openrgb = {
+    enable        = true;
+    package       = pkgs.openrgb-with-all-plugins;
+    motherboard   = "amd";
+  };
 
   # Define user account
   users.users.brad = {
-    isNormalUser = true;
-    description = "Brad";
-    shell = pkgs.fish;
+    isNormalUser    = true;
+    shell           = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -75,42 +67,38 @@ services.hardware.openrgb = {
   };
 
   # Hamachi
-  services.logmein-hamachi.enable = true;
-  programs.haguichi.enable = true;
+  services.logmein-hamachi.enable   = true;
+  programs.haguichi.enable          = true;
 
   # Enable programs
   programs = {
-    gamemode.enable = true;
-    kdeconnect.enable = true;
-
-    # OBS + Plugins
-    obs-studio = {
-      enable = true;
-      plugins = [ pkgs.obs-studio-plugins.droidcam-obs ];
-    };
+    gamemode.enable     = true;
+    kdeconnect.enable   = true;
+    obs-studio.enable   = true;
 
     # Thunderbird
     thunderbird = {
-      enable = true;
-      package = pkgs.thunderbird-latest;
+      enable    = true;
+      package   = pkgs.thunderbird-latest;
     };
   };
 
-  # Realtime permissions
-  security.pam.loginLimits = [
-    {
-      domain = "@audio";
-      item = "rtprio";
-      type = "-";
-      value = "95";
-    }
-    {
-      domain = "@audio";
-      item = "memlock";
-      type = "-";
-      value = "unlimited";
-    }
-  ];
+  security = {
+    pam.services.sddm.enableKwallet = true; # Enable Kwallet
+
+    # Realtime permissions
+    pam.loginLimits = [{
+      domain    = "@audio";
+      item      = "rtprio";
+      type      = "-";
+      value     = "95";
+    } {
+      domain    = "@audio";
+      item      = "memlock";
+      type      = "-";
+      value     = "unlimited";
+    }];
+  };
 
   # Declare flatpaks
   services.flatpak.packages = [
