@@ -4,7 +4,10 @@
 
 -- Plugins are installed/managed by Nix, but are configured/loaded here
 
--- Set options
+-- Load split configs
+require('keybinds')
+
+-- Options
 vim.o.termguicolors = true
 vim.o.number = true
 vim.o.relativenumber = true
@@ -16,24 +19,16 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.api.nvim_command('filetype plugin indent on')
 
--- Custom keybinds
-vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
-vim.keymap.set('n', '<C-l>', ':Telescope live_grep<CR>')
-
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
 require('nvim-autopairs').setup({})
 
--- TODO separate into options and keybinds files
--- require('config.options') -- [./lua/options.lua]
--- require('config.keybinds') -- [./lua/keybinds.lua]
-
--- Set colours
+-- Colours
 vim.cmd.colorscheme "tokyonight"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
 
--- Tree-sitter setup
+-- Tree-sitter
 require('nvim-treesitter').setup({})
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
@@ -45,10 +40,6 @@ vim.api.nvim_create_autocmd('FileType', {
 -- LSP config
 vim.lsp.enable({ 'clangd', 'rust_analyzer' })
 
-vim.o.autocomplete = true
-
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
-
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
@@ -58,9 +49,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-vim.opt.complete:append('o')
-
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-
+vim.opt.complete:append('o')
+vim.o.autocomplete = true
 vim.o.pumheight = 6
 vim.o.pumborder = 'rounded'
