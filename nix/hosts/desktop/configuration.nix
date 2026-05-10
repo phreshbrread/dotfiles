@@ -42,7 +42,7 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     discover
     kate
-    konsolee
+    konsole
   ];
 
   services.hardware.openrgb = {
