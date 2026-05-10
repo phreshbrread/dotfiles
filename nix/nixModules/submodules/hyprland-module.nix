@@ -52,11 +52,10 @@
       fuzzel
       cliphist
       wl-clipboard
-      networkmanagerapplet
-      wpa_supplicant_gui
 
       # Waybar
       waybar
+      networkmanagerapplet
       pavucontrol
       mpd
 
