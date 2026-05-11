@@ -75,8 +75,6 @@
     tenacity
     yacreader
     nicotine-plus
-
-    # Language servers
-    rust-analyzer
+    handbrake
   ];
 }

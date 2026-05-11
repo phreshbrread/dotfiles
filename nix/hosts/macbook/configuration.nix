@@ -79,7 +79,6 @@
   # Declare flatpaks
   services.flatpak.packages = [
     "org.polymc.PolyMC"
-    "fr.handbrake.ghb"
     "fm.reaper.Reaper"
     "org.jdownloader.JDownloader"
   ];
