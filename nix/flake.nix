@@ -17,11 +17,6 @@
     };
 
     pmenu-git.url = "github:PhreshBrread/pmenu/dev"; # pmenu dev branch
-
-    hyprqt6engine = {
-      url = "github:hyprwm/hyprqt6engine";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -32,7 +27,6 @@
       home-manager,
       pmenu-git,
       nixpkgs-unstable,
-      hyprqt6engine,
     }@inputs:
     {
       # Macbook

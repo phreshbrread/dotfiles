@@ -10,20 +10,6 @@
   ...
 }:
 
-let
-  hyprqt6engine = pkgs.callPackage "${inputs.hyprqt6engine}/nix/default.nix" {};
-
-  # Symlink fix for NixOS plugin path
-  hyprqt6engine-fixed = pkgs.symlinkJoin {
-    name = "hyprqt6engine-fixed";
-    paths = [ hyprqt6engine ];
-    postBuild = ''
-      mkdir -p $out/lib/qt-6/plugins/platformthemes
-      ln -s ${hyprqt6engine}/lib/qt-6/platformthemes/libhyprqt6engine.so \
-            $out/lib/qt-6/plugins/platformthemes/libhyprqt6engine.so
-    '';
-  };
-in
 {
   options = {
     hyprland-module.enable = lib.mkEnableOption "Enables Hyprland";
@@ -57,7 +43,6 @@ in
       hyprtoolkit
       hyprland-qt-support
       hyprland-qtutils
-      hyprqt6engine-fixed # Pulls from overlay
 
       # Core
       lxqt.lxqt-notificationd
