@@ -11,11 +11,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pmenu-git.url = "github:PhreshBrread/pmenu/dev"; # pmenu dev branch
   };
 
@@ -24,7 +19,6 @@
       self,
       nixpkgs,
       nix-flatpak,
-      home-manager,
       pmenu-git,
       nixpkgs-unstable,
     }@inputs:
@@ -39,19 +33,6 @@
           ./nixModules/shared-config.nix
 
           nix-flatpak.nixosModules.nix-flatpak
-
-          # Make home-manager as a module of nixos so that
-          # home-manager configuration will be deployed
-          # automatically when executing `nixos-rebuild switch`
-          #home-manager.nixosModules.home-manager
-          #{
-          #  home-manager.useGlobalPkgs = true;
-          #  home-manager.users.brad = {
-          #    imports = [
-          #      ./nixModules/home.nix
-          #    ];
-          #  };
-          #}
         ];
       };
 
