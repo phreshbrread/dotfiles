@@ -21,5 +21,9 @@
       libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      virtiofsd
+    ];
   };
 }
