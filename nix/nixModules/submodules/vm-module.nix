@@ -18,12 +18,11 @@
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = [ "brad" ];
     virtualisation = {
-      libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
+      libvirtd = {
+        enable = true;
+        qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+      };
     };
-
-    environment.systemPackages = with pkgs; [
-      virtiofsd
-    ];
   };
 }
