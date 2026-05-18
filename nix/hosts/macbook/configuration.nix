@@ -20,7 +20,7 @@
   syncthing-module.enable = true;
   gaming-module.enable = true;
   openbox-module.enable = true;
-  cosmic-module.enable = true;
+  #cosmic-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -62,6 +62,9 @@
     ];
   };
   hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
+
+  # LXQT
+  services.xserver.desktopManager.lxqt.enable = true;
 
   # Use ly
   services.displayManager.ly.enable = true;
