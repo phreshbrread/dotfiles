@@ -66,6 +66,12 @@
   # LXQT
   services.xserver.desktopManager.lxqt.enable = true;
 
+  # Kwallet
+  security.pam.services.login.kwallet = {
+    enable = true;
+    package = pkgs.kdePackages.kwallet-pam;
+  };
+
   # Use ly
   services.displayManager.ly.enable = true;
 

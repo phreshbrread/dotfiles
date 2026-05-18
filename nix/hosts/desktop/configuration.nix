@@ -84,7 +84,7 @@
   };
 
   security = {
-    pam.services.sddm.enableKwallet = true; # Enable Kwallet
+    pam.services.login.enableKwallet = true; # Enable Kwallet
 
     # Realtime permissions
     pam.loginLimits = [{
