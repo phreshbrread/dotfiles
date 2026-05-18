@@ -187,6 +187,7 @@
 
   # Fonts
   fonts = {
+    fontDir.enable = true;
     enableDefaultPackages = true;
     packages = with pkgs; [
       corefonts
