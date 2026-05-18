@@ -20,6 +20,8 @@
       qbittorrent
       image-roll
       scarlett2 # Focusrite Scarlett driver
+      kdePackages.kwallet
+      kdePackages.kwalletmanager
     ];
   };
 }
