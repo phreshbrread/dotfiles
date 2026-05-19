@@ -63,6 +63,7 @@
               nvim-autopairs
               nvim-lspconfig
               nvim-treesitter.withAllGrammars
+              presence-nvim
 
               lualine-nvim
               nvim-highlight-colors
