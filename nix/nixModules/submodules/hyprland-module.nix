@@ -73,6 +73,7 @@
 
       # Extra
       thunar
+      woomer
     ];
   };
 }
