@@ -76,5 +76,6 @@
     yacreader
     nicotine-plus
     handbrake
+    dosbox-x
   ];
 }

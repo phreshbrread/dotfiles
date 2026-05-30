@@ -45,7 +45,6 @@
       kdePackages.plasma-vault
       openutau
       easyeffects
-      starfox64recomp
 
       # Doom Engines
       crispy-doom
