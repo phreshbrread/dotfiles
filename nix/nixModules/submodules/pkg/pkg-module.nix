@@ -68,7 +68,6 @@
     mousepad
     picard
     picard-tools
-    qjackctl
     qpwgraph
     kooha
     jellyfin-media-player
