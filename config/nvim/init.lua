@@ -37,6 +37,9 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- Markdown rendering
+require('render-markdown').setup({})
+
 -- Discord RPC
 require("presence").setup({
     -- General options

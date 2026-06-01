@@ -64,6 +64,7 @@
               nvim-lspconfig
               nvim-treesitter.withAllGrammars
               presence-nvim
+              render-markdown-nvim
 
               lualine-nvim
               nvim-highlight-colors
