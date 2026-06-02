@@ -1,10 +1,5 @@
 -- [[ WINDOW RULES ]] --
 hl.window_rule({
-    name    = "Qjackctl",
-    match   = { class = "QjackCtl" },
-    float   = true,
-})
-hl.window_rule({
     name    = "Steam Settings",
     match   = {title = "Steam Settings" },
     float   = true,

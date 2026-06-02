@@ -25,7 +25,7 @@
         xterm
       ];
       windowManager = {
-        awesome.enable = true; # Enable AwesomeWM
+        #awesome.enable = true; # Enable AwesomeWM
         dwm = {
           # Enable custom DWM package
           enable = true;
