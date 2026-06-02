@@ -1,11 +1,7 @@
-### Nix
-- Set up LSP + syntax highlighting in nvim
-
 ### Desktop
 - Automate Jellyfin backup
 - Create PS3 status service
 
 ### Macbook
-- Redo Waybar again
 - X clipboard history
 - Polkit for X WMs
