@@ -42,6 +42,7 @@
     resvg
     v4l-utils
     libsecret
+    ventoy
 
     # GUI / TUI
     inputs.pmenu-git.packages.${pkgs.system}.default # Use pmenu from flake.nix
@@ -75,5 +76,9 @@
     nicotine-plus
     handbrake
     dosbox-x
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.12"
   ];
 }
