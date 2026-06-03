@@ -17,7 +17,6 @@
     bat
     ripgrep
     fastfetch
-    git-credential-manager
     killall
     nh
     exiftool

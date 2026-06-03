@@ -36,8 +36,6 @@
 
   # Environment variables
   environment.variables = {
-    GCM_CREDENTIAL_STORE    = "none";
-    GCM_GUI_PROMPT          = "0";
     TERMINAL                = "kitty";
     TERM                    = "kitty";
     EDITOR                  = "nvim";
