@@ -10,6 +10,14 @@
     ./macbook-pkgs.nix
   ];
 
+  # Allow insecure packages
+  nixpkgs.config = {
+    allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "broadcom-sta"
+      "ventoy"
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     # CLI
     eza
@@ -76,9 +84,5 @@
     nicotine-plus
     handbrake
     dosbox-x
-  ];
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.12"
   ];
 }
