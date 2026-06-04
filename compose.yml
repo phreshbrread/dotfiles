@@ -7,7 +7,7 @@ services:
       - PUID=1000
       - PGID=100
       - TZ=Australia/Melbourne
-#      - DOCKER_MODS=linuxserver/mods:jellyfin-amd
+      - JELLYFIN_PublishedServerUrl=https://screamingbird.duckdns.org
     group_add:
       - '303' # Add to "render" group to enable GPU accel
       - '100'
@@ -15,8 +15,8 @@ services:
       - /Jellyfin:/config:rwx
       - /external-drive/Media:/data/media:rwx
     ports:
-      - 8096:8096 # HTTP
-      - 8920:8920 # HTTPS
+      - 8096:8096     # HTTP
+      - 8920:8920     # HTTPS
       - 7359:7359/udp # Local discovery
     devices:
       - /dev/dri:/dev/dri
