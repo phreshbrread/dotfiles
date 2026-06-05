@@ -20,7 +20,6 @@
   syncthing-module.enable = true;
   gaming-module.enable = true;
   openbox-module.enable = true;
-  #cosmic-module.enable = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-macbook";
@@ -30,10 +29,11 @@
 
   # Environment variables
   environment.variables = {
-    GDK_SCALE = "1";
-    QT_SCALE_FACTOR = "1";
-    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-    LIBVA_DRIVER_NAME = "i965";
+    GDK_SCALE           = "1";
+    QT_SCALE_FACTOR     = "1";
+    _JAVA_OPTIONS       = "-Dsun.java2d.uiScale=2";
+    LIBVA_DRIVER_NAME   = "i965";
+    PROTON_USE_WINED3D  = "1";
   };
 
   # Define user account

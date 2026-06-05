@@ -15,9 +15,13 @@
   };
 
   config = lib.mkIf config.gaming-module.enable {
+    programs.gamemode = {
+      enable        = true;
+      enableRenice  = true;
+    };
     programs.steam = {
-      enable = true;
-      protontricks.enable = true;
+      enable                = true;
+      protontricks.enable   = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
         steamtinkerlaunch
