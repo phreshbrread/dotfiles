@@ -21,11 +21,21 @@
   gaming-module.enable = true;
   openbox-module.enable = true;
 
-  # Set hostname
-  networking.hostName = "pheg-nixos-macbook";
-
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
+
+  # Network
+  networking = {
+    hostName                    = "pheg-nixos-macbook";
+    networkmanager.wifi.backend = "iwd";
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        Network.EnableIPv6      = true;
+        Settings.Autoconnect    = true;
+      };
+    };
+  };
 
   # Environment variables
   environment.variables = {
