@@ -51,21 +51,24 @@
     v4l-utils
     libsecret
     ventoy
+    inxi
+    libnotify
+    vulkan-tools
 
-    # GUI / TUI
-    inputs.pmenu-git.packages.${pkgs.system}.default # Use pmenu from flake.nix
-    ncdu
+    # TUI
+    inputs.pmenu-git.packages.${pkgs.system}.default # pmenu from flake
     kitty
+    gf
+    ncdu
     yazi
     btop
+
+    # GUI
     floorp-bin
     obsidian
     blender
     seahorse
     gparted
-    libnotify
-    inxi
-    vulkan-tools
     spotify
     warpinator
     equibop
