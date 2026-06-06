@@ -25,6 +25,9 @@
   # Enable text editors for all hosts
   editors-module.enable = true;
 
+  # Enable package index
+  programs.nix-index.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -154,7 +157,6 @@
     git.enable                  = true;
     tmux.enable                 = true;
     gamescope.enable            = true;
-    command-not-found.enable    = true;
     fish = {
       enable = true;
       shellAliases = {
