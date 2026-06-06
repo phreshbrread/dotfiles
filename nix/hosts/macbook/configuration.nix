@@ -49,7 +49,6 @@
   # Define user account
   users.users.brad = {
     isNormalUser = true;
-    description = "Brad";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -59,7 +58,7 @@
 
   # Intel graphics
   hardware.graphics = {
-    enable = true;
+    enable      = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
       intel-vaapi-driver
@@ -73,7 +72,7 @@
 
   # Kwallet
   security.pam.services.login.kwallet = {
-    enable = true;
+    enable  = true;
     package = pkgs.kdePackages.kwallet-pam;
   };
 
@@ -84,9 +83,9 @@
   services.libinput = {
     enable = true;
     touchpad = {
-      accelProfile = "flat"; # Disable touchpad acceleration
-      naturalScrolling = true;
-      disableWhileTyping = true;
+      accelProfile          = "flat"; # Disable touchpad acceleration
+      naturalScrolling      = true;
+      disableWhileTyping    = true;
     };
   };
 
@@ -97,10 +96,8 @@
     "org.jdownloader.JDownloader"
   ];
 
-  # Enable programs
-  programs = {
-    kdeconnect.enable = true;
-  };
+  # KDE Connect
+  programs.kdeconnect.enable = true;
 
   # Ignore power key
   services.logind.settings.Login = {

@@ -22,7 +22,7 @@
     ./submodules/pkg/pkg-module.nix
   ];
 
-  # Enable text editors by default
+  # Enable text editors for all hosts
   editors-module.enable = true;
 
   # Allow unfree packages
@@ -36,9 +36,9 @@
 
   # Environment variables
   environment.variables = {
-    TERMINAL                = "kitty";
-    TERM                    = "kitty";
-    EDITOR                  = "nvim";
+    TERMINAL    = "kitty";
+    TERM        = "kitty";
+    EDITOR      = "nvim";
   };
 
   xdg = {
@@ -124,8 +124,8 @@
 
   networking = {
     networkmanager = {
-      enable = true;
-      wifi.powersave = false;
+      enable            = true;
+      wifi.powersave    = false;
       plugins = with pkgs; [
         networkmanager-openvpn
         networkmanager-strongswan
@@ -151,9 +151,10 @@
 
   # Programs
   programs = {
-    git.enable          = true;
-    tmux.enable         = true;
-    gamescope.enable    = true;
+    git.enable                  = true;
+    tmux.enable                 = true;
+    gamescope.enable            = true;
+    command-not-found.enable    = true;
     fish = {
       enable = true;
       shellAliases = {
@@ -181,8 +182,8 @@
 
   # Fonts
   fonts = {
-    fontDir.enable = true;
-    enableDefaultPackages = true;
+    fontDir.enable          = true;
+    enableDefaultPackages   = true;
     packages = with pkgs; [
       corefonts
       font-awesome

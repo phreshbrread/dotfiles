@@ -10,8 +10,8 @@
   ];
 
   # Enable modules
-  macbook-pkgs.enable = true;
-  hyprland-module.enable = true;
+  macbook-pkgs.enable       = true;
+  hyprland-module.enable    = true;
 
   # Define hostname
   networking.hostName = "nixos-vm";
@@ -20,15 +20,14 @@
   boot = {
     kernelPackages = pkgs.linuxPackages;
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      systemd-boot.enable       = true;
+      efi.canTouchEfiVariables  = true;
     };
   };
 
   # Define a user account.
   users.users.pheg = {
-    isNormalUser = true;
-    description = "Pheg";
+    isNormalUser    = true;
     shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
