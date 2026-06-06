@@ -40,7 +40,6 @@
       scrcpy
       blanket
       kdePackages.kdenlive
-      android-tools
       steamtinkerlaunch
       kdePackages.plasma-vault
       openutau

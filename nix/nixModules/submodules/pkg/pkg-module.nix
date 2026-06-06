@@ -54,6 +54,8 @@
     inxi
     libnotify
     vulkan-tools
+    android-tools
+    gdb
 
     # TUI
     inputs.pmenu-git.packages.${pkgs.system}.default # pmenu from flake
