@@ -56,6 +56,8 @@
     vulkan-tools
     android-tools
     gdb
+    man
+    man-pages
 
     # TUI
     inputs.pmenu-git.packages.${pkgs.system}.default # pmenu from flake
