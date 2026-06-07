@@ -57,7 +57,7 @@
       # Waybar
       waybar
       networkmanagerapplet
-      pavucontrol
+      pwvucontrol
       mpd
 
       # Appearance
