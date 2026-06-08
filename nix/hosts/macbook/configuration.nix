@@ -29,10 +29,9 @@
     hostName                    = "pheg-nixos-macbook";
     networkmanager.wifi.backend = "iwd";
     wireless.iwd = {
-      enable = true;
       settings = {
         Network.EnableIPv6      = true;
-        Settings.Autoconnect    = true;
+        #Settings.Autoconnect    = true;
       };
     };
   };
