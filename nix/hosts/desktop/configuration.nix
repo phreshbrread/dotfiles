@@ -33,9 +33,16 @@
     options     = "--delete-older-than 7d";
   };
 
+  # Plasma + SDDM
   services = {
-    displayManager.sddm.enable      = true; # Use SDDM as display manager
-    desktopManager.plasma6.enable   = true; # Enable Plasma
+    desktopManager.plasma6.enable   = true;
+    displayManager.sddm = {
+      enable = true;
+      settings.Autologin = {
+        Session = "hyprland.desktop";
+        User = "brad";
+      };
+    };
   };
 
   # Exclude KDE packages
