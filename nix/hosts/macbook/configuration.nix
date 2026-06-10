@@ -24,6 +24,9 @@
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
 
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+
   # Network
   networking = {
     hostName                    = "pheg-nixos-macbook";
