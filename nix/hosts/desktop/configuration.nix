@@ -78,7 +78,6 @@
 
   # Enable programs
   programs = {
-    gamemode.enable     = true;
     kdeconnect.enable   = true;
     obs-studio.enable   = true;
 
