@@ -17,9 +17,6 @@
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
-
   # Enable swap file
   swapDevices = [
     {
@@ -57,6 +54,8 @@
     # Set module parameters
     extraModprobeConfig = ''
       options v4l2loopback devices=2 exclusive_caps=1,1 video_nr=1,2 card_label="OBS Cam,Virtual Camera"
+      options iwlwifi bt_coex_active=0
+      options iwlwifi power_save=0
     '';
   };
 

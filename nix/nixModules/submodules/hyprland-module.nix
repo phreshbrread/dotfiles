@@ -53,7 +53,7 @@
       fuzzel
       cliphist
       wl-clipboard
-      blueman
+      bluetui
 
       # Waybar
       waybar
