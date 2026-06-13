@@ -53,9 +53,14 @@
 
     # Set module parameters
     extraModprobeConfig = ''
+      # Virtual camera
       options v4l2loopback devices=2 exclusive_caps=1,1 video_nr=1,2 card_label="OBS Cam,Virtual Camera"
+
+      # Bluetooth stuff
       options iwlwifi bt_coex_active=0
       options iwlwifi power_save=0
+      options iwlwifi d0i3_disable=1
+      options iwlmvm power_scheme=1
     '';
   };
 
