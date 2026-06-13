@@ -15,6 +15,8 @@
   };
 
   config = lib.mkIf config.gaming-module.enable {
+    hardware.xpadneo.enable = true;
+
     programs.gamemode = {
       enable        = true;
       enableRenice  = true;
