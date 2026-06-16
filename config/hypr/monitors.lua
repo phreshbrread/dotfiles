@@ -9,7 +9,7 @@ hl.monitor({
 })
 
 hl.monitor({
-  output = "desc: BNQ BenQ RL2455 65F03137SL0",
+  output = "desc:BNQ BenQ RL2455 65F03137SL0",
   mode = "1920x1080@60",
   position = "1920x0",
   scale = 1,

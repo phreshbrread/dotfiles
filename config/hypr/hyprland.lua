@@ -6,6 +6,7 @@
 require("environment")
 require("monitors")
 require("binds")
+require("window-rules")
 
 -- Autostarts
 hl.on("hyprland.start", function ()
@@ -249,3 +250,77 @@ hl.window_rule({
     float = true,
 })
 
+
+--[[ OLD CONFIG TO PORT
+input {
+    kb_layout = us
+
+    follow_mouse = 1 # Focus follows cursor
+
+    touchpad {
+        natural_scroll = true
+        scroll_factor = 0.2
+        disable_while_typing = true
+    }
+
+    sensitivity = 0.1 # -1.0 to 1.0, 0 means no modification.
+    accel_profile = flat # disable cursor acceleration
+
+}
+
+device {
+    name = logitech-g502-hero-gaming-mouse
+    sensitivity = -0.1
+}
+device {
+    name = sony-interactive-entertainment-wireless-controller-touchpad
+    enabled = false
+}
+
+xwayland {
+    force_zero_scaling = true
+}
+
+general {
+    layout              = master
+    gaps_in             = 0
+    gaps_out            = 0
+    border_size         = 2
+    col.active_border   = rgb(173,142,230) rgb(122,162,247) 45deg
+    col.inactive_border = rgb(50,52,74)
+    allow_tearing       = true
+}
+
+master {
+    new_status  = master
+    new_on_top  = true
+    mfact       = 0.65
+}
+
+decoration {
+    rounding = 0
+
+    blur {
+        enabled = false
+        #size = 3
+        #passes = 1
+        #popups = false
+    }
+
+    shadow {
+        enabled = false
+        #range = 4
+        #render_power = 3
+        #color = rgba(1a1a1aee)
+    }
+}
+
+animations {
+    enabled = false
+}
+
+misc {
+    force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
+}
+
+--]]
