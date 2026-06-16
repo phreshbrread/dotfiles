@@ -131,19 +131,6 @@ hl.config({
 
 --[[
 input {
-    kb_layout = us
-
-    follow_mouse = 1 # Focus follows cursor
-
-    touchpad {
-        natural_scroll = true
-        scroll_factor = 0.2
-        disable_while_typing = true
-    }
-
-    sensitivity = 0.1 # -1.0 to 1.0, 0 means no modification.
-    accel_profile = flat # disable cursor acceleration
-
 }
 xwayland {
     force_zero_scaling = true
@@ -152,18 +139,17 @@ xwayland {
 
 hl.config({
     input = {
-        kb_layout  = "us",
-        follow_mouse = 1,
-
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        kb_layout     = "us",
+        follow_mouse  = 1,
+        accel_profile = "flat",
 
         touchpad = {
-            natural_scroll = true,
+            natural_scroll       = true,
+            scroll_factor        = 0.2,
+            disable_while_typing = true,
         },
     },
 })
-
-
 
 hl.gesture({
     fingers = 3,
