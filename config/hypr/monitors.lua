@@ -1,5 +1,8 @@
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+--------------
+-- MONITORS --
+--------------
 
+-- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
   output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G27F 21282B001333",
   mode = "1920x1080@144",
