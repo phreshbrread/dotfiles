@@ -3,6 +3,7 @@
 ---------------------
 
 -- Import split configs
+require("environment")
 require("monitors")
 require("binds")
 
@@ -28,30 +29,6 @@ hl.on("hyprland.start", function ()
     -- Import theme env
     hl.exec_cmd("systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH")
 end)
-
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-
---[[
-env = XCURSOR_THEME,Adwaita
-env = XCURSOR_SIZE,24
-env = HYPRCURSOR_THEME,Adwaita
-env = HYPRCURSOR_SIZE,24
-env = QT_AUTO_SCREEN_SCALE_FACTOR,1
-env = QT_QPA_PLATFORM,wayland;xcb
-env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
-env = QT_QPA_PLATFORMTHEME,qt6ct
-#env = QT_STYLE_OVERRIDE,kvantum
-env = QT_PLUGIN_PATH,/run/current-system/sw/lib/qt6/plugins
-env = NIXOS_OZONE_WL,1
---]]
-
 
 -----------------------
 ----- PERMISSIONS -----

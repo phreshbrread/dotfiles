@@ -1,7 +1,3 @@
----------------------
----- KEYBINDINGS ----
----------------------
-
 -- Set mod key
 local mainMod = "SUPER"
 
