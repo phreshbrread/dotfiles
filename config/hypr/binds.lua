@@ -1,3 +1,7 @@
+--------------
+-- KEYBINDS --
+--------------
+
 -- Set mod key
 local mainMod = "SUPER"
 
