@@ -35,14 +35,14 @@ hl.window_rule({
     float = true,
 })
 
-hl.window_rule({ -- Ignore maximize requests from all apps
+hl.window_rule({
     name  = "suppress-maximize-events",
     match = { class = ".*" },
 
     suppress_event = "maximize",
 })
 
-hl.window_rule({ -- Fix some dragging issues with XWayland
+hl.window_rule({
     name  = "fix-xwayland-drags",
     match = {
         class      = "^$",
