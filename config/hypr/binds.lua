@@ -26,24 +26,24 @@ local exitHyprland      = "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdo
 hl.bind(mainMod .. " + J",     hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + C",     hl.dsp.window.close())
 --hl.bind(mainMod .. " + P",     hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F",     hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 
 -- Program shortcuts
 hl.bind(mainMod .. " + E",         hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R",         hl.dsp.exec_cmd(menu))
-hl.bind(           "XF86LaunchB",  hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + V",         hl.dsp.exec_cmd(clipboardManager))
+hl.bind(mainMod .. " + Z",         hl.dsp.exec_cmd(zoomer))
+hl.bind(mainMod .. " + P",         hl.dsp.exec_cmd(pmenu))
+hl.bind(mainMod .. " + B",         hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Return",    hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd(exitHyprland))
-hl.bind(mainMod .. " + Z",         hl.dsp.exec_cmd(zoomer))
-hl.bind(mainMod .. " + L",         hl.dsp.exec_cmd(lockScreen))
-hl.bind(mainMod .. " + P",         hl.dsp.exec_cmd(pmenu))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(lockScreen))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshotCommand))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(reloadWaybar))
-hl.bind(mainMod .. " + B",         hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browserPriv))
 hl.bind(           "ALT + Z",      hl.dsp.exec_cmd(screenRec))
+hl.bind(           "XF86LaunchB",  hl.dsp.exec_cmd(menu))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
