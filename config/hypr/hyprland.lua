@@ -9,6 +9,7 @@ require("binds")
 require("window-rules")
 require("anim")
 require("permissions")
+require("workspaces")
 
 --- Autostarts ---
 hl.on("hyprland.start", function ()
