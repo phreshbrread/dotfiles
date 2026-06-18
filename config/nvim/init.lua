@@ -19,6 +19,9 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.api.nvim_command('filetype plugin indent on')
 
+-- Disable intro message
+vim.opt.shortmess:append "I"
+
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
