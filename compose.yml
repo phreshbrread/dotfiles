@@ -22,3 +22,23 @@ services:
       - /dev/dri:/dev/dri
       - /dev/kfd:/dev/kfd
     restart: unless-stopped
+  mc-server:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft-vanilla
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      # Server settings
+      MEMORY: "8G"
+      TYPE: "VANILLA"
+      VERSION: "26.2"
+      DIFFICULTY: "normal"
+      ICON: "https://soybooru.com/api/booru/posts/1025/file"
+      LEVEL: "FatGoy"
+      MOTD: "Fuck air and fuck water"
+    volumes:
+      - ~/servers/minecraft-server/:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
