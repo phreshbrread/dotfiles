@@ -33,7 +33,7 @@ services:
       MEMORY: "8G"
       TYPE: "VANILLA"
       VERSION: "26.2"
-      DIFFICULTY: "normal"
+      DIFFICULTY: "hard"
       ICON: "https://soybooru.com/api/booru/posts/1025/file"
       LEVEL: "FatGoy"
       MOTD: "Fuck air and fuck water"
