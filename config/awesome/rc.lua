@@ -3,6 +3,7 @@
 ------------------------
 
 -- TODO:
+-- Swap notification daemon
 -- Polkit agent
 -- Tokyo Night theme
 -- Battery widget
@@ -281,10 +282,20 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
 
+-- Focus border color
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- Autostarts
+--- Autostarts ---
 awful.spawn("nm-applet")
-awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("picom --backend glx")
+awful.spawn("nitrogen --restore")
+awful.spawn("picom --backend glx")
+awful.spawn("lxqt-notificationd")
+awful.spawn("openrgb")
+awful.spawn("kdeconnectd")
+awful.spawn("qpwgraph")
+awful.spawn("systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH")
+-- TODO Autostarts:
+-- Hyprsunset equivalent
+-- Clipboard manager
+-- D-bus

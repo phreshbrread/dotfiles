@@ -1,18 +1,16 @@
 --------------------------
 --- AWESOMEWM KEYBINDS ---
 --------------------------
+modkey = "Mod4" -- Command / Windows key
 
-modkey = "Mod4"
-
--- {{{ Mouse bindings
+--- Mouse controls (Desktop) ---
 root.buttons(gears.table.join(
-    awful.button({}, 3, function() mymainmenu:toggle() end),
-    awful.button({}, 4, awful.tag.viewnext),
-    awful.button({}, 5, awful.tag.viewprev)
+    awful.button({}, 3, function() mymainmenu:toggle() end), -- Right click
+    awful.button({}, 4, awful.tag.viewnext),                 -- Scroll down
+    awful.button({}, 5, awful.tag.viewprev)                  -- Scroll up
 ))
--- }}}
 
--- {{{ Key bindings
+--- Key bindings ---
 globalkeys = gears.table.join(
     awful.key({ modkey, }, "s", hotkeys_popup.show_help,
         { description = "show help", group = "awesome" }),
@@ -241,15 +239,20 @@ for i = 1, 9 do
     )
 end
 
+--- Mouse controls (Client) ---
 clientbuttons = gears.table.join(
-    awful.button({}, 1, function(c)
+    awful.button({},                    1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
     end),
-    awful.button({ modkey }, 1, function(c)
+    awful.button({ modkey },            1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.move(c)
     end),
-    awful.button({ modkey }, 3, function(c)
+    awful.button({ modkey },            3, function(c)
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
+        awful.mouse.client.resize(c)
+    end),
+    awful.button({ modkey, "Shift" },   1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.resize(c)
     end)
@@ -257,4 +260,3 @@ clientbuttons = gears.table.join(
 
 -- Set keys
 root.keys(globalkeys)
--- }}}
