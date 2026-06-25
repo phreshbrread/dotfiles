@@ -3,6 +3,8 @@
 --------------------------
 modkey = "Mod4" -- Command / Windows key
 
+local browser = "floorp"
+
 --- Mouse controls (Desktop) ---
 root.buttons(gears.table.join(
     awful.button({}, 3, function() mymainmenu:toggle() end), -- Right click
@@ -56,7 +58,7 @@ globalkeys = gears.table.join(
         end,
         { description = "go back", group = "client" }),
 
-    -- Standard program
+    -- Standard programs
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
@@ -79,6 +81,8 @@ globalkeys = gears.table.join(
         { description = "select next", group = "layout" }),
     awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
         { description = "select previous", group = "layout" }),
+    awful.key({ modkey, }, "b", function() awful.spawn(browser) end,
+        { description = "open browser", group = "programs" }),
 
     awful.key({ modkey, "Control" }, "n",
         function()
@@ -140,6 +144,7 @@ globalkeys = gears.table.join(
             }
         end,
         { description = "lua execute prompt", group = "awesome" }),
+
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
         { description = "show the menubar", group = "launcher" })

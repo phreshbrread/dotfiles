@@ -287,6 +287,7 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 --- Autostarts ---
+-- TODO: Spawn ONCE
 awful.spawn("nm-applet")
 awful.spawn("nitrogen --restore")
 awful.spawn("picom --backend glx")
