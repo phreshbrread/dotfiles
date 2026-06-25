@@ -15,9 +15,7 @@ services:
       - /Jellyfin:/config:rwx
       - /external-drive/Media:/data/media:rwx
     ports:
-      - 8096:8096     # HTTP
-      - 8920:8920     # HTTPS
-      - 7359:7359/udp # Local discovery
+      - 8096:8096
     devices:
       - /dev/dri:/dev/dri
       - /dev/kfd:/dev/kfd
@@ -26,7 +24,7 @@ services:
     image: itzg/minecraft-server:latest
     container_name: minecraft-vanilla
     ports:
-      - "25565:25565"
+      - "25566:25565"
     environment:
       EULA: "TRUE"
       # Server settings
@@ -37,6 +35,7 @@ services:
       ICON: "https://soybooru.com/api/booru/posts/1025/file"
       LEVEL: "FatGoy"
       MOTD: "Fuck air and fuck water"
+      SYNC_CHUNK_WRITES: true
     volumes:
       - ~/servers/minecraft-server/:/data
     stdin_open: true

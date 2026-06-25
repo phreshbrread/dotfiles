@@ -23,7 +23,6 @@
   services.caddy = {
     enable = true;
 
-    # Build Caddy with the DuckDNS DNS plugin
     package = pkgs.caddy.withPlugins {
       plugins = [ "github.com/caddy-dns/duckdns@v0.5.0" ];
       hash = "sha256-4TbgFecnVvdJ3fbbLR46Dhx5m0rPPryXQX9x8tr1tAY=";
@@ -31,6 +30,10 @@
 
     virtualHosts."screamingbird.duckdns.org" = {
       extraConfig = ''
+        tls {
+          dns duckdns "e877204b-8c9c-4200-877e-bbb4eb2a3cbe"
+        }
+
         reverse_proxy localhost:8096
 
         encode gzip zstd
@@ -73,6 +76,9 @@
       # Caddy
       80
       443
+
+      # Minecraft
+      25566
 
       # Terraria
       7777
