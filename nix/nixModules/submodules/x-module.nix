@@ -25,10 +25,10 @@
         xterm
       ];
       windowManager = {
-        #awesome.enable = true; # Enable AwesomeWM
+        awesome.enable = true; # Enable AwesomeWM
         dwm = {
           # Enable custom DWM package
-          enable = true;
+          enable = false;
           package = pkgs.dwm.overrideAttrs {
             src = ../../dwm;
           };
