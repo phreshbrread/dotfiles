@@ -4,7 +4,13 @@
 
 modkey = "Mod4" -- Command / Windows key
 
-local browser = "floorp"
+local fileManager = "Thunar"
+local menu        = "rofi -show drun"
+local pmenu       = "kitty -T pmenu -o font_size=16 pmenu"
+local browser     = "floorp"
+local browserPriv = "floorp --private-window"
+--local screenRec   = "com.dec05eba.gpu_screen_recorder"
+--local zoomer      = "woomer --monitor DP-1"
 
 --- Mouse controls (Desktop) ---
 root.buttons(gears.table.join(
@@ -98,7 +104,7 @@ globalkeys = gears.table.join(
         { description = "restore minimized", group = "client" }),
 
     -- Run prompt
-    awful.key({ modkey }, "r", function() awful.spawn("rofi -show drun") end,
+    awful.key({ modkey }, "r", function() awful.spawn(menu) end,
         { description = "run prompt", group = "launcher" }),
 
     -- Brightness keys
