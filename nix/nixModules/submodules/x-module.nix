@@ -15,10 +15,8 @@
   };
 
   config = lib.mkIf config.x-module.enable {
-
     services.xserver = {
       enable = true;
-      dpi = 227;
       autoRepeatDelay = 200;
       autoRepeatInterval = 35;
       excludePackages = with pkgs; [
@@ -36,12 +34,17 @@
       };
     };
 
+    services.xserver.displayManager.importedVariables = [
+      "GDK_SCALE" "GDK_DPI_SCALE" "QT_AUTO_SCREEN_SCALE_FACTOR" "JAVA_TOOL_OPTIONS"
+    ];
+
     environment.systemPackages = with pkgs; [
       dmenu
       nitrogen
       copyq
       picom
       rofi
+      xrdb
     ];
   };
 }
