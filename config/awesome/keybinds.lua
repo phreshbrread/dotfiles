@@ -46,16 +46,17 @@ globalkeys = gears.table.join(
         { description = "show main menu", group = "awesome" }),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
+    awful.key({ modkey, "Shift" },   "j", function() awful.client.swap.byidx(1) end,
         { description = "swap with next client by index", group = "client" }),
-    awful.key({ modkey, "Shift" }, "k", function() awful.client.swap.byidx(-1) end,
+    awful.key({ modkey, "Shift" },   "k", function() awful.client.swap.byidx(-1) end,
         { description = "swap with previous client by index", group = "client" }),
     awful.key({ modkey, "Control" }, "j", function() awful.screen.focus_relative(1) end,
         { description = "focus the next screen", group = "screen" }),
     awful.key({ modkey, "Control" }, "k", function() awful.screen.focus_relative(-1) end,
         { description = "focus the previous screen", group = "screen" }),
-    awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
+    awful.key({ modkey, },           "u", awful.client.urgent.jumpto,
         { description = "jump to urgent client", group = "client" }),
+
     awful.key({ modkey, }, "Tab",
         function()
             awful.client.focus.history.previous()
@@ -140,21 +141,9 @@ globalkeys = gears.table.join(
         function() awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") end,
         { description = "toggle mute", group = "audio" }),
 
-    -- Run Lua
-    awful.key({ modkey }, "x",
-        function()
-            awful.prompt.run {
-                prompt       = "Run Lua code: ",
-                textbox      = awful.screen.focused().mypromptbox.widget,
-                exe_callback = awful.util.eval,
-                history_path = awful.util.get_cache_dir() .. "/history_eval"
-            }
-        end,
-        { description = "lua execute prompt", group = "awesome" }),
-
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-        { description = "show the menubar", group = "launcher" })
+    -- Power menu
+    awful.key({ modkey }, "p", function() awful.spawn(pmenu) end,
+        { description = "show power menu", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
@@ -253,18 +242,18 @@ end
 
 --- Mouse controls (Client) ---
 clientbuttons = gears.table.join(
-    awful.button({},                    1, function(c)
+    awful.button({},                  1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
     end),
-    awful.button({ modkey },            1, function(c)
+    awful.button({ modkey },          1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.move(c)
     end),
-    awful.button({ modkey },            3, function(c)
+    awful.button({ modkey },          3, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.resize(c)
     end),
-    awful.button({ modkey, "Shift" },   1, function(c)
+    awful.button({ modkey, "Shift" }, 1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.resize(c)
     end)
