@@ -18,7 +18,6 @@ gears = require("gears")         -- Standard awesome library
 awful = require("awful")
 wibox = require("wibox")         -- Widget and layout library
 beautiful = require("beautiful") -- Theme handling library
-naughty = require("naughty")     -- Notification library
 menubar = require("menubar")
 hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.autofocus")
@@ -29,12 +28,14 @@ require("keybinds")
 --- Error handling ---
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
+-- TODO: Make this work with notify-send instead
 if awesome.startup_errors then
-    naughty.notify({
-        preset = naughty.config.presets.critical,
-        title = "Oops, there were errors during startup!",
-        text = awesome.startup_errors
-    })
+    awful.spawn.with_shell("notify-send \"Errors occurred during startup\"")
+--    naughty.notify({
+--        preset = naughty.config.presets.critical,
+--        title = "Oops, there were errors during startup!",
+--        text = awesome.startup_errors
+--    })
 end
 
 --- Handle runtime errors after startup ---
@@ -287,15 +288,14 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 --- Autostarts ---
--- TODO: Spawn ONCE
-awful.spawn("nm-applet")
-awful.spawn("nitrogen --restore")
-awful.spawn("picom --backend glx")
-awful.spawn("lxqt-notificationd")
-awful.spawn("openrgb")
-awful.spawn("kdeconnectd")
-awful.spawn("qpwgraph")
-awful.spawn("systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH")
+awful.spawn.once("nm-applet")
+awful.spawn.once("nitrogen --restore")
+awful.spawn.once("picom --backend glx")
+awful.spawn.once("lxqt-notificationd")
+awful.spawn.once("openrgb")
+awful.spawn.once("kdeconnectd")
+awful.spawn.once("qpwgraph")
+awful.spawn.once("systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH")
 -- TODO Autostarts:
 -- Hyprsunset equivalent
 -- Clipboard manager
