@@ -3,7 +3,6 @@
 ------------------------
 
 -- TODO:
--- Swap notification daemon
 -- Polkit agent
 -- Tokyo Night theme
 -- Battery widget
@@ -24,6 +23,7 @@ require("awful.autofocus")
 
 -- Import split configs
 require("keybinds")
+require("autostarts")
 
 --- Error handling ---
 -- Check if awesome encountered an error during startup and fell back to
@@ -287,16 +287,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
---- Autostarts ---
-awful.spawn.once("nm-applet")
-awful.spawn.once("nitrogen --restore")
-awful.spawn.once("picom --backend glx")
-awful.spawn.once("lxqt-notificationd")
-awful.spawn.once("openrgb")
-awful.spawn.once("kdeconnectd")
-awful.spawn.once("qpwgraph")
-awful.spawn.once("systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH")
--- TODO Autostarts:
--- Hyprsunset equivalent
--- Clipboard manager
--- D-bus

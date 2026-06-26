@@ -1,6 +1,7 @@
 --------------------------
 --- AWESOMEWM KEYBINDS ---
 --------------------------
+
 modkey = "Mod4" -- Command / Windows key
 
 local browser = "floorp"
