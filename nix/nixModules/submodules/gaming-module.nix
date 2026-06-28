@@ -21,6 +21,7 @@
       enable        = true;
       enableRenice  = true;
     };
+    hardware.steam-hardware.enable = true;
     programs.steam = {
       enable                = true;
       protontricks.enable   = true;
