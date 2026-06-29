@@ -21,9 +21,8 @@ menubar = require("menubar")
 hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.autofocus")
 
--- Import split configs
+-- Import keybinds
 require("keybinds")
-require("autostarts")
 
 --- Error handling ---
 -- Check if awesome encountered an error during startup and fell back to
@@ -196,3 +195,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Create bar
 require("bar")
+
+-- Run autostarts
+awful.spawn.with_shell("$HOME/dotfiles/scripts/autostarts.sh")
