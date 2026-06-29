@@ -42,7 +42,7 @@ static const char *const autostart[] = {
 	"nitrogen", "--restore", NULL,
 	"nm-applet", NULL,
 	"picom", "--backend", "glx", NULL,
-	"sh", "-c", "$HOME/dotfiles/dwm-statusbar.sh", NULL,
+	"sh", "-c", "$HOME/dotfiles/scripts/dwm-statusbar.sh", NULL,
 	NULL /* terminate */
 };
 
