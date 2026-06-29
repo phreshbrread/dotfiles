@@ -13,25 +13,7 @@ require("workspaces")
 
 --- Autostarts ---
 hl.on("hyprland.start", function ()
-    hl.exec_cmd("waypaper --restore")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd("hyprsunset")
-    hl.exec_cmd("nm-applet")
-    hl.exec_cmd("lxqt-notificationd")
-    hl.exec_cmd("openrgb")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    hl.exec_cmd("kdeconnectd")
-    hl.exec_cmd("qpwgraph")
-
-    -- Clipboard manager
-    hl.exec_cmd("wl-paste --type text --watch cliphist store # Stores only text data")
-    hl.exec_cmd("wl-paste --type image --watch cliphist store # Stores only image data")
-
-    -- D-bus
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-
-    -- Import theme env
-    hl.exec_cmd("systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH")
+    hl.exec_cmd("$HOME/dotfiles/scripts/autostarts.sh")
 end)
 
 --- General settings ---
