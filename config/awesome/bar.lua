@@ -2,10 +2,9 @@
 --- BAR CONFIG ---
 ------------------
 
-
---- Wibar ---
--- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+-- Create widgets
+mytextclock = wibox.widget.textclock()      -- Text clock
+mybattery_widget = wibox.widget.textbox()   -- Battery
 
 
 -- Create a wibox for each screen and add it
@@ -93,8 +92,40 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
             mykeyboardlayout,
+            mybattery_widget,
             mytextclock,
             s.mylayoutbox,
         },
     }
 end)
+
+
+-- Update function
+local function update_battery()
+    local capacity_file = io.open("/sys/class/power_supply/BAT0/capacity", "r")
+    local status_file = io.open("/sys/class/power_supply/BAT0/status", "r")
+
+    if capacity_file and status_file then
+        local capacity = capacity_file:read("*n")
+        local status = status_file:read("*l")
+        capacity_file:close()
+        status_file:close()
+
+        local icon = "🔋"
+        if status == "Charging" then
+            icon = "🔌"
+        end
+
+        mybattery_widget.text = string.format(" %s %d%% ", icon, capacity)
+    else
+        mybattery_widget.text = " 🚫 BAT "
+    end
+end
+
+-- Set up timer to update every 10 seconds
+gears.timer {
+    timeout = 10,
+    call_now = true,
+    autostart = true,
+    callback = update_battery
+}
