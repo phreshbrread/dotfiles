@@ -6,7 +6,6 @@
 mytextclock = wibox.widget.textclock()      -- Text clock
 mybattery_widget = wibox.widget.textbox()   -- Battery
 
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
     awful.button({}, 1, function(t) t:view_only() end),
@@ -99,7 +98,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 end)
 
-
+--- Battery Widget ---
 -- Update function
 local function update_battery()
     local capacity_file = io.open("/sys/class/power_supply/BAT0/capacity", "r")
@@ -111,18 +110,30 @@ local function update_battery()
         capacity_file:close()
         status_file:close()
 
-        local icon = "🔋"
+        local icon
+        if capacity >= 95 then
+            icon = ""
+        elseif capacity < 80 then
+          icon = ""
+        elseif capacity < 55 then
+          icon = ""
+        elseif capacity < 35 then
+          icon = ""
+        elseif capacity < 15 then
+            icon = ""
+        end
+
         if status == "Charging" then
-            icon = "🔌"
+            icon = ""
         end
 
         mybattery_widget.text = string.format(" %s %d%% ", icon, capacity)
     else
-        mybattery_widget.text = " 🚫 BAT "
+        mybattery_widget.text = ""
     end
 end
 
--- Set up timer to update every 10 seconds
+-- Update timer
 gears.timer {
     timeout = 10,
     call_now = true,
