@@ -84,3 +84,19 @@ vim.opt.complete:append('o')
 vim.o.autocomplete = true
 vim.o.pumheight = 6
 vim.o.pumborder = 'rounded'
+
+-- Create an autocmd group to isolate Telescope tweaks
+local telescope_autocomplete_group = vim.api.nvim_create_augroup("TelescopeNativeAutocomplete", { clear = true })
+
+-- Disable autocomplete inside Telescope prompt
+vim.api.nvim_create_autocmd("FileType", {
+  group = telescope_autocomplete_group,
+  pattern = "TelescopePrompt",
+  callback = function()
+    -- Disable autocomplete for this specific buffer
+    vim.opt_local.autocomplete = false
+
+    -- Clear complete sources list so it won't fetch omnifunc / buffer words
+    vim.opt_local.complete = ""
+  end,
+})
