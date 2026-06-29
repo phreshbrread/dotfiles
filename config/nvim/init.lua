@@ -1,6 +1,6 @@
------------------
--- NVIM CONFIG --
------------------
+-------------------
+--- NVIM CONFIG ---
+-------------------
 
 -- Plugins are installed/managed by Nix, but are configured/loaded here
 
@@ -26,6 +26,9 @@ vim.opt.shortmess:append "I"
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
 require('nvim-autopairs').setup({})
+require("telescope").setup({
+  defaults = { layout_config = { horizontal = { preview_cutoff = 0 }, -- Always show the preview
+    }, }, })
 
 -- Colours
 vim.cmd.colorscheme "tokyonight"
