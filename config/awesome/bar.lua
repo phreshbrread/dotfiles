@@ -111,16 +111,15 @@ local function update_battery()
         status_file:close()
 
         local icon
-        if capacity < 15 then
-            icon = ""
-        elseif capacity < 35 then
+        if     capacity <= 15 then
+          icon = ""
+        elseif capacity <= 35 then
           icon = ""
-        elseif capacity < 55 then
+        elseif capacity <= 55 then
           icon = ""
-        elseif capacity < 80 then
+        elseif capacity <= 85 then
           icon = ""
-        elseif capacity >= 95 then
-            icon = ""
+        else   icon = ""
         end
 
         if status == "Charging" then
