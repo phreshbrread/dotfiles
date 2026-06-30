@@ -7,9 +7,8 @@
 
   inputs = {
     nixpkgs.url         = "github:nixos/nixpkgs/nixos-unstable";        # Unstable
-    nixpkgs-stable.url  = "github:nixos/nixpkgs/nixos-25.11";           # Stable 25.11
     nix-flatpak.url     = "github:gmodena/nix-flatpak/?ref=latest";     # Latest stable release
-    pmenu-git.url       = "github:PhreshBrread/pmenu/dev";              # pmenu dev branch
+    pmenu-git.url       = "github:PhreshBrread/pmenu";                  # pmenu branch
 
     nix-index-database = {
       inputs.nixpkgs.follows    = "nixpkgs";
@@ -18,7 +17,7 @@
   };
 
   outputs =
-    { self, nixpkgs, nixpkgs-stable, nix-flatpak, pmenu-git, nix-index-database } @inputs: {
+    { self, nixpkgs, nix-flatpak, pmenu-git, nix-index-database } @inputs: {
       # Desktop
       nixosConfigurations.pheg-nixos-desktop = nixpkgs.lib.nixosSystem {
         system      = "x86_64-linux";
