@@ -111,7 +111,6 @@
     "com.steamgriddb.SGDBoop"
     "com.usebottles.bottles"
     "fm.reaper.Reaper"
-    "io.github.aandrew_me.ytdn"
     "io.github.shiiion.primehack"
     "io.github.streetpea.Chiaki4deck"
     "io.github.tntwise.REAL-Video-Enhancer"
