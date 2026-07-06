@@ -61,7 +61,7 @@
     gnumake
 
     # TUI
-    inputs.pmenu-git.packages.${pkgs.system}.default # pmenu from flake
+    inputs.pmenu-tui.packages.${pkgs.system}.default
     kitty
     gf
     ncdu

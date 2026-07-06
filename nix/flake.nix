@@ -6,9 +6,9 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url         = "github:nixos/nixpkgs/nixos-unstable";        # Unstable
-    nix-flatpak.url     = "github:gmodena/nix-flatpak/?ref=latest";     # Latest stable release
-    pmenu-git.url       = "github:PhreshBrread/pmenu";                  # pmenu branch
+    nixpkgs.url     = "github:nixos/nixpkgs/nixos-unstable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
+    pmenu-tui.url   = "github:PhreshBrread/pmenu";
 
     nix-index-database = {
       inputs.nixpkgs.follows    = "nixpkgs";
@@ -17,7 +17,7 @@
   };
 
   outputs =
-    { self, nixpkgs, nix-flatpak, pmenu-git, nix-index-database } @inputs: {
+    { self, nixpkgs, nix-flatpak, pmenu-tui, nix-index-database } @inputs: {
       # Desktop
       nixosConfigurations.pheg-nixos-desktop = nixpkgs.lib.nixosSystem {
         system      = "x86_64-linux";

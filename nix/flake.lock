@@ -73,11 +73,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1782817307,
-        "narHash": "sha256-BKTBvFOPBaMPkN3JnkGA9Brz0qsg1GUc84qr0ipnjvo=",
+        "lastModified": 1783310772,
+        "narHash": "sha256-Hvmexqgtr152wwwDIx5odgaRd/0XSIDxZj1teZ8jnuo=",
         "owner": "PhreshBrread",
         "repo": "pmenu",
-        "rev": "b24d805d647617a232840e60c96cc515f728ac6b",
+        "rev": "480f315632b295234a064af81313cb0a19216d8e",
         "type": "github"
       },
       "original": {
