@@ -59,6 +59,7 @@
     man
     man-pages
     gnumake
+    yt-dlp
 
     # TUI
     inputs.pmenu-tui.packages.${pkgs.system}.default
