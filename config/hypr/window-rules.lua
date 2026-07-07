@@ -23,6 +23,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name  = "kde-receiving-files",
+    match = { title = "Receiving files — KDE Connect Daemon" },
+    float = true,
+})
+
+hl.window_rule({
     name  = "power-menu",
     match = { title = "pmenu" },
     float = true,
