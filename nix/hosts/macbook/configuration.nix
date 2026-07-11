@@ -26,7 +26,7 @@
 
   # Network
   networking = {
-    hostName                    = "pheg-nixos-macbook";
+    hostName                    = "fentbook";
     networkmanager.wifi.backend = "iwd";
     wireless.iwd = {
       settings = {

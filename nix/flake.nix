@@ -35,7 +35,7 @@
       };
 
       # Macbook
-      nixosConfigurations.pheg-nixos-macbook = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.fentbook = nixpkgs.lib.nixosSystem {
         system      = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
