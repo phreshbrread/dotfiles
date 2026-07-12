@@ -28,7 +28,7 @@ services:
     environment:
       EULA: "TRUE"
       # Server settings
-      MEMORY: "8G"
+      MEMORY: "6G"
       TYPE: "VANILLA"
       VERSION: "26.2"
       DIFFICULTY: "hard"
