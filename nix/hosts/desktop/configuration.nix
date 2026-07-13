@@ -11,13 +11,13 @@
 
 {
   # Enable modules
-  desktop-pkgs.enable           = true; # Desktop package set
-  systemd-boot-module.enable    = true;
-  hyprland-module.enable        = true;
-  vm-module.enable              = true; # VM support
-  ssh-module.enable             = true;
-  syncthing-module.enable       = true;
-  gaming-module.enable          = true;
+  desktop-pkgs.enable        = true; # Desktop package set
+  systemd-boot-module.enable = true;
+  hyprland-module.enable     = true;
+  vm-module.enable           = true; # VM support
+  ssh-module.enable          = true;
+  syncthing-module.enable    = true;
+  gaming-module.enable       = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -27,22 +27,31 @@
 
   # Garbage collection
   nix.gc = {
-    automatic   = true;
-    dates       = "weekly";
-    options     = "--delete-older-than 7d";
+    automatic = true;
+    dates     = "weekly";
+    options   = "--delete-older-than 7d";
+  };
+
+  # Ly
+  services.displayManager = {
+    ly.enable = true;
+    autoLogin = {
+      enable = true;
+      user   = "brad";
+    };
   };
 
   # Plasma + SDDM
-  services = {
-    desktopManager.plasma6.enable   = true;
-    displayManager.sddm = {
-      enable = true;
-      settings.Autologin = {
-        Session = "hyprland.desktop";
-        User = "brad";
-      };
-    };
-  };
+  #services = {
+  #  desktopManager.plasma6.enable = true;
+  #  displayManager.sddm = {
+  #    enable = true;
+  #    settings.Autologin = {
+  #      Session = "hyprland.desktop";
+  #      User    = "brad";
+  #    };
+  #  };
+  #};
 
   # Exclude KDE packages
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -52,15 +61,15 @@
   ];
 
   services.hardware.openrgb = {
-    enable        = true;
-    package       = pkgs.openrgb-with-all-plugins;
-    motherboard   = "amd";
+    enable      = true;
+    package     = pkgs.openrgb-with-all-plugins;
+    motherboard = "amd";
   };
 
   # Define user account
   users.users.brad = {
-    isNormalUser    = true;
-    shell           = pkgs.fish;
+    isNormalUser = true;
+    shell        = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -73,35 +82,33 @@
   };
 
   # Hamachi
-  services.logmein-hamachi.enable   = true;
-  programs.haguichi.enable          = true;
+  services.logmein-hamachi.enable = true;
+  programs.haguichi.enable        = true;
 
   # Enable programs
   programs = {
-    kdeconnect.enable   = true;
-    obs-studio.enable   = true;
+    kdeconnect.enable = true;
+    obs-studio.enable = true;
 
     # Thunderbird
     thunderbird = {
-      enable    = true;
-      package   = pkgs.thunderbird-latest;
+      enable  = true;
+      package = pkgs.thunderbird-latest;
     };
   };
 
   security = {
-    pam.services.login.enableKwallet = true; # Enable Kwallet
-
     # Realtime permissions
     pam.loginLimits = [{
-      domain    = "@audio";
-      item      = "rtprio";
-      type      = "-";
-      value     = "95";
+      domain = "@audio";
+      item   = "rtprio";
+      type   = "-";
+      value  = "95";
     } {
-      domain    = "@audio";
-      item      = "memlock";
-      type      = "-";
-      value     = "unlimited";
+      domain = "@audio";
+      item   = "memlock";
+      type   = "-";
+      value  = "unlimited";
     }];
   };
 

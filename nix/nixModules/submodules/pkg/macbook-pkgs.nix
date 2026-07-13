@@ -21,8 +21,6 @@
       image-roll
       arrpc
       scarlett2 # Focusrite Scarlett driver
-      kdePackages.kwallet
-      kdePackages.kwalletmanager
       pinta
     ];
   };

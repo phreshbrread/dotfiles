@@ -11,15 +11,15 @@
 
 {
   # Enable modules
-  macbook-pkgs.enable = true; # Macbook package set
+  macbook-pkgs.enable        = true; # Macbook package set
   systemd-boot-module.enable = true;
-  hyprland-module.enable = true;
-  x-module.enable = true; # X window managers
-  vm-module.enable = true; # VM support
-  ssh-module.enable = true;
-  syncthing-module.enable = true;
-  gaming-module.enable = true;
-  openbox-module.enable = true;
+  hyprland-module.enable     = true;
+  x-module.enable            = true; # X window managers
+  vm-module.enable           = true; # VM support
+  ssh-module.enable          = true;
+  syncthing-module.enable    = true;
+  gaming-module.enable       = true;
+  openbox-module.enable      = true;
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
@@ -69,12 +69,6 @@
   # LXQT
   services.xserver.desktopManager.lxqt.enable = true;
 
-  # Kwallet
-  security.pam.services.login.kwallet = {
-    enable  = true;
-    package = pkgs.kdePackages.kwallet-pam;
-  };
-
   # Use ly
   services.displayManager.ly.enable = true;
 
@@ -82,9 +76,9 @@
   services.libinput = {
     enable = true;
     touchpad = {
-      accelProfile          = "flat"; # Disable touchpad acceleration
-      naturalScrolling      = true;
-      disableWhileTyping    = true;
+      accelProfile       = "flat"; # Disable touchpad acceleration
+      naturalScrolling   = true;
+      disableWhileTyping = true;
     };
   };
 

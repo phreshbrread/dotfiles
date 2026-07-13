@@ -70,6 +70,8 @@
     btop
 
     # GUI
+    kdePackages.kwallet
+    kdePackages.kwalletmanager
     floorp-bin
     obsidian
     blender
