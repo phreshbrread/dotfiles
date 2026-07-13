@@ -184,6 +184,7 @@
         nv            = "nvim";
         ff            = "fastfetch";
         cat           = "bat";
+        gpr           = "git pull --rebase";
       };
     };
 
