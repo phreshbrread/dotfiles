@@ -89,9 +89,6 @@
     "org.jdownloader.JDownloader"
   ];
 
-  # KDE Connect
-  programs.kdeconnect.enable = true;
-
   # Ignore power key
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";

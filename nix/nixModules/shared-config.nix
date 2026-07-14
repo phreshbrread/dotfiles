@@ -178,9 +178,10 @@
 
   # Programs
   programs = {
-    git.enable       = true;
-    tmux.enable      = true;
-    gamescope.enable = true;
+    git.enable        = true;
+    tmux.enable       = true;
+    gamescope.enable  = true;
+    kdeconnect.enable = true;
     fish = {
       enable = true;
       shellAliases = {

@@ -71,7 +71,6 @@
 
   # Enable programs
   programs = {
-    kdeconnect.enable  = true;
     obs-studio.enable  = true;
     thunderbird.enable = true;
   };
