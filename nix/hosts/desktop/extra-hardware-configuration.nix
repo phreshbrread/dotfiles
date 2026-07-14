@@ -12,17 +12,18 @@
 {
   # Enable accelerated graphics
   hardware.graphics = {
-    enable = true;
+    enable      = true;
     enable32Bit = true;
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  # Enable periodic TRIM
+  services.fstrim.enable = true;
+
   # Enable swap file
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 8 * 1024;
-      options = [ "discard" ];
+  swapDevices = [{
+      device  = "/var/lib/swapfile";
+      size    = 8 * 1024;
     }
   ];
 
@@ -35,7 +36,6 @@
     # Kernel parameters
     kernelParams = [
       "acpi_enforce_resources=lax" # Fix RAM RGB control
-      "systemd.swap=0" # Disable systemd auto swap geneneration
     ];
 
     # Extra packages
@@ -60,7 +60,7 @@
       options iwlwifi bt_coex_active=0
       options iwlwifi power_save=0
       options iwlwifi d0i3_disable=1
-      options iwlmvm power_scheme=1
+      options iwlmvm  power_scheme=1
     '';
   };
 
