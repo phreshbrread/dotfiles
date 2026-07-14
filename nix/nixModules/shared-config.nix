@@ -65,10 +65,11 @@
   };
 
   xdg = {
-    # Set default XDG terminal
     terminal-exec = {
-      enable           = true;
-      settings.default = [ "kitty.desktop" ];
+      enable = true;
+      settings = {
+        default = [ "kitty.desktop" ];
+      };
     };
 
     # Set default apps
