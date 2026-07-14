@@ -59,21 +59,21 @@
 
   # Environment variables
   environment.variables = {
-    TERMINAL = "kitty";
     TERM     = "kitty";
+    TERMINAL = "kitty";
     EDITOR   = "nvim";
   };
 
   xdg = {
     # Set default XDG terminal
     terminal-exec = {
-      enable = true;
-      settings.default = [ "kitty.desktop "];
+      enable           = true;
+      settings.default = [ "kitty.desktop" ];
     };
 
     # Set default apps
-    mime.defaultApplications = {
     # https://mimetype.io/all-types for types
+    mime.defaultApplications = {
       "application/pdf" = "floorp.desktop";
       "image/png" = [
         "image-roll.desktop"
@@ -86,19 +86,21 @@
     rtkit.enable  = true; # Enable realtime daemon
     polkit.enable = true;
 
-  # Use doas instead of sudo
-  # User must be in 'wheel' group
+    # Use doas instead of sudo. User must be in "wheel" group
     sudo.enable = false;
-      doas = {
-        enable             = true;
-        wheelNeedsPassword = true;
-        extraRules = [{
-          groups  = [ "wheel" ];
-          keepEnv = true;
-          persist = true;
-        }];
-      };
+    doas = {
+      enable             = true;
+      wheelNeedsPassword = true;
+      extraRules = [{
+        keepEnv = true;
+        persist = true;
+        groups  = [ "wheel" ];
+      }];
     };
+  };
+
+  # Safely symlink "doas" to "sudo"
+  environment.systemPackages = [ (pkgs.writeScriptBin "sudo" ''exec doas "$@"'' ) ];
 
   # Enable XDG portals
   xdg.portal.enable = true;
@@ -185,12 +187,11 @@
         x             = "exit";
         ls            = "eza -algh --group-directories-first --icons=always";
         cls           = "clear";
-        sudo          = "doas";
+        #sudo          = "doas";
         tmux-mc       = "tmux a -t minecraft-server";
         sudoedit      = "doas rnano";
         install-date  = "stat / | grep Birth";
         tmux-terraria = "tmux a -t terraria-server";
-        nrs           = "nixos-rebuild switch";
         nv            = "nvim";
         ff            = "fastfetch";
         cat           = "bat";
@@ -207,7 +208,6 @@
 
   # Fonts
   fonts = {
-    fontDir.enable          = true;
     enableDefaultPackages   = true;
     packages = with pkgs; [
       corefonts
@@ -226,19 +226,19 @@
     };
   };
 
-  # Time zone + locale
-  time.timeZone         = "Australia/Melbourne";
-  i18n.defaultLocale    = "en_AU.UTF-8";
-  i18n.extraLocales     = [ "all" ];
+  # Locale
+  time.timeZone      = "Australia/Melbourne";
+  i18n.defaultLocale = "en_AU.UTF-8";
+  i18n.extraLocales  = [ "en_US.UTF-8/UTF-8" ];
   i18n.extraLocaleSettings = {
-    LC_ADDRESS          = "en_AU.UTF-8";
-    LC_IDENTIFICATION   = "en_AU.UTF-8";
-    LC_MEASUREMENT      = "en_AU.UTF-8";
-    LC_MONETARY         = "en_AU.UTF-8";
-    LC_NAME             = "en_AU.UTF-8";
-    LC_NUMERIC          = "en_AU.UTF-8";
-    LC_PAPER            = "en_AU.UTF-8";
-    LC_TELEPHONE        = "en_AU.UTF-8";
-    LC_TIME             = "en_AU.UTF-8";
+    LC_ADDRESS        = "en_AU.UTF-8";
+    LC_IDENTIFICATION = "en_AU.UTF-8";
+    LC_MEASUREMENT    = "en_AU.UTF-8";
+    LC_MONETARY       = "en_AU.UTF-8";
+    LC_NAME           = "en_AU.UTF-8";
+    LC_NUMERIC        = "en_AU.UTF-8";
+    LC_PAPER          = "en_AU.UTF-8";
+    LC_TELEPHONE      = "en_AU.UTF-8";
+    LC_TIME           = "en_AU.UTF-8";
   };
 }

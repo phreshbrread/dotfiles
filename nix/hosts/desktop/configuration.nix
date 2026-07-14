@@ -2,12 +2,7 @@
 ## DESKTOP NIXOS CONFIG ##
 ##########################
 
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, pkgs, lib, ... }:
 
 {
   # Enable modules
@@ -32,26 +27,15 @@
     options   = "--delete-older-than 7d";
   };
 
-  # Ly
-  services.displayManager = {
-    ly.enable = true;
-    autoLogin = {
-      enable = true;
-      user   = "brad";
+  # SDDM
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    settings.Autologin = {
+      Session = "hyprland.desktop";
+      User    = "brad";
     };
   };
-
-  # Plasma + SDDM
-  #services = {
-  #  desktopManager.plasma6.enable = true;
-  #  displayManager.sddm = {
-  #    enable = true;
-  #    settings.Autologin = {
-  #      Session = "hyprland.desktop";
-  #      User    = "brad";
-  #    };
-  #  };
-  #};
 
   # Exclude KDE packages
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -87,14 +71,9 @@
 
   # Enable programs
   programs = {
-    kdeconnect.enable = true;
-    obs-studio.enable = true;
-
-    # Thunderbird
-    thunderbird = {
-      enable  = true;
-      package = pkgs.thunderbird-latest;
-    };
+    kdeconnect.enable  = true;
+    obs-studio.enable  = true;
+    thunderbird.enable = true;
   };
 
   security = {
