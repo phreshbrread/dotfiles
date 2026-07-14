@@ -83,7 +83,8 @@
   };
 
   security = {
-    rtkit.enable = true; # Enable realtime daemon
+    rtkit.enable  = true; # Enable realtime daemon
+    polkit.enable = true;
 
   # Use doas instead of sudo
   # User must be in 'wheel' group
@@ -107,7 +108,6 @@
     power-profiles-daemon.enable = true;
     tumbler.enable               = true;
     gvfs.enable                  = true;
-    polkit.enable                = true;
 
     # Enable Flatpak
     flatpak = {
