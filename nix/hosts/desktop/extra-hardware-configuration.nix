@@ -2,12 +2,7 @@
 ## EXTRA HARDWARE CONFIG ##
 ###########################
 
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   # Enable accelerated graphics
@@ -47,8 +42,7 @@
     kernelModules = [
       "i2c-dev"
       "i2c-piix4" # These two are for RGB control
-      "v4l2loopback"
-      "snd-aloop"
+      "snd-aloop" # ALSA audio loopback
     ];
 
     # Set module parameters
@@ -67,7 +61,7 @@
   # Enable i2c for RGB control
   hardware.i2c.enable = true;
 
-  # Mount extra drives
+  # Seagate HDD (2TB)
   fileSystems."/mass-storage" = {
     device = "/dev/disk/by-uuid/1f430d6f-a649-4717-ae3f-5e6f98ffbe3f";
     fsType = "btrfs";
@@ -77,6 +71,7 @@
     ];
   };
 
+  # Toshiba external (4TB)
   fileSystems."/external-drive" = {
     device = "/dev/disk/by-uuid/777F-FB5D";
     fsType = "exfat";
@@ -85,13 +80,10 @@
       "nosuid"
       "nodev"
       "noatime"
-      "async"
-      "rw"
-      "auto"
       "uid=1000"
-      "gid=100"
-      "umask=000"
-      "dmask=000"
+      "gid=100"    # Group 100 (users)
+      "fmask=0002" # Set files as RW for owner + group
+      "dmask=0002" # Set directories as RWX for owner + group
     ];
   };
 }

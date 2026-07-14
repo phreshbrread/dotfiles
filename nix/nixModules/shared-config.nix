@@ -107,6 +107,7 @@
     power-profiles-daemon.enable = true;
     tumbler.enable               = true;
     gvfs.enable                  = true;
+    polkit.enable                = true;
 
     # Enable Flatpak
     flatpak = {

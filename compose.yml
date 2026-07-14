@@ -4,8 +4,8 @@ services:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
     environment:
-      - PUID=1000
-      - PGID=100
+      - PUID=1000 # Match drive UID
+      - PGID=100  # Match drive GID
       - TZ=Australia/Melbourne
       - JELLYFIN_PublishedServerUrl=https://screamingbird.duckdns.org
     group_add:
