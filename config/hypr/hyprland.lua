@@ -9,7 +9,6 @@ require("binds")
 require("window-rules")
 require("anim")
 require("permissions")
-require("workspaces")
 
 --- Autostarts ---
 hl.on("hyprland.start", function ()
@@ -88,3 +87,16 @@ hl.device({
     name    = "sony-interactive-entertainment-wireless-controller-touchpad",
     enabled = false,
 })
+
+--- WORKSPACES ---
+-- Set Gigabyte as primary monitor
+hl.config({ cursor = { default_monitor = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G27F 21282B001333" }})
+
+-- Force workspace focus on startup
+hl.on("hyprland.start", function()
+    hl.timer(function()
+        hl.dispatch(hl.dsp.workspace.move({ workspace = "6", monitor = "desc:BNQ BenQ RL2455 65F03137SL0" }))
+        hl.dispatch(hl.dsp.workspace.move({ workspace = "1", monitor = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G27F 21282B001333" }))
+    end, { timeout = 500, type = "oneshot" })
+end)
+
