@@ -21,6 +21,7 @@
       spiceUSBRedirection.enable = true;
       libvirtd = {
         enable = true;
+        onShutdown = "shutdown";
         qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
       };
     };
