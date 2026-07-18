@@ -18,7 +18,6 @@
     environment.systemPackages = with pkgs; [
       font-manager
       qbittorrent
-      image-roll
       arrpc
       scarlett2 # Focusrite Scarlett driver
       pinta

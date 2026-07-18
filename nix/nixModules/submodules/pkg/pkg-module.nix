@@ -95,5 +95,6 @@
     nicotine-plus
     #handbrake
     dosbox-x
+    image-roll
   ];
 }
