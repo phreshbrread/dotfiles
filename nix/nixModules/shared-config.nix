@@ -75,7 +75,8 @@
     # Set default apps
     # https://mimetype.io/all-types for types
     mime.defaultApplications = {
-      "application/pdf" = "floorp.desktop";
+      "application/pdf" = [ "floorp.desktop" ];
+      "inode/directory" = [ "thunar.desktop" ];
       "image/png" = [
         "image-roll.desktop"
         "gimp.desktop"
