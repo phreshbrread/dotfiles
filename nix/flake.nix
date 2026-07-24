@@ -11,8 +11,8 @@
     pmenu-tui.url   = "github:PhreshBrread/pmenu";
 
     nix-index-database = {
-      inputs.nixpkgs.follows    = "nixpkgs";
-      url                       = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+      url                    = "github:nix-community/nix-index-database";
     };
   };
 

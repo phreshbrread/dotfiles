@@ -93,7 +93,7 @@
     tenacity
     yacreader
     nicotine-plus
-    #handbrake
+    handbrake
     dosbox-x
     image-roll
   ];
