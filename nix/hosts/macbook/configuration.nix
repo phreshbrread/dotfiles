@@ -24,17 +24,15 @@
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
 
-  # Network
-  networking = {
-    hostName                    = "fentbook";
-    networkmanager.wifi.backend = "iwd";
-    wireless.iwd = {
-      settings = {
-        Network.EnableIPv6      = true;
-        #Settings.Autoconnect    = true;
-      };
-    };
+  # Ensure OSS wifi modules don't conflict with proprietary broadcom_sta driver
+  boot = {
+    extraModulePackages      = [ config.boot.kernelPackages.broadcom_sta ];
+    kernelModules            = [ "wl" ];
+    blacklistedKernelModules = [ "b43" "bcma" "ssb" "brcmfmac" "brcmsmac" ];
   };
+
+  # Hostname
+  networking.hostName = "fentbook";
 
   # Environment variables
   environment.variables = {
