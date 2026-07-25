@@ -38,7 +38,7 @@ services:
       SYNC_CHUNK_WRITES: true
       ENABLE_WHITELIST: "TRUE"
       ENFORCE_WHITELIST: "TRUE"
-      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator"
+      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1"
     volumes:
       - ~/servers/minecraft-server/:/data
     stdin_open: true
