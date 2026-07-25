@@ -36,6 +36,9 @@ services:
       LEVEL: "FatGoy"
       MOTD: "Fuck air and fuck water"
       SYNC_CHUNK_WRITES: true
+      ENABLE_WHITELIST: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator"
     volumes:
       - ~/servers/minecraft-server/:/data
     stdin_open: true
