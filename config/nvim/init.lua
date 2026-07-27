@@ -22,6 +22,11 @@ vim.api.nvim_command('filetype plugin indent on')
 -- Disable intro message
 vim.opt.shortmess:append "I"
 
+-- Enable instant bracket wrapping around selection
+vim.keymap.set("v", "(", 'c()<Esc>P', { remap = false })
+vim.keymap.set("v", "[", 'c[]<Esc>P', { remap = false })
+vim.keymap.set("v", "{", 'c{}<Esc>P', { remap = false })
+
 -- Load plugins
 require('lualine').setup()
 require('nvim-highlight-colors').setup({})
