@@ -66,7 +66,7 @@
       libsForQt5.qtstyleplugin-kvantum
       kdePackages.breeze
       kdePackages.breeze-icons
-      tokyonight-gtk-theme
+      #tokyonight-gtk-theme
       elementary-xfce-icon-theme
       qt6Packages.qt6ct
       nwg-look
