@@ -25,9 +25,5 @@
         qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
       };
     };
-
-    environment.systemPackages = with pkgs; [
-      virtiofsd
-    ];
   };
 }
