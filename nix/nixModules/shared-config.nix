@@ -18,6 +18,7 @@
     ./submodules/hyprland-module.nix
     ./submodules/syncthing-module.nix
     ./submodules/systemd-boot-module.nix
+    ./submodules/dev-tools.nix
     ./submodules/pkg/pkg-module.nix
   ];
 
