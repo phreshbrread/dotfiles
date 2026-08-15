@@ -50,13 +50,13 @@
   };
 
   # Kwallet
-  security.pam.services.login = {
-    enableKwallet = true;
-    kwallet = {
-      enable  = true;
-      package = pkgs.kdePackages.kwallet-pam;
-    };
-  };
+  # security.pam.services.login = {
+  #   enableKwallet = true;
+  #   kwallet = {
+  #     enable  = true;
+  #     package = pkgs.kdePackages.kwallet-pam;
+  #   };
+  # };
 
   # Environment variables
   environment.variables = {
