@@ -20,6 +20,12 @@
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Ethernet IP forwarding
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+  };
+  networking.firewall.trustedInterfaces = [ "enp8s0" ];
+
   # Garbage collection
   nix.gc = {
     automatic = true;
