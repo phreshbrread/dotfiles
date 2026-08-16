@@ -13,6 +13,7 @@
   ssh-module.enable          = true;
   syncthing-module.enable    = true;
   gaming-module.enable       = true;
+  dev-tools.enable           = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";

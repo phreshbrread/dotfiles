@@ -20,6 +20,7 @@
   syncthing-module.enable    = true;
   gaming-module.enable       = true;
   openbox-module.enable      = true;
+  dev-tools.enable           = true;
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
