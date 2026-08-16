@@ -70,7 +70,6 @@
     btop
 
     # GUI
-    github-desktop
     kdePackages.kwallet
     kdePackages.kwalletmanager
     floorp-bin
