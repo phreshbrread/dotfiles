@@ -70,6 +70,7 @@
     btop
 
     # GUI
+    inputs.zooma.packages.${pkgs.system}.default
     kdePackages.kwallet
     kdePackages.kwalletmanager
     floorp-bin

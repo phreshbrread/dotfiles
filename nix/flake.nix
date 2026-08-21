@@ -9,6 +9,7 @@
     nixpkgs.url     = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
     pmenu-tui.url   = "github:PhreshBrread/pmenu";
+    zooma.url       = "github:PhreshBrread/zooma";
 
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +18,7 @@
   };
 
   outputs =
-    { self, nixpkgs, nix-flatpak, pmenu-tui, nix-index-database } @inputs: {
+    { self, nixpkgs, nix-flatpak, pmenu-tui, zooma, nix-index-database } @inputs: {
       # Desktop
       nixosConfigurations.pheg-nixos-desktop = nixpkgs.lib.nixosSystem {
         system      = "x86_64-linux";
