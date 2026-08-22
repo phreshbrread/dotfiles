@@ -21,6 +21,7 @@
       arrpc
       scarlett2 # Focusrite Scarlett driver
       pinta
+      youtube-tui
     ];
   };
 }

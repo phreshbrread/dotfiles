@@ -116,11 +116,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1787309782,
-        "narHash": "sha256-hoavMmX1TZD0+l626+WdBuyuKZUu1U445yWhRTe47mo=",
+        "lastModified": 1787362525,
+        "narHash": "sha256-SwJHDs2FlsyLGLl5RyKGfXD0gwanJG4VyIs1krVRwQM=",
         "owner": "PhreshBrread",
         "repo": "zooma",
-        "rev": "853a9b50f970a18a4e7fe102eb6a2424877627d8",
+        "rev": "2a3a0fefbd1e8fb998e41a3e2d9394e2121743a5",
         "type": "github"
       },
       "original": {
