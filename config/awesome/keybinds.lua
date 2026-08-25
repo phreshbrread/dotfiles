@@ -9,8 +9,8 @@ local menu        = "rofi -show drun"
 local pmenu       = "kitty -T pmenu -o font_size=16 pmenu"
 local browser     = "floorp"
 local browserPriv = "floorp --private-window"
+local zoomer      = "zooma"
 --local screenRec   = "com.dec05eba.gpu_screen_recorder"
---local zoomer      = "woomer --monitor DP-1"
 
 --- Mouse controls (Desktop) ---
 root.buttons(gears.table.join(
@@ -91,6 +91,8 @@ globalkeys = gears.table.join(
         { description = "select previous", group = "layout" }),
     awful.key({ modkey, }, "b", function() awful.spawn(browser) end,
         { description = "open browser", group = "programs" }),
+    awful.key({ modkey, }, "z", function() awful.spawn(zoomer) end,
+        { description = "activate screen zoomer", group = "programs" }),
 
     awful.key({ modkey, "Control" }, "n",
         function()
