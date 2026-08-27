@@ -16,6 +16,8 @@
 
   config = lib.mkIf config.dev-tools.enable {
     environment.systemPackages = with pkgs; [
+      devenv
+
       # C
       cmake
       gcc
