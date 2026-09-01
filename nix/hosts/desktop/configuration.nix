@@ -39,16 +39,7 @@
     displayManager.plasma-login-manager.enable = true;
     desktopManager.plasma6.enable = true;
   };
-
-  # SDDM
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   wayland.enable = true;
-  #   settings.Autologin = {
-  #     Session = "hyprland.desktop";
-  #     User    = "brad";
-  #   };
-  # };
+  environment.systemPackages = [ pkgs.kdePackages.oxygen ];
 
   # Exclude KDE packages
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
