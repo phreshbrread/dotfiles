@@ -43,24 +43,23 @@
 
               lualine-nvim
               nvim-highlight-colors
+
+              # Pull error-lens from github since it isn't in nixpkgs
+              (pkgs.vimUtils.buildVimPlugin {
+                pname = "error-lens.nvim";
+                version = "latest";
+                nvimSkipModule = [ "error-lens.telescope" ];
+                src = pkgs.fetchFromGitHub {
+                  owner = "chikko80";
+                  repo = "error-lens.nvim";
+                  rev = "main";
+                  hash = "sha256-Zxj0qq0UZLc37KQT9c9J05iAMty1fxclfQrqdFbO1BI=";
+                };
+              })
             ];
           };
         };
       };
-
-      # VSCodium
-      #vscode = {
-      #  enable = true;
-      #  package = pkgs.vscodium-fhs;
-      #  extensions = with pkgs.vscode-extensions; [
-      #    jnoortheen.nix-ide
-      #    llvm-vs-code-extensions.vscode-clangd
-      #    redhat.vscode-yaml
-      #    tamasfe.even-better-toml
-      #    enkia.tokyo-night
-      #    sumneko.lua
-      #  ];
-      #};
     };
 
     environment.systemPackages = with pkgs; [
