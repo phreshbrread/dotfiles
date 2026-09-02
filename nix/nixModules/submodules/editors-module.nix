@@ -40,22 +40,10 @@
               nvim-treesitter.withAllGrammars
               presence-nvim
               render-markdown-nvim
+              trouble-nvim
 
               lualine-nvim
               nvim-highlight-colors
-
-              # Pull error-lens from github since it isn't in nixpkgs
-              (pkgs.vimUtils.buildVimPlugin {
-                pname = "error-lens.nvim";
-                version = "latest";
-                nvimSkipModule = [ "error-lens.telescope" ];
-                src = pkgs.fetchFromGitHub {
-                  owner = "chikko80";
-                  repo = "error-lens.nvim";
-                  rev = "main";
-                  hash = "sha256-Zxj0qq0UZLc37KQT9c9J05iAMty1fxclfQrqdFbO1BI=";
-                };
-              })
             ];
           };
         };
