@@ -39,7 +39,7 @@ static const char *colors[][3]           = {
 
 /* Autostarts */
 static const char *const autostart[] = {
-	"nitrogen", "--restore", NULL,
+	"waypaper", "--restore", NULL,
 	"nm-applet", NULL,
 	"picom", "--backend", "glx", NULL,
 	"sh", "-c", "$HOME/dotfiles/scripts/dwm-statusbar.sh", NULL,

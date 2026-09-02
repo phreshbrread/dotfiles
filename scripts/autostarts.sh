@@ -7,6 +7,8 @@ pgrep -f lxqt-notificationd || lxqt-notificationd &
 pgrep openrgb               || openrgb            &
 pgrep kdeconnectd           || kdeconnectd        &
 
+waypaper --restore &
+
 systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH & # Import theme env
 
 # X only
@@ -15,14 +17,12 @@ systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_PLUGIN_PATH & # Impo
 # Clipboard manager
 # D-bus
 if [ "$XDG_SESSION_TYPE" == "x11" ]; then
-    nitrogen --restore     &
     picom    --backend glx &
 fi
 
 # Wayland only
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
     pgrep waybar || waybar &
-    waypaper --restore     &
 
     # Clipboard manager
     pgrep wl-paste || wl-paste --type text --watch cliphist store  & # Stores only text data

@@ -40,7 +40,8 @@
 
     environment.systemPackages = with pkgs; [
       dmenu
-      nitrogen
+      waypaper
+      feh
       copyq
       picom
       rofi
