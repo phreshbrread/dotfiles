@@ -11,6 +11,7 @@
     ./submodules/x-module.nix
     ./submodules/vm-module.nix
     ./submodules/ssh-module.nix
+    ./submodules/reaper-module.nix
     ./submodules/gaming-module.nix
     ./submodules/cosmic-module.nix
     ./submodules/editors-module.nix

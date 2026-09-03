@@ -14,6 +14,7 @@
   syncthing-module.enable    = true;
   gaming-module.enable       = true;
   dev-tools.enable           = true;
+  reaper-module.enable       = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";
@@ -39,7 +40,10 @@
     displayManager.plasma-login-manager.enable = true;
     desktopManager.plasma6.enable = true;
   };
-  environment.systemPackages = [ pkgs.kdePackages.oxygen ];
+  # Oxygen theme
+  environment.systemPackages = with pkgs; [
+    kdePackages.oxygen
+  ];
 
   # Exclude KDE packages
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -49,9 +53,8 @@
   ];
 
   services.hardware.openrgb = {
-    enable      = true;
-    package     = pkgs.openrgb-with-all-plugins;
-    motherboard = "amd";
+    enable  = true;
+    package = pkgs.openrgb-with-all-plugins;
   };
 
   # Define user account
@@ -99,7 +102,6 @@
     "com.dec05eba.gpu_screen_recorder"
     "com.steamgriddb.SGDBoop"
     "com.usebottles.bottles"
-    "fm.reaper.Reaper"
     "io.github.shiiion.primehack"
     "io.github.streetpea.Chiaki4deck"
     "io.github.tntwise.REAL-Video-Enhancer"
