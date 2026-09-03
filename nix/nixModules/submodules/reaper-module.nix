@@ -17,6 +17,7 @@
   config = lib.mkIf config.reaper-module.enable {
     environment.systemPackages = with pkgs; [
       reaper
+      lsp-plugins
     ];
 
     environment.sessionVariables = {
