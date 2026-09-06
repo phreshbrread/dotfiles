@@ -40,9 +40,10 @@
     displayManager.plasma-login-manager.enable = true;
     desktopManager.plasma6.enable = true;
   };
-  # Oxygen theme
+  # Extra Plasma packages
   environment.systemPackages = with pkgs; [
-    kdePackages.oxygen
+    kdePackages.oxygen # Oxygen theme
+    kdePackages.kcalc
   ];
 
   # Exclude KDE packages
