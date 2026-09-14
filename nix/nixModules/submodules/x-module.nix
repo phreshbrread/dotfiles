@@ -24,6 +24,8 @@
       ];
       windowManager = {
         awesome.enable = true; # Enable AwesomeWM
+        i3.enable      = true; # Enable i3WM
+        i3.package     = pkgs.i3-rounded;
         dwm = {
           # Enable custom DWM package
           enable = false;
