@@ -30,6 +30,9 @@ tiling_drag modifier titlebar
 # Open terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# Power menu
+bindsym $mod+p exec i3-sensible-terminal pmenu
+
 # Kill focused window
 bindsym $mod+c kill
 
@@ -59,7 +62,7 @@ bindsym $mod+Shift+Right move right
 # Split in horizontal orientation
 bindsym $mod+h split h
 
-# Jplit in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
 # Enter fullscreen mode for the focused container
@@ -163,4 +166,5 @@ bar {
 
 # Autostarts
 exec --no-startup-id nm-applet
-
+exec --no-startup-id qpwgraph
+exec --no-startup-id waypaper --restore
