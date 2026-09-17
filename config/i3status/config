@@ -5,7 +5,7 @@ general {
 
 #order += "ipv6"
 order += "wireless _first_"
-order += "ethernet _first_"
+#order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
 order += "load"
@@ -13,7 +13,7 @@ order += "memory"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
+        format_up = "W: %essid (%ip)"
         format_down = "W: down"
 }
 
@@ -35,7 +35,7 @@ load {
 }
 
 memory {
-        format = "%used | %available"
+        format = "%used / %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
