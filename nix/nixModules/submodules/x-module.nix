@@ -16,22 +16,15 @@
 
   config = lib.mkIf config.x-module.enable {
     services.xserver = {
-      enable = true;
-      autoRepeatDelay = 200;
+      enable             = true;
+      autoRepeatDelay    = 200;
       autoRepeatInterval = 35;
-      excludePackages = with pkgs; [
-        xterm
-      ];
+      excludePackages    = [ pkgs.xterm ];
       windowManager = {
-        awesome.enable = true; # Enable AwesomeWM
-        i3.enable      = true; # Enable i3WM
-        i3.package     = pkgs.i3-rounded;
-        dwm = {
-          # Enable custom DWM package
-          enable = false;
-          package = pkgs.dwm.overrideAttrs {
-            src = ../../dwm;
-          };
+        awesome.enable = true;
+        i3 = {
+          enable  = true;
+          package = pkgs.i3-rounded;
         };
       };
     };
@@ -41,7 +34,6 @@
     ];
 
     environment.systemPackages = with pkgs; [
-      dmenu
       waypaper
       feh
       copyq
