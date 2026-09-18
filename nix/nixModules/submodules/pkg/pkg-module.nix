@@ -68,6 +68,7 @@
     ncdu
     yazi
     btop
+    wifitui
 
     # GUI
     inputs.zooma.packages.${pkgs.system}.default

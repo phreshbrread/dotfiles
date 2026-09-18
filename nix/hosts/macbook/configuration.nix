@@ -21,6 +21,7 @@
   gaming-module.enable       = true;
   openbox-module.enable      = true;
   dev-tools.enable           = true;
+  reaper-module.enable       = true;
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
@@ -84,7 +85,6 @@
   # Declare flatpaks
   services.flatpak.packages = [
     "org.polymc.PolyMC"
-    "fm.reaper.Reaper"
     "org.jdownloader.JDownloader"
   ];
 
