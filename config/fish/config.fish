@@ -7,6 +7,3 @@ set fish_greeting
 starship init fish | source
 
 direnv hook fish | source
-devenv hook fish | source
-
-fish_add_path /home/brad/.millennium/ext/bin
