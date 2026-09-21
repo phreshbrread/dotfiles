@@ -186,23 +186,7 @@
     tmux.enable       = true;
     gamescope.enable  = true;
     kdeconnect.enable = true;
-    fish = {
-      enable = true;
-      shellAliases = {
-        x             = "exit";
-        ls            = "eza -algh --group-directories-first --icons=always";
-        cls           = "clear";
-        #sudo          = "doas";
-        tmux-mc       = "tmux a -t minecraft-server";
-        sudoedit      = "doas rnano";
-        install-date  = "stat / | grep Birth";
-        tmux-terraria = "tmux a -t terraria-server";
-        nv            = "nvim";
-        ff            = "fastfetch";
-        cat           = "bat";
-        gpr           = "git pull --rebase";
-      };
-    };
+    fish.enable       = true;
 
     # Enable AppImage
     appimage = {
