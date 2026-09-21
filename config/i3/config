@@ -171,5 +171,5 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # -- Autostarts -- #
 exec --no-startup-id nm-applet
-exec --no-startup-id qpwgraph
+exec --no-startup-id qpwgraph -m
 exec --no-startup-id waypaper --restore
