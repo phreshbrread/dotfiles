@@ -26,10 +26,11 @@
       gdb
 
       # Rust
-      cargo
-      rustc
-      rustfmt
-      clippy
+      rustup
+      #cargo
+      #rustc
+      #rustfmt
+      #clippy
       rust-analyzer
     ];
   };
