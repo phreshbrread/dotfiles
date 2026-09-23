@@ -115,6 +115,7 @@
     "net.shadps4.shadPS4"
     "org.gnome.Brasero"
     "com.fightcade.Fightcade"
+    "dev.eden_emu.eden"
   ];
 
   # Initial system state version (no need to change)
