@@ -67,7 +67,7 @@
   hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
 
   # LXQT
-  services.xserver.desktopManager.lxqt.enable = true;
+  #services.xserver.desktopManager.lxqt.enable = true;
 
   # Use ly
   services.displayManager.ly.enable = true;
@@ -77,8 +77,10 @@
     enable = true;
     touchpad = {
       accelProfile       = "flat"; # Disable touchpad acceleration
+      accelSpeed         = "0.6";  # Set cursor speed
       naturalScrolling   = true;
       disableWhileTyping = true;
+      tapping            = true;
     };
   };
 
