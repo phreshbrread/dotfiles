@@ -98,5 +98,6 @@
     handbrake
     dosbox-x
     image-roll
+    remmina
   ];
 }
