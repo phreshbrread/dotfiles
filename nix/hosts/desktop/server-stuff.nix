@@ -39,9 +39,10 @@
         encode gzip zstd
         header {
           Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-          X-Content-Type-Options nosniff
-          X-Frame-Options DENY
-          X-XSS-Protection "0"
+          -X-Frame-Options
+
+          # Add resource policy required by newer LG webOS updates
+          Cross-Origin-Resource-Policy "cross-origin"
         }
       '';
     };
