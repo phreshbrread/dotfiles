@@ -17,6 +17,7 @@
   config = lib.mkIf config.dev-tools.enable {
     environment.systemPackages = with pkgs; [
       devenv
+      android-studio
 
       # C
       cmake
