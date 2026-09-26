@@ -28,6 +28,7 @@
 
       # Rust
       rustup
+      rust-analyzer
       #cargo
       #rustc
       #rustfmt
