@@ -54,7 +54,7 @@
     };
 
     environment.variables = {
-      PROTON_PREFER_SDL = "1";
+      #PROTON_PREFER_SDL = "1";
     };
   };
 }
