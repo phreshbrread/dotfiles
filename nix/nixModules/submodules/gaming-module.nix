@@ -26,7 +26,7 @@
       enable                = true;
       protontricks.enable   = true;
       extraCompatPackages = with pkgs; [
-        proton-ge-bin
+        #proton-ge-bin
         steamtinkerlaunch
       ];
       package = pkgs.steam.override {
