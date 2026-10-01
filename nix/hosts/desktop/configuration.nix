@@ -72,6 +72,7 @@
       "audio"
       "adbusers"
       "i2c"
+      "input"
     ];
   };
 
