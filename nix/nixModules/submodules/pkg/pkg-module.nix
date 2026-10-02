@@ -26,6 +26,7 @@
     ripgrep
     fastfetch
     killall
+    extract-xiso
     nh
     exiftool
     nixfmt
