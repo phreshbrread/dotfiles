@@ -45,6 +45,11 @@
     PROTON_USE_WINED3D          = "1";
   };
 
+  # Add cargo bin to PATH
+  environment.sessionVariables = {
+    PATH = [ "$HOME/.cargo/bin" ];
+  };
+
   # Define user account
   users.users.brad = {
     isNormalUser = true;
