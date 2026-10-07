@@ -17,6 +17,7 @@ vim.o.syntax = 'on'
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
+vim.o.splitright = true
 vim.api.nvim_command('filetype plugin indent on')
 
 -- Disable intro message
