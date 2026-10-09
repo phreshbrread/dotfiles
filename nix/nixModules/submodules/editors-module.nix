@@ -25,22 +25,6 @@
           customRC = ''
             source ~/dotfiles/config/nvim/init.lua
           '';
-          # packages.myVimPackage = with pkgs.vimPlugins; {
-          #   start = [
-          #     telescope-nvim
-          #     telescope-fzf-native-nvim
-          #     vim-better-whitespace
-          #     nvim-autopairs
-          #     nvim-lspconfig
-          #     nvim-treesitter.withAllGrammars
-          #     presence-nvim
-          #     render-markdown-nvim
-          #     trouble-nvim
-
-          #     lualine-nvim
-          #     nvim-highlight-colors
-          #   ];
-          # };
         };
       };
     };
@@ -50,10 +34,9 @@
       ripgrep
       fzf
       fd
-      clang-tools # For nvim LSP
-      tree-sitter
       luarocks
       lua5_1
+      tree-sitter
     ];
   };
 }

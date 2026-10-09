@@ -1,10 +1,7 @@
 return {
     "brenoprata10/nvim-highlight-colors",
-    cmd = "HighlightColors",
-    config = function()
-        require("nvim-highlight-colors").setup({
-            render = "background",
-            enable_tailwind = true,
-        })
-    end,
+    event = { "BufReadPre", "BufNewFile" }, -- Lazy load on file open
+    opts = {
+        render = 'background',
+    },
 }

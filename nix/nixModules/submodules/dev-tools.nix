@@ -23,16 +23,17 @@
       cmake
       gcc
       clang
+      clang-tools
       gnumake
       gdb
 
       # Rust
       rustup
       rust-analyzer
-      #cargo
-      #rustc
-      #rustfmt
-      #clippy
+      cargo
+      rustc
+      rustfmt
+      clippy
     ];
   };
 }
