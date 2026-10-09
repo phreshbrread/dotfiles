@@ -25,27 +25,27 @@
           customRC = ''
             source ~/dotfiles/config/nvim/init.lua
           '';
-          packages.myVimPackage = with pkgs.vimPlugins; {
-            start = [
-              tokyonight-nvim
-              nvim-cmp
-              nvim-web-devicons
+          # packages.myVimPackage = with pkgs.vimPlugins; {
+          #   start = [
+          #     tokyonight-nvim
+          #     nvim-cmp
+          #     nvim-web-devicons
 
-              telescope-nvim
-              plenary-nvim
-              telescope-fzf-native-nvim
-              vim-better-whitespace
-              nvim-autopairs
-              nvim-lspconfig
-              nvim-treesitter.withAllGrammars
-              presence-nvim
-              render-markdown-nvim
-              trouble-nvim
+          #     telescope-nvim
+          #     plenary-nvim
+          #     telescope-fzf-native-nvim
+          #     vim-better-whitespace
+          #     nvim-autopairs
+          #     nvim-lspconfig
+          #     nvim-treesitter.withAllGrammars
+          #     presence-nvim
+          #     render-markdown-nvim
+          #     trouble-nvim
 
-              lualine-nvim
-              nvim-highlight-colors
-            ];
-          };
+          #     lualine-nvim
+          #     nvim-highlight-colors
+          #   ];
+          # };
         };
       };
     };
@@ -57,6 +57,8 @@
       fd
       clang-tools # For nvim LSP
       tree-sitter
+      luarocks
+      lua5_1
     ];
   };
 }
