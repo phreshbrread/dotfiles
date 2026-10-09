@@ -29,13 +29,8 @@ vim.keymap.set("v", "[", 'c[]<Esc>P', { remap = false })
 vim.keymap.set("v", "{", 'c{}<Esc>P', { remap = false })
 
 -- Load plugins
---require('lualine').setup()
---require('nvim-highlight-colors').setup({})
 --require('nvim-autopairs').setup({})
 --require('render-markdown').setup({})
---require("telescope").setup({
---  defaults = { layout_config = { horizontal = { preview_cutoff = 0 }, -- Always show the preview
---    }, }, })
 
 
 -- Tree-sitter
