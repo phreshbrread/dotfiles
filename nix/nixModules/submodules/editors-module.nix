@@ -27,12 +27,7 @@
           '';
           # packages.myVimPackage = with pkgs.vimPlugins; {
           #   start = [
-          #     tokyonight-nvim
-          #     nvim-cmp
-          #     nvim-web-devicons
-
           #     telescope-nvim
-          #     plenary-nvim
           #     telescope-fzf-native-nvim
           #     vim-better-whitespace
           #     nvim-autopairs

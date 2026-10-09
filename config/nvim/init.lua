@@ -2,10 +2,10 @@
 --- NVIM CONFIG ---
 -------------------
 
--- Plugins are installed/managed by Nix, but are configured/loaded here
+-- Load lazy.nvim plugin manager
 require("config.lazy")
 
--- Load split configs
+-- Load keybinds
 require("config.keybinds")
 
 -- Options
@@ -20,9 +20,8 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.splitright = true
 vim.api.nvim_command('filetype plugin indent on')
-
--- Disable intro message
-vim.opt.shortmess:append "I"
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
+vim.opt.shortmess:append "I" -- Disable intro message
 
 -- Enable instant bracket wrapping around selection
 vim.keymap.set("v", "(", 'c()<Esc>P', { remap = false })
@@ -38,9 +37,6 @@ vim.keymap.set("v", "{", 'c{}<Esc>P', { remap = false })
 --  defaults = { layout_config = { horizontal = { preview_cutoff = 0 }, -- Always show the preview
 --    }, }, })
 
--- Colours
-vim.cmd.colorscheme "tokyonight"
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
 
 -- Tree-sitter
 --require('nvim-treesitter').setup({})
