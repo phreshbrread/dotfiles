@@ -20,27 +20,64 @@ services:
       - /dev/dri:/dev/dri
       - /dev/kfd:/dev/kfd
     restart: unless-stopped
-  mc-server:
-    image: itzg/minecraft-server:latest
-    container_name: minecraft-vanilla
+
+#  mc-server:
+#    image: itzg/minecraft-server:latest
+#    container_name: minecraft-vanilla
+#    ports:
+#      - "25566:25565"
+#    environment:
+#      EULA: "TRUE"
+#      MEMORY: "6G"
+#      TYPE: "VANILLA"
+#      VERSION: "26.2"
+#      DIFFICULTY: "hard"
+#      ICON: "https://soybooru.com/api/booru/posts/1025/file"
+#      LEVEL: "FatGoy"
+#      MOTD: "Fuck air and fuck water"
+#      SYNC_CHUNK_WRITES: true
+#      ENABLE_WHITELIST: "TRUE"
+#      ENFORCE_WHITELIST: "TRUE"
+#      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,Humbumza,OhSprenos"
+#    volumes:
+#      - ~/servers/minecraft-server/:/data
+#    stdin_open: true
+#    tty: true
+#    restart: unless-stopped
+
+  gluetun:
+    image: qmcgaw/gluetun:v3
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
     ports:
-      - "25566:25565"
-    environment:
-      EULA: "TRUE"
-      # Server settings
-      MEMORY: "6G"
-      TYPE: "VANILLA"
-      VERSION: "26.2"
-      DIFFICULTY: "hard"
-      ICON: "https://soybooru.com/api/booru/posts/1025/file"
-      LEVEL: "FatGoy"
-      MOTD: "Fuck air and fuck water"
-      SYNC_CHUNK_WRITES: true
-      ENABLE_WHITELIST: "TRUE"
-      ENFORCE_WHITELIST: "TRUE"
-      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,Humbumza,OhSprenos"
-    volumes:
-      - ~/servers/minecraft-server/:/data
-    stdin_open: true
-    tty: true
+      - 8080:8080     # qBittorrent Web UI
+      - 6881:6881     # qBittorrent Torrent port (TCP)
+      - 6881:6881/udp # qBittorrent Torrent port (UDP)
+    environment:      # User & pass pull from .env file
+      - VPN_SERVICE_PROVIDER=protonvpn
+      - VPN_TYPE=openvpn
+      - OPENVPN_USER=${PROTON_VPN_USER}
+      - OPENVPN_PASSWORD=${PROTON_VPN_PASSWORD}
+      - SERVER_COUNTRIES=New Zealand
     restart: unless-stopped
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: "container:gluetun"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Melbourne
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
+    volumes:
+      - /mass-storage/qBittorrent-config:/config
+      - /mass-storage/Torrents:/downloads
+    restart: unless-stopped
+    depends_on:
+      gluetun:
+        condition: service_healthy
