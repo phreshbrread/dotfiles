@@ -8,6 +8,8 @@ starship init fish | source
 
 direnv hook fish | source
 
+fish_add_path ~/.cargo/bin
+
 # Aliases
 alias cat            "bat"
 alias x              "exit"
