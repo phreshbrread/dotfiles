@@ -22,7 +22,7 @@
       scarlett2 # Focusrite Scarlett driver
       pinta
       youtube-tui
-      numr
+      #numr
     ];
   };
 }
