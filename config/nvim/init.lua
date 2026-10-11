@@ -23,11 +23,6 @@ vim.api.nvim_command("filetype plugin indent on")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
 vim.opt.shortmess:append "I" -- Disable intro message
 
--- Enable instant bracket wrapping around selection
-vim.keymap.set("v", "(", "c()<Esc>P", { remap = false })
-vim.keymap.set("v", "[", "c[]<Esc>P", { remap = false })
-vim.keymap.set("v", "{", "c{}<Esc>P", { remap = false })
-
 -- LSP config
 vim.lsp.config('clangd', {
   cmd = { 'clangd', '--background-index' },

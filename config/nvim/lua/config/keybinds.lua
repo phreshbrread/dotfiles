@@ -11,11 +11,20 @@ vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
 vim.keymap.set('n', '<C-f>', 'mzgg=G`z')
 
 -- Split & cargo run
-vim.keymap.set('n', '<A-c>', '<cmd>vsplit | terminal cargo run<CR>')
+vim.keymap.set('n', '<A-c>', function()
+  vim.cmd('vsplit')
+  vim.cmd('terminal cargo run')
+  vim.cmd('startinsert')
+end)
 
 -- Find references using LSP in normal mode
 vim.keymap.set('n', '<A-r>', vim.lsp.buf.references, { desc = 'Find references (Alt+r)' })
 
 -- Map escape to exit terminal mode
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
+
+-- Enable instant bracket wrapping around selection
+vim.keymap.set("v", "(", "c()<Esc>P", { remap = false })
+vim.keymap.set("v", "[", "c[]<Esc>P", { remap = false })
+vim.keymap.set("v", "{", "c{}<Esc>P", { remap = false })
 
