@@ -8,6 +8,10 @@
   # Docker
   virtualisation.docker = {
     enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
     daemon.settings = {
       userland-proxy = false;
       experimental = true;
@@ -16,7 +20,6 @@
       fixed-cidr-v6 = "fd00::/80";
     };
   };
-  users.users.brad.extraGroups = [ "docker" ];
   systemd.services.docker.unitConfig.RequiresMountsFor = [ "/external-drive" ];
 
   # Caddy with DuckDNS plugin
