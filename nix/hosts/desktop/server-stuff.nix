@@ -28,7 +28,7 @@
 
     package = pkgs.caddy.withPlugins {
       plugins = [ "github.com/caddy-dns/duckdns@v0.5.0" ];
-      hash = "sha256-lSS8YQ3VSk2lU7cMDVF+Nn8v9U/AdrMcJgNasVvS/Po=";
+      hash = "sha256-hdJoUoWpDZEz367Rwhagz5040TMHBReLY+hhHjMfwgM=";
     };
 
     virtualHosts."screamingbird.duckdns.org" = {
