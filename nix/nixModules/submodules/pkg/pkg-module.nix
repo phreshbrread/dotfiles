@@ -29,6 +29,7 @@
     extract-xiso
     nh
     exiftool
+    unrar
     nixfmt
     tree
     starship
