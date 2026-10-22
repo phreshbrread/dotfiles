@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791711434,
-        "narHash": "sha256-LpIhxnuO0tYeZ4k7BbNMxsPs2zJpB4hWXO1jdhUuE7Q=",
+        "lastModified": 1792309949,
+        "narHash": "sha256-2DAEMk8YkV8OF6N2uw9jQ016cYoNkcgnq50AShwWxNw=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "9a2dd40780eeab8543aa97c59c26f11267025616",
+        "rev": "1b4d1758fa6053c5d6284254a793134fa602fbff",
         "type": "github"
       },
       "original": {
@@ -38,16 +38,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1791734076,
-        "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
+        "lastModified": 1792615934,
+        "narHash": "sha256-MlvRfa1O5Cqc2/a+gG+l9TSuowEoCKCmrJ1d9oAVm0I=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "rev": "da6dc0e7b26060f2f71ce3ef7088fb56ee44fa36",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
+        "ref": "nixos-26.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -89,11 +89,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1789982614,
-        "narHash": "sha256-/6Lo8vV1Zm0a3iETPzOAQotLNIso21mIUFqJp/oDscM=",
+        "lastModified": 1792460915,
+        "narHash": "sha256-BPxhcUhr3O8DKeyn2mUKya6JQvhCVYsvb0ENh/nMxfc=",
         "owner": "PhreshBrread",
         "repo": "pmenu",
-        "rev": "a7421099dacc6e98aaf177be1b29ee16c062b3d1",
+        "rev": "d8868aa74bf4a5d50dfddf8afe27d659bb330742",
         "type": "github"
       },
       "original": {
@@ -116,11 +116,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1791717944,
-        "narHash": "sha256-RZp99er2X9CtavCm4jtIJzTcm6QWjRn5MHZLqQ6Or40=",
+        "lastModified": 1792569688,
+        "narHash": "sha256-qiz7w1mvvqf3TtY3Wcf4jLPAYzriD/deV5wusbae5RY=",
         "owner": "PhreshBrread",
         "repo": "zooma",
-        "rev": "4f0dac01a243d651c076c141f7c60e6469ebe658",
+        "rev": "e52e24ff8532bb6a6251b63c0d419391f1ba4547",
         "type": "github"
       },
       "original": {

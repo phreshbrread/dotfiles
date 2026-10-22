@@ -6,7 +6,7 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url     = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url     = "github:nixos/nixpkgs/nixos-26.05";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Latest stable release
     pmenu-tui.url   = "github:PhreshBrread/pmenu";
     zooma.url       = "github:PhreshBrread/zooma";
