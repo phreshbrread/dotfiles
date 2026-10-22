@@ -22,6 +22,9 @@
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Enable Nix-LD
+  programs.nix-ld.enable = true;
+
   # Ethernet IP forwarding
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = 1;
