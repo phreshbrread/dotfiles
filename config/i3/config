@@ -148,9 +148,9 @@ bar {
 
 # -- Programs -- #
 bindsym $mod+Return exec $term
-bindsym $mod+p      exec $term pmenu
+bindsym $mod+p      exec kitty -T pmenu pmenu
 bindsym $mod+z      exec zooma
-bindsym $mod+r      exec rofi -show drun
+bindsym $mod+r      exec kitty -T fsel fsel
 bindsym $mod+b      exec floorp
 
 # -- Peripheral Control -- #

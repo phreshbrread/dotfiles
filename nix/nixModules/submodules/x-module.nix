@@ -38,8 +38,8 @@
       feh
       copyq
       picom
-      rofi
       xrdb
+      fsel
     ];
   };
 }
