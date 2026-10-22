@@ -5,7 +5,7 @@
 modkey = "Mod4" -- Command / Windows key
 
 local fileManager = "Thunar"
-local menu        = "kitty -T fsel -o font_size=16 fsel"
+local menu        = "kitty -T fsel fsel --detach"
 local pmenu       = "kitty -T pmenu -o font_size=16 pmenu"
 local browser     = "floorp"
 local browserPriv = "floorp --private-window"
