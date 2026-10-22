@@ -64,7 +64,7 @@
     yt-dlp
 
     # TUI
-    inputs.pmenu-tui.packages.${pkgs.system}.default
+    inputs.pmenu-tui.packages.${stdenv.hostPlatform.system}.default
     kitty
     gf
     ncdu
@@ -73,7 +73,7 @@
     wifitui
 
     # GUI
-    inputs.zooma.packages.${pkgs.system}.default
+    inputs.zooma.packages.${stdenv.hostPlatform.system}.default
     kdePackages.kwallet
     kdePackages.kwalletmanager
     floorp-bin
