@@ -15,6 +15,9 @@
   };
 
   config = lib.mkIf config.dev-tools.enable {
+    # Set rust library path
+    environment.variables.RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+
     environment.systemPackages = with pkgs; [
       devenv
       android-studio
@@ -28,7 +31,6 @@
       gdb
 
       # Rust
-      rustup
       rust-analyzer
       cargo
       rustc
