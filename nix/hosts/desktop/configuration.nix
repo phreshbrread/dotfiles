@@ -45,8 +45,12 @@
   };
   # Extra Plasma packages
   environment.systemPackages = with pkgs; [
-    kdePackages.oxygen # Oxygen theme
     kdePackages.kcalc
+
+    # Oxygen theme
+    kdePackages.oxygen
+    kdePackages.oxygen-icons
+    kdePackages.oxygen-sounds
   ];
 
   # Exclude KDE packages
