@@ -10,10 +10,17 @@ vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
 -- Auto indent in place
 vim.keymap.set('n', '<C-f>', 'mzgg=G`z')
 
--- Split & cargo run
+-- Split & build using makefile
+vim.keymap.set('n', '<A-b>', function()
+  vim.cmd('vsplit')
+  vim.cmd('terminal make')
+  vim.cmd('startinsert')
+end)
+
+-- Split & execute makefile run target
 vim.keymap.set('n', '<A-c>', function()
   vim.cmd('vsplit')
-  vim.cmd('terminal cargo run')
+  vim.cmd('terminal make run')
   vim.cmd('startinsert')
 end)
 
