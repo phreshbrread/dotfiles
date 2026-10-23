@@ -12,7 +12,7 @@
 {
   # Enable modules
   macbook-pkgs.enable        = true; # Macbook package set
-  systemd-boot-module.enable = true;
+  #systemd-boot-module.enable = true;
   hyprland-module.enable     = true;
   x-module.enable            = true; # X window managers
   vm-module.enable           = true; # VM support
@@ -35,6 +35,24 @@
 
   # Hostname
   networking.hostName = "fentbook";
+
+  # Systemd-boot
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 5;
+      memtest86.enable = true;
+
+      # Custom Gentoo partition boot entry
+      extraEntries = {
+        "gentoo.conf" = ''
+          title Gentoo (EFI)
+          efi   /efi/gentoo/grubx64.efi
+        '';
+      };
+    };
+  };
 
   # Environment variables
   environment.variables = {
@@ -70,9 +88,6 @@
     ];
   };
   hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.intel-vaapi-driver ];
-
-  # LXQT
-  #services.xserver.desktopManager.lxqt.enable = true;
 
   # Use ly
   services.displayManager.ly.enable = true;
