@@ -47,7 +47,7 @@
       # Custom Gentoo partition boot entry
       extraEntries = {
         "gentoo.conf" = ''
-          title Gentoo (EFI)
+          title Gentoo
           efi   /efi/gentoo/grubx64.efi
         '';
       };
