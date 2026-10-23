@@ -34,9 +34,13 @@ vim.lsp.config('rust_analyzer', {
   filetypes = { 'rust' },
   root_markers = { '.git', 'Cargo.toml' },
 })
-vim.lsp.enable({ "clangd", "rust_analyzer" })
+vim.lsp.config('zls', {
+  cmd = { 'zls' },
+  filetypes = { 'zig', 'zir' },
+  root_markers = { 'zls.json', 'build.zig', '.git' },
+})
 
-
+vim.lsp.enable({ "clangd", "rust_analyzer", "zig" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)

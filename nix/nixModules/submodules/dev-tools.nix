@@ -36,6 +36,10 @@
       rustc
       rustfmt
       clippy
+
+      # Zig
+      zig
+      zls
     ];
   };
 }
