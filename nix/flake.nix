@@ -50,10 +50,8 @@
         system      = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./nixModules/shared-config.nix
-
-          # configuration.nix imports hardware config relatively since VM hardware changes often
-          ./hosts/virtual-machine/configuration.nix
+          ./hosts/virtual-machine
+          ./modules
 
           nix-flatpak.nixosModules.nix-flatpak
           nix-index-database.nixosModules.nix-index
