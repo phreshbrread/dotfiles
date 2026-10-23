@@ -17,6 +17,9 @@ vim.keymap.set('n', '<A-b>', function()
   vim.cmd('startinsert')
 end)
 
+-- Open Lazy
+vim.keymap.set('n', '<A-l>', '<cmd>Lazy<CR>')
+
 -- Split & execute makefile run target
 vim.keymap.set('n', '<A-c>', function()
   vim.cmd('vsplit')
