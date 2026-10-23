@@ -1,20 +1,8 @@
-###################
-## GAMING MODULE ##
-###################
+{ pkgs, lib, config, ... }:
+let cfg = config.gaming; in {
+  options.gaming.enable = lib.mkEnableOption "Enable Steam + other gaming-related stuff";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    gaming-module.enable = lib.mkEnableOption "Enables Steam + other gaming stuff";
-  };
-
-  config = lib.mkIf config.gaming-module.enable {
+  config = lib.mkIf cfg.enable {
     hardware.xpadneo.enable = true;
 
     programs.gamemode = {

@@ -1,20 +1,8 @@
-######################
-## DEV TOOLS MODULE ##
-######################
+{ pkgs, lib, config, ... }:
+let cfg = config.devTools; in {
+  options.devTools.enable = lib.mkEnableOption "Enables extra software development tools";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    dev-tools.enable = lib.mkEnableOption "Enables extra software development tools";
-  };
-
-  config = lib.mkIf config.dev-tools.enable {
+  config = lib.mkIf cfg.enable {
     # Set rust library path
     environment.variables.RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
 

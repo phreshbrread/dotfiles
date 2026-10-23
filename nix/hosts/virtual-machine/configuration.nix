@@ -10,8 +10,8 @@
   ];
 
   # Enable modules
-  macbook-pkgs.enable       = true;
-  hyprland-module.enable    = true;
+  macbook-pkgs.enable = true;
+  hyprland.enable     = true;
 
   # Define hostname
   networking.hostName = "nixos-vm";

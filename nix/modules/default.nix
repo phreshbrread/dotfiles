@@ -3,13 +3,12 @@
 ###################
 
 { config, pkgs, ... }:
-
 {
   # Import all modules
   imports = [
     ./pkg
     ./cosmic.nix
-    ./dev-tools.nix
+    ./devTools.nix
     ./editors.nix
     ./gaming.nix
     ./hyprland.nix
@@ -17,13 +16,13 @@
     ./reaper.nix
     ./ssh.nix
     ./syncthing.nix
-    ./systemd-boot.nix
-    ./virtual-machines.nix
+    ./systemdBoot.nix
+    ./virtualMachines.nix
     ./xorg.nix
   ];
 
   # Enable text editors for all hosts
-  editors-module.enable = true;
+  editors.enable = true;
 
   # Enable package index
   programs.nix-index.enable = true;
@@ -92,8 +91,7 @@
     # Use doas instead of sudo. User must be in "wheel" group
     sudo.enable = false;
     doas = {
-      enable             = true;
-      wheelNeedsPassword = true;
+      enable = true;
       extraRules = [{
         keepEnv = true;
         persist = true;

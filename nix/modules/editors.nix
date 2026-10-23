@@ -1,20 +1,8 @@
-####################
-## EDITORS MODULE ##
-####################
+{ pkgs, lib, config, ... }:
+let cfg = config.editors; in {
+  options.editors.enable = lib.mkEnableOption "Enable text editors";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    editors-module.enable = lib.mkEnableOption "Enables text editors";
-  };
-
-  config = lib.mkIf config.editors-module.enable {
+  config = lib.mkIf cfg.enable {
     programs = {
       # Neovim
       neovim = {

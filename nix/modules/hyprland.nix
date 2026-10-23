@@ -1,22 +1,8 @@
-#####################
-## HYPRLAND MODULE ##
-#####################
+{ pkgs, lib, config, ... }:
+let cfg = config.hyprland; in {
+  options.hyprland.enable = lib.mkEnableOption "Enable Hyprland WM";
 
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:
-
-{
-  options = {
-    hyprland-module.enable = lib.mkEnableOption "Enables Hyprland";
-  };
-
-  # Enable Hyprland + Hyprlock
-  config = lib.mkIf config.hyprland-module.enable {
+  config = lib.mkIf cfg.enable {
     programs = {
       hyprland.enable = true;
       hyprlock.enable = true;

@@ -1,20 +1,8 @@
-######################
-## SYNCTHING MODULE ##
-######################
+{ pkgs, lib, config, ... }:
+let cfg = config.syncthing; in {
+  options.syncthing.enable = lib.mkEnableOption "Enable Syncthing";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    syncthing-module.enable = lib.mkEnableOption "Enables Syncthing";
-  };
-
-  config = lib.mkIf config.syncthing-module.enable {
+  config = lib.mkIf cfg.enable {
     services.syncthing = {
       enable = true;
       user = "brad";

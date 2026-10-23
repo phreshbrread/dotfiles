@@ -1,32 +1,13 @@
-##############################
-## X WINDOW MANAGERS MODULE ##
-##############################
+{ pkgs, lib, config, ... }:
+let cfg = config.xorg; in {
+  options.xorg.enable = lib.mkEnableOption "Enable common X settings";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    x-module.enable = lib.mkEnableOption "Enables X Window Managers";
-  };
-
-  config = lib.mkIf config.x-module.enable {
+  config = lib.mkIf cfg.enable {
     services.xserver = {
       enable             = true;
       autoRepeatDelay    = 200;
       autoRepeatInterval = 35;
       excludePackages    = [ pkgs.xterm ];
-      windowManager = {
-        awesome.enable = true;
-        i3 = {
-          enable  = true;
-          package = pkgs.i3-rounded;
-        };
-      };
     };
 
     services.xserver.displayManager.importedVariables = [

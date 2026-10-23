@@ -1,20 +1,8 @@
-###################
-## COSMIC MODULE ##
-###################
+{ pkgs, lib, config, ... }:
+let cfg = config.cosmic; in {
+  options.cosmic.enable = lib.mkEnableOption "Enable cosmic desktop";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-   cosmic-module.enable = lib.mkEnableOption "Enables cosmic";
-  };
-
-  config = lib.mkIf config.cosmic-module.enable {
+  config = lib.mkIf cfg.enable {
     services.desktopManager.cosmic = {
         enable = true;
         xwayland.enable = true;

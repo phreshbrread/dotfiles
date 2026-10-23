@@ -11,17 +11,26 @@
 
 {
   # Enable modules
-  macbook-pkgs.enable        = true; # Macbook package set
-  #systemd-boot-module.enable = true;
-  hyprland-module.enable     = true;
-  x-module.enable            = true; # X window managers
-  vm-module.enable           = true; # VM support
-  ssh-module.enable          = true;
-  syncthing-module.enable    = true;
-  gaming-module.enable       = true;
-  openbox-module.enable      = true;
-  dev-tools.enable           = true;
-  reaper-module.enable       = true;
+  macbook-pkgs.enable    = true; # Macbook package set
+  systemdBoot.enable     = true;
+  hyprland.enable        = true;
+  xorg.enable            = true;
+  virtualMachines.enable = true; # VM support
+  ssh.enable             = true;
+  syncthing.enable       = true;
+  gaming.enable          = true;
+  openbox.enable         = true;
+  dev-tools.enable       = true;
+  reaperModule.enable    = true;
+
+  # Enable X window managers
+  services.xserver.windowManager = {
+    awesome.enable = true;
+    i3 = {
+      enable  = true;
+      package = pkgs.i3-rounded;
+    };
+  };
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;

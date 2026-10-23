@@ -1,24 +1,9 @@
-####################
-## OPENBOX MODULE ##
-####################
+{ pkgs, lib, config, ... }:
+let cfg = config.openbox; in {
+  options.openbox.enable = lib.mkEnableOption "Enable openbox";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-   openbox-module.enable = lib.mkEnableOption "Enables openbox";
-  };
-
-  config = lib.mkIf config.openbox-module.enable {
+  config = lib.mkIf cfg.enable {
     services.xserver.windowManager.openbox.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      obconf
-    ];
+    environment.systemPackages = [ pkgs.obconf ];
   };
 }

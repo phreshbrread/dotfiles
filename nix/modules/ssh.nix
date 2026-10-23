@@ -1,21 +1,8 @@
-################
-## SSH MODULE ##
-################
+{ pkgs, lib, config, ... }:
+let cfg = config.ssh; in {
+  options.ssh.enable = lib.mkEnableOption "Enable openssh";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    ssh-module.enable = lib.mkEnableOption "Enables OpenSSH + authorized keys";
-  };
-
-  config = lib.mkIf config.ssh-module.enable {
-    # Enable OpenSSH
+  config = lib.mkIf cfg.enable {
     services.openssh = {
       enable = true;
       ports = [ 22 ];
@@ -35,7 +22,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsOBvqJxsicqpr4wDYLwR9s2VezX0r84vRpsSM/I0Oe brad@pheg-nixos-desktop"    # Desktop
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ6A3BTsde4wQCZPXwmjorPNk13BdOL0+nJa+rlH0IjH pheg@fatass"                # Toshiba laptop
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOoINyatbHwAARhJnwBQccXXDH1/PnQ0C4B8KJpwQC66 bazzite@brad-bazzite-ally"  # ROG Ally
-
     ];
   };
 }

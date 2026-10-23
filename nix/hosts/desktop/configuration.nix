@@ -6,15 +6,14 @@
 
 {
   # Enable modules
-  desktop-pkgs.enable        = true; # Desktop package set
-  systemd-boot-module.enable = true;
-  hyprland-module.enable     = true;
-  vm-module.enable           = true; # VM support
-  ssh-module.enable          = true;
-  syncthing-module.enable    = true;
-  gaming-module.enable       = true;
-  dev-tools.enable           = true;
-  reaper-module.enable       = true;
+  desktop-pkgs.enable    = true; # Desktop package set
+  systemdBoot.enable     = true;
+  virtualMachines.enable = true;
+  ssh.enable             = true;
+  syncthing.enable       = true;
+  gaming.enable          = true;
+  devTools.enable        = true;
+  reaper.enable          = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";

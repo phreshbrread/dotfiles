@@ -1,20 +1,8 @@
-###################
-## REAPER MODULE ##
-###################
+{ pkgs, lib, config, ... }:
+let cfg = config.reaper; in {
+  options.reaper.enable = lib.mkEnableOption "Enable REAPER DAW";
 
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
-  options = {
-    reaper-module.enable = lib.mkEnableOption "Enables the REAPER DAW";
-  };
-
-  config = lib.mkIf config.reaper-module.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       reaper
       lsp-plugins
