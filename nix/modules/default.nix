@@ -5,22 +5,21 @@
 { config, pkgs, ... }:
 
 {
-  # Import all modules here
-  # Hosts can simply toggle the ones needed
+  # Import all modules
   imports = [
-    ./submodules/x-module.nix
-    ./submodules/vm-module.nix
-    ./submodules/ssh-module.nix
-    ./submodules/reaper-module.nix
-    ./submodules/gaming-module.nix
-    ./submodules/cosmic-module.nix
-    ./submodules/editors-module.nix
-    ./submodules/openbox-module.nix
-    ./submodules/hyprland-module.nix
-    ./submodules/syncthing-module.nix
-    ./submodules/systemd-boot-module.nix
-    ./submodules/dev-tools.nix
-    ./submodules/pkg/pkg-module.nix
+    ./pkg
+    ./cosmic.nix
+    ./dev-tools.nix
+    ./editors.nix
+    ./gaming.nix
+    ./hyprland.nix
+    ./openbox.nix
+    ./reaper.nix
+    ./ssh.nix
+    ./syncthing.nix
+    ./systemd-boot.nix
+    ./virtual-machines.nix
+    ./xorg.nix
   ];
 
   # Enable text editors for all hosts

@@ -24,11 +24,8 @@
         system      = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./nixModules/shared-config.nix
-          ./hosts/desktop/configuration.nix
-          ./hosts/desktop/hardware-configuration.nix
-          ./hosts/desktop/extra-hardware-configuration.nix
-          ./hosts/desktop/server-stuff.nix
+          ./hosts/desktop
+          ./modules
 
           nix-flatpak.nixosModules.nix-flatpak
           nix-index-database.nixosModules.nix-index
@@ -40,9 +37,8 @@
         system      = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./nixModules/shared-config.nix
-          ./hosts/macbook/configuration.nix
-          ./hosts/macbook/hardware-configuration.nix
+          ./hosts/macbook
+          ./modules
 
           nix-flatpak.nixosModules.nix-flatpak
           nix-index-database.nixosModules.nix-index
