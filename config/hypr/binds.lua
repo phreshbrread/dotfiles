@@ -6,7 +6,7 @@
 local mainMod = "SUPER"
 
 -- Set programs
-local terminal    = "kitty"
+local terminal    = os.getenv("TERM")
 local fileManager = "Thunar"
 local menu        = "fuzzel"
 local pmenu       = "kitty -T pmenu -o font_size=16 pmenu"

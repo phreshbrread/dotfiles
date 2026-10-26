@@ -3,8 +3,8 @@
 set $mod Mod4
 
 # Grab environment variables
-set_from_resource $term echo "$TERM"
-set_from_resource $browser echo "$BROWSER"
+set_from_resource $term echo $TERM
+set_from_resource $browser echo $BROWSER
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

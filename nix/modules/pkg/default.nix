@@ -76,7 +76,6 @@
     inputs.zooma.packages.${stdenv.hostPlatform.system}.default
     kdePackages.kwallet
     kdePackages.kwalletmanager
-    floorp-bin
     librewolf
     obsidian
     blender

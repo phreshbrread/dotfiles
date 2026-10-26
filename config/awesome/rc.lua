@@ -59,7 +59,7 @@ end
 beautiful.init(gears.filesystem.get_configuration_dir() .. "customtheme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = os.getenv("TERM")
 editor = os.getenv("EDITOR")
 editor_cmd = terminal .. " -e " .. editor
 

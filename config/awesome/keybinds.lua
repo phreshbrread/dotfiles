@@ -4,11 +4,11 @@
 
 modkey = "Mod4" -- Command / Windows key
 
+local term        = os.getenv("TERMINAL")
+local browser     = os.getenv("BROWSER")
+local launcher    = term .. " -T fsel fsel --detach"
+local pmenu       = term .. " -T pmenu -o font_size=16 pmenu"
 local fileManager = "Thunar"
-local menu        = "kitty -T fsel fsel --detach"
-local pmenu       = "kitty -T pmenu -o font_size=16 pmenu"
-local browser     = "floorp"
-local browserPriv = "floorp --private-window"
 local zoomer      = "zooma"
 --local screenRec   = "com.dec05eba.gpu_screen_recorder"
 
@@ -107,7 +107,7 @@ globalkeys = gears.table.join(
         { description = "restore minimized", group = "client" }),
 
     -- Run prompt
-    awful.key({ modkey }, "r", function() awful.spawn(menu) end,
+    awful.key({ modkey }, "r", function() awful.spawn(launcher) end,
         { description = "run prompt", group = "launcher" }),
 
     -- Brightness keys
