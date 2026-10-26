@@ -62,6 +62,7 @@
     TERM     = "kitty";
     TERMINAL = "kitty";
     EDITOR   = "nvim";
+    BROWSER  = "librewolf";
   };
 
   xdg = {
@@ -75,7 +76,8 @@
     # Set default apps
     # https://mimetype.io/all-types for types
     mime.defaultApplications = {
-      "application/pdf" = [ "floorp.desktop" ];
+      # TODO: Idk if this will work
+      "application/pdf" = [ "{$BROWSER}.desktop" ];
       "inode/directory" = [ "thunar.desktop" ];
       "image/png" = [
         "image-roll.desktop"
