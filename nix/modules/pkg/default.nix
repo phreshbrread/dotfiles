@@ -77,6 +77,7 @@
     kdePackages.kwallet
     kdePackages.kwalletmanager
     floorp-bin
+    librewolf
     obsidian
     blender
     seahorse

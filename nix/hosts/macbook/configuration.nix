@@ -11,17 +11,17 @@
 
 {
   # Enable modules
-  macbook-pkgs.enable    = true; # Macbook package set
+  macbook-pkgs.enable    = true;
   systemdBoot.enable     = true;
   hyprland.enable        = true;
   xorg.enable            = true;
-  virtualMachines.enable = true; # VM support
+  virtualMachines.enable = true;
   ssh.enable             = true;
   syncthing.enable       = true;
   gaming.enable          = true;
   openbox.enable         = true;
-  dev-tools.enable       = true;
-  reaperModule.enable    = true;
+  devTools.enable        = true;
+  reaper.enable          = true;
 
   # Enable X window managers
   services.xserver.windowManager = {
