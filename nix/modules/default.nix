@@ -12,6 +12,7 @@
     ./editors.nix
     ./gaming.nix
     ./hyprland.nix
+    ./i3.nix
     ./openbox.nix
     ./reaper.nix
     ./ssh.nix

@@ -15,12 +15,8 @@ let cfg = config.xorg; in {
     ];
 
     environment.systemPackages = with pkgs; [
-      waypaper
-      feh
-      copyq
-      picom
-      xrdb
-      fsel
+      xinit
+      xwallpaper
     ];
   };
 }

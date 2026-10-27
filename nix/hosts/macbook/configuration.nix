@@ -19,17 +19,13 @@
   ssh.enable             = true;
   syncthing.enable       = true;
   gaming.enable          = true;
-  openbox.enable         = true;
   devTools.enable        = true;
   reaper.enable          = true;
+  i3.enable              = true;
 
   # Enable X window managers
   services.xserver.windowManager = {
     awesome.enable = true;
-    i3 = {
-      enable  = true;
-      package = pkgs.i3-rounded;
-    };
   };
 
   # Set kernel packages
@@ -101,7 +97,7 @@
   # Use ly
   services.displayManager.ly.enable = true;
 
-  # Enable touchpad
+  # Touchpad settings
   services.libinput = {
     enable = true;
     touchpad = {
