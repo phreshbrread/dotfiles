@@ -23,10 +23,8 @@
   reaper.enable          = true;
   i3.enable              = true;
 
-  # Enable X window managers
-  services.xserver.windowManager = {
-    awesome.enable = true;
-  };
+  # Enable AwesomeWM
+  services.xserver.windowManager.awesome.enable = true;
 
   # Set kernel packages
   boot.kernelPackages = pkgs.linuxPackages;
@@ -45,12 +43,11 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot = {
-      enable = true;
+      enable             = true;
       configurationLimit = 5;
-      memtest86.enable = true;
-
-      # Custom Gentoo partition boot entry
+      memtest86.enable   = true;
       extraEntries = {
+        # Custom Gentoo partition boot entry
         "gentoo.conf" = ''
           title Gentoo
           efi   /efi/gentoo/grubx64.efi
@@ -60,17 +57,14 @@
   };
 
   # Environment variables
-  environment.variables = {
+  environment.variables = { };
+  environment.sessionVariables = {
     GDK_SCALE                   = "1";
     GDK_DPI_SCALE               = "0.5";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    _JAVA_OPTIONS               = "-Dsun.java2d.uiScale=2";
     PROTON_USE_WINED3D          = "1";
-  };
-
-  # Add cargo bin to PATH
-  environment.sessionVariables = {
-    PATH = [ "$HOME/.cargo/bin" ];
+    _JAVA_OPTIONS               = "-Dsun.java2d.uiScale=2";
+    PATH                        = [ "$HOME/.cargo/bin" ];
   };
 
   # Define user account
