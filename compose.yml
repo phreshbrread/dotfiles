@@ -21,29 +21,30 @@ services:
       - /dev/kfd:/dev/kfd
     restart: unless-stopped
 
-#  mc-server:
-#    image: itzg/minecraft-server:latest
-#    container_name: minecraft-vanilla
-#    ports:
-#      - "25566:25565"
-#    environment:
-#      EULA: "TRUE"
-#      MEMORY: "6G"
-#      TYPE: "VANILLA"
-#      VERSION: "26.2"
-#      DIFFICULTY: "hard"
-#      ICON: "https://soybooru.com/api/booru/posts/1025/file"
-#      LEVEL: "FatGoy"
-#      MOTD: "Fuck air and fuck water"
-#      SYNC_CHUNK_WRITES: true
-#      ENABLE_WHITELIST: "TRUE"
-#      ENFORCE_WHITELIST: "TRUE"
-#      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,Humbumza,OhSprenos"
-#    volumes:
-#      - ~/servers/minecraft-server/:/data
-#    stdin_open: true
-#    tty: true
-#    restart: unless-stopped
+  mc-server:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft-vanilla
+    ports:
+      - "25566:25565"
+    environment:
+      EULA: "TRUE"
+      MEMORY: "6G"
+      TYPE: "VANILLA"
+      VERSION: "26.2"
+      DIFFICULTY: "hard"
+      ICON: "https://soybooru.com/api/booru/posts/1025/file"
+      LEVEL: "FatGoy2"
+      MOTD: "Nuke the world,\nNuke the universe."
+      SYNC_CHUNK_WRITES: true
+      ENABLE_WHITELIST: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+      WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,OhSprenos"
+      WHITELIST_FILE_RESOLVER: "NONE"
+    volumes:
+      - ~/servers/minecraft-server/:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
 
   gluetun:
     image: qmcgaw/gluetun:v3
