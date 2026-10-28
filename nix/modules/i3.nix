@@ -11,6 +11,7 @@ let cfg = config.i3; in {
     environment.systemPackages = with pkgs; [
       waypaper
       fsel
+      nwg-look
     ];
   };
 }

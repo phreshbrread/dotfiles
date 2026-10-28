@@ -106,8 +106,11 @@
   # Safely symlink "doas" to "sudo"
   environment.systemPackages = [ (pkgs.writeScriptBin "sudo" ''exec doas "$@"'' ) ];
 
-  # Enable XDG portals
-  xdg.portal.enable = true;
+  # Default XDG portal
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   # Declare services
   services = {

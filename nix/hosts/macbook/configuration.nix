@@ -13,7 +13,6 @@
   # Enable modules
   macbook-pkgs.enable    = true;
   systemdBoot.enable     = true;
-  hyprland.enable        = true;
   xorg.enable            = true;
   virtualMachines.enable = true;
   ssh.enable             = true;
