@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#! /bin/sh
 
 # For all WMs
 pgrep nm-applet             || nm-applet          &

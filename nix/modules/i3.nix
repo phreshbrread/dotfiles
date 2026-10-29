@@ -12,6 +12,8 @@ let cfg = config.i3; in {
       waypaper
       fsel
       nwg-look
+      picom
+      adwaita-icon-theme
     ];
   };
 }
