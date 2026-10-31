@@ -2,7 +2,7 @@
 ## SHARED CONFIG ##
 ###################
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
   # Import all modules
   imports = [
@@ -20,7 +20,16 @@
     ./systemdBoot.nix
     ./virtualMachines.nix
     ./xorg.nix
+
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+    inputs.nix-index-database.nixosModules.nix-index
   ];
+
+  # Allow hosts to pin packages to nixpkgs-stable
+  _module.args.pkgs-stable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
 
   # Enable text editors for all hosts
   editors.enable = true;
@@ -95,7 +104,7 @@
     sudo.enable = false;
     doas = {
       enable = true;
-      extraRules = [{
+      extraRules = lib.mkBefore [{
         keepEnv = true;
         persist = true;
         groups  = [ "wheel" ];

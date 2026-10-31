@@ -2,7 +2,7 @@
 ## DESKTOP NIXOS CONFIG ##
 ##########################
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-stable, lib, ... }:
 
 {
   # Enable modules
@@ -61,7 +61,7 @@
 
   services.hardware.openrgb = {
     enable = true;
-    package = pkgs.openrgb-with-all-plugins;
+    package = pkgs-stable.openrgb-with-all-plugins;
     motherboard = "amd";
   };
 
