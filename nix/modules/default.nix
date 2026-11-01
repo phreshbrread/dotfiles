@@ -104,7 +104,7 @@
     sudo.enable = false;
     doas = {
       enable = true;
-      extraRules = lib.mkBefore [{
+      extraRules = [{
         keepEnv = true;
         persist = true;
         groups  = [ "wheel" ];

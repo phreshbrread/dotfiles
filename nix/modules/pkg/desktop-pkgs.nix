@@ -22,6 +22,7 @@
       yad
 
       # Extra
+      dotnet-runtime_9
       brave
       pcsx2
       dolphin-emu
