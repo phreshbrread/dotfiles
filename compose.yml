@@ -30,10 +30,10 @@ services:
       EULA: "TRUE"
       MEMORY: "6G"
       TYPE: "VANILLA"
-      VERSION: "26.2"
+      VERSION: "1.21.1"
       DIFFICULTY: "hard"
       ICON: "https://soybooru.com/api/booru/posts/1025/file"
-      LEVEL: "FatGoy2"
+      LEVEL: "RealPingaCraft"
       MOTD: "Nuke the world,\nNuke the universe."
       SYNC_CHUNK_WRITES: true
       ENABLE_WHITELIST: "TRUE"
