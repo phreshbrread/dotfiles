@@ -30,8 +30,10 @@ services:
       EULA: "TRUE"
       MEMORY: "6G"
       #TYPE: "VANILLA"
-      TYPE: "FORGE"
-      CF_SERVER_MODPACK: "/data/conticraft.zip"
+      MODPACK_PLATFORM: "AUTO_CURSEFORGE"
+      CF_MODPACK_ZIP: "/data/conticraft.zip"
+      #CF_API_KEY: ${CF_API_KEY}
+      CF_SLUG: "custom-pack"
       VERSION: "1.21.1"
       DIFFICULTY: "hard"
       ICON: "https://soybooru.com/api/booru/posts/1025/file"
