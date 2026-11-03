@@ -29,7 +29,9 @@ services:
     environment:
       EULA: "TRUE"
       MEMORY: "6G"
-      TYPE: "VANILLA"
+      #TYPE: "VANILLA"
+      TYPE: "FORGE"
+      CF_SERVER_MODPACK: "/data/conticraft.zip"
       VERSION: "1.21.1"
       DIFFICULTY: "hard"
       ICON: "https://soybooru.com/api/booru/posts/1025/file"
