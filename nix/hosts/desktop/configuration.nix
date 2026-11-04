@@ -82,8 +82,8 @@
   };
 
   # Hamachi
-  services.logmein-hamachi.enable = true;
-  programs.haguichi.enable        = true;
+  #services.logmein-hamachi.enable = true;
+  #programs.haguichi.enable        = true;
 
   # Enable programs
   programs = {

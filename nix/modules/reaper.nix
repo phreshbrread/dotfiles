@@ -1,9 +1,9 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, pkgs-stable, lib, config, ... }:
 let cfg = config.reaper; in {
   options.reaper.enable = lib.mkEnableOption "Enable REAPER DAW";
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs-stable; [
       reaper
       lsp-plugins
     ];
