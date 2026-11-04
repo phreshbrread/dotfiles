@@ -14,6 +14,7 @@ let cfg = config.i3; in {
       nwg-look
       picom
       adwaita-icon-theme
+      brightnessctl
     ];
   };
 }
