@@ -61,7 +61,7 @@
 
   services.hardware.openrgb = {
     enable = true;
-    package = pkgs-stable.openrgb-with-all-plugins;
+    package = pkgs.openrgb-with-all-plugins;
     motherboard = "amd";
   };
 
