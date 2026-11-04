@@ -16,6 +16,10 @@
       "broadcom-sta"
       "ventoy"
     ];
+
+    problems.handlers = {
+      "gtk+".broken = "warn";
+    };
   };
 
   environment.systemPackages = with pkgs; [
