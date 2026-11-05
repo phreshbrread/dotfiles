@@ -95,7 +95,7 @@
     enable = true;
     touchpad = {
       accelProfile       = "flat"; # Disable touchpad acceleration
-      accelSpeed         = "0.6";  # Set cursor speed
+      accelSpeed         = "0.7";  # Set cursor speed
       naturalScrolling   = true;
       disableWhileTyping = true;
       tapping            = true;
