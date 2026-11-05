@@ -22,6 +22,7 @@ vim.o.splitright = true
 vim.api.nvim_command("filetype plugin indent on")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
 vim.opt.shortmess:append "I" -- Disable intro message
+vim.opt.mousescroll = "ver:1,hor:2"
 
 -- LSP config
 vim.lsp.config('clangd', {
