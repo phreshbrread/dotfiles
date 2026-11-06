@@ -15,6 +15,8 @@ let cfg = config.i3; in {
       picom
       adwaita-icon-theme
       brightnessctl
+      networkmanagerapplet
+      networkmanager-strongswan
     ];
   };
 }
