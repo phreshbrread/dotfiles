@@ -36,6 +36,7 @@ services:
       CF_SLUG: "custom-pack"
       VERSION: "1.21.1"
       DIFFICULTY: "hard"
+      ALLOW_FLIGHT: true
       ICON: "https://soybooru.com/api/booru/posts/1025/file"
       LEVEL: "RealPingaCraft"
       MOTD: "Nuke the world,\nNuke the universe."
