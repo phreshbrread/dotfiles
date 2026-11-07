@@ -10,7 +10,7 @@ let cfg = config.ssh; in {
         PasswordAuthentication = false;
         AllowUsers = [ "brad" ];
         UseDns = true;
-        X11Forwarding = false;
+        X11Forwarding = true;
         PermitRootLogin = "yes";
       };
     };
