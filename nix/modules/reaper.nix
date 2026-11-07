@@ -3,7 +3,7 @@ let cfg = config.reaper; in {
   options.reaper.enable = lib.mkEnableOption "Enable REAPER DAW";
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs-stable; [
+    environment.systemPackages = with pkgs; [
       reaper
       lsp-plugins
     ];
