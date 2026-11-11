@@ -1,7 +1,3 @@
-##########################
-## DESKTOP NIXOS CONFIG ##
-##########################
-
 { config, pkgs, pkgs-stable, lib, ... }:
 
 {

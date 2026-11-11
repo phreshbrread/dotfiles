@@ -1,13 +1,4 @@
-##########################
-## MACBOOK NIXOS CONFIG ##
-##########################
-
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, pkgs, lib, ... }:
 
 {
   # Enable modules

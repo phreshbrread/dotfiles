@@ -39,6 +39,16 @@
         ];
       };
 
+      # Server
+      nixosConfigurations.bignuts = nixpkgs.lib.nixosSystem {
+        system      = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/server
+          ./modules
+        ];
+      };
+
       # Virtual Machine
       nixosConfigurations.nixos-vm = nixpkgs.lib.nixosSystem {
         system      = "x86_64-linux";
