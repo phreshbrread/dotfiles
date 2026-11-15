@@ -52,7 +52,6 @@
     sshfs
     poppler
     jq
-    zoxide
     resvg
     v4l-utils
     libsecret
@@ -66,10 +65,10 @@
     man-pages
     gnumake
     yt-dlp
+    flac2mp3
 
     # TUI
     inputs.pmenu-tui.packages.${stdenv.hostPlatform.system}.default
-    kitty
     gf
     ncdu
     yazi
@@ -78,12 +77,10 @@
 
     # GUI
     inputs.zooma.packages.${stdenv.hostPlatform.system}.default
-    kdePackages.kwallet
-    kdePackages.kwalletmanager
+    kitty
     librewolf
     obsidian
     blender
-    seahorse
     gparted
     spotify
     warpinator
@@ -92,18 +89,13 @@
     vlc
     filezilla
     system-config-printer
-    mousepad
     picard
     picard-tools
     qpwgraph
-    kooha
-    jellyfin-media-player
     tenacity
     yacreader
     nicotine-plus
     handbrake
-    dosbox-x
-    image-roll
     remmina
   ];
 }
