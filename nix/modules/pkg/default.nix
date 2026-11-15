@@ -66,6 +66,7 @@
     man-pages
     gnumake
     yt-dlp
+    flac2all
 
     # TUI
     inputs.pmenu-tui.packages.${stdenv.hostPlatform.system}.default
