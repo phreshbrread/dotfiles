@@ -17,6 +17,7 @@ let cfg = config.i3; in {
       brightnessctl
       networkmanagerapplet
       networkmanager-strongswan
+      thunar
     ];
   };
 }
