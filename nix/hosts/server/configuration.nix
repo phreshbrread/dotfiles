@@ -49,12 +49,14 @@
     ];
   }
 
+  # DuckDNS
   services.duckdns = {
     enable = true;
     domains = [ "screamingbird" ];
-    tokenFile = "/etc/nixos/duckdns-token";
+    tokenFile = "/duckdns-token"; # TODO: Regen duckdns token
   };
 
+  # Nginx
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
@@ -65,6 +67,7 @@
       enableACME = true;
       forceSSL = true;
 
+      # Reverse proxy
       locations."/" = {
         proxyPass = "http://localhost:8096"; # Jellyfin port
         proxyWebsockets = true;
@@ -72,5 +75,12 @@
     };
   };
 
+  # Let's Encrypt
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "crustydog9@gmail.com";
+  };
+
+  # Initial install version
   system.stateVersion = "26.11";
 }
