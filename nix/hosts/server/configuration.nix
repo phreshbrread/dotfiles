@@ -50,7 +50,7 @@
     allowedUDPPorts = [
       7359  # Jellyfin local discovery
     ];
-  }
+  };
 
   # DuckDNS
   services.duckdns = {
