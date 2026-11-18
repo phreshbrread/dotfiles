@@ -3,7 +3,7 @@
 {
   # Modules
   systemdBoot.enable = true;
-  #ssh.enable         = true;
+  ssh.enable         = true;
 
   # Hostname
   networking.hostName = "bignuts";
@@ -43,10 +43,10 @@
   };
   systemd.services.docker.unitConfig.RequiresMountsFor = [ "/media" ];
 
-  services.openssh = {
-    enable = true;
-    passwordAuthentication = true;
-  };
+  #services.openssh = {
+  #  enable = true;
+  #  passwordAuthentication = true;
+  #};
 
   networking.firewall = {
     allowedTCPPorts = [

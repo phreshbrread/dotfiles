@@ -27,6 +27,9 @@ in
     };
 
     # Authorised SSH keys
-    users.users.brad.openssh.authorizedKeys.keys = sshKeys;
-  };
+    users.users = lib.genAttrs targetUsers (user:
+      lib.mkIf (config.users.users.${user}.isNormalUser or false) {
+        openssh.authorizedKeys.keys = sshKeys;
+      }
+    );
 }
