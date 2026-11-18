@@ -1,21 +1,32 @@
 { config, lib, pkgs-stable, ... }:
 
 {
-  # Bootloader
-  boot.loader = {
-    systemd-boot.enable      = true;
-    efi.canTouchEfiVariables = true;
-  };
+  # Modules
+  systemdBoot.enable = true;
+  #ssh.enable         = true;
 
+  # Hostname
   networking.hostName = "bignuts";
 
+  # TZ
   time.timeZone = "Australia/Melbourne";
 
+  # User
   users.users.plum = {
     isNormalUser = true;
     extraGroups  = [ "wheel" "server" ];
   };
 
+  # Disable bluetooth
+  hardware.bluetooth.enabled = false;
+
+  # Disable XDG portals
+  xdg.portal.enable = false;
+
+  # Disable flatpak
+  services.flatpak.enable = false;
+
+  # Packages
   environment.systemPackages = with pkgs-stable; [
     neovim
     wget
