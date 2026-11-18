@@ -9,6 +9,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOoINyatbHwAARhJnwBQccXXDH1/PnQ0C4B8KJpwQC66" # ROG Ally
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINcBwMGwNJVLw/puNsZjpZXjH36/BFW3ySzfTlZJxCdW" # Server
   ];
+  targetUsers = [ "plum" "brad" "pheg" ];
 in
 {
   options.ssh.enable = lib.mkEnableOption "Enable openssh";
@@ -19,17 +20,13 @@ in
       ports = [ 22 ];
       settings = {
         PasswordAuthentication = false;
-        AllowUsers = [ "brad" ];
         UseDns = true;
         X11Forwarding = true;
         PermitRootLogin = "yes";
       };
     };
 
-    # Authorised SSH keys
-    users.users = lib.genAttrs targetUsers (user:
-      lib.mkIf (config.users.users.${user}.isNormalUser or false) {
-        openssh.authorizedKeys.keys = sshKeys;
-      }
-    );
+  # Write the keys to a system-wide file, then open for each user
+  environment.etc."ssh/authorized_keys_global".text = builtins.concatStringsSep "\n" sshKeys;
+  services.openssh.settings.AuthorizedKeysFile = ".ssh/authorized_keys /etc/ssh/authorized_keys_global";
 }
