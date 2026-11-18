@@ -18,7 +18,7 @@
   };
 
   # Disable bluetooth
-  hardware.bluetooth.enabled = false;
+  hardware.bluetooth.enable = false;
 
   # Disable XDG portals
   xdg.portal.enable = false;
