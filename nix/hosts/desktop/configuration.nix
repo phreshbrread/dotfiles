@@ -10,6 +10,7 @@
   gaming.enable          = true;
   devTools.enable        = true;
   reaper.enable          = true;
+  pipewire.enable        = true;
 
   # Set hostname
   networking.hostName = "pheg-nixos-desktop";

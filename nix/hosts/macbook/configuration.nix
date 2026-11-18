@@ -12,6 +12,7 @@
   devTools.enable        = true;
   reaper.enable          = true;
   i3.enable              = true;
+  pipewire.enable        = true;
 
   # Enable AwesomeWM
   services.xserver.windowManager.awesome.enable = true;

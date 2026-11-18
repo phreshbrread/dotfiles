@@ -14,6 +14,7 @@
     ./hyprland.nix
     ./i3.nix
     ./openbox.nix
+    ./pipewire.nix
     ./reaper.nix
     ./ssh.nix
     ./syncthing.nix
@@ -129,16 +130,6 @@
     xserver.xkb = {
       layout  = "au";
       variant = "";
-    };
-
-    # Enable sound with pipewire
-    pulseaudio.enable = false;
-    pipewire = {
-      enable            = true;
-      alsa.enable       = true;
-      alsa.support32Bit = true;
-      pulse.enable      = true;
-      jack.enable       = true;
     };
   };
 
