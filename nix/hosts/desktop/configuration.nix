@@ -77,14 +77,11 @@
     ];
   };
 
-  # Hamachi
-  #services.logmein-hamachi.enable = true;
-  #programs.haguichi.enable        = true;
-
   # Enable programs
   programs = {
     obs-studio.enable  = true;
     thunderbird.enable = true;
+    kdeconnect.enable  = true;
   };
 
   security = {

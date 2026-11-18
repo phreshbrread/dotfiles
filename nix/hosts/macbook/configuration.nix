@@ -29,6 +29,9 @@
   # Hostname
   networking.hostName = "fentbook";
 
+  # KDE Connect
+  programs.kdeconnect.enable = true;
+
   # Systemd-boot
   boot.loader = {
     efi.canTouchEfiVariables = true;

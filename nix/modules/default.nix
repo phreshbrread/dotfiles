@@ -174,7 +174,6 @@
   programs = {
     git.enable        = true;
     tmux.enable       = true;
-    kdeconnect.enable = true;
     fish.enable       = true;
 
     # Enable AppImage
