@@ -13,7 +13,7 @@
 
   users.users.plum = {
     isNormalUser = true;
-    extraGroups  = [ "wheel" ];
+    extraGroups  = [ "wheel" "server" ];
   };
 
   environment.systemPackages = with pkgs-stable; [
