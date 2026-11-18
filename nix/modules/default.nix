@@ -74,6 +74,7 @@
         default = [ "kitty.desktop" ];
       };
     };
+   };
 
   security = {
     rtkit.enable  = true; # Enable realtime daemon
