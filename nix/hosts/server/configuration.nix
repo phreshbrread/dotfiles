@@ -7,7 +7,10 @@
     efi.canTouchEfiVariables = true;
   };
 
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    hostName              = "bignuts";
+  };
 
   time.timeZone = "Australia/Melbourne";
 

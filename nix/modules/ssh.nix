@@ -2,11 +2,12 @@
 let
   cfg = config.ssh;
   sshKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4CrQpgClN88TzMPVCkACe0r6n3kwPttU8b2ir5C9oa u0_a329@localhost"          # Mobile phone
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBno6ku/9vynuqpYNH1OLx1hZ1X0qciMycvzd5YM/aW8 brad@fentbook"              # Macbook
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsOBvqJxsicqpr4wDYLwR9s2VezX0r84vRpsSM/I0Oe brad@pheg-nixos-desktop"    # Desktop
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ6A3BTsde4wQCZPXwmjorPNk13BdOL0+nJa+rlH0IjH pheg@fatass"                # Toshiba laptop
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOoINyatbHwAARhJnwBQccXXDH1/PnQ0C4B8KJpwQC66 bazzite@brad-bazzite-ally"  # ROG Ally
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4CrQpgClN88TzMPVCkACe0r6n3kwPttU8b2ir5C9oa" # Mobile phone
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBno6ku/9vynuqpYNH1OLx1hZ1X0qciMycvzd5YM/aW8" # Macbook
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsOBvqJxsicqpr4wDYLwR9s2VezX0r84vRpsSM/I0Oe" # Desktop
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ6A3BTsde4wQCZPXwmjorPNk13BdOL0+nJa+rlH0IjH" # Toshiba laptop
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOoINyatbHwAARhJnwBQccXXDH1/PnQ0C4B8KJpwQC66" # ROG Ally
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINcBwMGwNJVLw/puNsZjpZXjH36/BFW3ySzfTlZJxCdW" # Server
   ];
 in
 {
