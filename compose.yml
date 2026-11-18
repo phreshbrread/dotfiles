@@ -84,8 +84,8 @@ services:
       - WEBUI_PORT=8090
       - TORRENTING_PORT=6881
     volumes:
-      - /mass-storage/qBittorrent-config:/config
-      - /mass-storage/Torrents:/downloads
+      - /qBittorrent-config:/config
+      - /Torrents:/downloads
     restart: unless-stopped
     depends_on:
       gluetun:
