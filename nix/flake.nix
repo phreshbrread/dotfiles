@@ -45,6 +45,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/server
+          ./modules
         ];
       };
 
