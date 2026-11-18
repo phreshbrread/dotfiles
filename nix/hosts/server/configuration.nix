@@ -37,7 +37,7 @@
 
   services.openssh = {
     enable = true;
-    PasswordAuthentication = true;
+    passwordAuthentication = true;
   };
 
   networking.firewall = {
