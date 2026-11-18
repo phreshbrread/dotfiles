@@ -74,19 +74,6 @@
       };
     };
 
-    # Set default apps
-    # https://mimetype.io/all-types for types
-    mime.defaultApplications = {
-      # TODO: Idk if this will work
-      "application/pdf" = [ "{$BROWSER}.desktop" ];
-      "inode/directory" = [ "thunar.desktop" ];
-      "image/png" = [
-        "image-roll.desktop"
-        "gimp.desktop"
-      ];
-    };
-  };
-
   security = {
     rtkit.enable  = true; # Enable realtime daemon
     polkit.enable = true;
@@ -187,7 +174,6 @@
   programs = {
     git.enable        = true;
     tmux.enable       = true;
-    gamescope.enable  = true;
     kdeconnect.enable = true;
     fish.enable       = true;
 

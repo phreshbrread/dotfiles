@@ -4,6 +4,7 @@ let cfg = config.gaming; in {
 
   config = lib.mkIf cfg.enable {
     hardware.xpadneo.enable = true;
+    programs.gamescope.enable = true;
 
     programs.gamemode = {
       enable        = true;
