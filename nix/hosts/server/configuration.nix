@@ -18,13 +18,13 @@
   };
 
   # Disable bluetooth
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = lib.mkForce false;
 
   # Disable XDG portals
-  xdg.portal.enable = false;
+  xdg.portal.enable = lib.mkForce false;
 
   # Disable flatpak
-  services.flatpak.enable = false;
+  services.flatpak.enable = lib.mkForce false;
 
   # Packages
   environment.systemPackages = with pkgs-stable; [
