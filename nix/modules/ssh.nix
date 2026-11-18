@@ -26,7 +26,8 @@ in
       };
     };
 
-  # Write the keys to a system-wide file, then open for each user
-  environment.etc."ssh/authorized_keys_global".text = builtins.concatStringsSep "\n" sshKeys;
-  services.openssh.settings.AuthorizedKeysFile = ".ssh/authorized_keys /etc/ssh/authorized_keys_global";
+    # Write the keys to a system-wide file, then open for each user
+    environment.etc."ssh/authorized_keys_global".text = builtins.concatStringsSep "\n" sshKeys;
+    services.openssh.settings.AuthorizedKeysFile = ".ssh/authorized_keys /etc/ssh/authorized_keys_global";
+  };
 }
