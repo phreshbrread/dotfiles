@@ -42,6 +42,7 @@
     allowedTCPPorts = [
       80    # Nginx
       443   # Nginx
+      8096  # Jellyfin
       25566 # Minecraft
       7777  # Terraria
       8090  # qBittorrent
