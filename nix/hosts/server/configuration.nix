@@ -14,17 +14,13 @@
   # User
   users.users.plum = {
     isNormalUser = true;
-    extraGroups  = [ "wheel" "server" ];
+    extraGroups  = [ "wheel" "server" "video" "render" ];
   };
 
-  # Disable bluetooth
+  # Force disable features
   hardware.bluetooth.enable = lib.mkForce false;
-
-  # Disable XDG portals
-  xdg.portal.enable = lib.mkForce false;
-
-  # Disable flatpak
-  services.flatpak.enable = lib.mkForce false;
+  xdg.portal.enable         = lib.mkForce false;
+  services.flatpak.enable   = lib.mkForce false;
 
   # Packages
   environment.systemPackages = with pkgs-stable; [
@@ -35,18 +31,13 @@
 
   # Docker
   virtualisation.docker = {
-    enable = true;
+    enable = false;
     rootless = {
       enable = true;
       setSocketVariable = true;
     };
   };
   systemd.services.docker.unitConfig.RequiresMountsFor = [ "/media" ];
-
-  #services.openssh = {
-  #  enable = true;
-  #  passwordAuthentication = true;
-  #};
 
   networking.firewall = {
     allowedTCPPorts = [
