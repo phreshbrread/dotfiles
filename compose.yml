@@ -12,13 +12,13 @@ services:
       - '303' # Add user to "render" group to enable GPU accel
       - '100'
     volumes:
-      - /Jellyfin:/config:rwx
-      - /external-drive/Media:/data/media:rwx
+      - ./jellyfin:/config:rwx
+      - ./media/Media:/data/media:rwx
     ports:
       - 8096:8096
     devices:
       - /dev/dri:/dev/dri
-      - /dev/kfd:/dev/kfd
+      #- /dev/kfd:/dev/kfd
     restart: unless-stopped
 
   mc-server:
@@ -46,7 +46,7 @@ services:
       WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,OhSprenos"
       WHITELIST_FILE_RESOLVER: "NONE"
     volumes:
-      - ~/servers/minecraft-server/:/data
+      - ~/servers/minecraft/:/data
     stdin_open: true
     tty: true
     restart: unless-stopped
