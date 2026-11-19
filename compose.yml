@@ -52,41 +52,37 @@ services:
     restart: unless-stopped
 
   gluetun:
-    image: qmcgaw/gluetun:v3
+    image: qmcgaw/gluetun:latest
     container_name: gluetun
     cap_add:
       - NET_ADMIN
     devices:
       - /dev/net/tun:/dev/net/tun
     ports:
-      - 8090:8090     # qBittorrent Web UI
-      - 6881:6881     # qBittorrent Torrent port (TCP)
-      - 6881:6881/udp # qBittorrent Torrent port (UDP)
-    environment:      # User & pass pull from .env file
-      - VPN_SERVICE_PROVIDER=protonvpn
-      - VPN_TYPE=openvpn
-      - OPENVPN_USER=${PROTON_VPN_USER}+pmp
-      - OPENVPN_PASSWORD=${PROTON_VPN_PASSWORD}
-      - SERVER_COUNTRIES=Australia
+      - "8090:8090" # qBittorrent WebUI
+    volumes:
+      - ./gluetun:/gluetun
+      - ./gluetun/wireguard/wg0.conf:/gluetun/wireguard/wg0.conf:ro
+    environment:
+      - VPN_SERVICE_PROVIDER=custom
+      - VPN_TYPE=wireguard
       - VPN_PORT_FORWARDING=on
-      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- -nv --retry-connrefused --post-data "json={\"listen_port\":{{PORT}},\"current_network_interface\":\"{{VPN_INTERFACE}}\",\"random_port\":false,\"upnp\":false}" http://127.0.0.1:8090/api/v2/app/setPreferences'
-      - VPN_PORT_FORWARDING_DOWN_COMMAND=/bin/sh -c 'wget -O- -nv --retry-connrefused --post-data "json={\"listen_port\":0}" http://127.0.0.1:8090/api/v2/app/setPreferences'
+      - VPN_PORT_FORWARDING_PROVIDER=protonvpn
     restart: unless-stopped
 
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
-    network_mode: "container:gluetun"
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Australia/Melbourne
-      - WEBUI_PORT=8090
-      - TORRENTING_PORT=6881
-    volumes:
-      - ~/qbittorrent-config:/config
-      - ~/torrents:/downloads
-    restart: unless-stopped
+    network_mode: "service:gluetun"
     depends_on:
       gluetun:
         condition: service_healthy
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Australia/Melbourne
+      - WEBUI_PORT=8090
+    volumes:
+      - ./qbittorrent:/config
+      - ./torrents:/downloads
+    restart: unless-stopped
