@@ -1,5 +1,4 @@
 { config, lib, pkgs-stable, ... }:
-
 {
   # Modules
   systemdBoot.enable = true;
@@ -45,6 +44,7 @@
       443   # Nginx
       25566 # Minecraft
       7777  # Terraria
+      8090  # qBittorrent
     ];
     allowedUDPPorts = [
       7359  # Jellyfin local discovery
