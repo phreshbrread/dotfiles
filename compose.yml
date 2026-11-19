@@ -27,6 +27,8 @@ services:
     ports:
       - "25566:25565"
     environment:
+      PUID: 1000
+      PGID: 100
       EULA: "TRUE"
       MEMORY: "12G"
       #TYPE: "VANILLA"
@@ -46,7 +48,7 @@ services:
       WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,OhSprenos"
       WHITELIST_FILE_RESOLVER: "NONE"
     volumes:
-      - ~/servers/minecraft/:/data
+      - ./servers/minecraft/:/data
     stdin_open: true
     tty: true
     restart: unless-stopped
