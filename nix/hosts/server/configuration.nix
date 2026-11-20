@@ -51,18 +51,6 @@
     };
   };
 
-  # Drive mount timing
-  systemd.services.docker = {
-    after = [ "home-plum-media.mount" ];
-    wants = [ "home-plum-media.mount" ];
-    unitConfig.RequiresMountsFor = [ "/home/plum/media" ];
-  };
-  systemd.user.services.docker = {
-    after = [ "home-plum-media.mount" "network-online.target" ];
-    wants = [ "home-plum-media.mount" "network-online.target" ];
-    unitConfig.RequiresMountsFor = [ "/home/plum/media" ];
-  };
-
   # Media drive
   boot.supportedFilesystems = [ "exfat" ];
   fileSystems."/home/plum/media" = {
@@ -112,7 +100,7 @@
 
       # Reverse proxy
       locations."/" = {
-        proxyPass = "http://localhost:8096"; # Jellyfin port
+        proxyPass = "http://127.0.0.1:8096"; # Jellyfin port
         proxyWebsockets = true;
       };
     };
