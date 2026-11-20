@@ -4,8 +4,8 @@ services:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=100
       - TZ=Australia/Melbourne
       - JELLYFIN_PublishedServerUrl=https://screamingbird.duckdns.org
       - NVIDIA_VISIBLE_DEVICES=all
@@ -14,8 +14,8 @@ services:
       - '303' # Add user to "render" group to enable GPU accel
       - '100' # "users" group
     volumes:
-      - ./jellyfin:/config:rwx
-      - ./media/Media:/data/media:rwx
+      - /home/plum/jellyfin:/config:rwx
+      - /home/plum/media/Media:/data/media:rwx
     ports:
       - 8096:8096
     devices:
@@ -47,7 +47,7 @@ services:
       WHITELIST: "Phrench64,LeggOfHam,Spineussy,Crepeinator,MonkeeMannz,LockiBocki1,tomas8s,OhSprenos"
       WHITELIST_FILE_RESOLVER: "NONE"
     volumes:
-      - ./servers/minecraft/:/data
+      - /home/plum/servers/minecraft/:/data
     stdin_open: true
     tty: true
     restart: unless-stopped
@@ -62,8 +62,8 @@ services:
     ports:
       - "8090:8090" # qBittorrent WebUI
     volumes:
-      - ./gluetun:/gluetun
-      - ./gluetun/wireguard/wg0.conf:/gluetun/wireguard/wg0.conf:ro
+      - /home/plum/gluetun:/gluetun
+      - /home/plum/gluetun/wireguard/wg0.conf:/gluetun/wireguard/wg0.conf:ro
     environment:
       - VPN_SERVICE_PROVIDER=custom
       - VPN_TYPE=wireguard
@@ -79,11 +79,11 @@ services:
       gluetun:
         condition: service_healthy
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=1000
+      - PGID=100
       - TZ=Australia/Melbourne
       - WEBUI_PORT=8090
     volumes:
-      - ./qbittorrent:/config
-      - ./torrents:/downloads
+      - /home/plum/qbittorrent:/config
+      - /home/plum/torrents:/downloads
     restart: unless-stopped
