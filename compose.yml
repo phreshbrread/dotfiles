@@ -4,8 +4,8 @@ services:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
     environment:
-      - PUID=1000 # Match drive UID
-      - PGID=100  # Match drive GID
+      - PUID=0
+      - PGID=0
       - TZ=Australia/Melbourne
       - JELLYFIN_PublishedServerUrl=https://screamingbird.duckdns.org
     group_add:
@@ -16,8 +16,8 @@ services:
       - ./media/Media:/data/media:rwx
     ports:
       - 8096:8096
-    devices:
-      - /dev/dri:/dev/dri
+    #devices:
+      # - /dev/dri:/dev/dri
       #- /dev/kfd:/dev/kfd
     restart: unless-stopped
 
@@ -27,8 +27,6 @@ services:
     ports:
       - "25566:25565"
     environment:
-      PUID: 1000
-      PGID: 100
       EULA: "TRUE"
       MEMORY: "12G"
       #TYPE: "VANILLA"
@@ -80,8 +78,8 @@ services:
       gluetun:
         condition: service_healthy
     environment:
-      - PUID=1000
-      - PGID=100
+      - PUID=0
+      - PGID=0
       - TZ=Australia/Melbourne
       - WEBUI_PORT=8090
     volumes:
