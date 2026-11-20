@@ -68,18 +68,18 @@
   };
 
   # Toshiba external (4TB)
-  fileSystems."/external-drive" = {
-    device = "/dev/disk/by-uuid/777F-FB5D";
-    fsType = "exfat";
-    options = [
-      "nofail"
-      "nosuid"
-      "nodev"
-      "noatime"
-      "uid=1000"
-      "gid=100"    # Group 100 (users)
-      "fmask=0002" # Set files as RW for owner + group
-      "dmask=0002" # Set directories as RWX for owner + group
-    ];
-  };
+  #fileSystems."/external-drive" = {
+  #  device = "/dev/disk/by-uuid/777F-FB5D";
+  #  fsType = "exfat";
+  #  options = [
+  #    "nofail"
+  #    "nosuid"
+  #    "nodev"
+  #    "noatime"
+  #    "uid=1000"
+  #    "gid=100"    # Group 100 (users)
+  #    "fmask=0002" # Set files as RW for owner + group
+  #    "dmask=0002" # Set directories as RWX for owner + group
+  #  ];
+  #};
 }

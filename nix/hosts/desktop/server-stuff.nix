@@ -17,7 +17,7 @@
     };
   };
   users.users.brad.extraGroups = [ "docker" ];
-  systemd.services.docker.unitConfig.RequiresMountsFor = [ "/external-drive" ];
+  #systemd.services.docker.unitConfig.RequiresMountsFor = [ "/external-drive" ];
 
   # Caddy with DuckDNS plugin
   services.caddy = {
