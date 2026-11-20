@@ -14,6 +14,7 @@
   users.users.plum = {
     isNormalUser = true;
     extraGroups  = [ "wheel" "server" "video" "render" ];
+    linger       = true;
   };
 
   # Force disable features
