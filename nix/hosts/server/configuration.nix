@@ -29,12 +29,25 @@
     git
   ];
 
+  # RTX 2070
+  services.xserver.videoDrivers            = [ "nvidia" ];
+  hardware.graphics.enable                 = true;
+  hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open               = false; # For proprietary driver
+    nvidiaSettings     = true;
+    package            = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
   # Docker
-  virtualisation.docker = {
-    enable = false;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+    daemon.settings = {
+      features = {
+        cdi = true;
+      };
     };
   };
   systemd.services.docker.unitConfig.RequiresMountsFor = [ "/home/plum/media" ];
@@ -72,7 +85,7 @@
   services.duckdns = {
     enable = true;
     domains = [ "screamingbird" ];
-    tokenFile = "/duckdns-token"; # TODO: Regen duckdns token
+    tokenFile = "/home/plum/duckdns-token";
   };
 
   # Nginx
