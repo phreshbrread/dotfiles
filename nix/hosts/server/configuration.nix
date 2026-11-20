@@ -13,7 +13,7 @@
   # User
   users.users.plum = {
     isNormalUser = true;
-    extraGroups  = [ "wheel" "server" "video" "render" ];
+    extraGroups  = [ "wheel" "server" "video" "render" "docker" ];
     linger       = true;
   };
 
@@ -41,15 +41,7 @@
   };
 
   # Docker
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-    daemon.settings = {
-      features = {
-        cdi = true;
-      };
-    };
-  };
+  virtualisation.docker.enable = true;
 
   # Media drive
   boot.supportedFilesystems = [ "exfat" ];
@@ -69,6 +61,7 @@
     ];
   };
 
+  # Firewall
   networking.firewall = {
     allowedTCPPorts = [
       80    # Nginx
