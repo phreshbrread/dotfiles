@@ -37,7 +37,22 @@
       setSocketVariable = true;
     };
   };
-  systemd.services.docker.unitConfig.RequiresMountsFor = [ "/media" ];
+  systemd.services.docker.unitConfig.RequiresMountsFor = [ "/home/plum/media" ];
+
+  # Media drive
+  boot.supportedFilesystems = [ "exfat" ];
+  fileSystems."/home/plum/media" = {
+    device = "/dev/disk/by-uuid/777F-FB5D";
+    fsType = "exfat";
+    options = [
+      "nofail"
+      "uid=1000"
+      "gid=100"
+      "fmask=0113"
+      "dmask=0022"
+      "iocharset=utf8"
+    ];
+  };
 
   networking.firewall = {
     allowedTCPPorts = [
