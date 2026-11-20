@@ -58,6 +58,9 @@
     fsType = "exfat";
     options = [
       "nofail"
+      "nosuid"
+      "nodev"
+      "noatime"
       "uid=1000"
       "gid=100"
       "fmask=0113"
@@ -100,7 +103,7 @@
 
       # Reverse proxy
       locations."/" = {
-        proxyPass = "http://127.0.0.1:8096"; # Jellyfin port
+        proxyPass = "http://localhost:8096"; # Jellyfin port
         proxyWebsockets = true;
       };
     };
