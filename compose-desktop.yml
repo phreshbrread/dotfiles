@@ -13,6 +13,8 @@ services:
       - /home/brad/gluetun:/gluetun
       - /home/brad/gluetun/wireguard/wg0.conf:/gluetun/wireguard/wg0.conf:ro
     environment:
+      - PUID=1000
+      - PGID=100
       - VPN_SERVICE_PROVIDER=custom
       - VPN_TYPE=wireguard
       - VPN_PORT_FORWARDING=on
